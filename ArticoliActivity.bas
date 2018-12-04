@@ -43,6 +43,12 @@ End Sub
 
 Sub Activity_Resume
 	AggiornaLista(Starter.db.GetArticoli())
+	If lvArticoli.Size == 0 Then
+		lvArticoli.SingleLineLayout.ItemHeight = 90
+		lvArticoli.SingleLineLayout.Label.TextColor = Colors.DarkGray
+		lvArticoli.SingleLineLayout.Label.Typeface = Typeface.CreateNew(Typeface.DEFAULT, Typeface.STYLE_BOLD_ITALIC)
+		lvArticoli.AddSingleLine("Nessun articolo in lista. Aggiornare gli articoli.")
+	End If	
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
@@ -51,12 +57,13 @@ End Sub
 
 Sub AggiornaLista(articoli As List)
 	lvArticoli.Clear
-	lvArticoli.TwoLinesLayout.ItemHeight = 70
-	lvArticoli.TwoLinesLayout.Label.TextColor = Colors.Black
-	lvArticoli.TwoLinesLayout.Label.TextSize = 22
-	lvArticoli.TwoLinesLayout.SecondLabel.TextSize = 16
+	lvArticoli.TwoLinesAndBitmap.ItemHeight = 60dip
+	lvArticoli.TwoLinesAndBitmap.Label.TextColor = Colors.Black
+	lvArticoli.TwoLinesAndBitmap.Label.TextSize = 22
+	lvArticoli.TwoLinesAndBitmap.SecondLabel.TextSize = 16
+	'lvArticoli.TwoLinesAndBitmap.ImageView.Bitmap = LoadBitmap(File.DirAssets, "articolo.png")
 	For Each a As Articolo In articoli
-		lvArticoli.AddTwoLines2(a.Descrizione, NumberFormat2(a.Prezzo, 0, 2, 2, False) & " €", a)
+		lvArticoli.AddTwoLinesAndBitmap2(a.Descrizione, NumberFormat2(a.Prezzo, 0, 2, 2, False) & " €", LoadBitmap(File.DirAssets, "articolo.png"), a)
 	Next
 End Sub
 

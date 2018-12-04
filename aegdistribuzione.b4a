@@ -1,24 +1,30 @@
 ﻿Build1=Default,app.aegdistribuzione
 File1=ArticoliLayout.bal
-File10=OrdinInCorsoLayout.bal
-File11=prodotti.jpg
-File12=ScaricaDatiLayout.bal
-File13=SchedaClienteLayout.bal
-File14=StoricoOrdiniLayout.bal
-File2=cellitem.bal
-File3=ClientiLayout.bal
-File4=DettaglioOrdineLayout.bal
-File5=ListaPreferitiLayout.bal
-File6=loginlayout.bal
-File7=Loyal_Customers.jpg
-File8=MainLayout.bal
-File9=OrdineLayout.bal
+File10=OrdineLayout.bal
+File11=OrdinInCorsoLayout.bal
+File12=persona.png
+File13=prodotti.jpg
+File14=ScaricaDatiLayout.bal
+File15=SchedaClienteLayout.bal
+File16=stella.png
+File17=StoricoOrdiniLayout.bal
+File2=articolo.png
+File3=cellitem.bal
+File4=ClientiLayout.bal
+File5=DettaglioOrdineLayout.bal
+File6=ListaPreferitiLayout.bal
+File7=loginlayout.bal
+File8=Loyal_Customers.jpg
+File9=MainLayout.bal
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup11=Default Group
 FileGroup12=Default Group
 FileGroup13=Default Group
 FileGroup14=Default Group
+FileGroup15=Default Group
+FileGroup16=Default Group
+FileGroup17=Default Group
 FileGroup2=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
@@ -37,6 +43,7 @@ Library5=javaobject
 Library6=stringutils
 Library7=xui
 Library8=ime
+Library9=okhttp
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~'End of default text.~\n~~\n~AddPermission(android.permission.WRITE_EXTERNAL_STORAGE)~\n~SetApplicationAttribute(android:theme, "@android:style/Theme.Holo.Light")
 Module1=OrdineActivity
 Module10=Cliente
@@ -55,8 +62,8 @@ Module6=ApiClient
 Module7=Utente
 Module8=ScaricaDatiActivity
 Module9=Ordine
-NumberOfFiles=14
-NumberOfLibraries=8
+NumberOfFiles=17
+NumberOfLibraries=9
 NumberOfModules=17
 Version=8.5
 @EndOfDesignText@
@@ -89,6 +96,10 @@ End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("MainLayout")
+	
+	If Starter.User == Null Then
+		StartActivity(LoginActivity)
+	End If
 End Sub
 
 Sub Activity_Resume

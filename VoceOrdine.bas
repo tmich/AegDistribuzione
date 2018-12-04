@@ -25,6 +25,19 @@ Public Sub Initialize(vid As Int, vcod As String, vdesc As String, oid As Int, n
 	Qta = q
 End Sub
 
+Public Sub ToMap As Map
+	Dim mv As Map
+	mv.Initialize
+	mv.Put("id", Id)
+	mv.Put("codice", CodArt)
+	mv.Put("desc_art", DescArt)
+	mv.Put("prez_art", Prezzo)
+	mv.Put("qta", Qta)
+	mv.Put("note", Note)
+	
+	Return mv
+End Sub
+
 Public Sub Totale As Float
 	Return Prezzo * Qta
 End Sub

@@ -356,65 +356,65 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="schedaclienteactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=3211264;
- //BA.debugLineNum = 3211264;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=3211266;
- //BA.debugLineNum = 3211266;BA.debugLine="Activity.LoadLayout(\"SchedaClienteLayout\")";
+RDebugUtils.currentLine=3342336;
+ //BA.debugLineNum = 3342336;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=3342338;
+ //BA.debugLineNum = 3342338;BA.debugLine="Activity.LoadLayout(\"SchedaClienteLayout\")";
 mostCurrent._activity.LoadLayout("SchedaClienteLayout",mostCurrent.activityBA);
-RDebugUtils.currentLine=3211267;
- //BA.debugLineNum = 3211267;BA.debugLine="TabHost1.AddTab(\"Scheda\", \"ListaPreferitiLayout\")";
+RDebugUtils.currentLine=3342339;
+ //BA.debugLineNum = 3342339;BA.debugLine="TabHost1.AddTab(\"Scheda\", \"ListaPreferitiLayout\")";
 mostCurrent._tabhost1.AddTab(mostCurrent.activityBA,"Scheda","ListaPreferitiLayout");
-RDebugUtils.currentLine=3211268;
- //BA.debugLineNum = 3211268;BA.debugLine="TabHost1.AddTab(\"Ordini in corso\", \"ordinincorsol";
+RDebugUtils.currentLine=3342340;
+ //BA.debugLineNum = 3342340;BA.debugLine="TabHost1.AddTab(\"Ordini in corso\", \"ordinincorsol";
 mostCurrent._tabhost1.AddTab(mostCurrent.activityBA,"Ordini in corso","ordinincorsolayout");
-RDebugUtils.currentLine=3211269;
- //BA.debugLineNum = 3211269;BA.debugLine="TabHost1.AddTab(\"Storico Ordini\", \"StoricoOrdiniL";
+RDebugUtils.currentLine=3342341;
+ //BA.debugLineNum = 3342341;BA.debugLine="TabHost1.AddTab(\"Storico Ordini\", \"StoricoOrdiniL";
 mostCurrent._tabhost1.AddTab(mostCurrent.activityBA,"Storico Ordini","StoricoOrdiniLayout");
-RDebugUtils.currentLine=3211270;
- //BA.debugLineNum = 3211270;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3342342;
+ //BA.debugLineNum = 3342342;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="schedaclienteactivity";
-RDebugUtils.currentLine=3407872;
- //BA.debugLineNum = 3407872;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=3407874;
- //BA.debugLineNum = 3407874;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3538944;
+ //BA.debugLineNum = 3538944;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=3538946;
+ //BA.debugLineNum = 3538946;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="schedaclienteactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=3342336;
- //BA.debugLineNum = 3342336;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=3342337;
- //BA.debugLineNum = 3342337;BA.debugLine="Select TabHost1.CurrentTab";
+RDebugUtils.currentLine=3473408;
+ //BA.debugLineNum = 3473408;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=3473409;
+ //BA.debugLineNum = 3473409;BA.debugLine="Select TabHost1.CurrentTab";
 switch (BA.switchObjectToInt(mostCurrent._tabhost1.getCurrentTab(),(int) (0),(int) (1),(int) (2))) {
 case 0: {
-RDebugUtils.currentLine=3342339;
- //BA.debugLineNum = 3342339;BA.debugLine="CaricaPreferiti";
+RDebugUtils.currentLine=3473411;
+ //BA.debugLineNum = 3473411;BA.debugLine="CaricaPreferiti";
 _caricapreferiti();
  break; }
 case 1: {
-RDebugUtils.currentLine=3342341;
- //BA.debugLineNum = 3342341;BA.debugLine="CaricaOrdiniInCorso";
+RDebugUtils.currentLine=3473413;
+ //BA.debugLineNum = 3473413;BA.debugLine="CaricaOrdiniInCorso";
 _caricaordiniincorso();
  break; }
 case 2: {
-RDebugUtils.currentLine=3342343;
- //BA.debugLineNum = 3342343;BA.debugLine="CaricaStoricoOrdini";
+RDebugUtils.currentLine=3473415;
+ //BA.debugLineNum = 3473415;BA.debugLine="CaricaStoricoOrdini";
 _caricastoricoordini();
  break; }
 default: {
-RDebugUtils.currentLine=3342345;
- //BA.debugLineNum = 3342345;BA.debugLine="Log(\"Boh?\")";
+RDebugUtils.currentLine=3473417;
+ //BA.debugLineNum = 3473417;BA.debugLine="Log(\"Boh?\")";
 anywheresoftware.b4a.keywords.Common.Log("Boh?");
  break; }
 }
 ;
-RDebugUtils.currentLine=3342347;
- //BA.debugLineNum = 3342347;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3473419;
+ //BA.debugLineNum = 3473419;BA.debugLine="End Sub";
 return "";
 }
 public static String  _caricapreferiti() throws Exception{
@@ -423,29 +423,29 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "caricapreferiti"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "caricapreferiti", null));}
 anywheresoftware.b4a.objects.collections.List _preferiti = null;
 app.aegdistribuzione.preferito _p = null;
-RDebugUtils.currentLine=3473408;
- //BA.debugLineNum = 3473408;BA.debugLine="Private Sub CaricaPreferiti";
-RDebugUtils.currentLine=3473409;
- //BA.debugLineNum = 3473409;BA.debugLine="Dim preferiti As List = Starter.db.GetPreferitiCl";
+RDebugUtils.currentLine=3604480;
+ //BA.debugLineNum = 3604480;BA.debugLine="Private Sub CaricaPreferiti";
+RDebugUtils.currentLine=3604481;
+ //BA.debugLineNum = 3604481;BA.debugLine="Dim preferiti As List = Starter.db.GetPreferitiCl";
 _preferiti = new anywheresoftware.b4a.objects.collections.List();
 _preferiti = mostCurrent._starter._db._getpreferiticliente(null,mostCurrent._cli._id);
-RDebugUtils.currentLine=3473410;
- //BA.debugLineNum = 3473410;BA.debugLine="ListView1.Clear";
+RDebugUtils.currentLine=3604482;
+ //BA.debugLineNum = 3604482;BA.debugLine="ListView1.Clear";
 mostCurrent._listview1.Clear();
-RDebugUtils.currentLine=3473412;
- //BA.debugLineNum = 3473412;BA.debugLine="ListView1.SingleLineLayout.Label.Gravity = Gravit";
-mostCurrent._listview1.getSingleLineLayout().Label.setGravity(anywheresoftware.b4a.keywords.Common.Gravity.TOP);
-RDebugUtils.currentLine=3473413;
- //BA.debugLineNum = 3473413;BA.debugLine="ListView1.SingleLineLayout.ItemHeight = 60";
-mostCurrent._listview1.getSingleLineLayout().setItemHeight((int) (60));
-RDebugUtils.currentLine=3473414;
- //BA.debugLineNum = 3473414;BA.debugLine="ListView1.SingleLineLayout.Label.TextColor = Colo";
-mostCurrent._listview1.getSingleLineLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
-RDebugUtils.currentLine=3473415;
- //BA.debugLineNum = 3473415;BA.debugLine="ListView1.SingleLineLayout.Label.TextSize = 22";
-mostCurrent._listview1.getSingleLineLayout().Label.setTextSize((float) (22));
-RDebugUtils.currentLine=3473416;
- //BA.debugLineNum = 3473416;BA.debugLine="For Each p As Preferito In preferiti";
+RDebugUtils.currentLine=3604488;
+ //BA.debugLineNum = 3604488;BA.debugLine="ListView1.TwoLinesAndBitmap.ItemHeight = 60dip";
+mostCurrent._listview1.getTwoLinesAndBitmap().setItemHeight(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (60)));
+RDebugUtils.currentLine=3604489;
+ //BA.debugLineNum = 3604489;BA.debugLine="ListView1.TwoLinesAndBitmap.Label.TextColor = Col";
+mostCurrent._listview1.getTwoLinesAndBitmap().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
+RDebugUtils.currentLine=3604490;
+ //BA.debugLineNum = 3604490;BA.debugLine="ListView1.TwoLinesAndBitmap.Label.TextSize = 22";
+mostCurrent._listview1.getTwoLinesAndBitmap().Label.setTextSize((float) (22));
+RDebugUtils.currentLine=3604491;
+ //BA.debugLineNum = 3604491;BA.debugLine="ListView1.TwoLinesAndBitmap.SecondLabel.TextSize";
+mostCurrent._listview1.getTwoLinesAndBitmap().SecondLabel.setTextSize((float) (16));
+RDebugUtils.currentLine=3604492;
+ //BA.debugLineNum = 3604492;BA.debugLine="For Each p As Preferito In preferiti";
 {
 final anywheresoftware.b4a.BA.IterableList group7 = _preferiti;
 final int groupLen7 = group7.getSize()
@@ -453,13 +453,13 @@ final int groupLen7 = group7.getSize()
 ;
 for (; index7 < groupLen7;index7++){
 _p = (app.aegdistribuzione.preferito)(group7.Get(index7));
-RDebugUtils.currentLine=3473417;
- //BA.debugLineNum = 3473417;BA.debugLine="ListView1.AddSingleLine2(p.Descrizione, p)";
-mostCurrent._listview1.AddSingleLine2(BA.ObjectToCharSequence(_p._descrizione),(Object)(_p));
+RDebugUtils.currentLine=3604494;
+ //BA.debugLineNum = 3604494;BA.debugLine="ListView1.AddTwoLinesAndBitmap2(p.Descrizione, p";
+mostCurrent._listview1.AddTwoLinesAndBitmap2(BA.ObjectToCharSequence(_p._descrizione),BA.ObjectToCharSequence(BA.NumberToString(_p._occorrenze)+" volt"+_singplur(_p._occorrenze)),(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"stella.png").getObject()),(Object)(_p));
  }
 };
-RDebugUtils.currentLine=3473419;
- //BA.debugLineNum = 3473419;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3604496;
+ //BA.debugLineNum = 3604496;BA.debugLine="End Sub";
 return "";
 }
 public static String  _caricaordiniincorso() throws Exception{
@@ -468,29 +468,29 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "caricaordiniincorso"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "caricaordiniincorso", null));}
 anywheresoftware.b4a.objects.collections.List _ordini = null;
 app.aegdistribuzione.ordine _o = null;
-RDebugUtils.currentLine=3604480;
- //BA.debugLineNum = 3604480;BA.debugLine="Private Sub CaricaOrdiniInCorso";
-RDebugUtils.currentLine=3604481;
- //BA.debugLineNum = 3604481;BA.debugLine="Dim ordini As List = Starter.db.OrdiniInCorsoPerC";
+RDebugUtils.currentLine=3735552;
+ //BA.debugLineNum = 3735552;BA.debugLine="Private Sub CaricaOrdiniInCorso";
+RDebugUtils.currentLine=3735553;
+ //BA.debugLineNum = 3735553;BA.debugLine="Dim ordini As List = Starter.db.OrdiniInCorsoPerC";
 _ordini = new anywheresoftware.b4a.objects.collections.List();
 _ordini = mostCurrent._starter._db._ordiniincorsopercliente(null,mostCurrent._cli._id);
-RDebugUtils.currentLine=3604482;
- //BA.debugLineNum = 3604482;BA.debugLine="ListView3.Clear";
+RDebugUtils.currentLine=3735554;
+ //BA.debugLineNum = 3735554;BA.debugLine="ListView3.Clear";
 mostCurrent._listview3.Clear();
-RDebugUtils.currentLine=3604483;
- //BA.debugLineNum = 3604483;BA.debugLine="ListView3.SingleLineLayout.Label.Gravity = Gravit";
+RDebugUtils.currentLine=3735555;
+ //BA.debugLineNum = 3735555;BA.debugLine="ListView3.SingleLineLayout.Label.Gravity = Gravit";
 mostCurrent._listview3.getSingleLineLayout().Label.setGravity(anywheresoftware.b4a.keywords.Common.Gravity.TOP);
-RDebugUtils.currentLine=3604484;
- //BA.debugLineNum = 3604484;BA.debugLine="ListView3.SingleLineLayout.ItemHeight = 60";
+RDebugUtils.currentLine=3735556;
+ //BA.debugLineNum = 3735556;BA.debugLine="ListView3.SingleLineLayout.ItemHeight = 60";
 mostCurrent._listview3.getSingleLineLayout().setItemHeight((int) (60));
-RDebugUtils.currentLine=3604485;
- //BA.debugLineNum = 3604485;BA.debugLine="ListView3.SingleLineLayout.Label.TextColor = Colo";
+RDebugUtils.currentLine=3735557;
+ //BA.debugLineNum = 3735557;BA.debugLine="ListView3.SingleLineLayout.Label.TextColor = Colo";
 mostCurrent._listview3.getSingleLineLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
-RDebugUtils.currentLine=3604486;
- //BA.debugLineNum = 3604486;BA.debugLine="ListView3.SingleLineLayout.Label.TextSize = 22";
+RDebugUtils.currentLine=3735558;
+ //BA.debugLineNum = 3735558;BA.debugLine="ListView3.SingleLineLayout.Label.TextSize = 22";
 mostCurrent._listview3.getSingleLineLayout().Label.setTextSize((float) (22));
-RDebugUtils.currentLine=3604487;
- //BA.debugLineNum = 3604487;BA.debugLine="For Each o As Ordine In ordini";
+RDebugUtils.currentLine=3735559;
+ //BA.debugLineNum = 3735559;BA.debugLine="For Each o As Ordine In ordini";
 {
 final anywheresoftware.b4a.BA.IterableList group7 = _ordini;
 final int groupLen7 = group7.getSize()
@@ -498,13 +498,13 @@ final int groupLen7 = group7.getSize()
 ;
 for (; index7 < groupLen7;index7++){
 _o = (app.aegdistribuzione.ordine)(group7.Get(index7));
-RDebugUtils.currentLine=3604488;
- //BA.debugLineNum = 3604488;BA.debugLine="ListView3.AddSingleLine2(\"Ordine n. \" & o.Id, o)";
+RDebugUtils.currentLine=3735560;
+ //BA.debugLineNum = 3735560;BA.debugLine="ListView3.AddSingleLine2(\"Ordine n. \" & o.Id, o)";
 mostCurrent._listview3.AddSingleLine2(BA.ObjectToCharSequence("Ordine n. "+BA.NumberToString(_o._id)),(Object)(_o));
  }
 };
-RDebugUtils.currentLine=3604490;
- //BA.debugLineNum = 3604490;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3735562;
+ //BA.debugLineNum = 3735562;BA.debugLine="End Sub";
 return "";
 }
 public static String  _caricastoricoordini() throws Exception{
@@ -513,29 +513,29 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "caricastoricoordini"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "caricastoricoordini", null));}
 anywheresoftware.b4a.objects.collections.List _ordini = null;
 app.aegdistribuzione.ordine _o = null;
-RDebugUtils.currentLine=3538944;
- //BA.debugLineNum = 3538944;BA.debugLine="Private Sub CaricaStoricoOrdini";
-RDebugUtils.currentLine=3538945;
- //BA.debugLineNum = 3538945;BA.debugLine="Dim ordini As List = Starter.db.OrdiniPerCliente(";
+RDebugUtils.currentLine=3670016;
+ //BA.debugLineNum = 3670016;BA.debugLine="Private Sub CaricaStoricoOrdini";
+RDebugUtils.currentLine=3670017;
+ //BA.debugLineNum = 3670017;BA.debugLine="Dim ordini As List = Starter.db.OrdiniPerCliente(";
 _ordini = new anywheresoftware.b4a.objects.collections.List();
 _ordini = mostCurrent._starter._db._ordinipercliente(null,mostCurrent._cli._id);
-RDebugUtils.currentLine=3538946;
- //BA.debugLineNum = 3538946;BA.debugLine="ListView2.Clear";
+RDebugUtils.currentLine=3670018;
+ //BA.debugLineNum = 3670018;BA.debugLine="ListView2.Clear";
 mostCurrent._listview2.Clear();
-RDebugUtils.currentLine=3538947;
- //BA.debugLineNum = 3538947;BA.debugLine="ListView2.SingleLineLayout.Label.Gravity = Gravit";
+RDebugUtils.currentLine=3670019;
+ //BA.debugLineNum = 3670019;BA.debugLine="ListView2.SingleLineLayout.Label.Gravity = Gravit";
 mostCurrent._listview2.getSingleLineLayout().Label.setGravity(anywheresoftware.b4a.keywords.Common.Gravity.TOP);
-RDebugUtils.currentLine=3538948;
- //BA.debugLineNum = 3538948;BA.debugLine="ListView2.SingleLineLayout.ItemHeight = 60";
+RDebugUtils.currentLine=3670020;
+ //BA.debugLineNum = 3670020;BA.debugLine="ListView2.SingleLineLayout.ItemHeight = 60";
 mostCurrent._listview2.getSingleLineLayout().setItemHeight((int) (60));
-RDebugUtils.currentLine=3538949;
- //BA.debugLineNum = 3538949;BA.debugLine="ListView2.SingleLineLayout.Label.TextColor = Colo";
+RDebugUtils.currentLine=3670021;
+ //BA.debugLineNum = 3670021;BA.debugLine="ListView2.SingleLineLayout.Label.TextColor = Colo";
 mostCurrent._listview2.getSingleLineLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
-RDebugUtils.currentLine=3538950;
- //BA.debugLineNum = 3538950;BA.debugLine="ListView2.SingleLineLayout.Label.TextSize = 22";
+RDebugUtils.currentLine=3670022;
+ //BA.debugLineNum = 3670022;BA.debugLine="ListView2.SingleLineLayout.Label.TextSize = 22";
 mostCurrent._listview2.getSingleLineLayout().Label.setTextSize((float) (22));
-RDebugUtils.currentLine=3538951;
- //BA.debugLineNum = 3538951;BA.debugLine="For Each o As Ordine In ordini";
+RDebugUtils.currentLine=3670023;
+ //BA.debugLineNum = 3670023;BA.debugLine="For Each o As Ordine In ordini";
 {
 final anywheresoftware.b4a.BA.IterableList group7 = _ordini;
 final int groupLen7 = group7.getSize()
@@ -543,13 +543,13 @@ final int groupLen7 = group7.getSize()
 ;
 for (; index7 < groupLen7;index7++){
 _o = (app.aegdistribuzione.ordine)(group7.Get(index7));
-RDebugUtils.currentLine=3538952;
- //BA.debugLineNum = 3538952;BA.debugLine="ListView2.AddSingleLine2(\"Ordine del \" & o.DataF";
+RDebugUtils.currentLine=3670024;
+ //BA.debugLineNum = 3670024;BA.debugLine="ListView2.AddSingleLine2(\"Ordine del \" & o.DataF";
 mostCurrent._listview2.AddSingleLine2(BA.ObjectToCharSequence("Ordine del "+_o._getdataformattata(null)),(Object)(_o));
  }
 };
-RDebugUtils.currentLine=3538954;
- //BA.debugLineNum = 3538954;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3670026;
+ //BA.debugLineNum = 3670026;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnnuovo_click() throws Exception{
@@ -557,16 +557,37 @@ RDebugUtils.currentModule="schedaclienteactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btnnuovo_click"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnnuovo_click", null));}
 app.aegdistribuzione.ordine _o = null;
-RDebugUtils.currentLine=3801088;
- //BA.debugLineNum = 3801088;BA.debugLine="Sub BtnNuovo_Click";
-RDebugUtils.currentLine=3801089;
- //BA.debugLineNum = 3801089;BA.debugLine="Dim o As Ordine = Starter.db.NuovoOrdine(cli)";
+RDebugUtils.currentLine=3932160;
+ //BA.debugLineNum = 3932160;BA.debugLine="Sub BtnNuovo_Click";
+RDebugUtils.currentLine=3932161;
+ //BA.debugLineNum = 3932161;BA.debugLine="Dim o As Ordine = Starter.db.NuovoOrdine(cli)";
 _o = mostCurrent._starter._db._nuovoordine(null,mostCurrent._cli);
-RDebugUtils.currentLine=3801090;
- //BA.debugLineNum = 3801090;BA.debugLine="CallSubDelayed2(OrdineActivity, \"Carica\", o)";
+RDebugUtils.currentLine=3932162;
+ //BA.debugLineNum = 3932162;BA.debugLine="CallSubDelayed2(OrdineActivity, \"Carica\", o)";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._ordineactivity.getObject()),"Carica",(Object)(_o));
-RDebugUtils.currentLine=3801091;
- //BA.debugLineNum = 3801091;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3932163;
+ //BA.debugLineNum = 3932163;BA.debugLine="End Sub";
+return "";
+}
+public static String  _singplur(int _v) throws Exception{
+RDebugUtils.currentModule="schedaclienteactivity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "singplur"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "singplur", new Object[] {_v}));}
+RDebugUtils.currentLine=20381696;
+ //BA.debugLineNum = 20381696;BA.debugLine="Sub SingPlur(v As Int) As String";
+RDebugUtils.currentLine=20381697;
+ //BA.debugLineNum = 20381697;BA.debugLine="If v == 1 Then";
+if (_v==1) { 
+RDebugUtils.currentLine=20381698;
+ //BA.debugLineNum = 20381698;BA.debugLine="Return \"a\"";
+if (true) return "a";
+ }else {
+RDebugUtils.currentLine=20381700;
+ //BA.debugLineNum = 20381700;BA.debugLine="Return \"e\"";
+if (true) return "e";
+ };
+RDebugUtils.currentLine=20381702;
+ //BA.debugLineNum = 20381702;BA.debugLine="End Sub";
 return "";
 }
 public static String  _listview2_itemclick(int _position,Object _value) throws Exception{
@@ -574,16 +595,16 @@ RDebugUtils.currentModule="schedaclienteactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "listview2_itemclick"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "listview2_itemclick", new Object[] {_position,_value}));}
 app.aegdistribuzione.ordine _o = null;
-RDebugUtils.currentLine=3735552;
- //BA.debugLineNum = 3735552;BA.debugLine="Sub ListView2_ItemClick (Position As Int, Value As";
-RDebugUtils.currentLine=3735553;
- //BA.debugLineNum = 3735553;BA.debugLine="Dim o As Ordine = Value";
+RDebugUtils.currentLine=3866624;
+ //BA.debugLineNum = 3866624;BA.debugLine="Sub ListView2_ItemClick (Position As Int, Value As";
+RDebugUtils.currentLine=3866625;
+ //BA.debugLineNum = 3866625;BA.debugLine="Dim o As Ordine = Value";
 _o = (app.aegdistribuzione.ordine)(_value);
-RDebugUtils.currentLine=3735555;
- //BA.debugLineNum = 3735555;BA.debugLine="CallSubDelayed2(DettaglioOrdineActivity, \"Aggiorn";
+RDebugUtils.currentLine=3866627;
+ //BA.debugLineNum = 3866627;BA.debugLine="CallSubDelayed2(DettaglioOrdineActivity, \"Aggiorn";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._dettaglioordineactivity.getObject()),"AggiornaLista",(Object)(_o));
-RDebugUtils.currentLine=3735556;
- //BA.debugLineNum = 3735556;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3866628;
+ //BA.debugLineNum = 3866628;BA.debugLine="End Sub";
 return "";
 }
 public static String  _listview3_itemclick(int _position,Object _value) throws Exception{
@@ -591,70 +612,70 @@ RDebugUtils.currentModule="schedaclienteactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "listview3_itemclick"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "listview3_itemclick", new Object[] {_position,_value}));}
 app.aegdistribuzione.ordine _o = null;
-RDebugUtils.currentLine=3866624;
- //BA.debugLineNum = 3866624;BA.debugLine="Sub ListView3_ItemClick (Position As Int, Value As";
-RDebugUtils.currentLine=3866625;
- //BA.debugLineNum = 3866625;BA.debugLine="Dim o As Ordine = Value";
+RDebugUtils.currentLine=3997696;
+ //BA.debugLineNum = 3997696;BA.debugLine="Sub ListView3_ItemClick (Position As Int, Value As";
+RDebugUtils.currentLine=3997697;
+ //BA.debugLineNum = 3997697;BA.debugLine="Dim o As Ordine = Value";
 _o = (app.aegdistribuzione.ordine)(_value);
-RDebugUtils.currentLine=3866626;
- //BA.debugLineNum = 3866626;BA.debugLine="CallSubDelayed2(OrdineActivity, \"Carica\", o)";
+RDebugUtils.currentLine=3997698;
+ //BA.debugLineNum = 3997698;BA.debugLine="CallSubDelayed2(OrdineActivity, \"Carica\", o)";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._ordineactivity.getObject()),"Carica",(Object)(_o));
-RDebugUtils.currentLine=3866627;
- //BA.debugLineNum = 3866627;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3997699;
+ //BA.debugLineNum = 3997699;BA.debugLine="End Sub";
 return "";
 }
 public static String  _tabhost1_tabchanged() throws Exception{
 RDebugUtils.currentModule="schedaclienteactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "tabhost1_tabchanged"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "tabhost1_tabchanged", null));}
-RDebugUtils.currentLine=3670016;
- //BA.debugLineNum = 3670016;BA.debugLine="Sub TabHost1_TabChanged";
-RDebugUtils.currentLine=3670017;
- //BA.debugLineNum = 3670017;BA.debugLine="Select TabHost1.CurrentTab";
+RDebugUtils.currentLine=3801088;
+ //BA.debugLineNum = 3801088;BA.debugLine="Sub TabHost1_TabChanged";
+RDebugUtils.currentLine=3801089;
+ //BA.debugLineNum = 3801089;BA.debugLine="Select TabHost1.CurrentTab";
 switch (BA.switchObjectToInt(mostCurrent._tabhost1.getCurrentTab(),(int) (0),(int) (1),(int) (2))) {
 case 0: {
-RDebugUtils.currentLine=3670019;
- //BA.debugLineNum = 3670019;BA.debugLine="CaricaPreferiti";
+RDebugUtils.currentLine=3801091;
+ //BA.debugLineNum = 3801091;BA.debugLine="CaricaPreferiti";
 _caricapreferiti();
  break; }
 case 1: {
-RDebugUtils.currentLine=3670021;
- //BA.debugLineNum = 3670021;BA.debugLine="CaricaOrdiniInCorso";
+RDebugUtils.currentLine=3801093;
+ //BA.debugLineNum = 3801093;BA.debugLine="CaricaOrdiniInCorso";
 _caricaordiniincorso();
  break; }
 case 2: {
-RDebugUtils.currentLine=3670023;
- //BA.debugLineNum = 3670023;BA.debugLine="CaricaStoricoOrdini";
+RDebugUtils.currentLine=3801095;
+ //BA.debugLineNum = 3801095;BA.debugLine="CaricaStoricoOrdini";
 _caricastoricoordini();
  break; }
 default: {
-RDebugUtils.currentLine=3670025;
- //BA.debugLineNum = 3670025;BA.debugLine="Log(\"Boh?\")";
+RDebugUtils.currentLine=3801097;
+ //BA.debugLineNum = 3801097;BA.debugLine="Log(\"Boh?\")";
 anywheresoftware.b4a.keywords.Common.Log("Boh?");
  break; }
 }
 ;
-RDebugUtils.currentLine=3670027;
- //BA.debugLineNum = 3670027;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3801099;
+ //BA.debugLineNum = 3801099;BA.debugLine="End Sub";
 return "";
 }
 public static String  _visualizzascheda(app.aegdistribuzione.cliente _c) throws Exception{
 RDebugUtils.currentModule="schedaclienteactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "visualizzascheda"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "visualizzascheda", new Object[] {_c}));}
-RDebugUtils.currentLine=3276800;
- //BA.debugLineNum = 3276800;BA.debugLine="Sub VisualizzaScheda(c As Cliente)";
-RDebugUtils.currentLine=3276801;
- //BA.debugLineNum = 3276801;BA.debugLine="cli = c";
+RDebugUtils.currentLine=3407872;
+ //BA.debugLineNum = 3407872;BA.debugLine="Sub VisualizzaScheda(c As Cliente)";
+RDebugUtils.currentLine=3407873;
+ //BA.debugLineNum = 3407873;BA.debugLine="cli = c";
 mostCurrent._cli = _c;
-RDebugUtils.currentLine=3276802;
- //BA.debugLineNum = 3276802;BA.debugLine="Activity.Title = cli.Denominazione & \" \" & cli.In";
+RDebugUtils.currentLine=3407874;
+ //BA.debugLineNum = 3407874;BA.debugLine="Activity.Title = cli.Denominazione & \" \" & cli.In";
 mostCurrent._activity.setTitle(BA.ObjectToCharSequence(mostCurrent._cli._denominazione+" "+mostCurrent._cli._indirizzo));
-RDebugUtils.currentLine=3276804;
- //BA.debugLineNum = 3276804;BA.debugLine="CaricaPreferiti";
+RDebugUtils.currentLine=3407876;
+ //BA.debugLineNum = 3407876;BA.debugLine="CaricaPreferiti";
 _caricapreferiti();
-RDebugUtils.currentLine=3276805;
- //BA.debugLineNum = 3276805;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3407877;
+ //BA.debugLineNum = 3407877;BA.debugLine="End Sub";
 return "";
 }
 }

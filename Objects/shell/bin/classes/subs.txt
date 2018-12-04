@@ -10,23 +10,23 @@ voceordine
 articolo
 preferito
 customlistview
-main,activity_create,1,0,28,30
-
-
-
-main,activity_pause,0,0,38,40
-
-
-
-main,activity_resume,0,0,32,36
+main,activity_create,1,0,28,34
 starter,user
 
 
-main,btnarticoli_click,0,0,51,53
+main,activity_pause,0,0,42,44
 
 
 
-main,btnclienti_click,0,0,47,49
+main,activity_resume,0,0,36,40
+starter,user
+
+
+main,btnarticoli_click,0,0,55,57
+
+
+
+main,btnclienti_click,0,0,51,53
 
 
 
@@ -34,7 +34,7 @@ main,globals,0,1,21,25
 
 
 
-main,imageview3_click,0,0,43,45
+main,imageview3_click,0,0,47,49
 
 
 
@@ -66,10 +66,10 @@ ordineactivity,btnaggiungi_click,0,0,105,107
 
 
 
-ordineactivity,btninvia_longclick,0,0,124,131
+ordineactivity,btninvia_longclick,1,0,128,160
+starter,client,,m_ordine,starter,db,,m_cliente,starter,user
 
-
-
+apiclient,invia,apiclient,getsuccesso,database,salvaordine,database,eliminaordineincorso,apiclient,storicoordinipercliente,database,salvastoricoordinipercliente,apiclient,scaricapreferitipercliente,database,salvapreferitipercliente,apiclient,geterrore,ordine,initialize,ordine,tojson,ordine,fromjson,voceordine,tomap,voceordine,initialize,preferito,initialize
 ordineactivity,button1_click,1,0,82,96
 ,clv2,starter,db,,m_ordine,starter,user,,btninvia,,lbltotale,,button1,,label1,,label2,,spinner1
 ,m_ordine,,button1,,label1,,label2,,spinner1
@@ -86,10 +86,10 @@ ordineactivity,clv2_itemclick,0,0,75,80
 ,clv2
 
 customlistview,asview
-ordineactivity,getresult,1,0,109,113
-starter,db,,m_ordine,,btninvia,,lbltotale,starter,user,,clv2,,button1,,label1,,label2,,spinner1
+ordineactivity,getresult,1,1,109,117
+,m_ordine,starter,db,,btninvia,,lbltotale,starter,user,,clv2,,button1,,label1,,label2,,spinner1
 ,m_ordine,,button1,,label1,,label2,,spinner1
-database,nuovavoce,,aggiorna,voceordine,initialize,database,getordineincorso,,caricavoci,ordine,totale,ordine,initialize,customlistview,clear,customlistview,add,,createlistitem,customlistview,asview,customlistview,setscrollviewcontentsize,customlistview,insertat,customlistview,insertatimpl,customlistview,createpanel,customlistview,getscrollviewcontentsize,customlistview,cleanafteranimation,customlistview,getpaneloffset,customlistview,getscrollviewoffset,customlistview,getscrollviewvisiblesize,customlistview,setpaneloffset,voceordine,totale
+ordine,aggiungi,,aggiorna,ordine,contiene,database,nuovavoce,voceordine,initialize,database,getordineincorso,,caricavoci,ordine,totale,ordine,initialize,customlistview,clear,customlistview,add,,createlistitem,customlistview,asview,customlistview,setscrollviewcontentsize,customlistview,insertat,customlistview,insertatimpl,customlistview,createpanel,customlistview,getscrollviewcontentsize,customlistview,cleanafteranimation,customlistview,getpaneloffset,customlistview,getscrollviewoffset,customlistview,getscrollviewvisiblesize,customlistview,setpaneloffset,voceordine,totale
 ordineactivity,globals,0,1,12,27
 
 
@@ -98,19 +98,35 @@ ordineactivity,process_globals,0,1,6,10
 
 
 
-ordineactivity,spinner1_itemclick,1,0,115,122
+ordineactivity,spinner1_itemclick,1,0,119,126
 ,clv2,starter,db,,m_ordine,,btninvia,,lbltotale,starter,user,,button1,,label1,,label2,,spinner1
 ,m_ordine,,button1,,label1,,label2,,spinner1
 customlistview,getitemfromview,customlistview,getvalue,database,getvoce,database,aggiornavoce,,aggiorna,customlistview,getitem,voceordine,initialize,database,getordineincorso,,caricavoci,ordine,totale,ordine,initialize,customlistview,clear,customlistview,add,,createlistitem,customlistview,asview,customlistview,setscrollviewcontentsize,customlistview,insertat,customlistview,insertatimpl,customlistview,createpanel,customlistview,getscrollviewcontentsize,customlistview,cleanafteranimation,customlistview,getpaneloffset,customlistview,getscrollviewoffset,customlistview,getscrollviewvisiblesize,customlistview,setpaneloffset,voceordine,totale
-database,getordineincorso,0,0,351,373
+database,getordineincorso,0,0,388,410
 starter,user
 
 ordine,initialize,voceordine,initialize
-database,getvoce,0,0,419,432
+database,salvaordine,0,0,295,309
+
+
+
+database,eliminaordineincorso,0,0,380,386
+
+
+
+database,salvastoricoordinipercliente,0,0,329,345
+
+
+
+database,salvapreferitipercliente,0,0,358,367
+
+
+
+database,getvoce,0,0,456,469
 
 
 voceordine,initialize
-database,eliminavoce,0,0,412,417
+database,eliminavoce,0,0,449,454
 
 
 
@@ -118,11 +134,7 @@ database,getcliente,0,0,265,276
 
 
 cliente,initialize
-database,nuovavoce,0,0,390,403
-
-
-voceordine,initialize
-database,aggiornavoce,0,0,434,440
+database,aggiornavoce,0,0,471,477
 
 
 
@@ -178,7 +190,11 @@ database,tablesexist,0,0,14,22
 
 
 
-database,nuovoordine,0,0,375,388
+database,nuovavoce,0,0,427,440
+
+
+voceordine,initialize
+database,nuovoordine,0,0,412,425
 starter,user
 
 ordine,initialize
@@ -198,15 +214,11 @@ database,salvaclienti,0,0,243,252
 
 
 
-database,salvaordine,0,0,295,309
+database,salvaordineincorso,0,0,369,378
 
 
 
-database,salvaordineincorso,0,0,340,349
-
-
-
-database,salvapreferiti,0,0,329,338
+database,salvapreferiti,0,0,347,356
 
 
 
@@ -214,19 +226,35 @@ database,salvastoricoordini,0,0,311,327
 
 
 
-database,salvautente,0,0,405,410
+database,salvautente,0,0,442,447
 
 
 
-ordine,totale,0,0,38,45
+ordine,totale,0,0,94,101
 
 
 voceordine,totale
+ordine,aggiungi,0,1,47,55
+starter,db
+
+,contiene,database,nuovavoce,voceordine,initialize
 ordine,initialize,0,0,11,18
 
 
 
-ordine,getdataformattata,0,0,20,30
+ordine,getdataformattata,0,0,84,86
+
+
+
+ordine,tojson,0,0,107,124
+
+
+voceordine,tomap
+ordine,fromjson,0,0,57,82
+
+
+voceordine,initialize
+ordine,contiene,0,0,37,45
 
 
 
@@ -234,14 +262,62 @@ ordine,class_globals,0,0,1,8
 
 
 
-ordine,getdatainvioticks,0,0,32,36
+ordine,getdatainvioticks,0,0,88,92
 
 
 
-ordine,numvoci,0,0,47,49
+ordine,numvoci,0,0,103,105
 
 
 
+apiclient,invia,0,0,316,343
+starter,user
+
+ordine,initialize,ordine,tojson,ordine,fromjson,voceordine,tomap,voceordine,initialize
+apiclient,getsuccesso,0,0,20,22
+
+
+
+apiclient,storicoordinipercliente,0,0,160,206
+
+
+ordine,initialize,voceordine,initialize
+apiclient,scaricapreferitipercliente,0,0,286,314
+
+
+preferito,initialize
+apiclient,geterrore,0,0,24,26
+
+
+
+apiclient,initialize,0,0,9,18
+
+
+
+apiclient,login,0,0,345,378
+
+
+utente,initialize
+apiclient,class_globals,0,0,1,6
+
+
+
+apiclient,scaricaarticoli,0,0,98,126
+
+
+articolo,initialize
+apiclient,scaricaclienti,0,0,128,158
+
+
+cliente,initialize
+apiclient,scaricapreferiti,0,0,256,284
+
+
+preferito,initialize
+apiclient,storicoordini,0,0,208,254
+
+
+ordine,initialize,voceordine,initialize
 customlistview,getitemfromview,0,0,397,405
 
 
@@ -406,7 +482,11 @@ voceordine,initialize,0,0,12,20
 
 
 
-voceordine,totale,0,0,22,24
+voceordine,tomap,0,0,22,33
+
+
+
+voceordine,totale,0,0,35,37
 
 
 
@@ -457,32 +537,36 @@ schedaclienteactivity,activity_pause,0,0,48,50
 schedaclienteactivity,activity_resume,0,0,35,46
 ,tabhost1,starter,db,,cli,,listview1,,listview3,starter,user,,listview2
 
-,caricapreferiti,,caricaordiniincorso,,caricastoricoordini,database,getpreferiticliente,preferito,initialize,database,ordiniincorsopercliente,ordine,initialize,database,caricavociordineincorso,voceordine,initialize,database,ordinipercliente,ordine,getdataformattata,database,caricavoci
-schedaclienteactivity,caricapreferiti,0,0,52,63
+,caricapreferiti,,caricaordiniincorso,,caricastoricoordini,database,getpreferiticliente,,singplur,preferito,initialize,database,ordiniincorsopercliente,ordine,initialize,database,caricavociordineincorso,voceordine,initialize,database,ordinipercliente,ordine,getdataformattata,database,caricavoci
+schedaclienteactivity,caricapreferiti,0,0,60,76
 starter,db,,cli,,listview1
 
-database,getpreferiticliente,preferito,initialize
-schedaclienteactivity,caricaordiniincorso,0,0,77,87
+database,getpreferiticliente,,singplur,preferito,initialize
+schedaclienteactivity,caricaordiniincorso,0,0,90,100
 starter,db,,cli,,listview3,starter,user
 
 database,ordiniincorsopercliente,ordine,initialize,database,caricavociordineincorso,voceordine,initialize
-schedaclienteactivity,caricastoricoordini,0,0,65,75
+schedaclienteactivity,caricastoricoordini,0,0,78,88
 starter,db,,cli,,listview2
 
 database,ordinipercliente,ordine,getdataformattata,ordine,initialize,database,caricavoci,voceordine,initialize
-schedaclienteactivity,btnnuovo_click,0,0,108,111
+schedaclienteactivity,btnnuovo_click,0,0,121,124
 starter,db,,cli,starter,user
 
 database,nuovoordine,ordine,initialize
+schedaclienteactivity,singplur,0,0,52,58
+
+
+
 schedaclienteactivity,globals,0,1,12,18
 
 
 
-schedaclienteactivity,listview2_itemclick,0,0,102,106
+schedaclienteactivity,listview2_itemclick,0,0,115,119
 
 
 
-schedaclienteactivity,listview3_itemclick,0,0,113,116
+schedaclienteactivity,listview3_itemclick,0,0,126,129
 
 
 
@@ -490,14 +574,14 @@ schedaclienteactivity,process_globals,0,1,6,10
 
 
 
-schedaclienteactivity,tabhost1_tabchanged,0,0,89,100
+schedaclienteactivity,tabhost1_tabchanged,0,0,102,113
 ,tabhost1,starter,db,,cli,,listview1,,listview3,starter,user,,listview2
 
-,caricapreferiti,,caricaordiniincorso,,caricastoricoordini,database,getpreferiticliente,preferito,initialize,database,ordiniincorsopercliente,ordine,initialize,database,caricavociordineincorso,voceordine,initialize,database,ordinipercliente,ordine,getdataformattata,database,caricavoci
+,caricapreferiti,,caricaordiniincorso,,caricastoricoordini,database,getpreferiticliente,,singplur,preferito,initialize,database,ordiniincorsopercliente,ordine,initialize,database,caricavociordineincorso,voceordine,initialize,database,ordinipercliente,ordine,getdataformattata,database,caricavoci
 schedaclienteactivity,visualizzascheda,0,0,28,33
 ,cli,starter,db,,listview1
 ,cli
-,caricapreferiti,database,getpreferiticliente,preferito,initialize
+,caricapreferiti,database,getpreferiticliente,,singplur,preferito,initialize
 starter,application_error,0,0,35,37
 
 
@@ -522,38 +606,6 @@ starter,service_taskremoved,0,0,30,32
 
 
 
-apiclient,initialize,0,0,8,17
-
-
-
-apiclient,login,0,0,233,257
-
-
-utente,initialize
-apiclient,getsuccesso,0,0,19,21
-
-
-
-apiclient,class_globals,0,0,1,5
-
-
-
-apiclient,scaricaarticoli,0,0,93,121
-
-
-articolo,initialize
-apiclient,scaricaclienti,0,0,123,153
-
-
-cliente,initialize
-apiclient,scaricapreferiti,0,0,203,231
-
-
-preferito,initialize
-apiclient,storicoordini,0,0,155,201
-
-
-ordine,initialize,voceordine,initialize
 loginactivity,activity_create,1,0,20,24
 ,txnome,,txpassword
 ,txnome,,txpassword
@@ -566,10 +618,10 @@ loginactivity,activity_resume,0,0,26,28
 
 
 
-loginactivity,btlogin_click,1,0,35,52
+loginactivity,btlogin_click,1,0,35,56
 ,txnome,,txpassword,starter,client,starter,user,starter,db
 starter,user
-apiclient,login,apiclient,getsuccesso,database,salvautente,utente,initialize
+apiclient,login,apiclient,getsuccesso,database,salvautente,apiclient,geterrore,utente,initialize
 loginactivity,globals,0,1,12,18
 
 
@@ -630,11 +682,11 @@ clientiactivity,activity_create,1,0,23,27
 ,btnannulla,,btncerca,,label1,,lvclienti,,txcerca,,oime
 ,btnannulla,,btncerca,,label1,,lvclienti,,txcerca
 
-clientiactivity,activity_pause,0,0,49,51
+clientiactivity,activity_pause,0,0,56,58
 
 
 
-clientiactivity,activity_resume,0,0,41,47
+clientiactivity,activity_resume,0,0,41,54
 ,txcerca,starter,db,,lvclienti
 
 ,aggiornalista,database,cercaclientipernome,database,getclienti,cliente,initialize
@@ -642,15 +694,15 @@ clientiactivity,aggiornalista,0,0,29,39
 ,lvclienti
 
 
-clientiactivity,btnaggiorna_click,0,0,81,91
+clientiactivity,btnaggiorna_click,0,0,88,98
 starter,client,starter,db,,lvclienti
 
 apiclient,scaricaclienti,apiclient,getsuccesso,database,salvaclienti,,aggiornalista,database,getclienti,cliente,initialize
-clientiactivity,btnannulla_click,1,0,71,79
+clientiactivity,btnannulla_click,1,0,78,86
 ,txcerca,,btncerca,,btnannulla,,oime,,label1,starter,db,,lvclienti
 
 ,aggiornalista,database,getclienti,cliente,initialize
-clientiactivity,btncerca_click,0,0,63,69
+clientiactivity,btncerca_click,0,0,70,76
 ,label1,,txcerca,,oime,,btncerca,,btnannulla
 
 
@@ -658,7 +710,7 @@ clientiactivity,globals,0,1,12,21
 
 
 
-clientiactivity,lvclienti_itemclick,0,0,54,57
+clientiactivity,lvclienti_itemclick,0,0,61,64
 
 
 
@@ -666,7 +718,7 @@ clientiactivity,process_globals,0,1,6,10
 
 
 
-clientiactivity,txcerca_textchanged,0,0,59,61
+clientiactivity,txcerca_textchanged,0,0,66,68
 starter,db,,lvclienti
 
 ,aggiornalista,database,cercaclientipernome,cliente,initialize
@@ -674,27 +726,27 @@ articoliactivity,activity_create,1,0,31,36
 ,btnannulla,,btncerca,,label1,,lvarticoli,,txcerca,,forresult,,oime
 ,btnannulla,,btncerca,,label1,,lvarticoli,,txcerca,,forresult
 
-articoliactivity,activity_pause,0,0,42,44
+articoliactivity,activity_pause,0,0,48,50
 
 
 
-articoliactivity,activity_resume,0,0,38,40
+articoliactivity,activity_resume,0,0,38,46
 starter,db,,lvarticoli
 
 ,aggiornalista,database,getarticoli,articolo,initialize
-articoliactivity,aggiornalista,0,0,46,55
+articoliactivity,aggiornalista,0,0,52,62
 ,lvarticoli
 
 
-articoliactivity,btnaggiorna_click,0,0,57,67
+articoliactivity,btnaggiorna_click,0,0,64,74
 starter,client,starter,db,,lvarticoli
 
 apiclient,scaricaarticoli,apiclient,getsuccesso,database,salvaarticoli,,aggiornalista,database,getarticoli,articolo,initialize
-articoliactivity,btnannulla_click,1,0,81,89
+articoliactivity,btnannulla_click,1,0,88,96
 ,txcerca,,btncerca,,btnannulla,,oime,,label1,starter,db,,lvarticoli
 
 ,aggiornalista,database,getarticoli,articolo,initialize
-articoliactivity,btncerca_click,0,0,73,79
+articoliactivity,btncerca_click,0,0,80,86
 ,label1,,txcerca,,oime,,btncerca,,btnannulla
 
 
@@ -702,7 +754,7 @@ articoliactivity,globals,0,1,12,22
 
 
 
-articoliactivity,lvarticoli_itemclick,1,1,91,101
+articoliactivity,lvarticoli_itemclick,1,0,98,108
 ,oime,,forresult
 ,forresult
 
@@ -714,7 +766,7 @@ articoliactivity,scegliarticoloperordine,0,0,24,29
 ,forresult,,lvarticoli,starter,db
 ,forresult
 ,aggiornalista,database,getarticoli,articolo,initialize
-articoliactivity,txcerca_textchanged,0,0,69,71
+articoliactivity,txcerca_textchanged,0,0,76,78
 starter,db,,lvarticoli
 
 ,aggiornalista,database,cercaarticolipernome,articolo,initialize

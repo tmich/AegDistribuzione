@@ -357,45 +357,61 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="clientiactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=7012352;
- //BA.debugLineNum = 7012352;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=7012354;
- //BA.debugLineNum = 7012354;BA.debugLine="Activity.LoadLayout(\"ClientiLayout\")";
+RDebugUtils.currentLine=7340032;
+ //BA.debugLineNum = 7340032;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=7340034;
+ //BA.debugLineNum = 7340034;BA.debugLine="Activity.LoadLayout(\"ClientiLayout\")";
 mostCurrent._activity.LoadLayout("ClientiLayout",mostCurrent.activityBA);
-RDebugUtils.currentLine=7012355;
- //BA.debugLineNum = 7012355;BA.debugLine="oIme.Initialize(\"Keyboard\")";
+RDebugUtils.currentLine=7340035;
+ //BA.debugLineNum = 7340035;BA.debugLine="oIme.Initialize(\"Keyboard\")";
 mostCurrent._oime.Initialize("Keyboard");
-RDebugUtils.currentLine=7012356;
- //BA.debugLineNum = 7012356;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7340036;
+ //BA.debugLineNum = 7340036;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="clientiactivity";
-RDebugUtils.currentLine=7208960;
- //BA.debugLineNum = 7208960;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=7208962;
- //BA.debugLineNum = 7208962;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7536640;
+ //BA.debugLineNum = 7536640;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=7536642;
+ //BA.debugLineNum = 7536642;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="clientiactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=7143424;
- //BA.debugLineNum = 7143424;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=7143425;
- //BA.debugLineNum = 7143425;BA.debugLine="If txCerca.Visible Then";
+RDebugUtils.currentLine=7471104;
+ //BA.debugLineNum = 7471104;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=7471105;
+ //BA.debugLineNum = 7471105;BA.debugLine="If txCerca.Visible Then";
 if (mostCurrent._txcerca.getVisible()) { 
-RDebugUtils.currentLine=7143426;
- //BA.debugLineNum = 7143426;BA.debugLine="AggiornaLista(Starter.db.CercaClientiPerNome(txC";
+RDebugUtils.currentLine=7471106;
+ //BA.debugLineNum = 7471106;BA.debugLine="AggiornaLista(Starter.db.CercaClientiPerNome(txC";
 _aggiornalista(mostCurrent._starter._db._cercaclientipernome(null,mostCurrent._txcerca.getText()));
  }else {
-RDebugUtils.currentLine=7143428;
- //BA.debugLineNum = 7143428;BA.debugLine="AggiornaLista(Starter.db.GetClienti())";
+RDebugUtils.currentLine=7471108;
+ //BA.debugLineNum = 7471108;BA.debugLine="AggiornaLista(Starter.db.GetClienti())";
 _aggiornalista(mostCurrent._starter._db._getclienti(null));
  };
-RDebugUtils.currentLine=7143430;
- //BA.debugLineNum = 7143430;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7471111;
+ //BA.debugLineNum = 7471111;BA.debugLine="If lvClienti.Size == 0 Then";
+if (mostCurrent._lvclienti.getSize()==0) { 
+RDebugUtils.currentLine=7471112;
+ //BA.debugLineNum = 7471112;BA.debugLine="lvClienti.SingleLineLayout.ItemHeight = 90";
+mostCurrent._lvclienti.getSingleLineLayout().setItemHeight((int) (90));
+RDebugUtils.currentLine=7471113;
+ //BA.debugLineNum = 7471113;BA.debugLine="lvClienti.SingleLineLayout.Label.TextColor = Col";
+mostCurrent._lvclienti.getSingleLineLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.DarkGray);
+RDebugUtils.currentLine=7471114;
+ //BA.debugLineNum = 7471114;BA.debugLine="lvClienti.SingleLineLayout.Label.Typeface = Type";
+mostCurrent._lvclienti.getSingleLineLayout().Label.setTypeface(anywheresoftware.b4a.keywords.Common.Typeface.CreateNew(anywheresoftware.b4a.keywords.Common.Typeface.DEFAULT,anywheresoftware.b4a.keywords.Common.Typeface.STYLE_BOLD_ITALIC));
+RDebugUtils.currentLine=7471115;
+ //BA.debugLineNum = 7471115;BA.debugLine="lvClienti.AddSingleLine(\"Nessun cliente in lista";
+mostCurrent._lvclienti.AddSingleLine(BA.ObjectToCharSequence("Nessun cliente in lista. Aggiornare i clienti."));
+ };
+RDebugUtils.currentLine=7471117;
+ //BA.debugLineNum = 7471117;BA.debugLine="End Sub";
 return "";
 }
 public static String  _aggiornalista(anywheresoftware.b4a.objects.collections.List _clienti) throws Exception{
@@ -403,25 +419,25 @@ RDebugUtils.currentModule="clientiactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "aggiornalista"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "aggiornalista", new Object[] {_clienti}));}
 app.aegdistribuzione.cliente _c = null;
-RDebugUtils.currentLine=7077888;
- //BA.debugLineNum = 7077888;BA.debugLine="Sub AggiornaLista(clienti As List)";
-RDebugUtils.currentLine=7077889;
- //BA.debugLineNum = 7077889;BA.debugLine="lvClienti.Clear";
+RDebugUtils.currentLine=7405568;
+ //BA.debugLineNum = 7405568;BA.debugLine="Sub AggiornaLista(clienti As List)";
+RDebugUtils.currentLine=7405569;
+ //BA.debugLineNum = 7405569;BA.debugLine="lvClienti.Clear";
 mostCurrent._lvclienti.Clear();
-RDebugUtils.currentLine=7077890;
- //BA.debugLineNum = 7077890;BA.debugLine="lvClienti.TwoLinesLayout.ItemHeight = 70";
-mostCurrent._lvclienti.getTwoLinesLayout().setItemHeight((int) (70));
-RDebugUtils.currentLine=7077891;
- //BA.debugLineNum = 7077891;BA.debugLine="lvClienti.TwoLinesLayout.Label.TextColor = Colors";
-mostCurrent._lvclienti.getTwoLinesLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
-RDebugUtils.currentLine=7077892;
- //BA.debugLineNum = 7077892;BA.debugLine="lvClienti.TwoLinesLayout.Label.TextSize = 22";
-mostCurrent._lvclienti.getTwoLinesLayout().Label.setTextSize((float) (22));
-RDebugUtils.currentLine=7077893;
- //BA.debugLineNum = 7077893;BA.debugLine="lvClienti.TwoLinesLayout.SecondLabel.TextSize = 1";
-mostCurrent._lvclienti.getTwoLinesLayout().SecondLabel.setTextSize((float) (16));
-RDebugUtils.currentLine=7077895;
- //BA.debugLineNum = 7077895;BA.debugLine="For Each c As Cliente In clienti";
+RDebugUtils.currentLine=7405570;
+ //BA.debugLineNum = 7405570;BA.debugLine="lvClienti.TwoLinesAndBitmap.ItemHeight = 60dip";
+mostCurrent._lvclienti.getTwoLinesAndBitmap().setItemHeight(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (60)));
+RDebugUtils.currentLine=7405571;
+ //BA.debugLineNum = 7405571;BA.debugLine="lvClienti.TwoLinesAndBitmap.Label.TextColor = Col";
+mostCurrent._lvclienti.getTwoLinesAndBitmap().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
+RDebugUtils.currentLine=7405572;
+ //BA.debugLineNum = 7405572;BA.debugLine="lvClienti.TwoLinesAndBitmap.Label.TextSize = 22";
+mostCurrent._lvclienti.getTwoLinesAndBitmap().Label.setTextSize((float) (22));
+RDebugUtils.currentLine=7405573;
+ //BA.debugLineNum = 7405573;BA.debugLine="lvClienti.TwoLinesAndBitmap.SecondLabel.TextSize";
+mostCurrent._lvclienti.getTwoLinesAndBitmap().SecondLabel.setTextSize((float) (16));
+RDebugUtils.currentLine=7405575;
+ //BA.debugLineNum = 7405575;BA.debugLine="For Each c As Cliente In clienti";
 {
 final anywheresoftware.b4a.BA.IterableList group6 = _clienti;
 final int groupLen6 = group6.getSize()
@@ -429,13 +445,13 @@ final int groupLen6 = group6.getSize()
 ;
 for (; index6 < groupLen6;index6++){
 _c = (app.aegdistribuzione.cliente)(group6.Get(index6));
-RDebugUtils.currentLine=7077896;
- //BA.debugLineNum = 7077896;BA.debugLine="lvClienti.AddTwoLines2(c.Denominazione, c.Indiri";
-mostCurrent._lvclienti.AddTwoLines2(BA.ObjectToCharSequence(_c._denominazione),BA.ObjectToCharSequence(_c._indirizzo),(Object)(_c));
+RDebugUtils.currentLine=7405576;
+ //BA.debugLineNum = 7405576;BA.debugLine="lvClienti.AddTwoLinesAndBitmap2(c.Denominazione,";
+mostCurrent._lvclienti.AddTwoLinesAndBitmap2(BA.ObjectToCharSequence(_c._denominazione),BA.ObjectToCharSequence(_c._indirizzo),(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"persona.png").getObject()),(Object)(_c));
  }
 };
-RDebugUtils.currentLine=7077898;
- //BA.debugLineNum = 7077898;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7405578;
+ //BA.debugLineNum = 7405578;BA.debugLine="End Sub";
 return "";
 }
 public static void  _btnaggiorna_click() throws Exception{
@@ -464,11 +480,11 @@ return;
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=14942209;
- //BA.debugLineNum = 14942209;BA.debugLine="ProgressDialogShow2(\"Aggiornamento in corso\", Fal";
+RDebugUtils.currentLine=7864321;
+ //BA.debugLineNum = 7864321;BA.debugLine="ProgressDialogShow2(\"Aggiornamento in corso\", Fal";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow2(mostCurrent.activityBA,BA.ObjectToCharSequence("Aggiornamento in corso"),anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=14942210;
- //BA.debugLineNum = 14942210;BA.debugLine="Wait For (Starter.client.ScaricaClienti) Complete";
+RDebugUtils.currentLine=7864322;
+ //BA.debugLineNum = 7864322;BA.debugLine="Wait For (Starter.client.ScaricaClienti) Complete";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "clientiactivity", "btnaggiorna_click"), parent.mostCurrent._starter._client._scaricaclienti(null));
 this.state = 9;
 return;
@@ -477,8 +493,8 @@ case 9:
 this.state = 1;
 _result = (anywheresoftware.b4a.objects.collections.List) result[0];
 ;
-RDebugUtils.currentLine=14942211;
- //BA.debugLineNum = 14942211;BA.debugLine="If Starter.client.Successo Then";
+RDebugUtils.currentLine=7864323;
+ //BA.debugLineNum = 7864323;BA.debugLine="If Starter.client.Successo Then";
 if (true) break;
 
 case 1:
@@ -491,8 +507,8 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=14942212;
- //BA.debugLineNum = 14942212;BA.debugLine="If Result.Size > 0 Then";
+RDebugUtils.currentLine=7864324;
+ //BA.debugLineNum = 7864324;BA.debugLine="If Result.Size > 0 Then";
 if (true) break;
 
 case 4:
@@ -505,11 +521,11 @@ this.state = 6;
 case 6:
 //C
 this.state = 7;
-RDebugUtils.currentLine=14942213;
- //BA.debugLineNum = 14942213;BA.debugLine="Starter.db.SalvaClienti(Result)";
+RDebugUtils.currentLine=7864325;
+ //BA.debugLineNum = 7864325;BA.debugLine="Starter.db.SalvaClienti(Result)";
 parent.mostCurrent._starter._db._salvaclienti(null,_result);
-RDebugUtils.currentLine=14942214;
- //BA.debugLineNum = 14942214;BA.debugLine="AggiornaLista(Starter.db.GetClienti())";
+RDebugUtils.currentLine=7864326;
+ //BA.debugLineNum = 7864326;BA.debugLine="AggiornaLista(Starter.db.GetClienti())";
 _aggiornalista(parent.mostCurrent._starter._db._getclienti(null));
  if (true) break;
 
@@ -523,11 +539,11 @@ case 8:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=14942217;
- //BA.debugLineNum = 14942217;BA.debugLine="ProgressDialogHide()";
+RDebugUtils.currentLine=7864329;
+ //BA.debugLineNum = 7864329;BA.debugLine="ProgressDialogHide()";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
-RDebugUtils.currentLine=14942218;
- //BA.debugLineNum = 14942218;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7864330;
+ //BA.debugLineNum = 7864330;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -538,56 +554,56 @@ public static String  _btnannulla_click() throws Exception{
 RDebugUtils.currentModule="clientiactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btnannulla_click"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnannulla_click", null));}
-RDebugUtils.currentLine=14876672;
- //BA.debugLineNum = 14876672;BA.debugLine="Sub btnAnnulla_Click";
-RDebugUtils.currentLine=14876673;
- //BA.debugLineNum = 14876673;BA.debugLine="txCerca.Visible = False";
+RDebugUtils.currentLine=7798784;
+ //BA.debugLineNum = 7798784;BA.debugLine="Sub btnAnnulla_Click";
+RDebugUtils.currentLine=7798785;
+ //BA.debugLineNum = 7798785;BA.debugLine="txCerca.Visible = False";
 mostCurrent._txcerca.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=14876674;
- //BA.debugLineNum = 14876674;BA.debugLine="btnCerca.Visible = True";
+RDebugUtils.currentLine=7798786;
+ //BA.debugLineNum = 7798786;BA.debugLine="btnCerca.Visible = True";
 mostCurrent._btncerca.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=14876675;
- //BA.debugLineNum = 14876675;BA.debugLine="btnAnnulla.Visible = False";
+RDebugUtils.currentLine=7798787;
+ //BA.debugLineNum = 7798787;BA.debugLine="btnAnnulla.Visible = False";
 mostCurrent._btnannulla.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=14876676;
- //BA.debugLineNum = 14876676;BA.debugLine="txCerca.Text = \"\"";
+RDebugUtils.currentLine=7798788;
+ //BA.debugLineNum = 7798788;BA.debugLine="txCerca.Text = \"\"";
 mostCurrent._txcerca.setText(BA.ObjectToCharSequence(""));
-RDebugUtils.currentLine=14876677;
- //BA.debugLineNum = 14876677;BA.debugLine="oIme.HideKeyboard";
+RDebugUtils.currentLine=7798789;
+ //BA.debugLineNum = 7798789;BA.debugLine="oIme.HideKeyboard";
 mostCurrent._oime.HideKeyboard(mostCurrent.activityBA);
-RDebugUtils.currentLine=14876678;
- //BA.debugLineNum = 14876678;BA.debugLine="Label1.Visible = True";
+RDebugUtils.currentLine=7798790;
+ //BA.debugLineNum = 7798790;BA.debugLine="Label1.Visible = True";
 mostCurrent._label1.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=14876679;
- //BA.debugLineNum = 14876679;BA.debugLine="AggiornaLista(Starter.db.GetClienti())";
+RDebugUtils.currentLine=7798791;
+ //BA.debugLineNum = 7798791;BA.debugLine="AggiornaLista(Starter.db.GetClienti())";
 _aggiornalista(mostCurrent._starter._db._getclienti(null));
-RDebugUtils.currentLine=14876680;
- //BA.debugLineNum = 14876680;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7798792;
+ //BA.debugLineNum = 7798792;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btncerca_click() throws Exception{
 RDebugUtils.currentModule="clientiactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btncerca_click"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btncerca_click", null));}
-RDebugUtils.currentLine=14811136;
- //BA.debugLineNum = 14811136;BA.debugLine="Sub btnCerca_Click";
-RDebugUtils.currentLine=14811137;
- //BA.debugLineNum = 14811137;BA.debugLine="Label1.Visible = False";
+RDebugUtils.currentLine=7733248;
+ //BA.debugLineNum = 7733248;BA.debugLine="Sub btnCerca_Click";
+RDebugUtils.currentLine=7733249;
+ //BA.debugLineNum = 7733249;BA.debugLine="Label1.Visible = False";
 mostCurrent._label1.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=14811138;
- //BA.debugLineNum = 14811138;BA.debugLine="txCerca.Visible = True";
+RDebugUtils.currentLine=7733250;
+ //BA.debugLineNum = 7733250;BA.debugLine="txCerca.Visible = True";
 mostCurrent._txcerca.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=14811139;
- //BA.debugLineNum = 14811139;BA.debugLine="oIme.ShowKeyboard(txCerca)";
+RDebugUtils.currentLine=7733251;
+ //BA.debugLineNum = 7733251;BA.debugLine="oIme.ShowKeyboard(txCerca)";
 mostCurrent._oime.ShowKeyboard((android.view.View)(mostCurrent._txcerca.getObject()));
-RDebugUtils.currentLine=14811140;
- //BA.debugLineNum = 14811140;BA.debugLine="btnCerca.Visible = False";
+RDebugUtils.currentLine=7733252;
+ //BA.debugLineNum = 7733252;BA.debugLine="btnCerca.Visible = False";
 mostCurrent._btncerca.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=14811141;
- //BA.debugLineNum = 14811141;BA.debugLine="btnAnnulla.Visible = True";
+RDebugUtils.currentLine=7733253;
+ //BA.debugLineNum = 7733253;BA.debugLine="btnAnnulla.Visible = True";
 mostCurrent._btnannulla.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=14811142;
- //BA.debugLineNum = 14811142;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7733254;
+ //BA.debugLineNum = 7733254;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lvclienti_itemclick(int _position,Object _value) throws Exception{
@@ -595,29 +611,29 @@ RDebugUtils.currentModule="clientiactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "lvclienti_itemclick"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lvclienti_itemclick", new Object[] {_position,_value}));}
 app.aegdistribuzione.cliente _cli = null;
-RDebugUtils.currentLine=15007744;
- //BA.debugLineNum = 15007744;BA.debugLine="Sub lvClienti_ItemClick (Position As Int, Value As";
-RDebugUtils.currentLine=15007745;
- //BA.debugLineNum = 15007745;BA.debugLine="Dim cli As Cliente = Value";
+RDebugUtils.currentLine=7602176;
+ //BA.debugLineNum = 7602176;BA.debugLine="Sub lvClienti_ItemClick (Position As Int, Value As";
+RDebugUtils.currentLine=7602177;
+ //BA.debugLineNum = 7602177;BA.debugLine="Dim cli As Cliente = Value";
 _cli = (app.aegdistribuzione.cliente)(_value);
-RDebugUtils.currentLine=15007746;
- //BA.debugLineNum = 15007746;BA.debugLine="CallSubDelayed2(SchedaClienteActivity, \"Visualizz";
+RDebugUtils.currentLine=7602178;
+ //BA.debugLineNum = 7602178;BA.debugLine="CallSubDelayed2(SchedaClienteActivity, \"Visualizz";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._schedaclienteactivity.getObject()),"VisualizzaScheda",(Object)(_cli));
-RDebugUtils.currentLine=15007747;
- //BA.debugLineNum = 15007747;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7602179;
+ //BA.debugLineNum = 7602179;BA.debugLine="End Sub";
 return "";
 }
 public static String  _txcerca_textchanged(String _old,String _new) throws Exception{
 RDebugUtils.currentModule="clientiactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "txcerca_textchanged"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "txcerca_textchanged", new Object[] {_old,_new}));}
-RDebugUtils.currentLine=14745600;
- //BA.debugLineNum = 14745600;BA.debugLine="Sub txCerca_TextChanged (Old As String, New As Str";
-RDebugUtils.currentLine=14745601;
- //BA.debugLineNum = 14745601;BA.debugLine="AggiornaLista(Starter.db.CercaClientiPerNome(New)";
+RDebugUtils.currentLine=7667712;
+ //BA.debugLineNum = 7667712;BA.debugLine="Sub txCerca_TextChanged (Old As String, New As Str";
+RDebugUtils.currentLine=7667713;
+ //BA.debugLineNum = 7667713;BA.debugLine="AggiornaLista(Starter.db.CercaClientiPerNome(New)";
 _aggiornalista(mostCurrent._starter._db._cercaclientipernome(null,_new));
-RDebugUtils.currentLine=14745602;
- //BA.debugLineNum = 14745602;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7667714;
+ //BA.debugLineNum = 7667714;BA.debugLine="End Sub";
 return "";
 }
 }

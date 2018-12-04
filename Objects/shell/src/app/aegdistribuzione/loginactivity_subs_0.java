@@ -102,66 +102,89 @@ _username = parent.mostCurrent._txnome.runMethod(true,"getText");Debug.locals.pu
  BA.debugLineNum = 37;BA.debugLine="Dim password As String = txPassword.Text";
 Debug.ShouldStop(16);
 _password = parent.mostCurrent._txpassword.runMethod(true,"getText");Debug.locals.put("password", _password);Debug.locals.put("password", _password);
- BA.debugLineNum = 39;BA.debugLine="ProgressDialogShow2(\"Accesso in corso\", False)";
+ BA.debugLineNum = 39;BA.debugLine="If username.Trim().Length == 0 Or password.Trim()";
 Debug.ShouldStop(64);
-parent.mostCurrent.__c.runVoidMethod ("ProgressDialogShow2",loginactivity.mostCurrent.activityBA,(Object)(BA.ObjectToCharSequence("Accesso in corso")),(Object)(parent.mostCurrent.__c.getField(true,"False")));
- BA.debugLineNum = 41;BA.debugLine="Wait For (Starter.client.Login(username, password";
-Debug.ShouldStop(256);
-parent.mostCurrent.__c.runVoidMethod ("WaitFor","complete", loginactivity.processBA, anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this), parent.mostCurrent._starter._client.runClassMethod (app.aegdistribuzione.apiclient.class, "_login",(Object)(_username),(Object)(_password)));
-this.state = 7;
-return;
-case 7:
-//C
-this.state = 1;
-_result = (RemoteObject) result.getArrayElement(false,RemoteObject.createImmutable(0));Debug.locals.put("Result", _result);
-;
- BA.debugLineNum = 43;BA.debugLine="If Starter.client.Successo Then";
-Debug.ShouldStop(1024);
 if (true) break;
 
 case 1:
 //if
-this.state = 6;
-if (parent.mostCurrent._starter._client.runClassMethod (app.aegdistribuzione.apiclient.class, "_getsuccesso").<Boolean>get().booleanValue()) { 
+this.state = 4;
+if (RemoteObject.solveBoolean("=",_username.runMethod(true,"trim").runMethod(true,"length"),BA.numberCast(double.class, 0)) || RemoteObject.solveBoolean("=",_password.runMethod(true,"trim").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
 this.state = 3;
-}else {
-this.state = 5;
 }if (true) break;
 
 case 3:
 //C
-this.state = 6;
- BA.debugLineNum = 44;BA.debugLine="Starter.User = Result";
-Debug.ShouldStop(2048);
-parent.mostCurrent._starter._user = _result;
- BA.debugLineNum = 45;BA.debugLine="Starter.db.SalvaUtente(Result)";
+this.state = 4;
+ BA.debugLineNum = 40;BA.debugLine="Return";
+Debug.ShouldStop(128);
+Debug.CheckDeviceExceptions();if (true) return ;
+ if (true) break;
+
+case 4:
+//C
+this.state = 5;
+;
+ BA.debugLineNum = 43;BA.debugLine="ProgressDialogShow2(\"Accesso in corso\", False)";
+Debug.ShouldStop(1024);
+parent.mostCurrent.__c.runVoidMethod ("ProgressDialogShow2",loginactivity.mostCurrent.activityBA,(Object)(BA.ObjectToCharSequence("Accesso in corso")),(Object)(parent.mostCurrent.__c.getField(true,"False")));
+ BA.debugLineNum = 45;BA.debugLine="Wait For (Starter.client.Login(username, password";
 Debug.ShouldStop(4096);
-parent.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_salvautente",(Object)(_result));
- BA.debugLineNum = 46;BA.debugLine="StartActivity(Main)";
-Debug.ShouldStop(8192);
-parent.mostCurrent.__c.runVoidMethod ("StartActivity",loginactivity.processBA,(Object)((parent.mostCurrent._main.getObject())));
- BA.debugLineNum = 47;BA.debugLine="Activity.Finish()";
+parent.mostCurrent.__c.runVoidMethod ("WaitFor","complete", loginactivity.processBA, anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this), parent.mostCurrent._starter._client.runClassMethod (app.aegdistribuzione.apiclient.class, "_login",(Object)(_username),(Object)(_password)));
+this.state = 11;
+return;
+case 11:
+//C
+this.state = 5;
+_result = (RemoteObject) result.getArrayElement(false,RemoteObject.createImmutable(0));Debug.locals.put("Result", _result);
+;
+ BA.debugLineNum = 47;BA.debugLine="If Starter.client.Successo Then";
 Debug.ShouldStop(16384);
+if (true) break;
+
+case 5:
+//if
+this.state = 10;
+if (parent.mostCurrent._starter._client.runClassMethod (app.aegdistribuzione.apiclient.class, "_getsuccesso").<Boolean>get().booleanValue()) { 
+this.state = 7;
+}else {
+this.state = 9;
+}if (true) break;
+
+case 7:
+//C
+this.state = 10;
+ BA.debugLineNum = 48;BA.debugLine="Starter.User = Result";
+Debug.ShouldStop(32768);
+parent.mostCurrent._starter._user = _result;
+ BA.debugLineNum = 49;BA.debugLine="Starter.db.SalvaUtente(Result)";
+Debug.ShouldStop(65536);
+parent.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_salvautente",(Object)(_result));
+ BA.debugLineNum = 50;BA.debugLine="StartActivity(Main)";
+Debug.ShouldStop(131072);
+parent.mostCurrent.__c.runVoidMethod ("StartActivity",loginactivity.processBA,(Object)((parent.mostCurrent._main.getObject())));
+ BA.debugLineNum = 51;BA.debugLine="Activity.Finish()";
+Debug.ShouldStop(262144);
 parent.mostCurrent._activity.runVoidMethod ("Finish");
  if (true) break;
 
-case 5:
+case 9:
 //C
-this.state = 6;
- BA.debugLineNum = 49;BA.debugLine="ProgressDialogHide";
-Debug.ShouldStop(65536);
+this.state = 10;
+ BA.debugLineNum = 53;BA.debugLine="ProgressDialogHide";
+Debug.ShouldStop(1048576);
 parent.mostCurrent.__c.runVoidMethod ("ProgressDialogHide");
- BA.debugLineNum = 50;BA.debugLine="Msgbox(\"Nome utente o password errata\", \"Accesso";
-Debug.ShouldStop(131072);
-parent.mostCurrent.__c.runVoidMethodAndSync ("Msgbox",(Object)(BA.ObjectToCharSequence("Nome utente o password errata")),(Object)(BA.ObjectToCharSequence(RemoteObject.createImmutable("Accesso"))),loginactivity.mostCurrent.activityBA);
+ BA.debugLineNum = 54;BA.debugLine="Msgbox(Starter.client.Errore, \"Accesso\")";
+Debug.ShouldStop(2097152);
+parent.mostCurrent.__c.runVoidMethodAndSync ("Msgbox",(Object)(BA.ObjectToCharSequence(parent.mostCurrent._starter._client.runClassMethod (app.aegdistribuzione.apiclient.class, "_geterrore"))),(Object)(BA.ObjectToCharSequence(RemoteObject.createImmutable("Accesso"))),loginactivity.mostCurrent.activityBA);
  if (true) break;
 
-case 6:
+case 10:
 //C
 this.state = -1;
 ;
- BA.debugLineNum = 52;BA.debugLine="End Sub";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 56;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 if (true) break;
 
             }

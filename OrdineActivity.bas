@@ -113,8 +113,12 @@ Sub btnAggiungi_Click
 End Sub
 
 Sub GetResult(Result As Articolo)
-	Dim v As VoceOrdine = Starter.db.NuovaVoce(m_ordine, Result.Codice, Result.Descrizione, 1, Result.Prezzo, "")
-	m_ordine.Voci.Add(v)
+	'Dim v As VoceOrdine = Starter.db.NuovaVoce(m_ordine, Result.Codice, Result.Descrizione, 1, Result.Prezzo, "")
+	'm_ordine.Voci.Add(v)
+	If m_ordine.Aggiungi(Result, 1, "") == False Then
+		ToastMessageShow("Articolo già presente", False)
+		Return
+	End If
 	Aggiorna
 End Sub
 
@@ -132,6 +136,31 @@ Sub btnInvia_LongClick
 	Wait For MsgBox_Result (iResult As Int)
 	
 	If iResult == DialogResponse.POSITIVE Then
-		
+		ProgressDialogShow2("Invio in corso", False)
+		Wait For (Starter.client.Invia(m_ordine)) Complete (Result As Ordine)
+		If Starter.client.Successo Then
+			If Result <> Null Then
+				Starter.db.SalvaOrdine(Result)
+				Starter.db.EliminaOrdineInCorso(m_ordine.Id)
+				
+				wait for (Starter.client.StoricoOrdiniPerCliente(m_cliente.Id)) Complete (Storico As List)
+				If Starter.client.Successo Then
+					Starter.db.SalvaStoricoOrdiniPerCliente(Storico, m_cliente.Id)
+				End If
+				
+				Wait For (Starter.client.ScaricaPreferitiPerCliente(m_cliente.Id)) Complete (Preferiti As List)
+				If Starter.client.Successo Then
+					Starter.db.SalvaPreferitiPerCliente(Preferiti, m_cliente.Id)
+				End If
+				
+				ProgressDialogHide()
+				ToastMessageShow("Ordine inviato correttamente", True)
+				Activity.Finish
+			Else
+				Msgbox("C'è stato un problema con l'invio dell'ordine: " & Starter.client.Errore, "Attenzione")
+			End If
+		Else
+			Msgbox("C'è stato un problema con l'invio dell'ordine: " & Starter.client.Errore, "Attenzione")
+		End If
 	End If
 End Sub

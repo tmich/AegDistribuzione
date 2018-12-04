@@ -56,7 +56,7 @@ if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "customlist
 Debug.ShouldStop(262144);
  BA.debugLineNum = 84;BA.debugLine="Return mBase";
 Debug.ShouldStop(524288);
-if (true) return __ref.getField(false,"_mbase");
+Debug.CheckDeviceExceptions();if (true) return __ref.getField(false,"_mbase");
  BA.debugLineNum = 85;BA.debugLine="End Sub";
 Debug.ShouldStop(1048576);
 return RemoteObject.createImmutable(null);
@@ -269,7 +269,7 @@ this.state = 3;
 case 3:
 //C
 this.state = 6;
-if (true) return ;
+Debug.CheckDeviceExceptions();if (true) return ;
 if (true) break;
 
 case 6:
@@ -398,7 +398,7 @@ Debug.ShouldStop(128);
 _lbl.runMethod(true,"setHeight",__ref.getField(false,"_su").runMethod(true,"MeasureMultilineTextHeight",(Object)((_lbl.getObject())),(Object)(BA.ObjectToCharSequence(_txt))));
  BA.debugLineNum = 457;BA.debugLine="Return lbl";
 Debug.ShouldStop(256);
-if (true) return RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.B4XViewWrapper"), _lbl.getObject());
+Debug.CheckDeviceExceptions();if (true) return RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.B4XViewWrapper"), _lbl.getObject());
  BA.debugLineNum = 458;BA.debugLine="End Sub";
 Debug.ShouldStop(512);
 return RemoteObject.createImmutable(null);
@@ -418,7 +418,7 @@ Debug.locals.put("PanelEventName", _paneleventname);
 Debug.ShouldStop(4);
  BA.debugLineNum = 420;BA.debugLine="Return xui.CreatePanel(PanelEventName)";
 Debug.ShouldStop(8);
-if (true) return __ref.getField(false,"_xui").runMethod(false,"CreatePanel",__ref.getField(false, "ba"),(Object)(_paneleventname));
+Debug.CheckDeviceExceptions();if (true) return __ref.getField(false,"_xui").runMethod(false,"CreatePanel",__ref.getField(false, "ba"),(Object)(_paneleventname));
  BA.debugLineNum = 421;BA.debugLine="End Sub";
 Debug.ShouldStop(16);
 return RemoteObject.createImmutable(null);
@@ -448,7 +448,7 @@ Debug.ShouldStop(16384);
 _hv.runVoidMethod ("Initialize",__ref.getField(false, "ba"),(Object)(BA.numberCast(int.class, 0)),(Object)(RemoteObject.createImmutable("sv")));
  BA.debugLineNum = 432;BA.debugLine="Return hv";
 Debug.ShouldStop(32768);
-if (true) return RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.B4XViewWrapper"), _hv.getObject());
+Debug.CheckDeviceExceptions();if (true) return RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.B4XViewWrapper"), _hv.getObject());
  }else {
  BA.debugLineNum = 434;BA.debugLine="Dim nsv As ScrollView";
 Debug.ShouldStop(131072);
@@ -458,7 +458,7 @@ Debug.ShouldStop(262144);
 _nsv.runVoidMethod ("Initialize2",__ref.getField(false, "ba"),(Object)(BA.numberCast(int.class, 0)),(Object)(RemoteObject.createImmutable("sv")));
  BA.debugLineNum = 436;BA.debugLine="Return nsv";
 Debug.ShouldStop(524288);
-if (true) return RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.B4XViewWrapper"), _nsv.getObject());
+Debug.CheckDeviceExceptions();if (true) return RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.B4XViewWrapper"), _nsv.getObject());
  };
  BA.debugLineNum = 438;BA.debugLine="End Sub";
 Debug.ShouldStop(2097152);
@@ -557,7 +557,7 @@ _offset = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {_offse
 ;
  BA.debugLineNum = 361;BA.debugLine="Return Offset";
 Debug.ShouldStop(256);
-if (true) return _offset;
+Debug.CheckDeviceExceptions();if (true) return _offset;
  BA.debugLineNum = 362;BA.debugLine="End Sub";
 Debug.ShouldStop(512);
 return RemoteObject.createImmutable(0);
@@ -576,7 +576,7 @@ if (RapidSub.canDelegate("getbase")) { return __ref.runUserSub(false, "customlis
 Debug.ShouldStop(536870912);
  BA.debugLineNum = 95;BA.debugLine="Return mBase";
 Debug.ShouldStop(1073741824);
-if (true) return __ref.getField(false,"_mbase");
+Debug.CheckDeviceExceptions();if (true) return __ref.getField(false,"_mbase");
  BA.debugLineNum = 96;BA.debugLine="End Sub";
 Debug.ShouldStop(-2147483648);
 return RemoteObject.createImmutable(null);
@@ -612,13 +612,13 @@ _bottom = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {_botto
  BA.debugLineNum = 370;BA.debugLine="If bottom > GetScrollViewOffset Then Return i";
 Debug.ShouldStop(131072);
 if (RemoteObject.solveBoolean(">",_bottom,BA.numberCast(double.class, __ref.runClassMethod (app.aegdistribuzione.customlistview.class, "_getscrollviewoffset")))) { 
-if (true) return BA.numberCast(int.class, _i);};
+Debug.CheckDeviceExceptions();if (true) return BA.numberCast(int.class, _i);};
  }
 }Debug.locals.put("i", _i);
 ;
  BA.debugLineNum = 372;BA.debugLine="Return items.Size - 1";
 Debug.ShouldStop(524288);
-if (true) return RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_items").runMethod(true,"getSize"),RemoteObject.createImmutable(1)}, "-",1, 1);
+Debug.CheckDeviceExceptions();if (true) return RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_items").runMethod(true,"getSize"),RemoteObject.createImmutable(1)}, "-",1, 1);
  BA.debugLineNum = 373;BA.debugLine="End Sub";
 Debug.ShouldStop(1048576);
 return RemoteObject.createImmutable(0);
@@ -638,7 +638,7 @@ Debug.locals.put("Index", _index);
 Debug.ShouldStop(64);
  BA.debugLineNum = 104;BA.debugLine="Return items.Get(Index)";
 Debug.ShouldStop(128);
-if (true) return (__ref.getField(false,"_items").runMethod(false,"Get",(Object)(_index)));
+Debug.CheckDeviceExceptions();if (true) return (__ref.getField(false,"_items").runMethod(false,"Get",(Object)(_index)));
  BA.debugLineNum = 105;BA.debugLine="End Sub";
 Debug.ShouldStop(256);
 return RemoteObject.createImmutable(null);
@@ -678,7 +678,7 @@ Debug.ShouldStop(262144);
 _v = _current;Debug.locals.put("v", _v);
  BA.debugLineNum = 404;BA.debugLine="Return v.Tag";
 Debug.ShouldStop(524288);
-if (true) return BA.numberCast(int.class, _v.runMethod(false,"getTag"));
+Debug.CheckDeviceExceptions();if (true) return BA.numberCast(int.class, _v.runMethod(false,"getTag"));
  BA.debugLineNum = 405;BA.debugLine="End Sub";
 Debug.ShouldStop(1048576);
 return RemoteObject.createImmutable(0);
@@ -718,13 +718,13 @@ _bottom = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {_botto
  BA.debugLineNum = 381;BA.debugLine="If i >= first And bottom >= GetScrollViewOffset";
 Debug.ShouldStop(268435456);
 if (RemoteObject.solveBoolean("g",RemoteObject.createImmutable(_i),BA.numberCast(double.class, _first)) && RemoteObject.solveBoolean("g",_bottom,RemoteObject.solve(new RemoteObject[] {__ref.runClassMethod (app.aegdistribuzione.customlistview.class, "_getscrollviewoffset"),__ref.runClassMethod (app.aegdistribuzione.customlistview.class, "_getscrollviewvisiblesize")}, "+",1, 0))) { 
-if (true) return BA.numberCast(int.class, customlistview.__c.runMethod(true,"Max",(Object)(BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {RemoteObject.createImmutable(_i),RemoteObject.createImmutable(1)}, "-",1, 1))),(Object)(BA.numberCast(double.class, _first))));};
+Debug.CheckDeviceExceptions();if (true) return BA.numberCast(int.class, customlistview.__c.runMethod(true,"Max",(Object)(BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {RemoteObject.createImmutable(_i),RemoteObject.createImmutable(1)}, "-",1, 1))),(Object)(BA.numberCast(double.class, _first))));};
  }
 }Debug.locals.put("i", _i);
 ;
  BA.debugLineNum = 383;BA.debugLine="Return items.Size - 1";
 Debug.ShouldStop(1073741824);
-if (true) return RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_items").runMethod(true,"getSize"),RemoteObject.createImmutable(1)}, "-",1, 1);
+Debug.CheckDeviceExceptions();if (true) return RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_items").runMethod(true,"getSize"),RemoteObject.createImmutable(1)}, "-",1, 1);
  BA.debugLineNum = 384;BA.debugLine="End Sub";
 Debug.ShouldStop(-2147483648);
 return RemoteObject.createImmutable(0);
@@ -744,7 +744,7 @@ Debug.locals.put("Index", _index);
 Debug.ShouldStop(2048);
  BA.debugLineNum = 109;BA.debugLine="Return GetItem(Index).Panel.GetView(0)";
 Debug.ShouldStop(4096);
-if (true) return __ref.runClassMethod (app.aegdistribuzione.customlistview.class, "_getitem",(Object)(_index)).getField(false,"Panel").runMethod(false,"GetView",(Object)(BA.numberCast(int.class, 0)));
+Debug.CheckDeviceExceptions();if (true) return __ref.runClassMethod (app.aegdistribuzione.customlistview.class, "_getitem",(Object)(_index)).getField(false,"Panel").runMethod(false,"GetView",(Object)(BA.numberCast(int.class, 0)));
  BA.debugLineNum = 110;BA.debugLine="End Sub";
 Debug.ShouldStop(8192);
 return RemoteObject.createImmutable(null);
@@ -767,11 +767,11 @@ Debug.ShouldStop(1);
 if (__ref.getField(true,"_horizontal").<Boolean>get().booleanValue()) { 
  BA.debugLineNum = 290;BA.debugLine="Return p.Left";
 Debug.ShouldStop(2);
-if (true) return BA.numberCast(float.class, _p.runMethod(true,"getLeft"));
+Debug.CheckDeviceExceptions();if (true) return BA.numberCast(float.class, _p.runMethod(true,"getLeft"));
  }else {
  BA.debugLineNum = 292;BA.debugLine="Return p.Top";
 Debug.ShouldStop(8);
-if (true) return BA.numberCast(float.class, _p.runMethod(true,"getTop"));
+Debug.CheckDeviceExceptions();if (true) return BA.numberCast(float.class, _p.runMethod(true,"getTop"));
  };
  BA.debugLineNum = 294;BA.debugLine="End Sub";
 Debug.ShouldStop(32);
@@ -794,11 +794,11 @@ Debug.ShouldStop(256);
 if (__ref.getField(true,"_horizontal").<Boolean>get().booleanValue()) { 
  BA.debugLineNum = 266;BA.debugLine="Return sv.ScrollViewContentWidth";
 Debug.ShouldStop(512);
-if (true) return BA.numberCast(float.class, __ref.getField(false,"_sv").runMethod(true,"getScrollViewContentWidth"));
+Debug.CheckDeviceExceptions();if (true) return BA.numberCast(float.class, __ref.getField(false,"_sv").runMethod(true,"getScrollViewContentWidth"));
  }else {
  BA.debugLineNum = 268;BA.debugLine="Return sv.ScrollViewContentHeight";
 Debug.ShouldStop(2048);
-if (true) return BA.numberCast(float.class, __ref.getField(false,"_sv").runMethod(true,"getScrollViewContentHeight"));
+Debug.CheckDeviceExceptions();if (true) return BA.numberCast(float.class, __ref.getField(false,"_sv").runMethod(true,"getScrollViewContentHeight"));
  };
  BA.debugLineNum = 270;BA.debugLine="End Sub";
 Debug.ShouldStop(8192);
@@ -821,11 +821,11 @@ Debug.ShouldStop(16777216);
 if (__ref.getField(true,"_horizontal").<Boolean>get().booleanValue()) { 
  BA.debugLineNum = 250;BA.debugLine="Return sv.ScrollViewOffsetX";
 Debug.ShouldStop(33554432);
-if (true) return BA.numberCast(float.class, __ref.getField(false,"_sv").runMethod(true,"getScrollViewOffsetX"));
+Debug.CheckDeviceExceptions();if (true) return BA.numberCast(float.class, __ref.getField(false,"_sv").runMethod(true,"getScrollViewOffsetX"));
  }else {
  BA.debugLineNum = 252;BA.debugLine="Return sv.ScrollViewOffsetY";
 Debug.ShouldStop(134217728);
-if (true) return BA.numberCast(float.class, __ref.getField(false,"_sv").runMethod(true,"getScrollViewOffsetY"));
+Debug.CheckDeviceExceptions();if (true) return BA.numberCast(float.class, __ref.getField(false,"_sv").runMethod(true,"getScrollViewOffsetY"));
  };
  BA.debugLineNum = 254;BA.debugLine="End Sub";
 Debug.ShouldStop(536870912);
@@ -848,11 +848,11 @@ Debug.ShouldStop(65536);
 if (__ref.getField(true,"_horizontal").<Boolean>get().booleanValue()) { 
  BA.debugLineNum = 242;BA.debugLine="Return sv.Width";
 Debug.ShouldStop(131072);
-if (true) return BA.numberCast(float.class, __ref.getField(false,"_sv").runMethod(true,"getWidth"));
+Debug.CheckDeviceExceptions();if (true) return BA.numberCast(float.class, __ref.getField(false,"_sv").runMethod(true,"getWidth"));
  }else {
  BA.debugLineNum = 244;BA.debugLine="Return sv.Height";
 Debug.ShouldStop(524288);
-if (true) return BA.numberCast(float.class, __ref.getField(false,"_sv").runMethod(true,"getHeight"));
+Debug.CheckDeviceExceptions();if (true) return BA.numberCast(float.class, __ref.getField(false,"_sv").runMethod(true,"getHeight"));
  };
  BA.debugLineNum = 246;BA.debugLine="End Sub";
 Debug.ShouldStop(2097152);
@@ -872,7 +872,7 @@ if (RapidSub.canDelegate("getsize")) { return __ref.runUserSub(false, "customlis
 Debug.ShouldStop(4);
  BA.debugLineNum = 100;BA.debugLine="Return items.Size";
 Debug.ShouldStop(8);
-if (true) return __ref.getField(false,"_items").runMethod(true,"getSize");
+Debug.CheckDeviceExceptions();if (true) return __ref.getField(false,"_items").runMethod(true,"getSize");
  BA.debugLineNum = 101;BA.debugLine="End Sub";
 Debug.ShouldStop(16);
 return RemoteObject.createImmutable(0);
@@ -892,7 +892,7 @@ Debug.locals.put("Index", _index);
 Debug.ShouldStop(65536);
  BA.debugLineNum = 114;BA.debugLine="Return GetItem(Index).Value";
 Debug.ShouldStop(131072);
-if (true) return __ref.runClassMethod (app.aegdistribuzione.customlistview.class, "_getitem",(Object)(_index)).getField(false,"Value");
+Debug.CheckDeviceExceptions();if (true) return __ref.runClassMethod (app.aegdistribuzione.customlistview.class, "_getitem",(Object)(_index)).getField(false,"Value");
  BA.debugLineNum = 115;BA.debugLine="End Sub";
 Debug.ShouldStop(262144);
 return RemoteObject.createImmutable(null);
@@ -1191,7 +1191,7 @@ Debug.ShouldStop(131072);
 customlistview.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("AddTextItem is only supported in vertical orientation.")));
  BA.debugLineNum = 147;BA.debugLine="Return";
 Debug.ShouldStop(262144);
-if (true) return RemoteObject.createImmutable("");
+Debug.CheckDeviceExceptions();if (true) return RemoteObject.createImmutable("");
  };
  BA.debugLineNum = 149;BA.debugLine="Dim pnl As B4XView = CreatePanel(\"\")";
 Debug.ShouldStop(1048576);
@@ -1390,7 +1390,7 @@ Debug.ShouldStop(8388608);
 __ref.runClassMethod (app.aegdistribuzione.customlistview.class, "_clear");
  BA.debugLineNum = 121;BA.debugLine="Return";
 Debug.ShouldStop(16777216);
-if (true) return RemoteObject.createImmutable("");
+Debug.CheckDeviceExceptions();if (true) return RemoteObject.createImmutable("");
  };
  BA.debugLineNum = 123;BA.debugLine="Dim RemoveItem As CLVItem = items.Get(Index)";
 Debug.ShouldStop(67108864);

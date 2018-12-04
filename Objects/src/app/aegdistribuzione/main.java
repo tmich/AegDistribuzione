@@ -480,8 +480,15 @@ RDebugUtils.currentLine=131072;
 RDebugUtils.currentLine=131073;
  //BA.debugLineNum = 131073;BA.debugLine="Activity.LoadLayout(\"MainLayout\")";
 mostCurrent._activity.LoadLayout("MainLayout",mostCurrent.activityBA);
-RDebugUtils.currentLine=131074;
- //BA.debugLineNum = 131074;BA.debugLine="End Sub";
+RDebugUtils.currentLine=131075;
+ //BA.debugLineNum = 131075;BA.debugLine="If Starter.User == Null Then";
+if (mostCurrent._starter._user== null) { 
+RDebugUtils.currentLine=131076;
+ //BA.debugLineNum = 131076;BA.debugLine="StartActivity(LoginActivity)";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._loginactivity.getObject()));
+ };
+RDebugUtils.currentLine=131078;
+ //BA.debugLineNum = 131078;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
@@ -513,39 +520,39 @@ public static String  _btnarticoli_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btnarticoli_click"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnarticoli_click", null));}
-RDebugUtils.currentLine=12910592;
- //BA.debugLineNum = 12910592;BA.debugLine="Sub btnArticoli_Click";
-RDebugUtils.currentLine=12910593;
- //BA.debugLineNum = 12910593;BA.debugLine="StartActivity(ArticoliActivity)";
+RDebugUtils.currentLine=4587520;
+ //BA.debugLineNum = 4587520;BA.debugLine="Sub btnArticoli_Click";
+RDebugUtils.currentLine=4587521;
+ //BA.debugLineNum = 4587521;BA.debugLine="StartActivity(ArticoliActivity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._articoliactivity.getObject()));
-RDebugUtils.currentLine=12910594;
- //BA.debugLineNum = 12910594;BA.debugLine="End Sub";
+RDebugUtils.currentLine=4587522;
+ //BA.debugLineNum = 4587522;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnclienti_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btnclienti_click"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnclienti_click", null));}
-RDebugUtils.currentLine=12845056;
- //BA.debugLineNum = 12845056;BA.debugLine="Sub btnClienti_Click";
-RDebugUtils.currentLine=12845057;
- //BA.debugLineNum = 12845057;BA.debugLine="StartActivity(ClientiActivity)";
+RDebugUtils.currentLine=4521984;
+ //BA.debugLineNum = 4521984;BA.debugLine="Sub btnClienti_Click";
+RDebugUtils.currentLine=4521985;
+ //BA.debugLineNum = 4521985;BA.debugLine="StartActivity(ClientiActivity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._clientiactivity.getObject()));
-RDebugUtils.currentLine=12845058;
- //BA.debugLineNum = 12845058;BA.debugLine="End Sub";
+RDebugUtils.currentLine=4521986;
+ //BA.debugLineNum = 4521986;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imageview3_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "imageview3_click"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "imageview3_click", null));}
-RDebugUtils.currentLine=458752;
- //BA.debugLineNum = 458752;BA.debugLine="Sub ImageView3_Click";
-RDebugUtils.currentLine=458753;
- //BA.debugLineNum = 458753;BA.debugLine="StartActivity(ScaricaDatiActivity)";
+RDebugUtils.currentLine=4456448;
+ //BA.debugLineNum = 4456448;BA.debugLine="Sub ImageView3_Click";
+RDebugUtils.currentLine=4456449;
+ //BA.debugLineNum = 4456449;BA.debugLine="StartActivity(ScaricaDatiActivity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._scaricadatiactivity.getObject()));
-RDebugUtils.currentLine=458754;
- //BA.debugLineNum = 458754;BA.debugLine="End Sub";
+RDebugUtils.currentLine=4456450;
+ //BA.debugLineNum = 4456450;BA.debugLine="End Sub";
 return "";
 }
 }

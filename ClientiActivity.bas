@@ -34,13 +34,13 @@ End Sub
 
 Sub AggiornaLista(clienti As List)
 	lvClienti.Clear
-	lvClienti.TwoLinesLayout.ItemHeight = 70
-	lvClienti.TwoLinesLayout.Label.TextColor = Colors.Black
-	lvClienti.TwoLinesLayout.Label.TextSize = 22
-	lvClienti.TwoLinesLayout.SecondLabel.TextSize = 16
+	lvClienti.TwoLinesAndBitmap.ItemHeight = 60dip
+	lvClienti.TwoLinesAndBitmap.Label.TextColor = Colors.Black
+	lvClienti.TwoLinesAndBitmap.Label.TextSize = 22
+	lvClienti.TwoLinesAndBitmap.SecondLabel.TextSize = 16
 	
 	For Each c As Cliente In clienti
-		lvClienti.AddTwoLines2(c.Denominazione, c.Indirizzo, c)
+		lvClienti.AddTwoLinesAndBitmap2(c.Denominazione, c.Indirizzo, LoadBitmap(File.DirAssets, "persona.png"), c)
 	Next
 End Sub
 
@@ -49,6 +49,13 @@ Sub Activity_Resume
 		AggiornaLista(Starter.db.CercaClientiPerNome(txCerca.Text))
 	Else
 		AggiornaLista(Starter.db.GetClienti())		
+	End If
+	
+	If lvClienti.Size == 0 Then
+		lvClienti.SingleLineLayout.ItemHeight = 90
+		lvClienti.SingleLineLayout.Label.TextColor = Colors.DarkGray
+		lvClienti.SingleLineLayout.Label.Typeface = Typeface.CreateNew(Typeface.DEFAULT, Typeface.STYLE_BOLD_ITALIC)
+		lvClienti.AddSingleLine("Nessun cliente in lista. Aggiornare i clienti.")
 	End If
 End Sub
 

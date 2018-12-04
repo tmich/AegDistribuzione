@@ -8,25 +8,25 @@ public class database_subs_0 {
 
 public static RemoteObject  _aggiornavoce(RemoteObject __ref,RemoteObject _v) throws Exception{
 try {
-		Debug.PushSubsStack("AggiornaVoce (database) ","database",2,__ref.getField(false, "ba"),__ref,434);
+		Debug.PushSubsStack("AggiornaVoce (database) ","database",2,__ref.getField(false, "ba"),__ref,471);
 if (RapidSub.canDelegate("aggiornavoce")) { return __ref.runUserSub(false, "database","aggiornavoce", __ref, _v);}
 Debug.locals.put("v", _v);
- BA.debugLineNum = 434;BA.debugLine="Public Sub AggiornaVoce(v As VoceOrdine)";
-Debug.ShouldStop(131072);
- BA.debugLineNum = 435;BA.debugLine="Sql1.BeginTransaction";
-Debug.ShouldStop(262144);
-__ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
- BA.debugLineNum = 436;BA.debugLine="Sql1.ExecNonQuery2(\"UPDATE voce_ordine_in_corso S";
-Debug.ShouldStop(524288);
-__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("UPDATE voce_ordine_in_corso SET cod_art = ?, desc_art = ?, qta = ?, prezzo = ?, note = ? WHERE id = ?")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {6},new Object[] {(_v.getField(true,"_codart")),(_v.getField(true,"_descart")),(_v.getField(true,"_qta")),(_v.getField(true,"_prezzo")),(_v.getField(true,"_note")),(_v.getField(true,"_id"))})))));
- BA.debugLineNum = 438;BA.debugLine="Sql1.TransactionSuccessful";
-Debug.ShouldStop(2097152);
-__ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
- BA.debugLineNum = 439;BA.debugLine="Sql1.EndTransaction";
+ BA.debugLineNum = 471;BA.debugLine="Public Sub AggiornaVoce(v As VoceOrdine)";
 Debug.ShouldStop(4194304);
-__ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
- BA.debugLineNum = 440;BA.debugLine="End Sub";
+ BA.debugLineNum = 472;BA.debugLine="Sql1.BeginTransaction";
 Debug.ShouldStop(8388608);
+__ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
+ BA.debugLineNum = 473;BA.debugLine="Sql1.ExecNonQuery2(\"UPDATE voce_ordine_in_corso S";
+Debug.ShouldStop(16777216);
+__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("UPDATE voce_ordine_in_corso SET cod_art = ?, desc_art = ?, qta = ?, prezzo = ?, note = ? WHERE id = ?")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {6},new Object[] {(_v.getField(true,"_codart")),(_v.getField(true,"_descart")),(_v.getField(true,"_qta")),(_v.getField(true,"_prezzo")),(_v.getField(true,"_note")),(_v.getField(true,"_id"))})))));
+ BA.debugLineNum = 475;BA.debugLine="Sql1.TransactionSuccessful";
+Debug.ShouldStop(67108864);
+__ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
+ BA.debugLineNum = 476;BA.debugLine="Sql1.EndTransaction";
+Debug.ShouldStop(134217728);
+__ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
+ BA.debugLineNum = 477;BA.debugLine="End Sub";
+Debug.ShouldStop(268435456);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -90,7 +90,7 @@ Debug.ShouldStop(1024);
 _cursor1.runVoidMethod ("Close");
  BA.debugLineNum = 204;BA.debugLine="Return voci";
 Debug.ShouldStop(2048);
-if (true) return _voci;
+Debug.CheckDeviceExceptions();if (true) return _voci;
  BA.debugLineNum = 205;BA.debugLine="End Sub";
 Debug.ShouldStop(4096);
 return RemoteObject.createImmutable(null);
@@ -156,7 +156,7 @@ Debug.ShouldStop(16384);
 _cursor1.runVoidMethod ("Close");
  BA.debugLineNum = 240;BA.debugLine="Return voci";
 Debug.ShouldStop(32768);
-if (true) return _voci;
+Debug.CheckDeviceExceptions();if (true) return _voci;
  BA.debugLineNum = 241;BA.debugLine="End Sub";
 Debug.ShouldStop(65536);
 return RemoteObject.createImmutable(null);
@@ -220,7 +220,7 @@ Debug.ShouldStop(4096);
 _cursor1.runVoidMethod ("Close");
  BA.debugLineNum = 110;BA.debugLine="Return Articoli";
 Debug.ShouldStop(8192);
-if (true) return _articoli;
+Debug.CheckDeviceExceptions();if (true) return _articoli;
  BA.debugLineNum = 111;BA.debugLine="End Sub";
 Debug.ShouldStop(16384);
 return RemoteObject.createImmutable(null);
@@ -282,7 +282,7 @@ Debug.ShouldStop(134217728);
 _cursor1.runVoidMethod ("Close");
  BA.debugLineNum = 93;BA.debugLine="Return clienti";
 Debug.ShouldStop(268435456);
-if (true) return _clienti;
+Debug.CheckDeviceExceptions();if (true) return _clienti;
  BA.debugLineNum = 94;BA.debugLine="End Sub";
 Debug.ShouldStop(536870912);
 return RemoteObject.createImmutable(null);
@@ -389,27 +389,59 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
-public static RemoteObject  _eliminavoce(RemoteObject __ref,RemoteObject _id) throws Exception{
+public static RemoteObject  _eliminaordineincorso(RemoteObject __ref,RemoteObject _id) throws Exception{
 try {
-		Debug.PushSubsStack("EliminaVoce (database) ","database",2,__ref.getField(false, "ba"),__ref,412);
-if (RapidSub.canDelegate("eliminavoce")) { return __ref.runUserSub(false, "database","eliminavoce", __ref, _id);}
+		Debug.PushSubsStack("EliminaOrdineInCorso (database) ","database",2,__ref.getField(false, "ba"),__ref,380);
+if (RapidSub.canDelegate("eliminaordineincorso")) { return __ref.runUserSub(false, "database","eliminaordineincorso", __ref, _id);}
 Debug.locals.put("id", _id);
- BA.debugLineNum = 412;BA.debugLine="Public Sub EliminaVoce(id As Int)";
+ BA.debugLineNum = 380;BA.debugLine="Public Sub EliminaOrdineInCorso(id As Int)";
 Debug.ShouldStop(134217728);
- BA.debugLineNum = 413;BA.debugLine="Sql1.BeginTransaction";
+ BA.debugLineNum = 381;BA.debugLine="Sql1.BeginTransaction";
 Debug.ShouldStop(268435456);
 __ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
- BA.debugLineNum = 414;BA.debugLine="Sql1.ExecNonQuery2(\"DELETE FROM voce_ordine_in_co";
+ BA.debugLineNum = 382;BA.debugLine="Sql1.ExecNonQuery2(\"DELETE FROM voce_ordine_in_co";
 Debug.ShouldStop(536870912);
-__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("DELETE FROM voce_ordine_in_corso WHERE id = ?")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {1},new Object[] {(_id)})))));
- BA.debugLineNum = 415;BA.debugLine="Sql1.TransactionSuccessful";
+__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("DELETE FROM voce_ordine_in_corso WHERE id_ordine = ?;")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {1},new Object[] {(_id)})))));
+ BA.debugLineNum = 383;BA.debugLine="Sql1.ExecNonQuery2(\"DELETE FROM ordine_in_corso W";
 Debug.ShouldStop(1073741824);
-__ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
- BA.debugLineNum = 416;BA.debugLine="Sql1.EndTransaction";
+__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("DELETE FROM ordine_in_corso WHERE id = ?;")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {1},new Object[] {(_id)})))));
+ BA.debugLineNum = 384;BA.debugLine="Sql1.TransactionSuccessful";
 Debug.ShouldStop(-2147483648);
-__ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
- BA.debugLineNum = 417;BA.debugLine="End Sub";
+__ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
+ BA.debugLineNum = 385;BA.debugLine="Sql1.EndTransaction";
 Debug.ShouldStop(1);
+__ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
+ BA.debugLineNum = 386;BA.debugLine="End Sub";
+Debug.ShouldStop(2);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static RemoteObject  _eliminavoce(RemoteObject __ref,RemoteObject _id) throws Exception{
+try {
+		Debug.PushSubsStack("EliminaVoce (database) ","database",2,__ref.getField(false, "ba"),__ref,449);
+if (RapidSub.canDelegate("eliminavoce")) { return __ref.runUserSub(false, "database","eliminavoce", __ref, _id);}
+Debug.locals.put("id", _id);
+ BA.debugLineNum = 449;BA.debugLine="Public Sub EliminaVoce(id As Int)";
+Debug.ShouldStop(1);
+ BA.debugLineNum = 450;BA.debugLine="Sql1.BeginTransaction";
+Debug.ShouldStop(2);
+__ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
+ BA.debugLineNum = 451;BA.debugLine="Sql1.ExecNonQuery2(\"DELETE FROM voce_ordine_in_co";
+Debug.ShouldStop(4);
+__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("DELETE FROM voce_ordine_in_corso WHERE id = ?")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {1},new Object[] {(_id)})))));
+ BA.debugLineNum = 452;BA.debugLine="Sql1.TransactionSuccessful";
+Debug.ShouldStop(8);
+__ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
+ BA.debugLineNum = 453;BA.debugLine="Sql1.EndTransaction";
+Debug.ShouldStop(16);
+__ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
+ BA.debugLineNum = 454;BA.debugLine="End Sub";
+Debug.ShouldStop(32);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -470,7 +502,7 @@ Debug.ShouldStop(536870912);
 _cursor1.runVoidMethod ("Close");
  BA.debugLineNum = 127;BA.debugLine="Return Articoli";
 Debug.ShouldStop(1073741824);
-if (true) return _articoli;
+Debug.CheckDeviceExceptions();if (true) return _articoli;
  BA.debugLineNum = 128;BA.debugLine="End Sub";
 Debug.ShouldStop(-2147483648);
 return RemoteObject.createImmutable(null);
@@ -524,7 +556,7 @@ Debug.ShouldStop(131072);
 _cursor1.runVoidMethod ("Close");
  BA.debugLineNum = 275;BA.debugLine="Return c";
 Debug.ShouldStop(262144);
-if (true) return _c;
+Debug.CheckDeviceExceptions();if (true) return _c;
  BA.debugLineNum = 276;BA.debugLine="End Sub";
 Debug.ShouldStop(524288);
 return RemoteObject.createImmutable(null);
@@ -594,7 +626,7 @@ Debug.ShouldStop(262144);
 _cursor1.runVoidMethod ("Close");
  BA.debugLineNum = 148;BA.debugLine="Return Clienti";
 Debug.ShouldStop(524288);
-if (true) return _clienti;
+Debug.CheckDeviceExceptions();if (true) return _clienti;
  BA.debugLineNum = 149;BA.debugLine="End Sub";
 Debug.ShouldStop(1048576);
 return RemoteObject.createImmutable(null);
@@ -607,7 +639,7 @@ finally {
 		}}
 public static RemoteObject  _getordineincorso(RemoteObject __ref,RemoteObject _id) throws Exception{
 try {
-		Debug.PushSubsStack("GetOrdineInCorso (database) ","database",2,__ref.getField(false, "ba"),__ref,351);
+		Debug.PushSubsStack("GetOrdineInCorso (database) ","database",2,__ref.getField(false, "ba"),__ref,388);
 if (RapidSub.canDelegate("getordineincorso")) { return __ref.runUserSub(false, "database","getordineincorso", __ref, _id);}
 RemoteObject _o = RemoteObject.declareNull("app.aegdistribuzione.ordine");
 RemoteObject _crs = RemoteObject.declareNull("anywheresoftware.b4a.sql.SQL.CursorWrapper");
@@ -616,70 +648,70 @@ int _i = 0;
 RemoteObject _v = RemoteObject.declareNull("app.aegdistribuzione.voceordine");
 RemoteObject _prezzo = RemoteObject.createImmutable(0f);
 Debug.locals.put("id", _id);
- BA.debugLineNum = 351;BA.debugLine="Public Sub GetOrdineInCorso(id As Int) As Ordine";
-Debug.ShouldStop(1073741824);
- BA.debugLineNum = 352;BA.debugLine="Dim o As Ordine";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 388;BA.debugLine="Public Sub GetOrdineInCorso(id As Int) As Ordine";
+Debug.ShouldStop(8);
+ BA.debugLineNum = 389;BA.debugLine="Dim o As Ordine";
+Debug.ShouldStop(16);
 _o = RemoteObject.createNew ("app.aegdistribuzione.ordine");Debug.locals.put("o", _o);
- BA.debugLineNum = 353;BA.debugLine="Dim crs As Cursor = Sql1.ExecQuery2(\"SELECT id, i";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 390;BA.debugLine="Dim crs As Cursor = Sql1.ExecQuery2(\"SELECT id, i";
+Debug.ShouldStop(32);
 _crs = RemoteObject.createNew ("anywheresoftware.b4a.sql.SQL.CursorWrapper");
 _crs.setObject(__ref.getField(false,"_sql1").runMethod(false,"ExecQuery2",(Object)(BA.ObjectToString("SELECT id, id_cliente, note FROM ordine_in_corso WHERE id = ?")),(Object)(RemoteObject.createNewArray("String",new int[] {1},new Object[] {BA.NumberToString(_id)}))));Debug.locals.put("crs", _crs);
- BA.debugLineNum = 354;BA.debugLine="If crs.RowCount > 0 Then";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 391;BA.debugLine="If crs.RowCount > 0 Then";
+Debug.ShouldStop(64);
 if (RemoteObject.solveBoolean(">",_crs.runMethod(true,"getRowCount"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 355;BA.debugLine="crs.Position = 0";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 392;BA.debugLine="crs.Position = 0";
+Debug.ShouldStop(128);
 _crs.runMethod(true,"setPosition",BA.numberCast(int.class, 0));
- BA.debugLineNum = 356;BA.debugLine="o.Initialize(crs.GetInt2(0), crs.GetInt2(1), Sta";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 393;BA.debugLine="o.Initialize(crs.GetInt2(0), crs.GetInt2(1), Sta";
+Debug.ShouldStop(256);
 _o.runClassMethod (app.aegdistribuzione.ordine.class, "_initialize",__ref.getField(false, "ba"),(Object)(_crs.runMethod(true,"GetInt2",(Object)(BA.numberCast(int.class, 0)))),(Object)(_crs.runMethod(true,"GetInt2",(Object)(BA.numberCast(int.class, 1)))),(Object)(database._starter._user.getField(true,"_id")),(Object)(BA.ObjectToString("")),(Object)(_crs.runMethod(true,"GetString2",(Object)(BA.numberCast(int.class, 2)))));
  }else {
- BA.debugLineNum = 358;BA.debugLine="Return Null";
-Debug.ShouldStop(32);
-if (true) return (database.__c.getField(false,"Null"));
+ BA.debugLineNum = 395;BA.debugLine="Return Null";
+Debug.ShouldStop(1024);
+Debug.CheckDeviceExceptions();if (true) return (database.__c.getField(false,"Null"));
  };
- BA.debugLineNum = 360;BA.debugLine="crs.Close";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 397;BA.debugLine="crs.Close";
+Debug.ShouldStop(4096);
 _crs.runVoidMethod ("Close");
- BA.debugLineNum = 361;BA.debugLine="Dim crs2 As Cursor = Sql1.ExecQuery2(\"SELECT id,c";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 398;BA.debugLine="Dim crs2 As Cursor = Sql1.ExecQuery2(\"SELECT id,c";
+Debug.ShouldStop(8192);
 _crs2 = RemoteObject.createNew ("anywheresoftware.b4a.sql.SQL.CursorWrapper");
 _crs2.setObject(__ref.getField(false,"_sql1").runMethod(false,"ExecQuery2",(Object)(RemoteObject.concat(RemoteObject.createImmutable("SELECT id,cod_art,desc_art,id_ordine,qta,prezzo,note FROM voce_ordine_in_corso "),RemoteObject.createImmutable("WHERE id_ordine = ?;"))),(Object)(RemoteObject.createNewArray("String",new int[] {1},new Object[] {BA.NumberToString(_id)}))));Debug.locals.put("crs2", _crs2);
- BA.debugLineNum = 363;BA.debugLine="For i=0 To crs2.RowCount - 1";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 400;BA.debugLine="For i=0 To crs2.RowCount - 1";
+Debug.ShouldStop(32768);
 {
 final int step11 = 1;
 final int limit11 = RemoteObject.solve(new RemoteObject[] {_crs2.runMethod(true,"getRowCount"),RemoteObject.createImmutable(1)}, "-",1, 1).<Integer>get().intValue();
 _i = 0 ;
 for (;(step11 > 0 && _i <= limit11) || (step11 < 0 && _i >= limit11) ;_i = ((int)(0 + _i + step11))  ) {
 Debug.locals.put("i", _i);
- BA.debugLineNum = 364;BA.debugLine="crs2.Position = i";
-Debug.ShouldStop(2048);
-_crs2.runMethod(true,"setPosition",BA.numberCast(int.class, _i));
- BA.debugLineNum = 365;BA.debugLine="Dim v As VoceOrdine";
-Debug.ShouldStop(4096);
-_v = RemoteObject.createNew ("app.aegdistribuzione.voceordine");Debug.locals.put("v", _v);
- BA.debugLineNum = 366;BA.debugLine="Dim prezzo As Float = crs2.GetString(\"prezzo\")";
-Debug.ShouldStop(8192);
-_prezzo = BA.numberCast(float.class, _crs2.runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("prezzo"))));Debug.locals.put("prezzo", _prezzo);Debug.locals.put("prezzo", _prezzo);
- BA.debugLineNum = 367;BA.debugLine="v.Initialize(crs2.GetInt2(0), crs2.GetString2(1)";
-Debug.ShouldStop(16384);
-_v.runClassMethod (app.aegdistribuzione.voceordine.class, "_initialize",__ref.getField(false, "ba"),(Object)(_crs2.runMethod(true,"GetInt2",(Object)(BA.numberCast(int.class, 0)))),(Object)(_crs2.runMethod(true,"GetString2",(Object)(BA.numberCast(int.class, 1)))),(Object)(_crs2.runMethod(true,"GetString2",(Object)(BA.numberCast(int.class, 2)))),(Object)(_id),(Object)(_crs2.runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("note")))),(Object)(_prezzo),(Object)(_crs2.runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("qta")))));
- BA.debugLineNum = 369;BA.debugLine="o.Voci.Add(v)";
+ BA.debugLineNum = 401;BA.debugLine="crs2.Position = i";
 Debug.ShouldStop(65536);
+_crs2.runMethod(true,"setPosition",BA.numberCast(int.class, _i));
+ BA.debugLineNum = 402;BA.debugLine="Dim v As VoceOrdine";
+Debug.ShouldStop(131072);
+_v = RemoteObject.createNew ("app.aegdistribuzione.voceordine");Debug.locals.put("v", _v);
+ BA.debugLineNum = 403;BA.debugLine="Dim prezzo As Float = crs2.GetString(\"prezzo\")";
+Debug.ShouldStop(262144);
+_prezzo = BA.numberCast(float.class, _crs2.runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("prezzo"))));Debug.locals.put("prezzo", _prezzo);Debug.locals.put("prezzo", _prezzo);
+ BA.debugLineNum = 404;BA.debugLine="v.Initialize(crs2.GetInt2(0), crs2.GetString2(1)";
+Debug.ShouldStop(524288);
+_v.runClassMethod (app.aegdistribuzione.voceordine.class, "_initialize",__ref.getField(false, "ba"),(Object)(_crs2.runMethod(true,"GetInt2",(Object)(BA.numberCast(int.class, 0)))),(Object)(_crs2.runMethod(true,"GetString2",(Object)(BA.numberCast(int.class, 1)))),(Object)(_crs2.runMethod(true,"GetString2",(Object)(BA.numberCast(int.class, 2)))),(Object)(_id),(Object)(_crs2.runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("note")))),(Object)(_prezzo),(Object)(_crs2.runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("qta")))));
+ BA.debugLineNum = 406;BA.debugLine="o.Voci.Add(v)";
+Debug.ShouldStop(2097152);
 _o.getField(false,"_voci").runVoidMethod ("Add",(Object)((_v)));
  }
 }Debug.locals.put("i", _i);
 ;
- BA.debugLineNum = 371;BA.debugLine="crs2.Close";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 408;BA.debugLine="crs2.Close";
+Debug.ShouldStop(8388608);
 _crs2.runVoidMethod ("Close");
- BA.debugLineNum = 372;BA.debugLine="Return o";
-Debug.ShouldStop(524288);
-if (true) return _o;
- BA.debugLineNum = 373;BA.debugLine="End Sub";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 409;BA.debugLine="Return o";
+Debug.ShouldStop(16777216);
+Debug.CheckDeviceExceptions();if (true) return _o;
+ BA.debugLineNum = 410;BA.debugLine="End Sub";
+Debug.ShouldStop(33554432);
 return RemoteObject.createImmutable(null);
 }
 catch (Exception e) {
@@ -738,7 +770,7 @@ _preferiti.runVoidMethod ("Add",(Object)((_p)));
 ;
  BA.debugLineNum = 292;BA.debugLine="Return preferiti";
 Debug.ShouldStop(8);
-if (true) return _preferiti;
+Debug.CheckDeviceExceptions();if (true) return _preferiti;
  BA.debugLineNum = 293;BA.debugLine="End Sub";
 Debug.ShouldStop(16);
 return RemoteObject.createImmutable(null);
@@ -768,7 +800,7 @@ Debug.ShouldStop(33554432);
 if (RemoteObject.solveBoolean("=",_cursor1.runMethod(true,"getRowCount"),BA.numberCast(double.class, 0))) { 
  BA.debugLineNum = 155;BA.debugLine="Return Null";
 Debug.ShouldStop(67108864);
-if (true) return (database.__c.getField(false,"Null"));
+Debug.CheckDeviceExceptions();if (true) return (database.__c.getField(false,"Null"));
  };
  BA.debugLineNum = 158;BA.debugLine="Cursor1.Position = 0";
 Debug.ShouldStop(536870912);
@@ -781,7 +813,7 @@ Debug.ShouldStop(-2147483648);
 _u.runClassMethod (app.aegdistribuzione.utente.class, "_initialize",__ref.getField(false, "ba"),(Object)(_cursor1.runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("id")))),(Object)(_cursor1.runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("username")))),(Object)(_cursor1.runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("ultimo_accesso")))));
  BA.debugLineNum = 161;BA.debugLine="Return u";
 Debug.ShouldStop(1);
-if (true) return _u;
+Debug.CheckDeviceExceptions();if (true) return _u;
  BA.debugLineNum = 162;BA.debugLine="End Sub";
 Debug.ShouldStop(2);
 return RemoteObject.createImmutable(null);
@@ -794,39 +826,39 @@ finally {
 		}}
 public static RemoteObject  _getvoce(RemoteObject __ref,RemoteObject _id) throws Exception{
 try {
-		Debug.PushSubsStack("GetVoce (database) ","database",2,__ref.getField(false, "ba"),__ref,419);
+		Debug.PushSubsStack("GetVoce (database) ","database",2,__ref.getField(false, "ba"),__ref,456);
 if (RapidSub.canDelegate("getvoce")) { return __ref.runUserSub(false, "database","getvoce", __ref, _id);}
 RemoteObject _v = RemoteObject.declareNull("app.aegdistribuzione.voceordine");
 RemoteObject _crs = RemoteObject.declareNull("anywheresoftware.b4a.sql.SQL.CursorWrapper");
 Debug.locals.put("id", _id);
- BA.debugLineNum = 419;BA.debugLine="Public Sub GetVoce(id As Int) As VoceOrdine";
-Debug.ShouldStop(4);
- BA.debugLineNum = 420;BA.debugLine="Dim v As VoceOrdine";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 456;BA.debugLine="Public Sub GetVoce(id As Int) As VoceOrdine";
+Debug.ShouldStop(128);
+ BA.debugLineNum = 457;BA.debugLine="Dim v As VoceOrdine";
+Debug.ShouldStop(256);
 _v = RemoteObject.createNew ("app.aegdistribuzione.voceordine");Debug.locals.put("v", _v);
- BA.debugLineNum = 421;BA.debugLine="Dim crs As Cursor = Sql1.ExecQuery2(\"SELECT id,co";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 458;BA.debugLine="Dim crs As Cursor = Sql1.ExecQuery2(\"SELECT id,co";
+Debug.ShouldStop(512);
 _crs = RemoteObject.createNew ("anywheresoftware.b4a.sql.SQL.CursorWrapper");
 _crs.setObject(__ref.getField(false,"_sql1").runMethod(false,"ExecQuery2",(Object)(BA.ObjectToString("SELECT id,cod_art, desc_art, id_ordine, qta, prezzo, note FROM voce_ordine_in_corso WHERE id=?")),(Object)(RemoteObject.createNewArray("String",new int[] {1},new Object[] {BA.NumberToString(_id)}))));Debug.locals.put("crs", _crs);
- BA.debugLineNum = 423;BA.debugLine="If crs.RowCount == 0 Then";
-Debug.ShouldStop(64);
-if (RemoteObject.solveBoolean("=",_crs.runMethod(true,"getRowCount"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 424;BA.debugLine="Return Null";
-Debug.ShouldStop(128);
-if (true) return (database.__c.getField(false,"Null"));
- }else {
- BA.debugLineNum = 426;BA.debugLine="crs.Position = 0";
-Debug.ShouldStop(512);
-_crs.runMethod(true,"setPosition",BA.numberCast(int.class, 0));
- BA.debugLineNum = 428;BA.debugLine="v.Initialize(crs.GetInt(\"id\"), crs.GetString(\"co";
+ BA.debugLineNum = 460;BA.debugLine="If crs.RowCount == 0 Then";
 Debug.ShouldStop(2048);
+if (RemoteObject.solveBoolean("=",_crs.runMethod(true,"getRowCount"),BA.numberCast(double.class, 0))) { 
+ BA.debugLineNum = 461;BA.debugLine="Return Null";
+Debug.ShouldStop(4096);
+Debug.CheckDeviceExceptions();if (true) return (database.__c.getField(false,"Null"));
+ }else {
+ BA.debugLineNum = 463;BA.debugLine="crs.Position = 0";
+Debug.ShouldStop(16384);
+_crs.runMethod(true,"setPosition",BA.numberCast(int.class, 0));
+ BA.debugLineNum = 465;BA.debugLine="v.Initialize(crs.GetInt(\"id\"), crs.GetString(\"co";
+Debug.ShouldStop(65536);
 _v.runClassMethod (app.aegdistribuzione.voceordine.class, "_initialize",__ref.getField(false, "ba"),(Object)(_crs.runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("id")))),(Object)(_crs.runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("cod_art")))),(Object)(_crs.runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("desc_art")))),(Object)(_crs.runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("id_ordine")))),(Object)(_crs.runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("note")))),(Object)(BA.numberCast(float.class, _crs.runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("prezzo"))))),(Object)(_crs.runMethod(true,"GetInt",(Object)(RemoteObject.createImmutable("qta")))));
- BA.debugLineNum = 430;BA.debugLine="Return v";
-Debug.ShouldStop(8192);
-if (true) return _v;
+ BA.debugLineNum = 467;BA.debugLine="Return v";
+Debug.ShouldStop(262144);
+Debug.CheckDeviceExceptions();if (true) return _v;
  };
- BA.debugLineNum = 432;BA.debugLine="End Sub";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 469;BA.debugLine="End Sub";
+Debug.ShouldStop(1048576);
 return RemoteObject.createImmutable(null);
 }
 catch (Exception e) {
@@ -865,7 +897,7 @@ finally {
 		}}
 public static RemoteObject  _nuovavoce(RemoteObject __ref,RemoteObject _o,RemoteObject _cod,RemoteObject _desc,RemoteObject _q,RemoteObject _prz,RemoteObject _nt) throws Exception{
 try {
-		Debug.PushSubsStack("NuovaVoce (database) ","database",2,__ref.getField(false, "ba"),__ref,390);
+		Debug.PushSubsStack("NuovaVoce (database) ","database",2,__ref.getField(false, "ba"),__ref,427);
 if (RapidSub.canDelegate("nuovavoce")) { return __ref.runUserSub(false, "database","nuovavoce", __ref, _o, _cod, _desc, _q, _prz, _nt);}
 RemoteObject _crs = RemoteObject.declareNull("anywheresoftware.b4a.sql.SQL.CursorWrapper");
 RemoteObject _id = RemoteObject.createImmutable(0);
@@ -876,44 +908,44 @@ Debug.locals.put("desc", _desc);
 Debug.locals.put("q", _q);
 Debug.locals.put("prz", _prz);
 Debug.locals.put("nt", _nt);
- BA.debugLineNum = 390;BA.debugLine="Public Sub NuovaVoce(o As Ordine, cod As String, d";
-Debug.ShouldStop(32);
- BA.debugLineNum = 391;BA.debugLine="Sql1.BeginTransaction";
-Debug.ShouldStop(64);
-__ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
- BA.debugLineNum = 392;BA.debugLine="Sql1.ExecNonQuery2(\"INSERT INTO voce_ordine_in_co";
-Debug.ShouldStop(128);
-__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(RemoteObject.concat(RemoteObject.createImmutable("INSERT INTO voce_ordine_in_corso (cod_art, desc_art, id_ordine, qta, prezzo, note) "),RemoteObject.createImmutable("VALUES(?,?,?,?,?,?);"))),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {6},new Object[] {(_cod),(_desc),(_o.getField(true,"_id")),(_q),(_prz),(_nt)})))));
- BA.debugLineNum = 394;BA.debugLine="Sql1.TransactionSuccessful";
-Debug.ShouldStop(512);
-__ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
- BA.debugLineNum = 395;BA.debugLine="Sql1.EndTransaction";
+ BA.debugLineNum = 427;BA.debugLine="Public Sub NuovaVoce(o As Ordine, cod As String, d";
 Debug.ShouldStop(1024);
-__ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
- BA.debugLineNum = 396;BA.debugLine="Dim crs As Cursor = Sql1.ExecQuery(\"SELECT last_i";
+ BA.debugLineNum = 428;BA.debugLine="Sql1.BeginTransaction";
 Debug.ShouldStop(2048);
+__ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
+ BA.debugLineNum = 429;BA.debugLine="Sql1.ExecNonQuery2(\"INSERT INTO voce_ordine_in_co";
+Debug.ShouldStop(4096);
+__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(RemoteObject.concat(RemoteObject.createImmutable("INSERT INTO voce_ordine_in_corso (cod_art, desc_art, id_ordine, qta, prezzo, note) "),RemoteObject.createImmutable("VALUES(?,?,?,?,?,?);"))),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {6},new Object[] {(_cod),(_desc),(_o.getField(true,"_id")),(_q),(_prz),(_nt)})))));
+ BA.debugLineNum = 431;BA.debugLine="Sql1.TransactionSuccessful";
+Debug.ShouldStop(16384);
+__ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
+ BA.debugLineNum = 432;BA.debugLine="Sql1.EndTransaction";
+Debug.ShouldStop(32768);
+__ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
+ BA.debugLineNum = 433;BA.debugLine="Dim crs As Cursor = Sql1.ExecQuery(\"SELECT last_i";
+Debug.ShouldStop(65536);
 _crs = RemoteObject.createNew ("anywheresoftware.b4a.sql.SQL.CursorWrapper");
 _crs.setObject(__ref.getField(false,"_sql1").runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT last_insert_rowid();"))));Debug.locals.put("crs", _crs);
- BA.debugLineNum = 397;BA.debugLine="crs.Position = 0";
-Debug.ShouldStop(4096);
-_crs.runMethod(true,"setPosition",BA.numberCast(int.class, 0));
- BA.debugLineNum = 398;BA.debugLine="Dim id As Int = crs.GetInt2(0)";
-Debug.ShouldStop(8192);
-_id = _crs.runMethod(true,"GetInt2",(Object)(BA.numberCast(int.class, 0)));Debug.locals.put("id", _id);Debug.locals.put("id", _id);
- BA.debugLineNum = 399;BA.debugLine="crs.Close";
-Debug.ShouldStop(16384);
-_crs.runVoidMethod ("Close");
- BA.debugLineNum = 400;BA.debugLine="Dim v As VoceOrdine";
-Debug.ShouldStop(32768);
-_v = RemoteObject.createNew ("app.aegdistribuzione.voceordine");Debug.locals.put("v", _v);
- BA.debugLineNum = 401;BA.debugLine="v.Initialize(id, cod, desc, o.Id, nt, prz, q)";
-Debug.ShouldStop(65536);
-_v.runClassMethod (app.aegdistribuzione.voceordine.class, "_initialize",__ref.getField(false, "ba"),(Object)(_id),(Object)(_cod),(Object)(_desc),(Object)(_o.getField(true,"_id")),(Object)(_nt),(Object)(_prz),(Object)(_q));
- BA.debugLineNum = 402;BA.debugLine="Return v";
+ BA.debugLineNum = 434;BA.debugLine="crs.Position = 0";
 Debug.ShouldStop(131072);
-if (true) return _v;
- BA.debugLineNum = 403;BA.debugLine="End Sub";
+_crs.runMethod(true,"setPosition",BA.numberCast(int.class, 0));
+ BA.debugLineNum = 435;BA.debugLine="Dim id As Int = crs.GetInt2(0)";
 Debug.ShouldStop(262144);
+_id = _crs.runMethod(true,"GetInt2",(Object)(BA.numberCast(int.class, 0)));Debug.locals.put("id", _id);Debug.locals.put("id", _id);
+ BA.debugLineNum = 436;BA.debugLine="crs.Close";
+Debug.ShouldStop(524288);
+_crs.runVoidMethod ("Close");
+ BA.debugLineNum = 437;BA.debugLine="Dim v As VoceOrdine";
+Debug.ShouldStop(1048576);
+_v = RemoteObject.createNew ("app.aegdistribuzione.voceordine");Debug.locals.put("v", _v);
+ BA.debugLineNum = 438;BA.debugLine="v.Initialize(id, cod, desc, o.Id, nt, prz, q)";
+Debug.ShouldStop(2097152);
+_v.runClassMethod (app.aegdistribuzione.voceordine.class, "_initialize",__ref.getField(false, "ba"),(Object)(_id),(Object)(_cod),(Object)(_desc),(Object)(_o.getField(true,"_id")),(Object)(_nt),(Object)(_prz),(Object)(_q));
+ BA.debugLineNum = 439;BA.debugLine="Return v";
+Debug.ShouldStop(4194304);
+Debug.CheckDeviceExceptions();if (true) return _v;
+ BA.debugLineNum = 440;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return RemoteObject.createImmutable(null);
 }
 catch (Exception e) {
@@ -924,50 +956,50 @@ finally {
 		}}
 public static RemoteObject  _nuovoordine(RemoteObject __ref,RemoteObject _c) throws Exception{
 try {
-		Debug.PushSubsStack("NuovoOrdine (database) ","database",2,__ref.getField(false, "ba"),__ref,375);
+		Debug.PushSubsStack("NuovoOrdine (database) ","database",2,__ref.getField(false, "ba"),__ref,412);
 if (RapidSub.canDelegate("nuovoordine")) { return __ref.runUserSub(false, "database","nuovoordine", __ref, _c);}
 RemoteObject _crs = RemoteObject.declareNull("anywheresoftware.b4a.sql.SQL.CursorWrapper");
 RemoteObject _id = RemoteObject.createImmutable(0);
 RemoteObject _o = RemoteObject.declareNull("app.aegdistribuzione.ordine");
 Debug.locals.put("c", _c);
- BA.debugLineNum = 375;BA.debugLine="Public Sub NuovoOrdine(c As Cliente) As Ordine";
-Debug.ShouldStop(4194304);
- BA.debugLineNum = 376;BA.debugLine="Sql1.BeginTransaction";
-Debug.ShouldStop(8388608);
-__ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
- BA.debugLineNum = 377;BA.debugLine="Sql1.ExecNonQuery2(\"INSERT INTO ordine_in_corso (";
-Debug.ShouldStop(16777216);
-__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("INSERT INTO ordine_in_corso (id_cliente) VALUES(?);")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {1},new Object[] {(_c.getField(true,"_id"))})))));
- BA.debugLineNum = 378;BA.debugLine="Sql1.TransactionSuccessful";
-Debug.ShouldStop(33554432);
-__ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
- BA.debugLineNum = 379;BA.debugLine="Sql1.EndTransaction";
-Debug.ShouldStop(67108864);
-__ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
- BA.debugLineNum = 381;BA.debugLine="Dim crs As Cursor = Sql1.ExecQuery(\"SELECT last_i";
+ BA.debugLineNum = 412;BA.debugLine="Public Sub NuovoOrdine(c As Cliente) As Ordine";
+Debug.ShouldStop(134217728);
+ BA.debugLineNum = 413;BA.debugLine="Sql1.BeginTransaction";
 Debug.ShouldStop(268435456);
+__ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
+ BA.debugLineNum = 414;BA.debugLine="Sql1.ExecNonQuery2(\"INSERT INTO ordine_in_corso (";
+Debug.ShouldStop(536870912);
+__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("INSERT INTO ordine_in_corso (id_cliente) VALUES(?);")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {1},new Object[] {(_c.getField(true,"_id"))})))));
+ BA.debugLineNum = 415;BA.debugLine="Sql1.TransactionSuccessful";
+Debug.ShouldStop(1073741824);
+__ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
+ BA.debugLineNum = 416;BA.debugLine="Sql1.EndTransaction";
+Debug.ShouldStop(-2147483648);
+__ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
+ BA.debugLineNum = 418;BA.debugLine="Dim crs As Cursor = Sql1.ExecQuery(\"SELECT last_i";
+Debug.ShouldStop(2);
 _crs = RemoteObject.createNew ("anywheresoftware.b4a.sql.SQL.CursorWrapper");
 _crs.setObject(__ref.getField(false,"_sql1").runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT last_insert_rowid();"))));Debug.locals.put("crs", _crs);
- BA.debugLineNum = 382;BA.debugLine="crs.Position = 0";
-Debug.ShouldStop(536870912);
-_crs.runMethod(true,"setPosition",BA.numberCast(int.class, 0));
- BA.debugLineNum = 383;BA.debugLine="Dim id As Int = crs.GetInt2(0)";
-Debug.ShouldStop(1073741824);
-_id = _crs.runMethod(true,"GetInt2",(Object)(BA.numberCast(int.class, 0)));Debug.locals.put("id", _id);Debug.locals.put("id", _id);
- BA.debugLineNum = 384;BA.debugLine="crs.Close";
-Debug.ShouldStop(-2147483648);
-_crs.runVoidMethod ("Close");
- BA.debugLineNum = 385;BA.debugLine="Dim o As Ordine";
-Debug.ShouldStop(1);
-_o = RemoteObject.createNew ("app.aegdistribuzione.ordine");Debug.locals.put("o", _o);
- BA.debugLineNum = 386;BA.debugLine="o.Initialize(id, c.Id, Starter.User.Id, \"\", \"\")";
-Debug.ShouldStop(2);
-_o.runClassMethod (app.aegdistribuzione.ordine.class, "_initialize",__ref.getField(false, "ba"),(Object)(_id),(Object)(_c.getField(true,"_id")),(Object)(database._starter._user.getField(true,"_id")),(Object)(BA.ObjectToString("")),(Object)(RemoteObject.createImmutable("")));
- BA.debugLineNum = 387;BA.debugLine="Return o";
+ BA.debugLineNum = 419;BA.debugLine="crs.Position = 0";
 Debug.ShouldStop(4);
-if (true) return _o;
- BA.debugLineNum = 388;BA.debugLine="End Sub";
+_crs.runMethod(true,"setPosition",BA.numberCast(int.class, 0));
+ BA.debugLineNum = 420;BA.debugLine="Dim id As Int = crs.GetInt2(0)";
 Debug.ShouldStop(8);
+_id = _crs.runMethod(true,"GetInt2",(Object)(BA.numberCast(int.class, 0)));Debug.locals.put("id", _id);Debug.locals.put("id", _id);
+ BA.debugLineNum = 421;BA.debugLine="crs.Close";
+Debug.ShouldStop(16);
+_crs.runVoidMethod ("Close");
+ BA.debugLineNum = 422;BA.debugLine="Dim o As Ordine";
+Debug.ShouldStop(32);
+_o = RemoteObject.createNew ("app.aegdistribuzione.ordine");Debug.locals.put("o", _o);
+ BA.debugLineNum = 423;BA.debugLine="o.Initialize(id, c.Id, Starter.User.Id, \"\", \"\")";
+Debug.ShouldStop(64);
+_o.runClassMethod (app.aegdistribuzione.ordine.class, "_initialize",__ref.getField(false, "ba"),(Object)(_id),(Object)(_c.getField(true,"_id")),(Object)(database._starter._user.getField(true,"_id")),(Object)(BA.ObjectToString("")),(Object)(RemoteObject.createImmutable("")));
+ BA.debugLineNum = 424;BA.debugLine="Return o";
+Debug.ShouldStop(128);
+Debug.CheckDeviceExceptions();if (true) return _o;
+ BA.debugLineNum = 425;BA.debugLine="End Sub";
+Debug.ShouldStop(256);
 return RemoteObject.createImmutable(null);
 }
 catch (Exception e) {
@@ -1030,7 +1062,7 @@ Debug.ShouldStop(268435456);
 _cursor1.runVoidMethod ("Close");
  BA.debugLineNum = 222;BA.debugLine="Return Ordini";
 Debug.ShouldStop(536870912);
-if (true) return _ordini;
+Debug.CheckDeviceExceptions();if (true) return _ordini;
  BA.debugLineNum = 223;BA.debugLine="End Sub";
 Debug.ShouldStop(1073741824);
 return RemoteObject.createImmutable(null);
@@ -1095,7 +1127,7 @@ Debug.ShouldStop(16777216);
 _cursor1.runVoidMethod ("Close");
  BA.debugLineNum = 186;BA.debugLine="Return Ordini";
 Debug.ShouldStop(33554432);
-if (true) return _ordini;
+Debug.CheckDeviceExceptions();if (true) return _ordini;
  BA.debugLineNum = 187;BA.debugLine="End Sub";
 Debug.ShouldStop(67108864);
 return RemoteObject.createImmutable(null);
@@ -1260,20 +1292,20 @@ finally {
 		}}
 public static RemoteObject  _salvaordineincorso(RemoteObject __ref,RemoteObject _o) throws Exception{
 try {
-		Debug.PushSubsStack("SalvaOrdineInCorso (database) ","database",2,__ref.getField(false, "ba"),__ref,340);
+		Debug.PushSubsStack("SalvaOrdineInCorso (database) ","database",2,__ref.getField(false, "ba"),__ref,369);
 if (RapidSub.canDelegate("salvaordineincorso")) { return __ref.runUserSub(false, "database","salvaordineincorso", __ref, _o);}
 RemoteObject _v = RemoteObject.declareNull("app.aegdistribuzione.voceordine");
 Debug.locals.put("o", _o);
- BA.debugLineNum = 340;BA.debugLine="Public Sub SalvaOrdineInCorso(o As Ordine)";
-Debug.ShouldStop(524288);
- BA.debugLineNum = 341;BA.debugLine="Sql1.BeginTransaction";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 369;BA.debugLine="Public Sub SalvaOrdineInCorso(o As Ordine)";
+Debug.ShouldStop(65536);
+ BA.debugLineNum = 370;BA.debugLine="Sql1.BeginTransaction";
+Debug.ShouldStop(131072);
 __ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
- BA.debugLineNum = 342;BA.debugLine="Sql1.ExecNonQuery2(\"INSERT INTO ordine_in_corso (";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 371;BA.debugLine="Sql1.ExecNonQuery2(\"INSERT INTO ordine_in_corso (";
+Debug.ShouldStop(262144);
 __ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("INSERT INTO ordine_in_corso (id_cliente, note) VALUES(?,?);")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {2},new Object[] {(_o.getField(true,"_idcliente")),(_o.getField(true,"_note"))})))));
- BA.debugLineNum = 343;BA.debugLine="For Each v As VoceOrdine In o.Voci";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 372;BA.debugLine="For Each v As VoceOrdine In o.Voci";
+Debug.ShouldStop(524288);
 {
 final RemoteObject group3 = _o.getField(false,"_voci");
 final int groupLen3 = group3.runMethod(true,"getSize").<Integer>get()
@@ -1282,20 +1314,20 @@ final int groupLen3 = group3.runMethod(true,"getSize").<Integer>get()
 for (; index3 < groupLen3;index3++){
 _v = (group3.runMethod(false,"Get",index3));Debug.locals.put("v", _v);
 Debug.locals.put("v", _v);
- BA.debugLineNum = 344;BA.debugLine="Sql1.ExecNonQuery2(\"INSERT INTO voce_ordine_in_c";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 373;BA.debugLine="Sql1.ExecNonQuery2(\"INSERT INTO voce_ordine_in_c";
+Debug.ShouldStop(1048576);
 __ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("INSERT INTO voce_ordine_in_corso (cod_art,desc_art,id_ordine,qta,prezzo,note) VALUES(?,?,?,?,?,?);")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {6},new Object[] {(_v.getField(true,"_codart")),(_v.getField(true,"_descart")),(_v.getField(true,"_idordine")),(_v.getField(true,"_qta")),(_v.getField(true,"_prezzo")),(_v.getField(true,"_note"))})))));
  }
 }Debug.locals.put("v", _v);
 ;
- BA.debugLineNum = 347;BA.debugLine="Sql1.TransactionSuccessful";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 376;BA.debugLine="Sql1.TransactionSuccessful";
+Debug.ShouldStop(8388608);
 __ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
- BA.debugLineNum = 348;BA.debugLine="Sql1.EndTransaction";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 377;BA.debugLine="Sql1.EndTransaction";
+Debug.ShouldStop(16777216);
 __ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
- BA.debugLineNum = 349;BA.debugLine="End Sub";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 378;BA.debugLine="End Sub";
+Debug.ShouldStop(33554432);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -1306,24 +1338,24 @@ finally {
 		}}
 public static RemoteObject  _salvapreferiti(RemoteObject __ref,RemoteObject _preferiti) throws Exception{
 try {
-		Debug.PushSubsStack("SalvaPreferiti (database) ","database",2,__ref.getField(false, "ba"),__ref,329);
+		Debug.PushSubsStack("SalvaPreferiti (database) ","database",2,__ref.getField(false, "ba"),__ref,347);
 if (RapidSub.canDelegate("salvapreferiti")) { return __ref.runUserSub(false, "database","salvapreferiti", __ref, _preferiti);}
 RemoteObject _ins = RemoteObject.createImmutable("");
 RemoteObject _p = RemoteObject.declareNull("app.aegdistribuzione.preferito");
 Debug.locals.put("preferiti", _preferiti);
- BA.debugLineNum = 329;BA.debugLine="Public Sub SalvaPreferiti(preferiti As List)";
-Debug.ShouldStop(256);
- BA.debugLineNum = 330;BA.debugLine="Sql1.BeginTransaction";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 347;BA.debugLine="Public Sub SalvaPreferiti(preferiti As List)";
+Debug.ShouldStop(67108864);
+ BA.debugLineNum = 348;BA.debugLine="Sql1.BeginTransaction";
+Debug.ShouldStop(134217728);
 __ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
- BA.debugLineNum = 331;BA.debugLine="Sql1.ExecNonQuery(\"DELETE FROM preferiti;\")";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 349;BA.debugLine="Sql1.ExecNonQuery(\"DELETE FROM preferiti;\")";
+Debug.ShouldStop(268435456);
 __ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery",(Object)(RemoteObject.createImmutable("DELETE FROM preferiti;")));
- BA.debugLineNum = 332;BA.debugLine="Dim ins As String = \"INSERT INTO preferiti (id_cl";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 350;BA.debugLine="Dim ins As String = \"INSERT INTO preferiti (id_cl";
+Debug.ShouldStop(536870912);
 _ins = BA.ObjectToString("INSERT INTO preferiti (id_cliente, cod_art, desc_art, id_art, occorrenze) VALUES(?,?,?,?,?);");Debug.locals.put("ins", _ins);Debug.locals.put("ins", _ins);
- BA.debugLineNum = 333;BA.debugLine="For Each p As Preferito In preferiti";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 351;BA.debugLine="For Each p As Preferito In preferiti";
+Debug.ShouldStop(1073741824);
 {
 final RemoteObject group4 = _preferiti;
 final int groupLen4 = group4.runMethod(true,"getSize").<Integer>get()
@@ -1332,20 +1364,71 @@ final int groupLen4 = group4.runMethod(true,"getSize").<Integer>get()
 for (; index4 < groupLen4;index4++){
 _p = (group4.runMethod(false,"Get",index4));Debug.locals.put("p", _p);
 Debug.locals.put("p", _p);
- BA.debugLineNum = 334;BA.debugLine="Sql1.ExecNonQuery2(ins, Array As Object(p.IdClie";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 352;BA.debugLine="Sql1.ExecNonQuery2(ins, Array As Object(p.IdClie";
+Debug.ShouldStop(-2147483648);
 __ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(_ins),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {5},new Object[] {(_p.getField(true,"_idcliente")),(_p.getField(true,"_codice")),(_p.getField(true,"_descrizione")),(_p.getField(true,"_idart")),(_p.getField(true,"_occorrenze"))})))));
  }
 }Debug.locals.put("p", _p);
 ;
- BA.debugLineNum = 336;BA.debugLine="Sql1.TransactionSuccessful";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 354;BA.debugLine="Sql1.TransactionSuccessful";
+Debug.ShouldStop(2);
 __ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
- BA.debugLineNum = 337;BA.debugLine="Sql1.EndTransaction";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 355;BA.debugLine="Sql1.EndTransaction";
+Debug.ShouldStop(4);
 __ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
- BA.debugLineNum = 338;BA.debugLine="End Sub";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 356;BA.debugLine="End Sub";
+Debug.ShouldStop(8);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static RemoteObject  _salvapreferitipercliente(RemoteObject __ref,RemoteObject _preferiti,RemoteObject _id_cliente) throws Exception{
+try {
+		Debug.PushSubsStack("SalvaPreferitiPerCliente (database) ","database",2,__ref.getField(false, "ba"),__ref,358);
+if (RapidSub.canDelegate("salvapreferitipercliente")) { return __ref.runUserSub(false, "database","salvapreferitipercliente", __ref, _preferiti, _id_cliente);}
+RemoteObject _ins = RemoteObject.createImmutable("");
+RemoteObject _p = RemoteObject.declareNull("app.aegdistribuzione.preferito");
+Debug.locals.put("preferiti", _preferiti);
+Debug.locals.put("id_cliente", _id_cliente);
+ BA.debugLineNum = 358;BA.debugLine="Public Sub SalvaPreferitiPerCliente(preferiti As L";
+Debug.ShouldStop(32);
+ BA.debugLineNum = 359;BA.debugLine="Sql1.BeginTransaction";
+Debug.ShouldStop(64);
+__ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
+ BA.debugLineNum = 360;BA.debugLine="Sql1.ExecNonQuery2(\"DELETE FROM preferiti WHERE i";
+Debug.ShouldStop(128);
+__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("DELETE FROM preferiti WHERE id_cliente = ?;")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {1},new Object[] {(_id_cliente)})))));
+ BA.debugLineNum = 361;BA.debugLine="Dim ins As String = \"INSERT INTO preferiti (id_cl";
+Debug.ShouldStop(256);
+_ins = BA.ObjectToString("INSERT INTO preferiti (id_cliente, cod_art, desc_art, id_art, occorrenze) VALUES(?,?,?,?,?);");Debug.locals.put("ins", _ins);Debug.locals.put("ins", _ins);
+ BA.debugLineNum = 362;BA.debugLine="For Each p As Preferito In preferiti";
+Debug.ShouldStop(512);
+{
+final RemoteObject group4 = _preferiti;
+final int groupLen4 = group4.runMethod(true,"getSize").<Integer>get()
+;int index4 = 0;
+;
+for (; index4 < groupLen4;index4++){
+_p = (group4.runMethod(false,"Get",index4));Debug.locals.put("p", _p);
+Debug.locals.put("p", _p);
+ BA.debugLineNum = 363;BA.debugLine="Sql1.ExecNonQuery2(ins, Array As Object(p.IdClie";
+Debug.ShouldStop(1024);
+__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(_ins),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {5},new Object[] {(_p.getField(true,"_idcliente")),(_p.getField(true,"_codice")),(_p.getField(true,"_descrizione")),(_p.getField(true,"_idart")),(_p.getField(true,"_occorrenze"))})))));
+ }
+}Debug.locals.put("p", _p);
+;
+ BA.debugLineNum = 365;BA.debugLine="Sql1.TransactionSuccessful";
+Debug.ShouldStop(4096);
+__ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
+ BA.debugLineNum = 366;BA.debugLine="Sql1.EndTransaction";
+Debug.ShouldStop(8192);
+__ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
+ BA.debugLineNum = 367;BA.debugLine="End Sub";
+Debug.ShouldStop(16384);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -1428,27 +1511,102 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
+public static RemoteObject  _salvastoricoordinipercliente(RemoteObject __ref,RemoteObject _ordini,RemoteObject _id_cliente) throws Exception{
+try {
+		Debug.PushSubsStack("SalvaStoricoOrdiniPerCliente (database) ","database",2,__ref.getField(false, "ba"),__ref,329);
+if (RapidSub.canDelegate("salvastoricoordinipercliente")) { return __ref.runUserSub(false, "database","salvastoricoordinipercliente", __ref, _ordini, _id_cliente);}
+RemoteObject _qry1 = RemoteObject.createImmutable("");
+RemoteObject _qry2 = RemoteObject.createImmutable("");
+RemoteObject _o = RemoteObject.declareNull("app.aegdistribuzione.ordine");
+RemoteObject _v = RemoteObject.declareNull("app.aegdistribuzione.voceordine");
+Debug.locals.put("ordini", _ordini);
+Debug.locals.put("id_cliente", _id_cliente);
+ BA.debugLineNum = 329;BA.debugLine="Public Sub SalvaStoricoOrdiniPerCliente(ordini As";
+Debug.ShouldStop(256);
+ BA.debugLineNum = 330;BA.debugLine="Sql1.BeginTransaction";
+Debug.ShouldStop(512);
+__ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
+ BA.debugLineNum = 331;BA.debugLine="Sql1.ExecNonQuery2(\"DELETE FROM voce_ordine WHERE";
+Debug.ShouldStop(1024);
+__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("DELETE FROM voce_ordine WHERE id_ordine IN (SELECT id FROM ordine WHERE id_cliente = ?);")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {1},new Object[] {(_id_cliente)})))));
+ BA.debugLineNum = 332;BA.debugLine="Sql1.ExecNonQuery2(\"DELETE FROM ordine WHERE id_c";
+Debug.ShouldStop(2048);
+__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("DELETE FROM ordine WHERE id_cliente = ?;")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {1},new Object[] {(_id_cliente)})))));
+ BA.debugLineNum = 334;BA.debugLine="Dim qry1 As String = \"INSERT INTO ordine (id, dat";
+Debug.ShouldStop(8192);
+_qry1 = BA.ObjectToString("INSERT INTO ordine (id, data_invio,id_cliente,id_utente,note) VALUES(?,?,?,?,?);");Debug.locals.put("qry1", _qry1);Debug.locals.put("qry1", _qry1);
+ BA.debugLineNum = 335;BA.debugLine="Dim qry2 As String = \"INSERT INTO voce_ordine (id";
+Debug.ShouldStop(16384);
+_qry2 = BA.ObjectToString("INSERT INTO voce_ordine (id, cod_art,desc_art,id_ordine,qta,prezzo,note) VALUES(?,?,?,?,?,?,?);");Debug.locals.put("qry2", _qry2);Debug.locals.put("qry2", _qry2);
+ BA.debugLineNum = 336;BA.debugLine="For Each o As Ordine In ordini";
+Debug.ShouldStop(32768);
+{
+final RemoteObject group6 = _ordini;
+final int groupLen6 = group6.runMethod(true,"getSize").<Integer>get()
+;int index6 = 0;
+;
+for (; index6 < groupLen6;index6++){
+_o = (group6.runMethod(false,"Get",index6));Debug.locals.put("o", _o);
+Debug.locals.put("o", _o);
+ BA.debugLineNum = 337;BA.debugLine="Sql1.ExecNonQuery2(qry1, Array As Object(o.Id,o.";
+Debug.ShouldStop(65536);
+__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(_qry1),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {5},new Object[] {(_o.getField(true,"_id")),(_o.getField(true,"_datainvio")),(_o.getField(true,"_idcliente")),(_o.getField(true,"_idutente")),(_o.getField(true,"_note"))})))));
+ BA.debugLineNum = 339;BA.debugLine="For Each v As VoceOrdine In o.Voci";
+Debug.ShouldStop(262144);
+{
+final RemoteObject group8 = _o.getField(false,"_voci");
+final int groupLen8 = group8.runMethod(true,"getSize").<Integer>get()
+;int index8 = 0;
+;
+for (; index8 < groupLen8;index8++){
+_v = (group8.runMethod(false,"Get",index8));Debug.locals.put("v", _v);
+Debug.locals.put("v", _v);
+ BA.debugLineNum = 340;BA.debugLine="Sql1.ExecNonQuery2(qry2, Array As Object(v.Id,v";
+Debug.ShouldStop(524288);
+__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(_qry2),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {7},new Object[] {(_v.getField(true,"_id")),(_v.getField(true,"_codart")),(_v.getField(true,"_descart")),(_v.getField(true,"_idordine")),(_v.getField(true,"_qta")),(_v.getField(true,"_prezzo")),(_v.getField(true,"_note"))})))));
+ }
+}Debug.locals.put("v", _v);
+;
+ }
+}Debug.locals.put("o", _o);
+;
+ BA.debugLineNum = 343;BA.debugLine="Sql1.TransactionSuccessful";
+Debug.ShouldStop(4194304);
+__ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
+ BA.debugLineNum = 344;BA.debugLine="Sql1.EndTransaction";
+Debug.ShouldStop(8388608);
+__ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
+ BA.debugLineNum = 345;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 public static RemoteObject  _salvautente(RemoteObject __ref,RemoteObject _usr) throws Exception{
 try {
-		Debug.PushSubsStack("SalvaUtente (database) ","database",2,__ref.getField(false, "ba"),__ref,405);
+		Debug.PushSubsStack("SalvaUtente (database) ","database",2,__ref.getField(false, "ba"),__ref,442);
 if (RapidSub.canDelegate("salvautente")) { return __ref.runUserSub(false, "database","salvautente", __ref, _usr);}
 Debug.locals.put("usr", _usr);
- BA.debugLineNum = 405;BA.debugLine="Public Sub SalvaUtente(usr As Utente)";
-Debug.ShouldStop(1048576);
- BA.debugLineNum = 406;BA.debugLine="Sql1.BeginTransaction";
-Debug.ShouldStop(2097152);
-__ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
- BA.debugLineNum = 407;BA.debugLine="Sql1.ExecNonQuery2(\"INSERT INTO utente (id, usern";
-Debug.ShouldStop(4194304);
-__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("INSERT INTO utente (id, username, ultimo_accesso) VALUES(?, ?, ?);")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {3},new Object[] {(_usr.getField(true,"_id")),(_usr.getField(true,"_nome")),(_usr.getField(true,"_ultimoaccesso"))})))));
- BA.debugLineNum = 408;BA.debugLine="Sql1.TransactionSuccessful";
-Debug.ShouldStop(8388608);
-__ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
- BA.debugLineNum = 409;BA.debugLine="Sql1.EndTransaction";
-Debug.ShouldStop(16777216);
-__ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
- BA.debugLineNum = 410;BA.debugLine="End Sub";
+ BA.debugLineNum = 442;BA.debugLine="Public Sub SalvaUtente(usr As Utente)";
 Debug.ShouldStop(33554432);
+ BA.debugLineNum = 443;BA.debugLine="Sql1.BeginTransaction";
+Debug.ShouldStop(67108864);
+__ref.getField(false,"_sql1").runVoidMethod ("BeginTransaction");
+ BA.debugLineNum = 444;BA.debugLine="Sql1.ExecNonQuery2(\"INSERT INTO utente (id, usern";
+Debug.ShouldStop(134217728);
+__ref.getField(false,"_sql1").runVoidMethod ("ExecNonQuery2",(Object)(BA.ObjectToString("INSERT INTO utente (id, username, ultimo_accesso) VALUES(?, ?, ?);")),(Object)(database.__c.runMethod(false, "ArrayToList", (Object)(RemoteObject.createNewArray("Object",new int[] {3},new Object[] {(_usr.getField(true,"_id")),(_usr.getField(true,"_nome")),(_usr.getField(true,"_ultimoaccesso"))})))));
+ BA.debugLineNum = 445;BA.debugLine="Sql1.TransactionSuccessful";
+Debug.ShouldStop(268435456);
+__ref.getField(false,"_sql1").runVoidMethod ("TransactionSuccessful");
+ BA.debugLineNum = 446;BA.debugLine="Sql1.EndTransaction";
+Debug.ShouldStop(536870912);
+__ref.getField(false,"_sql1").runVoidMethod ("EndTransaction");
+ BA.debugLineNum = 447;BA.debugLine="End Sub";
+Debug.ShouldStop(1073741824);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -1479,7 +1637,7 @@ Debug.ShouldStop(262144);
 database.__c.runVoidMethod ("Log",(Object)(BA.ObjectToString(database.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA")))));
  BA.debugLineNum = 20;BA.debugLine="Return False";
 Debug.ShouldStop(524288);
-if (true) return database.__c.getField(true,"False");
+Debug.CheckDeviceExceptions();if (true) return database.__c.getField(true,"False");
  };
  BA.debugLineNum = 22;BA.debugLine="End Sub";
 Debug.ShouldStop(2097152);

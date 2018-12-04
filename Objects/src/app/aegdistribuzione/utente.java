@@ -50,37 +50,37 @@ innerInitialize(_ba);
 RDebugUtils.currentModule="utente";
 if (Debug.shouldDelegate(ba, "initialize"))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba,_uid,_nom,_uac}));}
-RDebugUtils.currentLine=5308416;
- //BA.debugLineNum = 5308416;BA.debugLine="Public Sub Initialize(uid As Int, nom As String, u";
-RDebugUtils.currentLine=5308417;
- //BA.debugLineNum = 5308417;BA.debugLine="Id=uid";
+RDebugUtils.currentLine=5636096;
+ //BA.debugLineNum = 5636096;BA.debugLine="Public Sub Initialize(uid As Int, nom As String, u";
+RDebugUtils.currentLine=5636097;
+ //BA.debugLineNum = 5636097;BA.debugLine="Id=uid";
 __ref._id = _uid;
-RDebugUtils.currentLine=5308418;
- //BA.debugLineNum = 5308418;BA.debugLine="Nome=nom";
+RDebugUtils.currentLine=5636098;
+ //BA.debugLineNum = 5636098;BA.debugLine="Nome=nom";
 __ref._nome = _nom;
-RDebugUtils.currentLine=5308419;
- //BA.debugLineNum = 5308419;BA.debugLine="UltimoAccesso=uac";
+RDebugUtils.currentLine=5636099;
+ //BA.debugLineNum = 5636099;BA.debugLine="UltimoAccesso=uac";
 __ref._ultimoaccesso = _uac;
-RDebugUtils.currentLine=5308420;
- //BA.debugLineNum = 5308420;BA.debugLine="End Sub";
+RDebugUtils.currentLine=5636100;
+ //BA.debugLineNum = 5636100;BA.debugLine="End Sub";
 return "";
 }
 public String  _class_globals(app.aegdistribuzione.utente __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="utente";
-RDebugUtils.currentLine=5242880;
- //BA.debugLineNum = 5242880;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=5242881;
- //BA.debugLineNum = 5242881;BA.debugLine="Public Id As Int";
+RDebugUtils.currentLine=5570560;
+ //BA.debugLineNum = 5570560;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=5570561;
+ //BA.debugLineNum = 5570561;BA.debugLine="Public Id As Int";
 _id = 0;
-RDebugUtils.currentLine=5242882;
- //BA.debugLineNum = 5242882;BA.debugLine="Public Nome As String";
+RDebugUtils.currentLine=5570562;
+ //BA.debugLineNum = 5570562;BA.debugLine="Public Nome As String";
 _nome = "";
-RDebugUtils.currentLine=5242883;
- //BA.debugLineNum = 5242883;BA.debugLine="Public UltimoAccesso As String";
+RDebugUtils.currentLine=5570563;
+ //BA.debugLineNum = 5570563;BA.debugLine="Public UltimoAccesso As String";
 _ultimoaccesso = "";
-RDebugUtils.currentLine=5242884;
- //BA.debugLineNum = 5242884;BA.debugLine="End Sub";
+RDebugUtils.currentLine=5570564;
+ //BA.debugLineNum = 5570564;BA.debugLine="End Sub";
 return "";
 }
 }

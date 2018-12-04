@@ -8,6 +8,7 @@ Sub Class_Globals
 	Dim m_job As HttpJob
 	Dim m_successo As Boolean
 	Dim m_url As String
+	Dim m_errore As String
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
@@ -24,6 +25,10 @@ End Sub
 
 Public Sub getSuccesso As Boolean
 	Return m_successo
+End Sub
+
+Public Sub getErrore As String
+	Return m_errore
 End Sub
 
 'Public Sub ScaricaUltimiOrdini() As ResumableSub
@@ -158,6 +163,54 @@ Public Sub ScaricaClienti() As ResumableSub
 	Return m_clienti
 End Sub
 
+Public Sub StoricoOrdiniPerCliente(id_cliente As Int) As ResumableSub
+	m_successo = False
+	Dim m_ordini As List
+	m_ordini.Initialize
+	m_job.Download(m_url & "/storico_ordini/" & id_cliente)
+	Wait For (m_job) JobDone
+	
+	If m_job.Success Then
+		m_successo = True
+		Dim parser As JSONParser
+		parser.Initialize(m_job.GetString)
+		Dim root As Map = parser.NextObject
+		Dim objects As List = root.Get("data")
+		
+		For Each m As Map In objects
+			Dim dt_inv As String = m.Get("data_invio")
+			Dim oid As Int = m.Get("id")
+			Dim cId As Int = m.Get("id_cliente")
+			Dim uId As Int = m.Get("id_utente")
+			Dim nt As String = m.Get("note")
+			Dim ordn As Ordine
+			ordn.Initialize(oid,cId,uId,dt_inv,nt)
+			
+			Dim righe As List = m.Get("righe")
+			For Each r As Map In righe
+				Try
+					Dim v As VoceOrdine
+					Dim id As Int = r.Get("id")
+					Dim oid As Int = ordn.Id
+					Dim cod As String = r.Get("cod_art")
+					Dim desc As String = r.Get("desc_art")
+					Dim note As String = r.Get("note")
+					Dim prezzo As Float = r.Get("prez_art")
+					Dim qta As Int = r.Get("qta")
+					v.Initialize(id, cod, desc, oid, note, prezzo, qta)
+					ordn.Voci.Add(v)
+				Catch
+					Log(LastException)
+				End Try
+			Next
+			
+			m_ordini.Add(ordn)
+		Next
+	End If
+	
+	Return m_ordini
+End Sub
+
 Public Sub StoricoOrdini() As ResumableSub
 	m_successo = False
 	Dim m_ordini As List
@@ -236,6 +289,65 @@ Public Sub ScaricaPreferiti() As ResumableSub
 	Return m_preferiti
 End Sub
 
+Public Sub ScaricaPreferitiPerCliente(id_cliente As Int) As ResumableSub
+	m_successo = False
+	Dim m_preferiti As List
+	m_preferiti.Initialize
+	m_job.Download(m_url & "/preferiti/" & id_cliente)
+	Wait For (m_job) JobDone
+	
+	If m_job.Success Then
+		m_successo = True
+		Dim parser As JSONParser
+		parser.Initialize(m_job.GetString)
+		Dim root As Map = parser.NextObject
+		Dim objects As List = root.Get("data")
+		
+		For Each m As Map In objects
+			Dim cod As String = m.Get("cod_art")
+			Dim desc As String = m.Get("desc_art")
+			Dim id As Int = m.Get("id_art")
+			Dim cid As String = m.Get("id_cliente")
+			Dim occ As String = m.Get("occorrenze")
+			
+			Dim pr As Preferito
+			pr.Initialize(id, cod, desc, cid, occ)
+			m_preferiti.Add(pr)
+		Next
+	End If
+	
+	Return m_preferiti
+End Sub
+
+Public Sub Invia(ord As Ordine) As ResumableSub
+	m_successo = False
+	Dim ordn As Ordine
+	Dim form As Map
+	'ordn.CreateNew()
+	ordn.Initialize(0,0,0,"","")
+	form.Initialize
+	form.Put("id_cliente", ord.IdCliente)
+	form.Put("id_utente", Starter.User.Id)
+	form.Put("data", ord.ToJson)
+	m_job.PostMultipart(m_url & "/ordine", form, Null)
+	Wait For (m_job) JobDone
+	
+	Try
+		If m_job.Success Then
+			m_successo = True
+			ordn.FromJson(m_job.GetString)
+			Return ordn
+		Else
+			m_errore = m_job.ErrorMessage
+		End If
+	Catch
+		Log(LastException)
+		m_errore = "Errore di connessione"
+	End Try
+	
+	Return Null
+End Sub
+
 Public Sub Login(username As String, password As String) As ResumableSub
 	m_successo = False
 	Dim user As Utente
@@ -246,18 +358,27 @@ Public Sub Login(username As String, password As String) As ResumableSub
 	m_job.PostMultipart(m_url & "/login", form, Null)
 	Wait For (m_job) JobDone
 	
-	If m_job.Success Then
-		m_successo = True
-		Dim parser As JSONParser
-		parser.Initialize(m_job.GetString)
-		Dim root As Map = parser.NextObject
-		Dim objects As List = root.Get("data")
+	Try
+		If m_job.Success Then
+			m_successo = True
+			Dim parser As JSONParser
+			parser.Initialize(m_job.GetString)
+			Dim root As Map = parser.NextObject
+			Dim objects As List = root.Get("data")
 		
-		Dim m As Map = objects.Get(0)
-		user.Initialize(m.Get("id"), m.Get("username"), m.Get("ultimo_accesso"))
+			Dim m As Map = objects.Get(0)
+			user.Initialize(m.Get("id"), m.Get("username"), m.Get("ultimo_accesso"))
 		
-		Return user
-	End If
-	
+			Return user
+		Else If m_job.Response.StatusCode == 404 Then
+			m_errore = "Nome utente o password errata"
+		Else
+			m_errore = m_job.ErrorMessage
+		End If
+	Catch
+		Log(LastException)
+		m_errore = "Errore di connessione"
+	End Try
+
 	Return Null
 End Sub

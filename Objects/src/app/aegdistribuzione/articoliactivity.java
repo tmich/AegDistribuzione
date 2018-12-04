@@ -358,40 +358,56 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="articoliactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=7602176;
- //BA.debugLineNum = 7602176;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=7602178;
- //BA.debugLineNum = 7602178;BA.debugLine="Activity.LoadLayout(\"ArticoliLayout\")";
+RDebugUtils.currentLine=8126464;
+ //BA.debugLineNum = 8126464;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=8126466;
+ //BA.debugLineNum = 8126466;BA.debugLine="Activity.LoadLayout(\"ArticoliLayout\")";
 mostCurrent._activity.LoadLayout("ArticoliLayout",mostCurrent.activityBA);
-RDebugUtils.currentLine=7602179;
- //BA.debugLineNum = 7602179;BA.debugLine="forResult = False";
+RDebugUtils.currentLine=8126467;
+ //BA.debugLineNum = 8126467;BA.debugLine="forResult = False";
 _forresult = anywheresoftware.b4a.keywords.Common.False;
-RDebugUtils.currentLine=7602180;
- //BA.debugLineNum = 7602180;BA.debugLine="oIme.Initialize(\"Keyboard\")";
+RDebugUtils.currentLine=8126468;
+ //BA.debugLineNum = 8126468;BA.debugLine="oIme.Initialize(\"Keyboard\")";
 mostCurrent._oime.Initialize("Keyboard");
-RDebugUtils.currentLine=7602181;
- //BA.debugLineNum = 7602181;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8126469;
+ //BA.debugLineNum = 8126469;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="articoliactivity";
-RDebugUtils.currentLine=7733248;
- //BA.debugLineNum = 7733248;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=7733250;
- //BA.debugLineNum = 7733250;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8257536;
+ //BA.debugLineNum = 8257536;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=8257538;
+ //BA.debugLineNum = 8257538;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="articoliactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=7667712;
- //BA.debugLineNum = 7667712;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=7667713;
- //BA.debugLineNum = 7667713;BA.debugLine="AggiornaLista(Starter.db.GetArticoli())";
+RDebugUtils.currentLine=8192000;
+ //BA.debugLineNum = 8192000;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=8192001;
+ //BA.debugLineNum = 8192001;BA.debugLine="AggiornaLista(Starter.db.GetArticoli())";
 _aggiornalista(mostCurrent._starter._db._getarticoli(null));
-RDebugUtils.currentLine=7667714;
- //BA.debugLineNum = 7667714;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8192002;
+ //BA.debugLineNum = 8192002;BA.debugLine="If lvArticoli.Size == 0 Then";
+if (mostCurrent._lvarticoli.getSize()==0) { 
+RDebugUtils.currentLine=8192003;
+ //BA.debugLineNum = 8192003;BA.debugLine="lvArticoli.SingleLineLayout.ItemHeight = 90";
+mostCurrent._lvarticoli.getSingleLineLayout().setItemHeight((int) (90));
+RDebugUtils.currentLine=8192004;
+ //BA.debugLineNum = 8192004;BA.debugLine="lvArticoli.SingleLineLayout.Label.TextColor = Co";
+mostCurrent._lvarticoli.getSingleLineLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.DarkGray);
+RDebugUtils.currentLine=8192005;
+ //BA.debugLineNum = 8192005;BA.debugLine="lvArticoli.SingleLineLayout.Label.Typeface = Typ";
+mostCurrent._lvarticoli.getSingleLineLayout().Label.setTypeface(anywheresoftware.b4a.keywords.Common.Typeface.CreateNew(anywheresoftware.b4a.keywords.Common.Typeface.DEFAULT,anywheresoftware.b4a.keywords.Common.Typeface.STYLE_BOLD_ITALIC));
+RDebugUtils.currentLine=8192006;
+ //BA.debugLineNum = 8192006;BA.debugLine="lvArticoli.AddSingleLine(\"Nessun articolo in lis";
+mostCurrent._lvarticoli.AddSingleLine(BA.ObjectToCharSequence("Nessun articolo in lista. Aggiornare gli articoli."));
+ };
+RDebugUtils.currentLine=8192008;
+ //BA.debugLineNum = 8192008;BA.debugLine="End Sub";
 return "";
 }
 public static String  _aggiornalista(anywheresoftware.b4a.objects.collections.List _articoli) throws Exception{
@@ -399,25 +415,25 @@ RDebugUtils.currentModule="articoliactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "aggiornalista"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "aggiornalista", new Object[] {_articoli}));}
 app.aegdistribuzione.articolo _a = null;
-RDebugUtils.currentLine=11599872;
- //BA.debugLineNum = 11599872;BA.debugLine="Sub AggiornaLista(articoli As List)";
-RDebugUtils.currentLine=11599873;
- //BA.debugLineNum = 11599873;BA.debugLine="lvArticoli.Clear";
+RDebugUtils.currentLine=8323072;
+ //BA.debugLineNum = 8323072;BA.debugLine="Sub AggiornaLista(articoli As List)";
+RDebugUtils.currentLine=8323073;
+ //BA.debugLineNum = 8323073;BA.debugLine="lvArticoli.Clear";
 mostCurrent._lvarticoli.Clear();
-RDebugUtils.currentLine=11599874;
- //BA.debugLineNum = 11599874;BA.debugLine="lvArticoli.TwoLinesLayout.ItemHeight = 70";
-mostCurrent._lvarticoli.getTwoLinesLayout().setItemHeight((int) (70));
-RDebugUtils.currentLine=11599875;
- //BA.debugLineNum = 11599875;BA.debugLine="lvArticoli.TwoLinesLayout.Label.TextColor = Color";
-mostCurrent._lvarticoli.getTwoLinesLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
-RDebugUtils.currentLine=11599876;
- //BA.debugLineNum = 11599876;BA.debugLine="lvArticoli.TwoLinesLayout.Label.TextSize = 22";
-mostCurrent._lvarticoli.getTwoLinesLayout().Label.setTextSize((float) (22));
-RDebugUtils.currentLine=11599877;
- //BA.debugLineNum = 11599877;BA.debugLine="lvArticoli.TwoLinesLayout.SecondLabel.TextSize =";
-mostCurrent._lvarticoli.getTwoLinesLayout().SecondLabel.setTextSize((float) (16));
-RDebugUtils.currentLine=11599878;
- //BA.debugLineNum = 11599878;BA.debugLine="For Each a As Articolo In articoli";
+RDebugUtils.currentLine=8323074;
+ //BA.debugLineNum = 8323074;BA.debugLine="lvArticoli.TwoLinesAndBitmap.ItemHeight = 60dip";
+mostCurrent._lvarticoli.getTwoLinesAndBitmap().setItemHeight(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (60)));
+RDebugUtils.currentLine=8323075;
+ //BA.debugLineNum = 8323075;BA.debugLine="lvArticoli.TwoLinesAndBitmap.Label.TextColor = Co";
+mostCurrent._lvarticoli.getTwoLinesAndBitmap().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
+RDebugUtils.currentLine=8323076;
+ //BA.debugLineNum = 8323076;BA.debugLine="lvArticoli.TwoLinesAndBitmap.Label.TextSize = 22";
+mostCurrent._lvarticoli.getTwoLinesAndBitmap().Label.setTextSize((float) (22));
+RDebugUtils.currentLine=8323077;
+ //BA.debugLineNum = 8323077;BA.debugLine="lvArticoli.TwoLinesAndBitmap.SecondLabel.TextSize";
+mostCurrent._lvarticoli.getTwoLinesAndBitmap().SecondLabel.setTextSize((float) (16));
+RDebugUtils.currentLine=8323079;
+ //BA.debugLineNum = 8323079;BA.debugLine="For Each a As Articolo In articoli";
 {
 final anywheresoftware.b4a.BA.IterableList group6 = _articoli;
 final int groupLen6 = group6.getSize()
@@ -425,13 +441,13 @@ final int groupLen6 = group6.getSize()
 ;
 for (; index6 < groupLen6;index6++){
 _a = (app.aegdistribuzione.articolo)(group6.Get(index6));
-RDebugUtils.currentLine=11599879;
- //BA.debugLineNum = 11599879;BA.debugLine="lvArticoli.AddTwoLines2(a.Descrizione, NumberFor";
-mostCurrent._lvarticoli.AddTwoLines2(BA.ObjectToCharSequence(_a._descrizione),BA.ObjectToCharSequence(anywheresoftware.b4a.keywords.Common.NumberFormat2(_a._prezzo,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)+" €"),(Object)(_a));
+RDebugUtils.currentLine=8323080;
+ //BA.debugLineNum = 8323080;BA.debugLine="lvArticoli.AddTwoLinesAndBitmap2(a.Descrizione,";
+mostCurrent._lvarticoli.AddTwoLinesAndBitmap2(BA.ObjectToCharSequence(_a._descrizione),BA.ObjectToCharSequence(anywheresoftware.b4a.keywords.Common.NumberFormat2(_a._prezzo,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)+" €"),(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"articolo.png").getObject()),(Object)(_a));
  }
 };
-RDebugUtils.currentLine=11599881;
- //BA.debugLineNum = 11599881;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8323082;
+ //BA.debugLineNum = 8323082;BA.debugLine="End Sub";
 return "";
 }
 public static void  _btnaggiorna_click() throws Exception{
@@ -460,11 +476,11 @@ return;
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=10682369;
- //BA.debugLineNum = 10682369;BA.debugLine="ProgressDialogShow2(\"Aggiornamento in corso\", Fal";
+RDebugUtils.currentLine=8388609;
+ //BA.debugLineNum = 8388609;BA.debugLine="ProgressDialogShow2(\"Aggiornamento in corso\", Fal";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow2(mostCurrent.activityBA,BA.ObjectToCharSequence("Aggiornamento in corso"),anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=10682370;
- //BA.debugLineNum = 10682370;BA.debugLine="Wait For (Starter.client.ScaricaArticoli) Complet";
+RDebugUtils.currentLine=8388610;
+ //BA.debugLineNum = 8388610;BA.debugLine="Wait For (Starter.client.ScaricaArticoli) Complet";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "articoliactivity", "btnaggiorna_click"), parent.mostCurrent._starter._client._scaricaarticoli(null));
 this.state = 9;
 return;
@@ -473,8 +489,8 @@ case 9:
 this.state = 1;
 _result = (anywheresoftware.b4a.objects.collections.List) result[0];
 ;
-RDebugUtils.currentLine=10682371;
- //BA.debugLineNum = 10682371;BA.debugLine="If Starter.client.Successo Then";
+RDebugUtils.currentLine=8388611;
+ //BA.debugLineNum = 8388611;BA.debugLine="If Starter.client.Successo Then";
 if (true) break;
 
 case 1:
@@ -487,8 +503,8 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=10682372;
- //BA.debugLineNum = 10682372;BA.debugLine="If Result.Size > 0 Then";
+RDebugUtils.currentLine=8388612;
+ //BA.debugLineNum = 8388612;BA.debugLine="If Result.Size > 0 Then";
 if (true) break;
 
 case 4:
@@ -501,11 +517,11 @@ this.state = 6;
 case 6:
 //C
 this.state = 7;
-RDebugUtils.currentLine=10682373;
- //BA.debugLineNum = 10682373;BA.debugLine="Starter.db.SalvaArticoli(Result)";
+RDebugUtils.currentLine=8388613;
+ //BA.debugLineNum = 8388613;BA.debugLine="Starter.db.SalvaArticoli(Result)";
 parent.mostCurrent._starter._db._salvaarticoli(null,_result);
-RDebugUtils.currentLine=10682374;
- //BA.debugLineNum = 10682374;BA.debugLine="AggiornaLista(Starter.db.GetArticoli())";
+RDebugUtils.currentLine=8388614;
+ //BA.debugLineNum = 8388614;BA.debugLine="AggiornaLista(Starter.db.GetArticoli())";
 _aggiornalista(parent.mostCurrent._starter._db._getarticoli(null));
  if (true) break;
 
@@ -519,11 +535,11 @@ case 8:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=10682377;
- //BA.debugLineNum = 10682377;BA.debugLine="ProgressDialogHide()";
+RDebugUtils.currentLine=8388617;
+ //BA.debugLineNum = 8388617;BA.debugLine="ProgressDialogHide()";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
-RDebugUtils.currentLine=10682378;
- //BA.debugLineNum = 10682378;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8388618;
+ //BA.debugLineNum = 8388618;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -534,56 +550,56 @@ public static String  _btnannulla_click() throws Exception{
 RDebugUtils.currentModule="articoliactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btnannulla_click"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnannulla_click", null));}
-RDebugUtils.currentLine=14614528;
- //BA.debugLineNum = 14614528;BA.debugLine="Sub btnAnnulla_Click";
-RDebugUtils.currentLine=14614529;
- //BA.debugLineNum = 14614529;BA.debugLine="txCerca.Visible = False";
+RDebugUtils.currentLine=8585216;
+ //BA.debugLineNum = 8585216;BA.debugLine="Sub btnAnnulla_Click";
+RDebugUtils.currentLine=8585217;
+ //BA.debugLineNum = 8585217;BA.debugLine="txCerca.Visible = False";
 mostCurrent._txcerca.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=14614530;
- //BA.debugLineNum = 14614530;BA.debugLine="btnCerca.Visible = True";
+RDebugUtils.currentLine=8585218;
+ //BA.debugLineNum = 8585218;BA.debugLine="btnCerca.Visible = True";
 mostCurrent._btncerca.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=14614531;
- //BA.debugLineNum = 14614531;BA.debugLine="btnAnnulla.Visible = False";
+RDebugUtils.currentLine=8585219;
+ //BA.debugLineNum = 8585219;BA.debugLine="btnAnnulla.Visible = False";
 mostCurrent._btnannulla.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=14614532;
- //BA.debugLineNum = 14614532;BA.debugLine="txCerca.Text = \"\"";
+RDebugUtils.currentLine=8585220;
+ //BA.debugLineNum = 8585220;BA.debugLine="txCerca.Text = \"\"";
 mostCurrent._txcerca.setText(BA.ObjectToCharSequence(""));
-RDebugUtils.currentLine=14614533;
- //BA.debugLineNum = 14614533;BA.debugLine="oIme.HideKeyboard";
+RDebugUtils.currentLine=8585221;
+ //BA.debugLineNum = 8585221;BA.debugLine="oIme.HideKeyboard";
 mostCurrent._oime.HideKeyboard(mostCurrent.activityBA);
-RDebugUtils.currentLine=14614534;
- //BA.debugLineNum = 14614534;BA.debugLine="Label1.Visible = True";
+RDebugUtils.currentLine=8585222;
+ //BA.debugLineNum = 8585222;BA.debugLine="Label1.Visible = True";
 mostCurrent._label1.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=14614535;
- //BA.debugLineNum = 14614535;BA.debugLine="AggiornaLista(Starter.db.GetArticoli())";
+RDebugUtils.currentLine=8585223;
+ //BA.debugLineNum = 8585223;BA.debugLine="AggiornaLista(Starter.db.GetArticoli())";
 _aggiornalista(mostCurrent._starter._db._getarticoli(null));
-RDebugUtils.currentLine=14614536;
- //BA.debugLineNum = 14614536;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8585224;
+ //BA.debugLineNum = 8585224;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btncerca_click() throws Exception{
 RDebugUtils.currentModule="articoliactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btncerca_click"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btncerca_click", null));}
-RDebugUtils.currentLine=14483456;
- //BA.debugLineNum = 14483456;BA.debugLine="Sub btnCerca_Click";
-RDebugUtils.currentLine=14483457;
- //BA.debugLineNum = 14483457;BA.debugLine="Label1.Visible = False";
+RDebugUtils.currentLine=8519680;
+ //BA.debugLineNum = 8519680;BA.debugLine="Sub btnCerca_Click";
+RDebugUtils.currentLine=8519681;
+ //BA.debugLineNum = 8519681;BA.debugLine="Label1.Visible = False";
 mostCurrent._label1.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=14483458;
- //BA.debugLineNum = 14483458;BA.debugLine="txCerca.Visible = True";
+RDebugUtils.currentLine=8519682;
+ //BA.debugLineNum = 8519682;BA.debugLine="txCerca.Visible = True";
 mostCurrent._txcerca.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=14483459;
- //BA.debugLineNum = 14483459;BA.debugLine="oIme.ShowKeyboard(txCerca)";
+RDebugUtils.currentLine=8519683;
+ //BA.debugLineNum = 8519683;BA.debugLine="oIme.ShowKeyboard(txCerca)";
 mostCurrent._oime.ShowKeyboard((android.view.View)(mostCurrent._txcerca.getObject()));
-RDebugUtils.currentLine=14483460;
- //BA.debugLineNum = 14483460;BA.debugLine="btnCerca.Visible = False";
+RDebugUtils.currentLine=8519684;
+ //BA.debugLineNum = 8519684;BA.debugLine="btnCerca.Visible = False";
 mostCurrent._btncerca.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=14483461;
- //BA.debugLineNum = 14483461;BA.debugLine="btnAnnulla.Visible = True";
+RDebugUtils.currentLine=8519685;
+ //BA.debugLineNum = 8519685;BA.debugLine="btnAnnulla.Visible = True";
 mostCurrent._btnannulla.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=14483462;
- //BA.debugLineNum = 14483462;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8519686;
+ //BA.debugLineNum = 8519686;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lvarticoli_itemclick(int _position,Object _value) throws Exception{
@@ -591,66 +607,66 @@ RDebugUtils.currentModule="articoliactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "lvarticoli_itemclick"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lvarticoli_itemclick", new Object[] {_position,_value}));}
 app.aegdistribuzione.articolo _art = null;
-RDebugUtils.currentLine=14680064;
- //BA.debugLineNum = 14680064;BA.debugLine="Sub lvArticoli_ItemClick (Position As Int, Value A";
-RDebugUtils.currentLine=14680065;
- //BA.debugLineNum = 14680065;BA.debugLine="Dim art As Articolo = Value";
+RDebugUtils.currentLine=8650752;
+ //BA.debugLineNum = 8650752;BA.debugLine="Sub lvArticoli_ItemClick (Position As Int, Value A";
+RDebugUtils.currentLine=8650753;
+ //BA.debugLineNum = 8650753;BA.debugLine="Dim art As Articolo = Value";
 _art = (app.aegdistribuzione.articolo)(_value);
-RDebugUtils.currentLine=14680066;
- //BA.debugLineNum = 14680066;BA.debugLine="oIme.HideKeyboard";
+RDebugUtils.currentLine=8650754;
+ //BA.debugLineNum = 8650754;BA.debugLine="oIme.HideKeyboard";
 mostCurrent._oime.HideKeyboard(mostCurrent.activityBA);
-RDebugUtils.currentLine=14680067;
- //BA.debugLineNum = 14680067;BA.debugLine="If forResult Then";
+RDebugUtils.currentLine=8650755;
+ //BA.debugLineNum = 8650755;BA.debugLine="If forResult Then";
 if (_forresult) { 
-RDebugUtils.currentLine=14680068;
- //BA.debugLineNum = 14680068;BA.debugLine="forResult = False";
+RDebugUtils.currentLine=8650756;
+ //BA.debugLineNum = 8650756;BA.debugLine="forResult = False";
 _forresult = anywheresoftware.b4a.keywords.Common.False;
-RDebugUtils.currentLine=14680069;
- //BA.debugLineNum = 14680069;BA.debugLine="CallSubDelayed2(OrdineActivity, \"GetResult\", art";
+RDebugUtils.currentLine=8650757;
+ //BA.debugLineNum = 8650757;BA.debugLine="CallSubDelayed2(OrdineActivity, \"GetResult\", art";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._ordineactivity.getObject()),"GetResult",(Object)(_art));
-RDebugUtils.currentLine=14680070;
- //BA.debugLineNum = 14680070;BA.debugLine="Activity.Finish()";
+RDebugUtils.currentLine=8650758;
+ //BA.debugLineNum = 8650758;BA.debugLine="Activity.Finish()";
 mostCurrent._activity.Finish();
  }else {
-RDebugUtils.currentLine=14680072;
- //BA.debugLineNum = 14680072;BA.debugLine="Msgbox(art.Descrizione, \"Articolo\")";
+RDebugUtils.currentLine=8650760;
+ //BA.debugLineNum = 8650760;BA.debugLine="Msgbox(art.Descrizione, \"Articolo\")";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence(_art._descrizione),BA.ObjectToCharSequence("Articolo"),mostCurrent.activityBA);
  };
-RDebugUtils.currentLine=14680074;
- //BA.debugLineNum = 14680074;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8650762;
+ //BA.debugLineNum = 8650762;BA.debugLine="End Sub";
 return "";
 }
 public static String  _scegliarticoloperordine() throws Exception{
 RDebugUtils.currentModule="articoliactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "scegliarticoloperordine"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "scegliarticoloperordine", null));}
-RDebugUtils.currentLine=16121856;
- //BA.debugLineNum = 16121856;BA.debugLine="Public Sub ScegliArticoloPerOrdine()";
-RDebugUtils.currentLine=16121857;
- //BA.debugLineNum = 16121857;BA.debugLine="forResult = True";
+RDebugUtils.currentLine=8060928;
+ //BA.debugLineNum = 8060928;BA.debugLine="Public Sub ScegliArticoloPerOrdine()";
+RDebugUtils.currentLine=8060929;
+ //BA.debugLineNum = 8060929;BA.debugLine="forResult = True";
 _forresult = anywheresoftware.b4a.keywords.Common.True;
-RDebugUtils.currentLine=16121858;
- //BA.debugLineNum = 16121858;BA.debugLine="If lvArticoli.Size == 0 Then";
+RDebugUtils.currentLine=8060930;
+ //BA.debugLineNum = 8060930;BA.debugLine="If lvArticoli.Size == 0 Then";
 if (mostCurrent._lvarticoli.getSize()==0) { 
-RDebugUtils.currentLine=16121859;
- //BA.debugLineNum = 16121859;BA.debugLine="AggiornaLista(Starter.db.GetArticoli())";
+RDebugUtils.currentLine=8060931;
+ //BA.debugLineNum = 8060931;BA.debugLine="AggiornaLista(Starter.db.GetArticoli())";
 _aggiornalista(mostCurrent._starter._db._getarticoli(null));
  };
-RDebugUtils.currentLine=16121861;
- //BA.debugLineNum = 16121861;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8060933;
+ //BA.debugLineNum = 8060933;BA.debugLine="End Sub";
 return "";
 }
 public static String  _txcerca_textchanged(String _old,String _new) throws Exception{
 RDebugUtils.currentModule="articoliactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "txcerca_textchanged"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "txcerca_textchanged", new Object[] {_old,_new}));}
-RDebugUtils.currentLine=13107200;
- //BA.debugLineNum = 13107200;BA.debugLine="Sub txCerca_TextChanged (Old As String, New As Str";
-RDebugUtils.currentLine=13107201;
- //BA.debugLineNum = 13107201;BA.debugLine="AggiornaLista(Starter.db.CercaArticoliPerNome(New";
+RDebugUtils.currentLine=8454144;
+ //BA.debugLineNum = 8454144;BA.debugLine="Sub txCerca_TextChanged (Old As String, New As Str";
+RDebugUtils.currentLine=8454145;
+ //BA.debugLineNum = 8454145;BA.debugLine="AggiornaLista(Starter.db.CercaArticoliPerNome(New";
 _aggiornalista(mostCurrent._starter._db._cercaarticolipernome(null,_new));
-RDebugUtils.currentLine=13107202;
- //BA.debugLineNum = 13107202;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8454146;
+ //BA.debugLineNum = 8454146;BA.debugLine="End Sub";
 return "";
 }
 }

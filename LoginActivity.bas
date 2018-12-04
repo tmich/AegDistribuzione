@@ -42,6 +42,10 @@ Sub btLogin_Click
 	Dim username As String = txNome.Text
 	Dim password As String = txPassword.Text
 	
+	If username.Trim().Length == 0 Or password.Trim().Length == 0 Then
+		Return
+	End If
+	
 	ProgressDialogShow2("Accesso in corso", False)
 	
 	Wait For (Starter.client.Login(username, password)) Complete (Result As Utente)
@@ -53,6 +57,6 @@ Sub btLogin_Click
 		Activity.Finish()
 	Else
 		ProgressDialogHide
-		Msgbox("Nome utente o password errata", "Accesso")		
+		Msgbox(Starter.client.Errore, "Accesso")
 	End If
 End Sub

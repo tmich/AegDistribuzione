@@ -332,9 +332,38 @@ Public Sub SalvaStoricoOrdini(ordini As List)
 	Sql1.EndTransaction
 End Sub
 
+Public Sub SalvaStoricoOrdiniPerCliente(ordini As List, id_cliente As Int)
+	Sql1.BeginTransaction
+	Sql1.ExecNonQuery2("DELETE FROM voce_ordine WHERE id_ordine IN (SELECT id FROM ordine WHERE id_cliente = ?);", Array As Object(id_cliente))
+	Sql1.ExecNonQuery2("DELETE FROM ordine WHERE id_cliente = ?;", Array As Object(id_cliente))
+	
+	Dim qry1 As String = "INSERT INTO ordine (id, data_invio,id_cliente,id_utente,note) VALUES(?,?,?,?,?);"
+	Dim qry2 As String = "INSERT INTO voce_ordine (id, cod_art,desc_art,id_ordine,qta,prezzo,note) VALUES(?,?,?,?,?,?,?);"
+	For Each o As Ordine In ordini
+		Sql1.ExecNonQuery2(qry1, Array As Object(o.Id,o.DataInvio,o.IdCliente,o.IdUtente,o.Note))
+		
+		For Each v As VoceOrdine In o.Voci
+			Sql1.ExecNonQuery2(qry2, Array As Object(v.Id,v.CodArt,v.DescArt,v.IdOrdine,v.Qta,v.Prezzo,v.Note))
+		Next
+	Next
+	Sql1.TransactionSuccessful
+	Sql1.EndTransaction
+End Sub
+
 Public Sub SalvaPreferiti(preferiti As List)
 	Sql1.BeginTransaction
 	Sql1.ExecNonQuery("DELETE FROM preferiti;")
+	Dim ins As String = "INSERT INTO preferiti (id_cliente, cod_art, desc_art, id_art, occorrenze) VALUES(?,?,?,?,?);"
+	For Each p As Preferito In preferiti
+		Sql1.ExecNonQuery2(ins, Array As Object(p.IdCliente, p.Codice, p.Descrizione, p.IdArt, p.Occorrenze))
+	Next
+	Sql1.TransactionSuccessful
+	Sql1.EndTransaction
+End Sub
+
+Public Sub SalvaPreferitiPerCliente(preferiti As List, id_cliente As Int)
+	Sql1.BeginTransaction
+	Sql1.ExecNonQuery2("DELETE FROM preferiti WHERE id_cliente = ?;", Array As Object(id_cliente))
 	Dim ins As String = "INSERT INTO preferiti (id_cliente, cod_art, desc_art, id_art, occorrenze) VALUES(?,?,?,?,?);"
 	For Each p As Preferito In preferiti
 		Sql1.ExecNonQuery2(ins, Array As Object(p.IdCliente, p.Codice, p.Descrizione, p.IdArt, p.Occorrenze))
@@ -350,6 +379,14 @@ Public Sub SalvaOrdineInCorso(o As Ordine)
 		Sql1.ExecNonQuery2("INSERT INTO voce_ordine_in_corso (cod_art,desc_art,id_ordine,qta,prezzo,note) VALUES(?,?,?,?,?,?);", _
 							Array As Object(v.CodArt,v.DescArt,v.IdOrdine,v.Qta,v.Prezzo,v.Note))
 	Next
+	Sql1.TransactionSuccessful
+	Sql1.EndTransaction
+End Sub
+
+Public Sub EliminaOrdineInCorso(id As Int)
+	Sql1.BeginTransaction
+	Sql1.ExecNonQuery2("DELETE FROM voce_ordine_in_corso WHERE id_ordine = ?;", Array As Object(id))
+	Sql1.ExecNonQuery2("DELETE FROM ordine_in_corso WHERE id = ?;", Array As Object(id))
 	Sql1.TransactionSuccessful
 	Sql1.EndTransaction
 End Sub

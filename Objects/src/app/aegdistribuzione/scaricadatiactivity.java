@@ -353,31 +353,31 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="scaricadatiactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=5505024;
- //BA.debugLineNum = 5505024;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=5505025;
- //BA.debugLineNum = 5505025;BA.debugLine="Activity.LoadLayout(\"ScaricaDatiLayout\")";
+RDebugUtils.currentLine=5832704;
+ //BA.debugLineNum = 5832704;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=5832705;
+ //BA.debugLineNum = 5832705;BA.debugLine="Activity.LoadLayout(\"ScaricaDatiLayout\")";
 mostCurrent._activity.LoadLayout("ScaricaDatiLayout",mostCurrent.activityBA);
-RDebugUtils.currentLine=5505026;
- //BA.debugLineNum = 5505026;BA.debugLine="End Sub";
+RDebugUtils.currentLine=5832706;
+ //BA.debugLineNum = 5832706;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="scaricadatiactivity";
-RDebugUtils.currentLine=5636096;
- //BA.debugLineNum = 5636096;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=5636098;
- //BA.debugLineNum = 5636098;BA.debugLine="End Sub";
+RDebugUtils.currentLine=5963776;
+ //BA.debugLineNum = 5963776;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=5963778;
+ //BA.debugLineNum = 5963778;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="scaricadatiactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=5570560;
- //BA.debugLineNum = 5570560;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=5570562;
- //BA.debugLineNum = 5570562;BA.debugLine="End Sub";
+RDebugUtils.currentLine=5898240;
+ //BA.debugLineNum = 5898240;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=5898242;
+ //BA.debugLineNum = 5898242;BA.debugLine="End Sub";
 return "";
 }
 public static void  _btnaggiorna_click() throws Exception{
@@ -408,20 +408,20 @@ return;
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=5701633;
- //BA.debugLineNum = 5701633;BA.debugLine="BtnAggiorna.Enabled = False";
+RDebugUtils.currentLine=6029313;
+ //BA.debugLineNum = 6029313;BA.debugLine="BtnAggiorna.Enabled = False";
 parent.mostCurrent._btnaggiorna.setEnabled(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=5701634;
- //BA.debugLineNum = 5701634;BA.debugLine="Dim error As Boolean = False";
+RDebugUtils.currentLine=6029314;
+ //BA.debugLineNum = 6029314;BA.debugLine="Dim error As Boolean = False";
 _error = anywheresoftware.b4a.keywords.Common.False;
-RDebugUtils.currentLine=5701635;
- //BA.debugLineNum = 5701635;BA.debugLine="Dim msg As String = \"\"";
+RDebugUtils.currentLine=6029315;
+ //BA.debugLineNum = 6029315;BA.debugLine="Dim msg As String = \"\"";
 _msg = "";
-RDebugUtils.currentLine=5701637;
- //BA.debugLineNum = 5701637;BA.debugLine="ProgressDialogShow2(\"Aggiornamento in corso\", Fal";
+RDebugUtils.currentLine=6029317;
+ //BA.debugLineNum = 6029317;BA.debugLine="ProgressDialogShow2(\"Aggiornamento in corso\", Fal";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow2(mostCurrent.activityBA,BA.ObjectToCharSequence("Aggiornamento in corso"),anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=5701640;
- //BA.debugLineNum = 5701640;BA.debugLine="Wait For (Starter.client.ScaricaClienti) Complete";
+RDebugUtils.currentLine=6029320;
+ //BA.debugLineNum = 6029320;BA.debugLine="Wait For (Starter.client.ScaricaClienti) Complete";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "scaricadatiactivity", "btnaggiorna_click"), parent.mostCurrent._starter._client._scaricaclienti(null));
 this.state = 56;
 return;
@@ -430,8 +430,8 @@ case 56:
 this.state = 1;
 _result = (anywheresoftware.b4a.objects.collections.List) result[0];
 ;
-RDebugUtils.currentLine=5701641;
- //BA.debugLineNum = 5701641;BA.debugLine="If Starter.client.Successo Then";
+RDebugUtils.currentLine=6029321;
+ //BA.debugLineNum = 6029321;BA.debugLine="If Starter.client.Successo Then";
 if (true) break;
 
 case 1:
@@ -446,11 +446,11 @@ this.state = 9;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=5701642;
- //BA.debugLineNum = 5701642;BA.debugLine="ProgressBar1.Progress = 25";
+RDebugUtils.currentLine=6029322;
+ //BA.debugLineNum = 6029322;BA.debugLine="ProgressBar1.Progress = 25";
 parent.mostCurrent._progressbar1.setProgress((int) (25));
-RDebugUtils.currentLine=5701643;
- //BA.debugLineNum = 5701643;BA.debugLine="If Result.Size > 0 Then";
+RDebugUtils.currentLine=6029323;
+ //BA.debugLineNum = 6029323;BA.debugLine="If Result.Size > 0 Then";
 if (true) break;
 
 case 4:
@@ -463,8 +463,8 @@ this.state = 6;
 case 6:
 //C
 this.state = 7;
-RDebugUtils.currentLine=5701644;
- //BA.debugLineNum = 5701644;BA.debugLine="Starter.db.SalvaClienti(Result)";
+RDebugUtils.currentLine=6029324;
+ //BA.debugLineNum = 6029324;BA.debugLine="Starter.db.SalvaClienti(Result)";
 parent.mostCurrent._starter._db._salvaclienti(null,_result);
  if (true) break;
 
@@ -477,16 +477,16 @@ this.state = 10;
 case 9:
 //C
 this.state = 10;
-RDebugUtils.currentLine=5701647;
- //BA.debugLineNum = 5701647;BA.debugLine="error = True";
+RDebugUtils.currentLine=6029327;
+ //BA.debugLineNum = 6029327;BA.debugLine="error = True";
 _error = anywheresoftware.b4a.keywords.Common.True;
-RDebugUtils.currentLine=5701648;
- //BA.debugLineNum = 5701648;BA.debugLine="msg = \"Errore durante l'aggiornamento dei client";
+RDebugUtils.currentLine=6029328;
+ //BA.debugLineNum = 6029328;BA.debugLine="msg = \"Errore durante l'aggiornamento dei client";
 _msg = "Errore durante l'aggiornamento dei clienti";
  if (true) break;
 ;
-RDebugUtils.currentLine=5701652;
- //BA.debugLineNum = 5701652;BA.debugLine="If error = False Then";
+RDebugUtils.currentLine=6029332;
+ //BA.debugLineNum = 6029332;BA.debugLine="If error = False Then";
 
 case 10:
 //if
@@ -498,8 +498,8 @@ this.state = 12;
 case 12:
 //C
 this.state = 13;
-RDebugUtils.currentLine=5701653;
- //BA.debugLineNum = 5701653;BA.debugLine="Wait For (Starter.client.ScaricaArticoli) Comple";
+RDebugUtils.currentLine=6029333;
+ //BA.debugLineNum = 6029333;BA.debugLine="Wait For (Starter.client.ScaricaArticoli) Comple";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "scaricadatiactivity", "btnaggiorna_click"), parent.mostCurrent._starter._client._scaricaarticoli(null));
 this.state = 57;
 return;
@@ -508,8 +508,8 @@ case 57:
 this.state = 13;
 _result = (anywheresoftware.b4a.objects.collections.List) result[0];
 ;
-RDebugUtils.currentLine=5701654;
- //BA.debugLineNum = 5701654;BA.debugLine="If Starter.client.Successo Then";
+RDebugUtils.currentLine=6029334;
+ //BA.debugLineNum = 6029334;BA.debugLine="If Starter.client.Successo Then";
 if (true) break;
 
 case 13:
@@ -524,11 +524,11 @@ this.state = 21;
 case 15:
 //C
 this.state = 16;
-RDebugUtils.currentLine=5701655;
- //BA.debugLineNum = 5701655;BA.debugLine="ProgressBar1.Progress = 40";
+RDebugUtils.currentLine=6029335;
+ //BA.debugLineNum = 6029335;BA.debugLine="ProgressBar1.Progress = 40";
 parent.mostCurrent._progressbar1.setProgress((int) (40));
-RDebugUtils.currentLine=5701656;
- //BA.debugLineNum = 5701656;BA.debugLine="If Result.Size > 0 Then";
+RDebugUtils.currentLine=6029336;
+ //BA.debugLineNum = 6029336;BA.debugLine="If Result.Size > 0 Then";
 if (true) break;
 
 case 16:
@@ -541,8 +541,8 @@ this.state = 18;
 case 18:
 //C
 this.state = 19;
-RDebugUtils.currentLine=5701657;
- //BA.debugLineNum = 5701657;BA.debugLine="Starter.db.SalvaArticoli(Result)";
+RDebugUtils.currentLine=6029337;
+ //BA.debugLineNum = 6029337;BA.debugLine="Starter.db.SalvaArticoli(Result)";
 parent.mostCurrent._starter._db._salvaarticoli(null,_result);
  if (true) break;
 
@@ -555,11 +555,11 @@ this.state = 22;
 case 21:
 //C
 this.state = 22;
-RDebugUtils.currentLine=5701660;
- //BA.debugLineNum = 5701660;BA.debugLine="error = True";
+RDebugUtils.currentLine=6029340;
+ //BA.debugLineNum = 6029340;BA.debugLine="error = True";
 _error = anywheresoftware.b4a.keywords.Common.True;
-RDebugUtils.currentLine=5701661;
- //BA.debugLineNum = 5701661;BA.debugLine="msg = \"Errore durante l'aggiornamento degli art";
+RDebugUtils.currentLine=6029341;
+ //BA.debugLineNum = 6029341;BA.debugLine="msg = \"Errore durante l'aggiornamento degli art";
 _msg = "Errore durante l'aggiornamento degli articoli";
  if (true) break;
 
@@ -569,8 +569,8 @@ this.state = 23;
 ;
  if (true) break;
 ;
-RDebugUtils.currentLine=5701666;
- //BA.debugLineNum = 5701666;BA.debugLine="If error = False Then";
+RDebugUtils.currentLine=6029346;
+ //BA.debugLineNum = 6029346;BA.debugLine="If error = False Then";
 
 case 23:
 //if
@@ -582,8 +582,8 @@ this.state = 25;
 case 25:
 //C
 this.state = 26;
-RDebugUtils.currentLine=5701667;
- //BA.debugLineNum = 5701667;BA.debugLine="Wait For (Starter.client.StoricoOrdini) Complete";
+RDebugUtils.currentLine=6029347;
+ //BA.debugLineNum = 6029347;BA.debugLine="Wait For (Starter.client.StoricoOrdini) Complete";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "scaricadatiactivity", "btnaggiorna_click"), parent.mostCurrent._starter._client._storicoordini(null));
 this.state = 58;
 return;
@@ -592,8 +592,8 @@ case 58:
 this.state = 26;
 _result = (anywheresoftware.b4a.objects.collections.List) result[0];
 ;
-RDebugUtils.currentLine=5701668;
- //BA.debugLineNum = 5701668;BA.debugLine="If Starter.client.Successo Then";
+RDebugUtils.currentLine=6029348;
+ //BA.debugLineNum = 6029348;BA.debugLine="If Starter.client.Successo Then";
 if (true) break;
 
 case 26:
@@ -608,11 +608,11 @@ this.state = 34;
 case 28:
 //C
 this.state = 29;
-RDebugUtils.currentLine=5701669;
- //BA.debugLineNum = 5701669;BA.debugLine="ProgressBar1.Progress = 70";
+RDebugUtils.currentLine=6029349;
+ //BA.debugLineNum = 6029349;BA.debugLine="ProgressBar1.Progress = 70";
 parent.mostCurrent._progressbar1.setProgress((int) (70));
-RDebugUtils.currentLine=5701670;
- //BA.debugLineNum = 5701670;BA.debugLine="If Result.Size > 0 Then";
+RDebugUtils.currentLine=6029350;
+ //BA.debugLineNum = 6029350;BA.debugLine="If Result.Size > 0 Then";
 if (true) break;
 
 case 29:
@@ -625,8 +625,8 @@ this.state = 31;
 case 31:
 //C
 this.state = 32;
-RDebugUtils.currentLine=5701671;
- //BA.debugLineNum = 5701671;BA.debugLine="Starter.db.SalvaStoricoOrdini(Result)";
+RDebugUtils.currentLine=6029351;
+ //BA.debugLineNum = 6029351;BA.debugLine="Starter.db.SalvaStoricoOrdini(Result)";
 parent.mostCurrent._starter._db._salvastoricoordini(null,_result);
  if (true) break;
 
@@ -639,11 +639,11 @@ this.state = 35;
 case 34:
 //C
 this.state = 35;
-RDebugUtils.currentLine=5701674;
- //BA.debugLineNum = 5701674;BA.debugLine="error = True";
+RDebugUtils.currentLine=6029354;
+ //BA.debugLineNum = 6029354;BA.debugLine="error = True";
 _error = anywheresoftware.b4a.keywords.Common.True;
-RDebugUtils.currentLine=5701675;
- //BA.debugLineNum = 5701675;BA.debugLine="msg = \"Errore durante l'aggiornamento dello sto";
+RDebugUtils.currentLine=6029355;
+ //BA.debugLineNum = 6029355;BA.debugLine="msg = \"Errore durante l'aggiornamento dello sto";
 _msg = "Errore durante l'aggiornamento dello storico ordini";
  if (true) break;
 
@@ -653,8 +653,8 @@ this.state = 36;
 ;
  if (true) break;
 ;
-RDebugUtils.currentLine=5701680;
- //BA.debugLineNum = 5701680;BA.debugLine="If error = False Then";
+RDebugUtils.currentLine=6029360;
+ //BA.debugLineNum = 6029360;BA.debugLine="If error = False Then";
 
 case 36:
 //if
@@ -666,8 +666,8 @@ this.state = 38;
 case 38:
 //C
 this.state = 39;
-RDebugUtils.currentLine=5701681;
- //BA.debugLineNum = 5701681;BA.debugLine="Wait For (Starter.client.ScaricaPreferiti) Compl";
+RDebugUtils.currentLine=6029361;
+ //BA.debugLineNum = 6029361;BA.debugLine="Wait For (Starter.client.ScaricaPreferiti) Compl";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "scaricadatiactivity", "btnaggiorna_click"), parent.mostCurrent._starter._client._scaricapreferiti(null));
 this.state = 59;
 return;
@@ -676,8 +676,8 @@ case 59:
 this.state = 39;
 _result = (anywheresoftware.b4a.objects.collections.List) result[0];
 ;
-RDebugUtils.currentLine=5701682;
- //BA.debugLineNum = 5701682;BA.debugLine="If Starter.client.Successo Then";
+RDebugUtils.currentLine=6029362;
+ //BA.debugLineNum = 6029362;BA.debugLine="If Starter.client.Successo Then";
 if (true) break;
 
 case 39:
@@ -692,11 +692,11 @@ this.state = 47;
 case 41:
 //C
 this.state = 42;
-RDebugUtils.currentLine=5701683;
- //BA.debugLineNum = 5701683;BA.debugLine="ProgressBar1.Progress = 90";
+RDebugUtils.currentLine=6029363;
+ //BA.debugLineNum = 6029363;BA.debugLine="ProgressBar1.Progress = 90";
 parent.mostCurrent._progressbar1.setProgress((int) (90));
-RDebugUtils.currentLine=5701684;
- //BA.debugLineNum = 5701684;BA.debugLine="If Result.Size > 0 Then";
+RDebugUtils.currentLine=6029364;
+ //BA.debugLineNum = 6029364;BA.debugLine="If Result.Size > 0 Then";
 if (true) break;
 
 case 42:
@@ -709,8 +709,8 @@ this.state = 44;
 case 44:
 //C
 this.state = 45;
-RDebugUtils.currentLine=5701685;
- //BA.debugLineNum = 5701685;BA.debugLine="Starter.db.SalvaPreferiti(Result)";
+RDebugUtils.currentLine=6029365;
+ //BA.debugLineNum = 6029365;BA.debugLine="Starter.db.SalvaPreferiti(Result)";
 parent.mostCurrent._starter._db._salvapreferiti(null,_result);
  if (true) break;
 
@@ -723,11 +723,11 @@ this.state = 48;
 case 47:
 //C
 this.state = 48;
-RDebugUtils.currentLine=5701688;
- //BA.debugLineNum = 5701688;BA.debugLine="error = True";
+RDebugUtils.currentLine=6029368;
+ //BA.debugLineNum = 6029368;BA.debugLine="error = True";
 _error = anywheresoftware.b4a.keywords.Common.True;
-RDebugUtils.currentLine=5701689;
- //BA.debugLineNum = 5701689;BA.debugLine="msg = \"Errore durante l'aggiornamento degli art";
+RDebugUtils.currentLine=6029369;
+ //BA.debugLineNum = 6029369;BA.debugLine="msg = \"Errore durante l'aggiornamento degli art";
 _msg = "Errore durante l'aggiornamento degli articoli preferiti";
  if (true) break;
 
@@ -741,14 +741,14 @@ case 49:
 //C
 this.state = 50;
 ;
-RDebugUtils.currentLine=5701711;
- //BA.debugLineNum = 5701711;BA.debugLine="BtnAggiorna.Enabled = True";
+RDebugUtils.currentLine=6029391;
+ //BA.debugLineNum = 6029391;BA.debugLine="BtnAggiorna.Enabled = True";
 parent.mostCurrent._btnaggiorna.setEnabled(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=5701712;
- //BA.debugLineNum = 5701712;BA.debugLine="ProgressDialogHide()";
+RDebugUtils.currentLine=6029392;
+ //BA.debugLineNum = 6029392;BA.debugLine="ProgressDialogHide()";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
-RDebugUtils.currentLine=5701714;
- //BA.debugLineNum = 5701714;BA.debugLine="If error Then";
+RDebugUtils.currentLine=6029394;
+ //BA.debugLineNum = 6029394;BA.debugLine="If error Then";
 if (true) break;
 
 case 50:
@@ -763,22 +763,22 @@ this.state = 54;
 case 52:
 //C
 this.state = 55;
-RDebugUtils.currentLine=5701715;
- //BA.debugLineNum = 5701715;BA.debugLine="Msgbox(msg, \"Errore\")";
+RDebugUtils.currentLine=6029395;
+ //BA.debugLineNum = 6029395;BA.debugLine="Msgbox(msg, \"Errore\")";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence(_msg),BA.ObjectToCharSequence("Errore"),mostCurrent.activityBA);
-RDebugUtils.currentLine=5701716;
- //BA.debugLineNum = 5701716;BA.debugLine="ProgressBar1.Progress = 0";
+RDebugUtils.currentLine=6029396;
+ //BA.debugLineNum = 6029396;BA.debugLine="ProgressBar1.Progress = 0";
 parent.mostCurrent._progressbar1.setProgress((int) (0));
  if (true) break;
 
 case 54:
 //C
 this.state = 55;
-RDebugUtils.currentLine=5701718;
- //BA.debugLineNum = 5701718;BA.debugLine="ToastMessageShow(\"Aggiornamento completato\", Fal";
+RDebugUtils.currentLine=6029398;
+ //BA.debugLineNum = 6029398;BA.debugLine="ToastMessageShow(\"Aggiornamento completato\", Fal";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Aggiornamento completato"),anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=5701719;
- //BA.debugLineNum = 5701719;BA.debugLine="Activity.Finish()";
+RDebugUtils.currentLine=6029399;
+ //BA.debugLineNum = 6029399;BA.debugLine="Activity.Finish()";
 parent.mostCurrent._activity.Finish();
  if (true) break;
 
@@ -786,8 +786,8 @@ case 55:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=5701721;
- //BA.debugLineNum = 5701721;BA.debugLine="End Sub";
+RDebugUtils.currentLine=6029401;
+ //BA.debugLineNum = 6029401;BA.debugLine="End Sub";
 if (true) break;
 
             }

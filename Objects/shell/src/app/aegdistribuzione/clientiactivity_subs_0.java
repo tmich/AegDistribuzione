@@ -31,13 +31,13 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,49);
+		Debug.PushSubsStack("Activity_Pause (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,56);
 if (RapidSub.canDelegate("activity_pause")) { return app.aegdistribuzione.clientiactivity.remoteMe.runUserSub(false, "clientiactivity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 49;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(65536);
- BA.debugLineNum = 51;BA.debugLine="End Sub";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 56;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(8388608);
+ BA.debugLineNum = 58;BA.debugLine="End Sub";
+Debug.ShouldStop(33554432);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -63,8 +63,24 @@ _aggiornalista(clientiactivity.mostCurrent._starter._db.runClassMethod (app.aegd
 Debug.ShouldStop(4096);
 _aggiornalista(clientiactivity.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_getclienti"));
  };
- BA.debugLineNum = 47;BA.debugLine="End Sub";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 48;BA.debugLine="If lvClienti.Size == 0 Then";
+Debug.ShouldStop(32768);
+if (RemoteObject.solveBoolean("=",clientiactivity.mostCurrent._lvclienti.runMethod(true,"getSize"),BA.numberCast(double.class, 0))) { 
+ BA.debugLineNum = 49;BA.debugLine="lvClienti.SingleLineLayout.ItemHeight = 90";
+Debug.ShouldStop(65536);
+clientiactivity.mostCurrent._lvclienti.runMethod(false,"getSingleLineLayout").runMethod(true,"setItemHeight",BA.numberCast(int.class, 90));
+ BA.debugLineNum = 50;BA.debugLine="lvClienti.SingleLineLayout.Label.TextColor = Col";
+Debug.ShouldStop(131072);
+clientiactivity.mostCurrent._lvclienti.runMethod(false,"getSingleLineLayout").getField(false,"Label").runMethod(true,"setTextColor",clientiactivity.mostCurrent.__c.getField(false,"Colors").getField(true,"DarkGray"));
+ BA.debugLineNum = 51;BA.debugLine="lvClienti.SingleLineLayout.Label.Typeface = Type";
+Debug.ShouldStop(262144);
+clientiactivity.mostCurrent._lvclienti.runMethod(false,"getSingleLineLayout").getField(false,"Label").runMethod(false,"setTypeface",clientiactivity.mostCurrent.__c.getField(false,"Typeface").runMethod(false,"CreateNew",(Object)(clientiactivity.mostCurrent.__c.getField(false,"Typeface").getField(false,"DEFAULT")),(Object)(clientiactivity.mostCurrent.__c.getField(false,"Typeface").getField(true,"STYLE_BOLD_ITALIC"))));
+ BA.debugLineNum = 52;BA.debugLine="lvClienti.AddSingleLine(\"Nessun cliente in lista";
+Debug.ShouldStop(524288);
+clientiactivity.mostCurrent._lvclienti.runVoidMethod ("AddSingleLine",(Object)(BA.ObjectToCharSequence(RemoteObject.createImmutable("Nessun cliente in lista. Aggiornare i clienti."))));
+ };
+ BA.debugLineNum = 54;BA.debugLine="End Sub";
+Debug.ShouldStop(2097152);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -84,18 +100,18 @@ Debug.ShouldStop(268435456);
  BA.debugLineNum = 30;BA.debugLine="lvClienti.Clear";
 Debug.ShouldStop(536870912);
 clientiactivity.mostCurrent._lvclienti.runVoidMethod ("Clear");
- BA.debugLineNum = 31;BA.debugLine="lvClienti.TwoLinesLayout.ItemHeight = 70";
+ BA.debugLineNum = 31;BA.debugLine="lvClienti.TwoLinesAndBitmap.ItemHeight = 60dip";
 Debug.ShouldStop(1073741824);
-clientiactivity.mostCurrent._lvclienti.runMethod(false,"getTwoLinesLayout").runMethod(true,"setItemHeight",BA.numberCast(int.class, 70));
- BA.debugLineNum = 32;BA.debugLine="lvClienti.TwoLinesLayout.Label.TextColor = Colors";
+clientiactivity.mostCurrent._lvclienti.runMethod(false,"getTwoLinesAndBitmap").runMethod(true,"setItemHeight",clientiactivity.mostCurrent.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 60))));
+ BA.debugLineNum = 32;BA.debugLine="lvClienti.TwoLinesAndBitmap.Label.TextColor = Col";
 Debug.ShouldStop(-2147483648);
-clientiactivity.mostCurrent._lvclienti.runMethod(false,"getTwoLinesLayout").getField(false,"Label").runMethod(true,"setTextColor",clientiactivity.mostCurrent.__c.getField(false,"Colors").getField(true,"Black"));
- BA.debugLineNum = 33;BA.debugLine="lvClienti.TwoLinesLayout.Label.TextSize = 22";
+clientiactivity.mostCurrent._lvclienti.runMethod(false,"getTwoLinesAndBitmap").getField(false,"Label").runMethod(true,"setTextColor",clientiactivity.mostCurrent.__c.getField(false,"Colors").getField(true,"Black"));
+ BA.debugLineNum = 33;BA.debugLine="lvClienti.TwoLinesAndBitmap.Label.TextSize = 22";
 Debug.ShouldStop(1);
-clientiactivity.mostCurrent._lvclienti.runMethod(false,"getTwoLinesLayout").getField(false,"Label").runMethod(true,"setTextSize",BA.numberCast(float.class, 22));
- BA.debugLineNum = 34;BA.debugLine="lvClienti.TwoLinesLayout.SecondLabel.TextSize = 1";
+clientiactivity.mostCurrent._lvclienti.runMethod(false,"getTwoLinesAndBitmap").getField(false,"Label").runMethod(true,"setTextSize",BA.numberCast(float.class, 22));
+ BA.debugLineNum = 34;BA.debugLine="lvClienti.TwoLinesAndBitmap.SecondLabel.TextSize";
 Debug.ShouldStop(2);
-clientiactivity.mostCurrent._lvclienti.runMethod(false,"getTwoLinesLayout").getField(false,"SecondLabel").runMethod(true,"setTextSize",BA.numberCast(float.class, 16));
+clientiactivity.mostCurrent._lvclienti.runMethod(false,"getTwoLinesAndBitmap").getField(false,"SecondLabel").runMethod(true,"setTextSize",BA.numberCast(float.class, 16));
  BA.debugLineNum = 36;BA.debugLine="For Each c As Cliente In clienti";
 Debug.ShouldStop(8);
 {
@@ -106,9 +122,9 @@ final int groupLen6 = group6.runMethod(true,"getSize").<Integer>get()
 for (; index6 < groupLen6;index6++){
 _c = (group6.runMethod(false,"Get",index6));Debug.locals.put("c", _c);
 Debug.locals.put("c", _c);
- BA.debugLineNum = 37;BA.debugLine="lvClienti.AddTwoLines2(c.Denominazione, c.Indiri";
+ BA.debugLineNum = 37;BA.debugLine="lvClienti.AddTwoLinesAndBitmap2(c.Denominazione,";
 Debug.ShouldStop(16);
-clientiactivity.mostCurrent._lvclienti.runVoidMethod ("AddTwoLines2",(Object)(BA.ObjectToCharSequence(_c.getField(true,"_denominazione"))),(Object)(BA.ObjectToCharSequence(_c.getField(true,"_indirizzo"))),(Object)((_c)));
+clientiactivity.mostCurrent._lvclienti.runVoidMethod ("AddTwoLinesAndBitmap2",(Object)(BA.ObjectToCharSequence(_c.getField(true,"_denominazione"))),(Object)(BA.ObjectToCharSequence(_c.getField(true,"_indirizzo"))),(Object)((clientiactivity.mostCurrent.__c.runMethod(false,"LoadBitmap",(Object)(clientiactivity.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("persona.png"))).getObject())),(Object)((_c)));
  }
 }Debug.locals.put("c", _c);
 ;
@@ -124,7 +140,7 @@ finally {
 		}}
 public static void  _btnaggiorna_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnAggiorna_Click (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,81);
+		Debug.PushSubsStack("btnAggiorna_Click (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,88);
 if (RapidSub.canDelegate("btnaggiorna_click")) { app.aegdistribuzione.clientiactivity.remoteMe.runUserSub(false, "clientiactivity","btnaggiorna_click"); return;}
 ResumableSub_btnAggiorna_Click rsub = new ResumableSub_btnAggiorna_Click(null);
 rsub.resume(null, null);
@@ -146,7 +162,7 @@ RemoteObject _result = RemoteObject.declareNull("anywheresoftware.b4a.objects.co
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("btnAggiorna_Click (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,81);
+		Debug.PushSubsStack("btnAggiorna_Click (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,88);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -157,11 +173,11 @@ return;
 case 0:
 //C
 this.state = 1;
- BA.debugLineNum = 82;BA.debugLine="ProgressDialogShow2(\"Aggiornamento in corso\", Fal";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 89;BA.debugLine="ProgressDialogShow2(\"Aggiornamento in corso\", Fal";
+Debug.ShouldStop(16777216);
 parent.mostCurrent.__c.runVoidMethod ("ProgressDialogShow2",clientiactivity.mostCurrent.activityBA,(Object)(BA.ObjectToCharSequence("Aggiornamento in corso")),(Object)(parent.mostCurrent.__c.getField(true,"False")));
- BA.debugLineNum = 83;BA.debugLine="Wait For (Starter.client.ScaricaClienti) Complete";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 90;BA.debugLine="Wait For (Starter.client.ScaricaClienti) Complete";
+Debug.ShouldStop(33554432);
 parent.mostCurrent.__c.runVoidMethod ("WaitFor","complete", clientiactivity.processBA, anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this), parent.mostCurrent._starter._client.runClassMethod (app.aegdistribuzione.apiclient.class, "_scaricaclienti"));
 this.state = 9;
 return;
@@ -170,8 +186,8 @@ case 9:
 this.state = 1;
 _result = (RemoteObject) result.getArrayElement(false,RemoteObject.createImmutable(0));Debug.locals.put("Result", _result);
 ;
- BA.debugLineNum = 84;BA.debugLine="If Starter.client.Successo Then";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 91;BA.debugLine="If Starter.client.Successo Then";
+Debug.ShouldStop(67108864);
 if (true) break;
 
 case 1:
@@ -184,8 +200,8 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
- BA.debugLineNum = 85;BA.debugLine="If Result.Size > 0 Then";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 92;BA.debugLine="If Result.Size > 0 Then";
+Debug.ShouldStop(134217728);
 if (true) break;
 
 case 4:
@@ -198,11 +214,11 @@ this.state = 6;
 case 6:
 //C
 this.state = 7;
- BA.debugLineNum = 86;BA.debugLine="Starter.db.SalvaClienti(Result)";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 93;BA.debugLine="Starter.db.SalvaClienti(Result)";
+Debug.ShouldStop(268435456);
 parent.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_salvaclienti",(Object)(_result));
- BA.debugLineNum = 87;BA.debugLine="AggiornaLista(Starter.db.GetClienti())";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 94;BA.debugLine="AggiornaLista(Starter.db.GetClienti())";
+Debug.ShouldStop(536870912);
 _aggiornalista(parent.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_getclienti"));
  if (true) break;
 
@@ -216,11 +232,11 @@ case 8:
 //C
 this.state = -1;
 ;
- BA.debugLineNum = 90;BA.debugLine="ProgressDialogHide()";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 97;BA.debugLine="ProgressDialogHide()";
+Debug.ShouldStop(1);
 parent.mostCurrent.__c.runVoidMethod ("ProgressDialogHide");
- BA.debugLineNum = 91;BA.debugLine="End Sub";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 98;BA.debugLine="End Sub";
+Debug.ShouldStop(2);
 if (true) break;
 
             }
@@ -237,33 +253,33 @@ public static void  _complete(RemoteObject _result) throws Exception{
 }
 public static RemoteObject  _btnannulla_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnAnnulla_Click (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,71);
+		Debug.PushSubsStack("btnAnnulla_Click (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,78);
 if (RapidSub.canDelegate("btnannulla_click")) { return app.aegdistribuzione.clientiactivity.remoteMe.runUserSub(false, "clientiactivity","btnannulla_click");}
- BA.debugLineNum = 71;BA.debugLine="Sub btnAnnulla_Click";
-Debug.ShouldStop(64);
- BA.debugLineNum = 72;BA.debugLine="txCerca.Visible = False";
-Debug.ShouldStop(128);
-clientiactivity.mostCurrent._txcerca.runMethod(true,"setVisible",clientiactivity.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 73;BA.debugLine="btnCerca.Visible = True";
-Debug.ShouldStop(256);
-clientiactivity.mostCurrent._btncerca.runMethod(true,"setVisible",clientiactivity.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 74;BA.debugLine="btnAnnulla.Visible = False";
-Debug.ShouldStop(512);
-clientiactivity.mostCurrent._btnannulla.runMethod(true,"setVisible",clientiactivity.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 75;BA.debugLine="txCerca.Text = \"\"";
-Debug.ShouldStop(1024);
-clientiactivity.mostCurrent._txcerca.runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
- BA.debugLineNum = 76;BA.debugLine="oIme.HideKeyboard";
-Debug.ShouldStop(2048);
-clientiactivity.mostCurrent._oime.runVoidMethod ("HideKeyboard",clientiactivity.mostCurrent.activityBA);
- BA.debugLineNum = 77;BA.debugLine="Label1.Visible = True";
-Debug.ShouldStop(4096);
-clientiactivity.mostCurrent._label1.runMethod(true,"setVisible",clientiactivity.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 78;BA.debugLine="AggiornaLista(Starter.db.GetClienti())";
+ BA.debugLineNum = 78;BA.debugLine="Sub btnAnnulla_Click";
 Debug.ShouldStop(8192);
-_aggiornalista(clientiactivity.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_getclienti"));
- BA.debugLineNum = 79;BA.debugLine="End Sub";
+ BA.debugLineNum = 79;BA.debugLine="txCerca.Visible = False";
 Debug.ShouldStop(16384);
+clientiactivity.mostCurrent._txcerca.runMethod(true,"setVisible",clientiactivity.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 80;BA.debugLine="btnCerca.Visible = True";
+Debug.ShouldStop(32768);
+clientiactivity.mostCurrent._btncerca.runMethod(true,"setVisible",clientiactivity.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 81;BA.debugLine="btnAnnulla.Visible = False";
+Debug.ShouldStop(65536);
+clientiactivity.mostCurrent._btnannulla.runMethod(true,"setVisible",clientiactivity.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 82;BA.debugLine="txCerca.Text = \"\"";
+Debug.ShouldStop(131072);
+clientiactivity.mostCurrent._txcerca.runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
+ BA.debugLineNum = 83;BA.debugLine="oIme.HideKeyboard";
+Debug.ShouldStop(262144);
+clientiactivity.mostCurrent._oime.runVoidMethod ("HideKeyboard",clientiactivity.mostCurrent.activityBA);
+ BA.debugLineNum = 84;BA.debugLine="Label1.Visible = True";
+Debug.ShouldStop(524288);
+clientiactivity.mostCurrent._label1.runMethod(true,"setVisible",clientiactivity.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 85;BA.debugLine="AggiornaLista(Starter.db.GetClienti())";
+Debug.ShouldStop(1048576);
+_aggiornalista(clientiactivity.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_getclienti"));
+ BA.debugLineNum = 86;BA.debugLine="End Sub";
+Debug.ShouldStop(2097152);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -274,27 +290,27 @@ finally {
 		}}
 public static RemoteObject  _btncerca_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnCerca_Click (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,63);
+		Debug.PushSubsStack("btnCerca_Click (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,70);
 if (RapidSub.canDelegate("btncerca_click")) { return app.aegdistribuzione.clientiactivity.remoteMe.runUserSub(false, "clientiactivity","btncerca_click");}
- BA.debugLineNum = 63;BA.debugLine="Sub btnCerca_Click";
-Debug.ShouldStop(1073741824);
- BA.debugLineNum = 64;BA.debugLine="Label1.Visible = False";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 70;BA.debugLine="Sub btnCerca_Click";
+Debug.ShouldStop(32);
+ BA.debugLineNum = 71;BA.debugLine="Label1.Visible = False";
+Debug.ShouldStop(64);
 clientiactivity.mostCurrent._label1.runMethod(true,"setVisible",clientiactivity.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 65;BA.debugLine="txCerca.Visible = True";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 72;BA.debugLine="txCerca.Visible = True";
+Debug.ShouldStop(128);
 clientiactivity.mostCurrent._txcerca.runMethod(true,"setVisible",clientiactivity.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 66;BA.debugLine="oIme.ShowKeyboard(txCerca)";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 73;BA.debugLine="oIme.ShowKeyboard(txCerca)";
+Debug.ShouldStop(256);
 clientiactivity.mostCurrent._oime.runVoidMethod ("ShowKeyboard",(Object)((clientiactivity.mostCurrent._txcerca.getObject())));
- BA.debugLineNum = 67;BA.debugLine="btnCerca.Visible = False";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 74;BA.debugLine="btnCerca.Visible = False";
+Debug.ShouldStop(512);
 clientiactivity.mostCurrent._btncerca.runMethod(true,"setVisible",clientiactivity.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 68;BA.debugLine="btnAnnulla.Visible = True";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 75;BA.debugLine="btnAnnulla.Visible = True";
+Debug.ShouldStop(1024);
 clientiactivity.mostCurrent._btnannulla.runMethod(true,"setVisible",clientiactivity.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 69;BA.debugLine="End Sub";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 76;BA.debugLine="End Sub";
+Debug.ShouldStop(2048);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -322,21 +338,21 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _lvclienti_itemclick(RemoteObject _position,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("lvClienti_ItemClick (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,54);
+		Debug.PushSubsStack("lvClienti_ItemClick (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,61);
 if (RapidSub.canDelegate("lvclienti_itemclick")) { return app.aegdistribuzione.clientiactivity.remoteMe.runUserSub(false, "clientiactivity","lvclienti_itemclick", _position, _value);}
 RemoteObject _cli = RemoteObject.declareNull("app.aegdistribuzione.cliente");
 Debug.locals.put("Position", _position);
 Debug.locals.put("Value", _value);
- BA.debugLineNum = 54;BA.debugLine="Sub lvClienti_ItemClick (Position As Int, Value As";
-Debug.ShouldStop(2097152);
- BA.debugLineNum = 55;BA.debugLine="Dim cli As Cliente = Value";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 61;BA.debugLine="Sub lvClienti_ItemClick (Position As Int, Value As";
+Debug.ShouldStop(268435456);
+ BA.debugLineNum = 62;BA.debugLine="Dim cli As Cliente = Value";
+Debug.ShouldStop(536870912);
 _cli = (_value);Debug.locals.put("cli", _cli);Debug.locals.put("cli", _cli);
- BA.debugLineNum = 56;BA.debugLine="CallSubDelayed2(SchedaClienteActivity, \"Visualizz";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 63;BA.debugLine="CallSubDelayed2(SchedaClienteActivity, \"Visualizz";
+Debug.ShouldStop(1073741824);
 clientiactivity.mostCurrent.__c.runVoidMethod ("CallSubDelayed2",clientiactivity.processBA,(Object)((clientiactivity.mostCurrent._schedaclienteactivity.getObject())),(Object)(BA.ObjectToString("VisualizzaScheda")),(Object)((_cli)));
- BA.debugLineNum = 57;BA.debugLine="End Sub";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 64;BA.debugLine="End Sub";
+Debug.ShouldStop(-2147483648);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -352,17 +368,17 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _txcerca_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("txCerca_TextChanged (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,59);
+		Debug.PushSubsStack("txCerca_TextChanged (clientiactivity) ","clientiactivity",13,clientiactivity.mostCurrent.activityBA,clientiactivity.mostCurrent,66);
 if (RapidSub.canDelegate("txcerca_textchanged")) { return app.aegdistribuzione.clientiactivity.remoteMe.runUserSub(false, "clientiactivity","txcerca_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
- BA.debugLineNum = 59;BA.debugLine="Sub txCerca_TextChanged (Old As String, New As Str";
-Debug.ShouldStop(67108864);
- BA.debugLineNum = 60;BA.debugLine="AggiornaLista(Starter.db.CercaClientiPerNome(New)";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 66;BA.debugLine="Sub txCerca_TextChanged (Old As String, New As Str";
+Debug.ShouldStop(2);
+ BA.debugLineNum = 67;BA.debugLine="AggiornaLista(Starter.db.CercaClientiPerNome(New)";
+Debug.ShouldStop(4);
 _aggiornalista(clientiactivity.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_cercaclientipernome",(Object)(_new)));
- BA.debugLineNum = 61;BA.debugLine="End Sub";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 68;BA.debugLine="End Sub";
+Debug.ShouldStop(8);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {

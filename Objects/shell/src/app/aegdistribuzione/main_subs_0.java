@@ -16,8 +16,15 @@ Debug.ShouldStop(134217728);
  BA.debugLineNum = 29;BA.debugLine="Activity.LoadLayout(\"MainLayout\")";
 Debug.ShouldStop(268435456);
 main.mostCurrent._activity.runMethodAndSync(false,"LoadLayout",(Object)(RemoteObject.createImmutable("MainLayout")),main.mostCurrent.activityBA);
- BA.debugLineNum = 30;BA.debugLine="End Sub";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 31;BA.debugLine="If Starter.User == Null Then";
+Debug.ShouldStop(1073741824);
+if (RemoteObject.solveBoolean("n",main.mostCurrent._starter._user)) { 
+ BA.debugLineNum = 32;BA.debugLine="StartActivity(LoginActivity)";
+Debug.ShouldStop(-2147483648);
+main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._loginactivity.getObject())));
+ };
+ BA.debugLineNum = 34;BA.debugLine="End Sub";
+Debug.ShouldStop(2);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -28,13 +35,13 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,38);
+		Debug.PushSubsStack("Activity_Pause (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,42);
 if (RapidSub.canDelegate("activity_pause")) { return app.aegdistribuzione.main.remoteMe.runUserSub(false, "main","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 38;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(32);
- BA.debugLineNum = 40;BA.debugLine="End Sub";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 42;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(512);
+ BA.debugLineNum = 44;BA.debugLine="End Sub";
+Debug.ShouldStop(2048);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -45,19 +52,19 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,32);
+		Debug.PushSubsStack("Activity_Resume (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,36);
 if (RapidSub.canDelegate("activity_resume")) { return app.aegdistribuzione.main.remoteMe.runUserSub(false, "main","activity_resume");}
- BA.debugLineNum = 32;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(-2147483648);
- BA.debugLineNum = 33;BA.debugLine="If Starter.User == Null Then";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 36;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(8);
+ BA.debugLineNum = 37;BA.debugLine="If Starter.User == Null Then";
+Debug.ShouldStop(16);
 if (RemoteObject.solveBoolean("n",main.mostCurrent._starter._user)) { 
- BA.debugLineNum = 34;BA.debugLine="StartActivity(LoginActivity)";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 38;BA.debugLine="StartActivity(LoginActivity)";
+Debug.ShouldStop(32);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._loginactivity.getObject())));
  };
- BA.debugLineNum = 36;BA.debugLine="End Sub";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 40;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -68,15 +75,15 @@ finally {
 		}}
 public static RemoteObject  _btnarticoli_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnArticoli_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,51);
+		Debug.PushSubsStack("btnArticoli_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,55);
 if (RapidSub.canDelegate("btnarticoli_click")) { return app.aegdistribuzione.main.remoteMe.runUserSub(false, "main","btnarticoli_click");}
- BA.debugLineNum = 51;BA.debugLine="Sub btnArticoli_Click";
-Debug.ShouldStop(262144);
- BA.debugLineNum = 52;BA.debugLine="StartActivity(ArticoliActivity)";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 55;BA.debugLine="Sub btnArticoli_Click";
+Debug.ShouldStop(4194304);
+ BA.debugLineNum = 56;BA.debugLine="StartActivity(ArticoliActivity)";
+Debug.ShouldStop(8388608);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._articoliactivity.getObject())));
- BA.debugLineNum = 53;BA.debugLine="End Sub";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 57;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -87,15 +94,15 @@ finally {
 		}}
 public static RemoteObject  _btnclienti_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnClienti_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,47);
+		Debug.PushSubsStack("btnClienti_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,51);
 if (RapidSub.canDelegate("btnclienti_click")) { return app.aegdistribuzione.main.remoteMe.runUserSub(false, "main","btnclienti_click");}
- BA.debugLineNum = 47;BA.debugLine="Sub btnClienti_Click";
-Debug.ShouldStop(16384);
- BA.debugLineNum = 48;BA.debugLine="StartActivity(ClientiActivity)";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 51;BA.debugLine="Sub btnClienti_Click";
+Debug.ShouldStop(262144);
+ BA.debugLineNum = 52;BA.debugLine="StartActivity(ClientiActivity)";
+Debug.ShouldStop(524288);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._clientiactivity.getObject())));
- BA.debugLineNum = 49;BA.debugLine="End Sub";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 53;BA.debugLine="End Sub";
+Debug.ShouldStop(1048576);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -111,15 +118,15 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _imageview3_click() throws Exception{
 try {
-		Debug.PushSubsStack("ImageView3_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,43);
+		Debug.PushSubsStack("ImageView3_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,47);
 if (RapidSub.canDelegate("imageview3_click")) { return app.aegdistribuzione.main.remoteMe.runUserSub(false, "main","imageview3_click");}
- BA.debugLineNum = 43;BA.debugLine="Sub ImageView3_Click";
-Debug.ShouldStop(1024);
- BA.debugLineNum = 44;BA.debugLine="StartActivity(ScaricaDatiActivity)";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 47;BA.debugLine="Sub ImageView3_Click";
+Debug.ShouldStop(16384);
+ BA.debugLineNum = 48;BA.debugLine="StartActivity(ScaricaDatiActivity)";
+Debug.ShouldStop(32768);
 main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._scaricadatiactivity.getObject())));
- BA.debugLineNum = 45;BA.debugLine="End Sub";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 49;BA.debugLine="End Sub";
+Debug.ShouldStop(65536);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {

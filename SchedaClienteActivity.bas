@@ -55,16 +55,29 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
+Sub SingPlur(v As Int) As String
+	If v == 1 Then
+		Return "a"
+	Else
+		Return "e"
+	End If
+End Sub
+
 Private Sub CaricaPreferiti
 	Dim preferiti As List = Starter.db.GetPreferitiCliente(cli.Id)
 	ListView1.Clear
 	
-	ListView1.SingleLineLayout.Label.Gravity = Gravity.TOP
-	ListView1.SingleLineLayout.ItemHeight = 60
-	ListView1.SingleLineLayout.Label.TextColor = Colors.Black
-	ListView1.SingleLineLayout.Label.TextSize = 22
+'	ListView1.SingleLineLayout.Label.Gravity = Gravity.TOP
+'	ListView1.SingleLineLayout.ItemHeight = 60
+'	ListView1.SingleLineLayout.Label.TextColor = Colors.Black
+'	ListView1.SingleLineLayout.Label.TextSize = 22
+	ListView1.TwoLinesAndBitmap.ItemHeight = 60dip
+	ListView1.TwoLinesAndBitmap.Label.TextColor = Colors.Black
+	ListView1.TwoLinesAndBitmap.Label.TextSize = 22
+	ListView1.TwoLinesAndBitmap.SecondLabel.TextSize = 16
 	For Each p As Preferito In preferiti
-		ListView1.AddSingleLine2(p.Descrizione, p)
+'		ListView1.AddSingleLine2(p.Descrizione, p)
+		ListView1.AddTwoLinesAndBitmap2(p.Descrizione, p.Occorrenze & " volt" & SingPlur(p.Occorrenze), LoadBitmap(File.DirAssets, "stella.png"), p)
 	Next
 End Sub
 
