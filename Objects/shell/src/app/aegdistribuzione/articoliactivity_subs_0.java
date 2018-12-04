@@ -8,7 +8,7 @@ public class articoliactivity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (articoliactivity) ","articoliactivity",14,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,31);
+		Debug.PushSubsStack("Activity_Create (articoliactivity) ","articoliactivity",5,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,31);
 if (RapidSub.canDelegate("activity_create")) { return app.aegdistribuzione.articoliactivity.remoteMe.runUserSub(false, "articoliactivity","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 31;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -34,7 +34,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (articoliactivity) ","articoliactivity",14,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,48);
+		Debug.PushSubsStack("Activity_Pause (articoliactivity) ","articoliactivity",5,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,48);
 if (RapidSub.canDelegate("activity_pause")) { return app.aegdistribuzione.articoliactivity.remoteMe.runUserSub(false, "articoliactivity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 48;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -51,7 +51,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (articoliactivity) ","articoliactivity",14,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,38);
+		Debug.PushSubsStack("Activity_Resume (articoliactivity) ","articoliactivity",5,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,38);
 if (RapidSub.canDelegate("activity_resume")) { return app.aegdistribuzione.articoliactivity.remoteMe.runUserSub(false, "articoliactivity","activity_resume");}
  BA.debugLineNum = 38;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(32);
@@ -86,7 +86,7 @@ finally {
 		}}
 public static RemoteObject  _aggiornalista(RemoteObject _articoli) throws Exception{
 try {
-		Debug.PushSubsStack("AggiornaLista (articoliactivity) ","articoliactivity",14,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,52);
+		Debug.PushSubsStack("AggiornaLista (articoliactivity) ","articoliactivity",5,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,52);
 if (RapidSub.canDelegate("aggiornalista")) { return app.aegdistribuzione.articoliactivity.remoteMe.runUserSub(false, "articoliactivity","aggiornalista", _articoli);}
 RemoteObject _a = RemoteObject.declareNull("app.aegdistribuzione.articolo");
 Debug.locals.put("articoli", _articoli);
@@ -135,7 +135,7 @@ finally {
 		}}
 public static void  _btnaggiorna_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnAggiorna_Click (articoliactivity) ","articoliactivity",14,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,64);
+		Debug.PushSubsStack("btnAggiorna_Click (articoliactivity) ","articoliactivity",5,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,64);
 if (RapidSub.canDelegate("btnaggiorna_click")) { app.aegdistribuzione.articoliactivity.remoteMe.runUserSub(false, "articoliactivity","btnaggiorna_click"); return;}
 ResumableSub_btnAggiorna_Click rsub = new ResumableSub_btnAggiorna_Click(null);
 rsub.resume(null, null);
@@ -157,7 +157,7 @@ RemoteObject _result = RemoteObject.declareNull("anywheresoftware.b4a.objects.co
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("btnAggiorna_Click (articoliactivity) ","articoliactivity",14,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,64);
+		Debug.PushSubsStack("btnAggiorna_Click (articoliactivity) ","articoliactivity",5,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,64);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -248,7 +248,7 @@ public static void  _complete(RemoteObject _result) throws Exception{
 }
 public static RemoteObject  _btnannulla_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnAnnulla_Click (articoliactivity) ","articoliactivity",14,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,88);
+		Debug.PushSubsStack("btnAnnulla_Click (articoliactivity) ","articoliactivity",5,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,88);
 if (RapidSub.canDelegate("btnannulla_click")) { return app.aegdistribuzione.articoliactivity.remoteMe.runUserSub(false, "articoliactivity","btnannulla_click");}
  BA.debugLineNum = 88;BA.debugLine="Sub btnAnnulla_Click";
 Debug.ShouldStop(8388608);
@@ -285,7 +285,7 @@ finally {
 		}}
 public static RemoteObject  _btncerca_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnCerca_Click (articoliactivity) ","articoliactivity",14,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,80);
+		Debug.PushSubsStack("btnCerca_Click (articoliactivity) ","articoliactivity",5,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,80);
 if (RapidSub.canDelegate("btncerca_click")) { return app.aegdistribuzione.articoliactivity.remoteMe.runUserSub(false, "articoliactivity","btncerca_click");}
  BA.debugLineNum = 80;BA.debugLine="Sub btnCerca_Click";
 Debug.ShouldStop(32768);
@@ -335,7 +335,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _lvarticoli_itemclick(RemoteObject _position,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("lvArticoli_ItemClick (articoliactivity) ","articoliactivity",14,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,98);
+		Debug.PushSubsStack("lvArticoli_ItemClick (articoliactivity) ","articoliactivity",5,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,98);
 if (RapidSub.canDelegate("lvarticoli_itemclick")) { return app.aegdistribuzione.articoliactivity.remoteMe.runUserSub(false, "articoliactivity","lvarticoli_itemclick", _position, _value);}
 RemoteObject _art = RemoteObject.declareNull("app.aegdistribuzione.articolo");
 Debug.locals.put("Position", _position);
@@ -382,7 +382,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _scegliarticoloperordine() throws Exception{
 try {
-		Debug.PushSubsStack("ScegliArticoloPerOrdine (articoliactivity) ","articoliactivity",14,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,24);
+		Debug.PushSubsStack("ScegliArticoloPerOrdine (articoliactivity) ","articoliactivity",5,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,24);
 if (RapidSub.canDelegate("scegliarticoloperordine")) { return app.aegdistribuzione.articoliactivity.remoteMe.runUserSub(false, "articoliactivity","scegliarticoloperordine");}
  BA.debugLineNum = 24;BA.debugLine="Public Sub ScegliArticoloPerOrdine()";
 Debug.ShouldStop(8388608);
@@ -408,7 +408,7 @@ finally {
 		}}
 public static RemoteObject  _txcerca_textchanged(RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("txCerca_TextChanged (articoliactivity) ","articoliactivity",14,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,76);
+		Debug.PushSubsStack("txCerca_TextChanged (articoliactivity) ","articoliactivity",5,articoliactivity.mostCurrent.activityBA,articoliactivity.mostCurrent,76);
 if (RapidSub.canDelegate("txcerca_textchanged")) { return app.aegdistribuzione.articoliactivity.remoteMe.runUserSub(false, "articoliactivity","txcerca_textchanged", _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);

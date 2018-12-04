@@ -1,5 +1,5 @@
 ﻿B4A=true
-Group=Default Group
+Group=Activities
 ModulesStructureVersion=1
 Type=Activity
 Version=8.5
@@ -24,6 +24,7 @@ Sub Globals
 	Dim btnAnnulla As Button
 	Dim Label1 As Label
 	Dim oIme As IME
+	Dim BD As BetterDialogs
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -38,6 +39,9 @@ Sub AggiornaLista(clienti As List)
 	lvClienti.TwoLinesAndBitmap.Label.TextColor = Colors.Black
 	lvClienti.TwoLinesAndBitmap.Label.TextSize = 22
 	lvClienti.TwoLinesAndBitmap.SecondLabel.TextSize = 16
+	
+	' Aggiunta cliente fittizio
+	lvClienti.AddTwoLinesAndBitmap2("Crea cliente fittizio", "", LoadBitmap(File.DirAssets, "persona_piu.png"), 0)
 	
 	For Each c As Cliente In clienti
 		lvClienti.AddTwoLinesAndBitmap2(c.Denominazione, c.Indirizzo, LoadBitmap(File.DirAssets, "persona.png"), c)
@@ -65,8 +69,31 @@ End Sub
 
 
 Sub lvClienti_ItemClick (Position As Int, Value As Object)
-	Dim cli As Cliente = Value
-	CallSubDelayed2(SchedaClienteActivity, "VisualizzaScheda", cli)
+	If Value == 0 Then
+		'Input box
+		Dim IP As BD_InputBoxParams
+		IP.Initialize
+		IP.Question = "<I>Nome</I>"
+		IP.QuestionTextSize = 18
+		IP.SpaceBetween = 4dip
+		IP.InputTextSize = 24
+		IP.InputType = IP.INPUT_TYPE_TEXT_WITH_CAPS
+		IP.Gravity = Gravity.CENTER_VERTICAL + Gravity.CENTER_HORIZONTAL
+		IP.ValidationCallback = "Input_Validation"
+		IP.WithSuggestions = True
+		
+		Dim DR As Int = BD.InputBox("Cliente fittizio", IP, "Salva", "Annulla", Null, Null)
+		If DR = DialogResponse.POSITIVE Then
+			Log(IP.Answer)
+			Log(IP.CompactAnswer)
+			Dim c As Cliente
+			c.Initialize(0, "", IP.Answer, "VIA", 00000, Null)
+			Starter.client.CreaCliente(c, 1)
+		End If
+	Else
+		Dim cli As Cliente = Value
+		CallSubDelayed2(SchedaClienteActivity, "VisualizzaScheda", cli)
+	End If
 End Sub
 
 Sub txCerca_TextChanged (Old As String, New As String)

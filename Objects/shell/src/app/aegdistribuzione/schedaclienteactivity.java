@@ -63,12 +63,12 @@ public static RemoteObject _listview3 = RemoteObject.declareNull("anywheresoftwa
 public static RemoteObject _httputils2service = RemoteObject.declareNull("anywheresoftware.b4a.samples.httputils2.httputils2service");
 public static app.aegdistribuzione.main _main = null;
 public static app.aegdistribuzione.ordineactivity _ordineactivity = null;
+public static app.aegdistribuzione.articoliactivity _articoliactivity = null;
 public static app.aegdistribuzione.starter _starter = null;
 public static app.aegdistribuzione.loginactivity _loginactivity = null;
 public static app.aegdistribuzione.scaricadatiactivity _scaricadatiactivity = null;
 public static app.aegdistribuzione.dettaglioordineactivity _dettaglioordineactivity = null;
 public static app.aegdistribuzione.clientiactivity _clientiactivity = null;
-public static app.aegdistribuzione.articoliactivity _articoliactivity = null;
   public Object[] GetGlobals() {
 		return new Object[] {"Activity",schedaclienteactivity.mostCurrent._activity,"ArticoliActivity",Debug.moduleToString(app.aegdistribuzione.articoliactivity.class),"cli",schedaclienteactivity.mostCurrent._cli,"ClientiActivity",Debug.moduleToString(app.aegdistribuzione.clientiactivity.class),"DettaglioOrdineActivity",Debug.moduleToString(app.aegdistribuzione.dettaglioordineactivity.class),"HttpUtils2Service",schedaclienteactivity.mostCurrent._httputils2service,"ListView1",schedaclienteactivity.mostCurrent._listview1,"ListView2",schedaclienteactivity.mostCurrent._listview2,"ListView3",schedaclienteactivity.mostCurrent._listview3,"LoginActivity",Debug.moduleToString(app.aegdistribuzione.loginactivity.class),"Main",Debug.moduleToString(app.aegdistribuzione.main.class),"OrdineActivity",Debug.moduleToString(app.aegdistribuzione.ordineactivity.class),"ScaricaDatiActivity",Debug.moduleToString(app.aegdistribuzione.scaricadatiactivity.class),"Starter",Debug.moduleToString(app.aegdistribuzione.starter.class),"TabHost1",schedaclienteactivity.mostCurrent._tabhost1};
 }

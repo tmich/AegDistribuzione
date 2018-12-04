@@ -1,5 +1,5 @@
 ﻿B4A=true
-Group=Default Group
+Group=Activities
 ModulesStructureVersion=1
 Type=Activity
 Version=8.5

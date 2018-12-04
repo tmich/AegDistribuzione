@@ -108,7 +108,7 @@ finally {
 		}}
 public static void  _btninvia_longclick() throws Exception{
 try {
-		Debug.PushSubsStack("btnInvia_LongClick (ordineactivity) ","ordineactivity",1,ordineactivity.mostCurrent.activityBA,ordineactivity.mostCurrent,127);
+		Debug.PushSubsStack("btnInvia_LongClick (ordineactivity) ","ordineactivity",1,ordineactivity.mostCurrent.activityBA,ordineactivity.mostCurrent,128);
 if (RapidSub.canDelegate("btninvia_longclick")) { app.aegdistribuzione.ordineactivity.remoteMe.runUserSub(false, "ordineactivity","btninvia_longclick"); return;}
 ResumableSub_btnInvia_LongClick rsub = new ResumableSub_btnInvia_LongClick(null);
 rsub.resume(null, null);
@@ -133,7 +133,7 @@ RemoteObject _preferiti = RemoteObject.declareNull("anywheresoftware.b4a.objects
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("btnInvia_LongClick (ordineactivity) ","ordineactivity",1,ordineactivity.mostCurrent.activityBA,ordineactivity.mostCurrent,127);
+		Debug.PushSubsStack("btnInvia_LongClick (ordineactivity) ","ordineactivity",1,ordineactivity.mostCurrent.activityBA,ordineactivity.mostCurrent,128);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -144,11 +144,11 @@ return;
 case 0:
 //C
 this.state = 1;
- BA.debugLineNum = 128;BA.debugLine="Msgbox2Async(\"Inviare l'ordine?\", \"Invio\", \"Invia";
-Debug.ShouldStop(-2147483648);
-parent.mostCurrent.__c.runVoidMethod ("Msgbox2Async",(Object)(BA.ObjectToCharSequence("Inviare l'ordine?")),(Object)(BA.ObjectToCharSequence("Invio")),(Object)(BA.ObjectToString("Invia")),(Object)(BA.ObjectToString("Annulla")),(Object)(BA.ObjectToString("")),RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper"), parent.mostCurrent.__c.getField(false,"Null")),ordineactivity.processBA,(Object)(parent.mostCurrent.__c.getField(true,"True")));
- BA.debugLineNum = 129;BA.debugLine="Wait For MsgBox_Result (iResult As Int)";
+ BA.debugLineNum = 129;BA.debugLine="Msgbox2Async(\"Inviare l'ordine?\", \"Invio\", \"Invia";
 Debug.ShouldStop(1);
+parent.mostCurrent.__c.runVoidMethod ("Msgbox2Async",(Object)(BA.ObjectToCharSequence("Inviare l'ordine?")),(Object)(BA.ObjectToCharSequence("Invio")),(Object)(BA.ObjectToString("Invia")),(Object)(BA.ObjectToString("Annulla")),(Object)(BA.ObjectToString("")),RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper"), parent.mostCurrent.__c.getField(false,"Null")),ordineactivity.processBA,(Object)(parent.mostCurrent.__c.getField(true,"True")));
+ BA.debugLineNum = 130;BA.debugLine="Wait For MsgBox_Result (iResult As Int)";
+Debug.ShouldStop(2);
 parent.mostCurrent.__c.runVoidMethod ("WaitFor","msgbox_result", ordineactivity.processBA, anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this), null);
 this.state = 25;
 return;
@@ -157,8 +157,8 @@ case 25:
 this.state = 1;
 _iresult = (RemoteObject) result.getArrayElement(true,RemoteObject.createImmutable(0));Debug.locals.put("iResult", _iresult);
 ;
- BA.debugLineNum = 131;BA.debugLine="If iResult == DialogResponse.POSITIVE Then";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 132;BA.debugLine="If iResult == DialogResponse.POSITIVE Then";
+Debug.ShouldStop(8);
 if (true) break;
 
 case 1:
@@ -171,11 +171,11 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
- BA.debugLineNum = 132;BA.debugLine="ProgressDialogShow2(\"Invio in corso\", False)";
-Debug.ShouldStop(8);
-parent.mostCurrent.__c.runVoidMethod ("ProgressDialogShow2",ordineactivity.mostCurrent.activityBA,(Object)(BA.ObjectToCharSequence("Invio in corso")),(Object)(parent.mostCurrent.__c.getField(true,"False")));
- BA.debugLineNum = 133;BA.debugLine="Wait For (Starter.client.Invia(m_ordine)) Comple";
+ BA.debugLineNum = 133;BA.debugLine="ProgressDialogShow2(\"Invio in corso\", False)";
 Debug.ShouldStop(16);
+parent.mostCurrent.__c.runVoidMethod ("ProgressDialogShow2",ordineactivity.mostCurrent.activityBA,(Object)(BA.ObjectToCharSequence("Invio in corso")),(Object)(parent.mostCurrent.__c.getField(true,"False")));
+ BA.debugLineNum = 134;BA.debugLine="Wait For (Starter.client.Invia(m_ordine)) Comple";
+Debug.ShouldStop(32);
 parent.mostCurrent.__c.runVoidMethod ("WaitFor","complete", ordineactivity.processBA, anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this), parent.mostCurrent._starter._client.runClassMethod (app.aegdistribuzione.apiclient.class, "_invia",(Object)(parent.mostCurrent._m_ordine)));
 this.state = 26;
 return;
@@ -184,8 +184,8 @@ case 26:
 this.state = 4;
 _result = (RemoteObject) result.getArrayElement(false,RemoteObject.createImmutable(0));Debug.locals.put("Result", _result);
 ;
- BA.debugLineNum = 134;BA.debugLine="If Starter.client.Successo Then";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 135;BA.debugLine="If Starter.client.Successo Then";
+Debug.ShouldStop(64);
 if (true) break;
 
 case 4:
@@ -200,8 +200,8 @@ this.state = 22;
 case 6:
 //C
 this.state = 7;
- BA.debugLineNum = 135;BA.debugLine="If Result <> Null Then";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 136;BA.debugLine="If Result <> Null Then";
+Debug.ShouldStop(128);
 if (true) break;
 
 case 7:
@@ -216,14 +216,14 @@ this.state = 19;
 case 9:
 //C
 this.state = 10;
- BA.debugLineNum = 136;BA.debugLine="Starter.db.SalvaOrdine(Result)";
-Debug.ShouldStop(128);
-parent.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_salvaordine",(Object)(_result));
- BA.debugLineNum = 137;BA.debugLine="Starter.db.EliminaOrdineInCorso(m_ordine.Id)";
+ BA.debugLineNum = 137;BA.debugLine="Starter.db.SalvaOrdine(Result)";
 Debug.ShouldStop(256);
+parent.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_salvaordine",(Object)(_result));
+ BA.debugLineNum = 138;BA.debugLine="Starter.db.EliminaOrdineInCorso(m_ordine.Id)";
+Debug.ShouldStop(512);
 parent.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_eliminaordineincorso",(Object)(parent.mostCurrent._m_ordine.getField(true,"_id")));
- BA.debugLineNum = 139;BA.debugLine="wait for (Starter.client.StoricoOrdiniPerClien";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 140;BA.debugLine="wait for (Starter.client.StoricoOrdiniPerClien";
+Debug.ShouldStop(2048);
 parent.mostCurrent.__c.runVoidMethod ("WaitFor","complete", ordineactivity.processBA, anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this), parent.mostCurrent._starter._client.runClassMethod (app.aegdistribuzione.apiclient.class, "_storicoordinipercliente",(Object)(parent.mostCurrent._m_cliente.getField(true,"_id"))));
 this.state = 27;
 return;
@@ -232,8 +232,8 @@ case 27:
 this.state = 10;
 _storico = (RemoteObject) result.getArrayElement(false,RemoteObject.createImmutable(0));Debug.locals.put("Storico", _storico);
 ;
- BA.debugLineNum = 140;BA.debugLine="If Starter.client.Successo Then";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 141;BA.debugLine="If Starter.client.Successo Then";
+Debug.ShouldStop(4096);
 if (true) break;
 
 case 10:
@@ -246,8 +246,8 @@ this.state = 12;
 case 12:
 //C
 this.state = 13;
- BA.debugLineNum = 141;BA.debugLine="Starter.db.SalvaStoricoOrdiniPerCliente(Stori";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 142;BA.debugLine="Starter.db.SalvaStoricoOrdiniPerCliente(Stori";
+Debug.ShouldStop(8192);
 parent.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_salvastoricoordinipercliente",(Object)(_storico),(Object)(parent.mostCurrent._m_cliente.getField(true,"_id")));
  if (true) break;
 
@@ -255,8 +255,8 @@ case 13:
 //C
 this.state = 14;
 ;
- BA.debugLineNum = 144;BA.debugLine="Wait For (Starter.client.ScaricaPreferitiPerCl";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 145;BA.debugLine="Wait For (Starter.client.ScaricaPreferitiPerCl";
+Debug.ShouldStop(65536);
 parent.mostCurrent.__c.runVoidMethod ("WaitFor","complete", ordineactivity.processBA, anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this), parent.mostCurrent._starter._client.runClassMethod (app.aegdistribuzione.apiclient.class, "_scaricapreferitipercliente",(Object)(parent.mostCurrent._m_cliente.getField(true,"_id"))));
 this.state = 28;
 return;
@@ -265,8 +265,8 @@ case 28:
 this.state = 14;
 _preferiti = (RemoteObject) result.getArrayElement(false,RemoteObject.createImmutable(0));Debug.locals.put("Preferiti", _preferiti);
 ;
- BA.debugLineNum = 145;BA.debugLine="If Starter.client.Successo Then";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 146;BA.debugLine="If Starter.client.Successo Then";
+Debug.ShouldStop(131072);
 if (true) break;
 
 case 14:
@@ -279,8 +279,8 @@ this.state = 16;
 case 16:
 //C
 this.state = 17;
- BA.debugLineNum = 146;BA.debugLine="Starter.db.SalvaPreferitiPerCliente(Preferiti";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 147;BA.debugLine="Starter.db.SalvaPreferitiPerCliente(Preferiti";
+Debug.ShouldStop(262144);
 parent.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_salvapreferitipercliente",(Object)(_preferiti),(Object)(parent.mostCurrent._m_cliente.getField(true,"_id")));
  if (true) break;
 
@@ -288,22 +288,22 @@ case 17:
 //C
 this.state = 20;
 ;
- BA.debugLineNum = 149;BA.debugLine="ProgressDialogHide()";
-Debug.ShouldStop(1048576);
-parent.mostCurrent.__c.runVoidMethod ("ProgressDialogHide");
- BA.debugLineNum = 150;BA.debugLine="ToastMessageShow(\"Ordine inviato correttamente";
+ BA.debugLineNum = 150;BA.debugLine="ProgressDialogHide()";
 Debug.ShouldStop(2097152);
-parent.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Ordine inviato correttamente")),(Object)(parent.mostCurrent.__c.getField(true,"True")));
- BA.debugLineNum = 151;BA.debugLine="Activity.Finish";
+parent.mostCurrent.__c.runVoidMethod ("ProgressDialogHide");
+ BA.debugLineNum = 151;BA.debugLine="ToastMessageShow(\"Ordine inviato correttamente";
 Debug.ShouldStop(4194304);
+parent.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Ordine inviato correttamente")),(Object)(parent.mostCurrent.__c.getField(true,"True")));
+ BA.debugLineNum = 152;BA.debugLine="Activity.Finish";
+Debug.ShouldStop(8388608);
 parent.mostCurrent._activity.runVoidMethod ("Finish");
  if (true) break;
 
 case 19:
 //C
 this.state = 20;
- BA.debugLineNum = 153;BA.debugLine="Msgbox(\"C'è stato un problema con l'invio dell";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 154;BA.debugLine="Msgbox(\"C'è stato un problema con l'invio dell";
+Debug.ShouldStop(33554432);
 parent.mostCurrent.__c.runVoidMethodAndSync ("Msgbox",(Object)(BA.ObjectToCharSequence(RemoteObject.concat(RemoteObject.createImmutable("C'è stato un problema con l'invio dell'ordine: "),parent.mostCurrent._starter._client.runClassMethod (app.aegdistribuzione.apiclient.class, "_geterrore")))),(Object)(BA.ObjectToCharSequence(RemoteObject.createImmutable("Attenzione"))),ordineactivity.mostCurrent.activityBA);
  if (true) break;
 
@@ -316,8 +316,8 @@ this.state = 23;
 case 22:
 //C
 this.state = 23;
- BA.debugLineNum = 156;BA.debugLine="Msgbox(\"C'è stato un problema con l'invio dell'";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 157;BA.debugLine="Msgbox(\"C'è stato un problema con l'invio dell'";
+Debug.ShouldStop(268435456);
 parent.mostCurrent.__c.runVoidMethodAndSync ("Msgbox",(Object)(BA.ObjectToCharSequence(RemoteObject.concat(RemoteObject.createImmutable("C'è stato un problema con l'invio dell'ordine: "),parent.mostCurrent._starter._client.runClassMethod (app.aegdistribuzione.apiclient.class, "_geterrore")))),(Object)(BA.ObjectToCharSequence(RemoteObject.createImmutable("Attenzione"))),ordineactivity.mostCurrent.activityBA);
  if (true) break;
 
@@ -331,8 +331,8 @@ case 24:
 //C
 this.state = -1;
 ;
- BA.debugLineNum = 159;BA.debugLine="End Sub";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 160;BA.debugLine="End Sub";
+Debug.ShouldStop(-2147483648);
 if (true) break;
 
             }
@@ -604,7 +604,7 @@ ordineactivity.mostCurrent._spinner1.runMethod(true,"setSelectedIndex",BA.number
 ;
  BA.debugLineNum = 42;BA.debugLine="Return p";
 Debug.ShouldStop(512);
-Debug.CheckDeviceExceptions();if (true) return _p;
+if (true) return _p;
  BA.debugLineNum = 43;BA.debugLine="End Sub";
 Debug.ShouldStop(1024);
 return RemoteObject.createImmutable(null);
@@ -628,12 +628,15 @@ if (RemoteObject.solveBoolean("=",ordineactivity.mostCurrent._m_ordine.runClassM
  BA.debugLineNum = 113;BA.debugLine="ToastMessageShow(\"Articolo già presente\", False)";
 Debug.ShouldStop(65536);
 ordineactivity.mostCurrent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Articolo già presente")),(Object)(ordineactivity.mostCurrent.__c.getField(true,"False")));
+ BA.debugLineNum = 114;BA.debugLine="Return";
+Debug.ShouldStop(131072);
+if (true) return RemoteObject.createImmutable("");
  };
- BA.debugLineNum = 115;BA.debugLine="Aggiorna";
-Debug.ShouldStop(262144);
-_aggiorna();
- BA.debugLineNum = 116;BA.debugLine="End Sub";
+ BA.debugLineNum = 116;BA.debugLine="Aggiorna";
 Debug.ShouldStop(524288);
+_aggiorna();
+ BA.debugLineNum = 117;BA.debugLine="End Sub";
+Debug.ShouldStop(1048576);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -678,35 +681,35 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _spinner1_itemclick(RemoteObject _position,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("Spinner1_ItemClick (ordineactivity) ","ordineactivity",1,ordineactivity.mostCurrent.activityBA,ordineactivity.mostCurrent,118);
+		Debug.PushSubsStack("Spinner1_ItemClick (ordineactivity) ","ordineactivity",1,ordineactivity.mostCurrent.activityBA,ordineactivity.mostCurrent,119);
 if (RapidSub.canDelegate("spinner1_itemclick")) { return app.aegdistribuzione.ordineactivity.remoteMe.runUserSub(false, "ordineactivity","spinner1_itemclick", _position, _value);}
 RemoteObject _index = RemoteObject.createImmutable(0);
 RemoteObject _id_voce = RemoteObject.createImmutable(0);
 RemoteObject _v = RemoteObject.declareNull("app.aegdistribuzione.voceordine");
 Debug.locals.put("Position", _position);
 Debug.locals.put("Value", _value);
- BA.debugLineNum = 118;BA.debugLine="Sub Spinner1_ItemClick (Position As Int, Value As";
-Debug.ShouldStop(2097152);
- BA.debugLineNum = 119;BA.debugLine="Dim index As Int = clv2.GetItemFromView(Sender)";
+ BA.debugLineNum = 119;BA.debugLine="Sub Spinner1_ItemClick (Position As Int, Value As";
 Debug.ShouldStop(4194304);
-_index = ordineactivity.mostCurrent._clv2.runClassMethod (app.aegdistribuzione.customlistview.class, "_getitemfromview",RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.B4XViewWrapper"), ordineactivity.mostCurrent.__c.runMethod(false,"Sender",ordineactivity.mostCurrent.activityBA)));Debug.locals.put("index", _index);Debug.locals.put("index", _index);
- BA.debugLineNum = 120;BA.debugLine="Dim id_voce As Int = clv2.GetValue(index)";
+ BA.debugLineNum = 120;BA.debugLine="Dim index As Int = clv2.GetItemFromView(Sender)";
 Debug.ShouldStop(8388608);
-_id_voce = BA.numberCast(int.class, ordineactivity.mostCurrent._clv2.runClassMethod (app.aegdistribuzione.customlistview.class, "_getvalue",(Object)(_index)));Debug.locals.put("id_voce", _id_voce);Debug.locals.put("id_voce", _id_voce);
- BA.debugLineNum = 121;BA.debugLine="Dim v As VoceOrdine = Starter.db.GetVoce(id_voce)";
+_index = ordineactivity.mostCurrent._clv2.runClassMethod (app.aegdistribuzione.customlistview.class, "_getitemfromview",RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.B4XViewWrapper"), ordineactivity.mostCurrent.__c.runMethod(false,"Sender",ordineactivity.mostCurrent.activityBA)));Debug.locals.put("index", _index);Debug.locals.put("index", _index);
+ BA.debugLineNum = 121;BA.debugLine="Dim id_voce As Int = clv2.GetValue(index)";
 Debug.ShouldStop(16777216);
-_v = ordineactivity.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_getvoce",(Object)(_id_voce));Debug.locals.put("v", _v);Debug.locals.put("v", _v);
- BA.debugLineNum = 122;BA.debugLine="v.Qta = Value";
+_id_voce = BA.numberCast(int.class, ordineactivity.mostCurrent._clv2.runClassMethod (app.aegdistribuzione.customlistview.class, "_getvalue",(Object)(_index)));Debug.locals.put("id_voce", _id_voce);Debug.locals.put("id_voce", _id_voce);
+ BA.debugLineNum = 122;BA.debugLine="Dim v As VoceOrdine = Starter.db.GetVoce(id_voce)";
 Debug.ShouldStop(33554432);
-_v.setField ("_qta",BA.numberCast(int.class, _value));
- BA.debugLineNum = 123;BA.debugLine="Starter.db.AggiornaVoce(v)";
+_v = ordineactivity.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_getvoce",(Object)(_id_voce));Debug.locals.put("v", _v);Debug.locals.put("v", _v);
+ BA.debugLineNum = 123;BA.debugLine="v.Qta = Value";
 Debug.ShouldStop(67108864);
-ordineactivity.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_aggiornavoce",(Object)(_v));
- BA.debugLineNum = 124;BA.debugLine="Aggiorna";
+_v.setField ("_qta",BA.numberCast(int.class, _value));
+ BA.debugLineNum = 124;BA.debugLine="Starter.db.AggiornaVoce(v)";
 Debug.ShouldStop(134217728);
-_aggiorna();
- BA.debugLineNum = 125;BA.debugLine="End Sub";
+ordineactivity.mostCurrent._starter._db.runClassMethod (app.aegdistribuzione.database.class, "_aggiornavoce",(Object)(_v));
+ BA.debugLineNum = 125;BA.debugLine="Aggiorna";
 Debug.ShouldStop(268435456);
+_aggiorna();
+ BA.debugLineNum = 126;BA.debugLine="End Sub";
+Debug.ShouldStop(536870912);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {

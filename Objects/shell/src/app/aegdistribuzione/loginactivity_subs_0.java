@@ -8,7 +8,7 @@ public class loginactivity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (loginactivity) ","loginactivity",5,loginactivity.mostCurrent.activityBA,loginactivity.mostCurrent,20);
+		Debug.PushSubsStack("Activity_Create (loginactivity) ","loginactivity",9,loginactivity.mostCurrent.activityBA,loginactivity.mostCurrent,20);
 if (RapidSub.canDelegate("activity_create")) { return app.aegdistribuzione.loginactivity.remoteMe.runUserSub(false, "loginactivity","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 20;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -28,7 +28,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (loginactivity) ","loginactivity",5,loginactivity.mostCurrent.activityBA,loginactivity.mostCurrent,30);
+		Debug.PushSubsStack("Activity_Pause (loginactivity) ","loginactivity",9,loginactivity.mostCurrent.activityBA,loginactivity.mostCurrent,30);
 if (RapidSub.canDelegate("activity_pause")) { return app.aegdistribuzione.loginactivity.remoteMe.runUserSub(false, "loginactivity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 30;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -45,7 +45,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (loginactivity) ","loginactivity",5,loginactivity.mostCurrent.activityBA,loginactivity.mostCurrent,26);
+		Debug.PushSubsStack("Activity_Resume (loginactivity) ","loginactivity",9,loginactivity.mostCurrent.activityBA,loginactivity.mostCurrent,26);
 if (RapidSub.canDelegate("activity_resume")) { return app.aegdistribuzione.loginactivity.remoteMe.runUserSub(false, "loginactivity","activity_resume");}
  BA.debugLineNum = 26;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(33554432);
@@ -61,7 +61,7 @@ finally {
 		}}
 public static void  _btlogin_click() throws Exception{
 try {
-		Debug.PushSubsStack("btLogin_Click (loginactivity) ","loginactivity",5,loginactivity.mostCurrent.activityBA,loginactivity.mostCurrent,35);
+		Debug.PushSubsStack("btLogin_Click (loginactivity) ","loginactivity",9,loginactivity.mostCurrent.activityBA,loginactivity.mostCurrent,35);
 if (RapidSub.canDelegate("btlogin_click")) { app.aegdistribuzione.loginactivity.remoteMe.runUserSub(false, "loginactivity","btlogin_click"); return;}
 ResumableSub_btLogin_Click rsub = new ResumableSub_btLogin_Click(null);
 rsub.resume(null, null);
@@ -85,7 +85,7 @@ RemoteObject _result = RemoteObject.declareNull("app.aegdistribuzione.utente");
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("btLogin_Click (loginactivity) ","loginactivity",5,loginactivity.mostCurrent.activityBA,loginactivity.mostCurrent,35);
+		Debug.PushSubsStack("btLogin_Click (loginactivity) ","loginactivity",9,loginactivity.mostCurrent.activityBA,loginactivity.mostCurrent,35);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -118,7 +118,7 @@ case 3:
 this.state = 4;
  BA.debugLineNum = 40;BA.debugLine="Return";
 Debug.ShouldStop(128);
-Debug.CheckDeviceExceptions();if (true) return ;
+if (true) return ;
  if (true) break;
 
 case 4:

@@ -8,7 +8,7 @@ public class dettaglioordineactivity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (dettaglioordineactivity) ","dettaglioordineactivity",11,dettaglioordineactivity.mostCurrent.activityBA,dettaglioordineactivity.mostCurrent,21);
+		Debug.PushSubsStack("Activity_Create (dettaglioordineactivity) ","dettaglioordineactivity",13,dettaglioordineactivity.mostCurrent.activityBA,dettaglioordineactivity.mostCurrent,21);
 if (RapidSub.canDelegate("activity_create")) { return app.aegdistribuzione.dettaglioordineactivity.remoteMe.runUserSub(false, "dettaglioordineactivity","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 21;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -28,7 +28,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (dettaglioordineactivity) ","dettaglioordineactivity",11,dettaglioordineactivity.mostCurrent.activityBA,dettaglioordineactivity.mostCurrent,43);
+		Debug.PushSubsStack("Activity_Pause (dettaglioordineactivity) ","dettaglioordineactivity",13,dettaglioordineactivity.mostCurrent.activityBA,dettaglioordineactivity.mostCurrent,43);
 if (RapidSub.canDelegate("activity_pause")) { return app.aegdistribuzione.dettaglioordineactivity.remoteMe.runUserSub(false, "dettaglioordineactivity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 43;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -45,7 +45,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (dettaglioordineactivity) ","dettaglioordineactivity",11,dettaglioordineactivity.mostCurrent.activityBA,dettaglioordineactivity.mostCurrent,39);
+		Debug.PushSubsStack("Activity_Resume (dettaglioordineactivity) ","dettaglioordineactivity",13,dettaglioordineactivity.mostCurrent.activityBA,dettaglioordineactivity.mostCurrent,39);
 if (RapidSub.canDelegate("activity_resume")) { return app.aegdistribuzione.dettaglioordineactivity.remoteMe.runUserSub(false, "dettaglioordineactivity","activity_resume");}
  BA.debugLineNum = 39;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(64);
@@ -61,7 +61,7 @@ finally {
 		}}
 public static RemoteObject  _aggiornalista(RemoteObject _o) throws Exception{
 try {
-		Debug.PushSubsStack("AggiornaLista (dettaglioordineactivity) ","dettaglioordineactivity",11,dettaglioordineactivity.mostCurrent.activityBA,dettaglioordineactivity.mostCurrent,26);
+		Debug.PushSubsStack("AggiornaLista (dettaglioordineactivity) ","dettaglioordineactivity",13,dettaglioordineactivity.mostCurrent.activityBA,dettaglioordineactivity.mostCurrent,26);
 if (RapidSub.canDelegate("aggiornalista")) { return app.aegdistribuzione.dettaglioordineactivity.remoteMe.runUserSub(false, "dettaglioordineactivity","aggiornalista", _o);}
 RemoteObject _c = RemoteObject.declareNull("app.aegdistribuzione.cliente");
 RemoteObject _v = RemoteObject.declareNull("app.aegdistribuzione.voceordine");

@@ -62,11 +62,11 @@ public static RemoteObject _httputils2service = RemoteObject.declareNull("anywhe
 public static app.aegdistribuzione.main _main = null;
 public static app.aegdistribuzione.ordineactivity _ordineactivity = null;
 public static app.aegdistribuzione.schedaclienteactivity _schedaclienteactivity = null;
+public static app.aegdistribuzione.articoliactivity _articoliactivity = null;
 public static app.aegdistribuzione.starter _starter = null;
 public static app.aegdistribuzione.loginactivity _loginactivity = null;
 public static app.aegdistribuzione.scaricadatiactivity _scaricadatiactivity = null;
 public static app.aegdistribuzione.clientiactivity _clientiactivity = null;
-public static app.aegdistribuzione.articoliactivity _articoliactivity = null;
   public Object[] GetGlobals() {
 		return new Object[] {"Activity",dettaglioordineactivity.mostCurrent._activity,"ArticoliActivity",Debug.moduleToString(app.aegdistribuzione.articoliactivity.class),"ClientiActivity",Debug.moduleToString(app.aegdistribuzione.clientiactivity.class),"HttpUtils2Service",dettaglioordineactivity.mostCurrent._httputils2service,"Label1",dettaglioordineactivity.mostCurrent._label1,"Label2",dettaglioordineactivity.mostCurrent._label2,"ListView1",dettaglioordineactivity.mostCurrent._listview1,"LoginActivity",Debug.moduleToString(app.aegdistribuzione.loginactivity.class),"Main",Debug.moduleToString(app.aegdistribuzione.main.class),"OrdineActivity",Debug.moduleToString(app.aegdistribuzione.ordineactivity.class),"ScaricaDatiActivity",Debug.moduleToString(app.aegdistribuzione.scaricadatiactivity.class),"SchedaClienteActivity",Debug.moduleToString(app.aegdistribuzione.schedaclienteactivity.class),"Starter",Debug.moduleToString(app.aegdistribuzione.starter.class)};
 }

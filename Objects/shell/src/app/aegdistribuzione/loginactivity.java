@@ -61,11 +61,11 @@ public static RemoteObject _httputils2service = RemoteObject.declareNull("anywhe
 public static app.aegdistribuzione.main _main = null;
 public static app.aegdistribuzione.ordineactivity _ordineactivity = null;
 public static app.aegdistribuzione.schedaclienteactivity _schedaclienteactivity = null;
+public static app.aegdistribuzione.articoliactivity _articoliactivity = null;
 public static app.aegdistribuzione.starter _starter = null;
 public static app.aegdistribuzione.scaricadatiactivity _scaricadatiactivity = null;
 public static app.aegdistribuzione.dettaglioordineactivity _dettaglioordineactivity = null;
 public static app.aegdistribuzione.clientiactivity _clientiactivity = null;
-public static app.aegdistribuzione.articoliactivity _articoliactivity = null;
   public Object[] GetGlobals() {
 		return new Object[] {"Activity",loginactivity.mostCurrent._activity,"ArticoliActivity",Debug.moduleToString(app.aegdistribuzione.articoliactivity.class),"ClientiActivity",Debug.moduleToString(app.aegdistribuzione.clientiactivity.class),"DettaglioOrdineActivity",Debug.moduleToString(app.aegdistribuzione.dettaglioordineactivity.class),"HttpUtils2Service",loginactivity.mostCurrent._httputils2service,"Main",Debug.moduleToString(app.aegdistribuzione.main.class),"OrdineActivity",Debug.moduleToString(app.aegdistribuzione.ordineactivity.class),"ScaricaDatiActivity",Debug.moduleToString(app.aegdistribuzione.scaricadatiactivity.class),"SchedaClienteActivity",Debug.moduleToString(app.aegdistribuzione.schedaclienteactivity.class),"Starter",Debug.moduleToString(app.aegdistribuzione.starter.class),"txNome",loginactivity.mostCurrent._txnome,"txPassword",loginactivity.mostCurrent._txpassword};
 }

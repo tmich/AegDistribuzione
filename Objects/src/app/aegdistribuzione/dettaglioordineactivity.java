@@ -345,40 +345,40 @@ public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2serv
 public app.aegdistribuzione.main _main = null;
 public app.aegdistribuzione.ordineactivity _ordineactivity = null;
 public app.aegdistribuzione.schedaclienteactivity _schedaclienteactivity = null;
+public app.aegdistribuzione.articoliactivity _articoliactivity = null;
 public app.aegdistribuzione.starter _starter = null;
 public app.aegdistribuzione.loginactivity _loginactivity = null;
 public app.aegdistribuzione.scaricadatiactivity _scaricadatiactivity = null;
 public app.aegdistribuzione.clientiactivity _clientiactivity = null;
-public app.aegdistribuzione.articoliactivity _articoliactivity = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="dettaglioordineactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=6750208;
- //BA.debugLineNum = 6750208;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=6750210;
- //BA.debugLineNum = 6750210;BA.debugLine="Activity.LoadLayout(\"DettaglioOrdineLayout\")";
+RDebugUtils.currentLine=8585216;
+ //BA.debugLineNum = 8585216;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=8585218;
+ //BA.debugLineNum = 8585218;BA.debugLine="Activity.LoadLayout(\"DettaglioOrdineLayout\")";
 mostCurrent._activity.LoadLayout("DettaglioOrdineLayout",mostCurrent.activityBA);
-RDebugUtils.currentLine=6750211;
- //BA.debugLineNum = 6750211;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8585219;
+ //BA.debugLineNum = 8585219;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="dettaglioordineactivity";
-RDebugUtils.currentLine=6946816;
- //BA.debugLineNum = 6946816;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=6946818;
- //BA.debugLineNum = 6946818;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8781824;
+ //BA.debugLineNum = 8781824;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=8781826;
+ //BA.debugLineNum = 8781826;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="dettaglioordineactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=6881280;
- //BA.debugLineNum = 6881280;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=6881282;
- //BA.debugLineNum = 6881282;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8716288;
+ //BA.debugLineNum = 8716288;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=8716290;
+ //BA.debugLineNum = 8716290;BA.debugLine="End Sub";
 return "";
 }
 public static String  _aggiornalista(app.aegdistribuzione.ordine _o) throws Exception{
@@ -387,22 +387,22 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "aggiornalista"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "aggiornalista", new Object[] {_o}));}
 app.aegdistribuzione.cliente _c = null;
 app.aegdistribuzione.voceordine _v = null;
-RDebugUtils.currentLine=6815744;
- //BA.debugLineNum = 6815744;BA.debugLine="Sub AggiornaLista(o As Ordine)";
-RDebugUtils.currentLine=6815745;
- //BA.debugLineNum = 6815745;BA.debugLine="Dim c As Cliente = Starter.db.GetCliente(o.IdClie";
+RDebugUtils.currentLine=8650752;
+ //BA.debugLineNum = 8650752;BA.debugLine="Sub AggiornaLista(o As Ordine)";
+RDebugUtils.currentLine=8650753;
+ //BA.debugLineNum = 8650753;BA.debugLine="Dim c As Cliente = Starter.db.GetCliente(o.IdClie";
 _c = mostCurrent._starter._db._getcliente(null,_o._idcliente);
-RDebugUtils.currentLine=6815746;
- //BA.debugLineNum = 6815746;BA.debugLine="Activity.Title = \"Ordine n \" & o.Id & \" per \" & c";
+RDebugUtils.currentLine=8650754;
+ //BA.debugLineNum = 8650754;BA.debugLine="Activity.Title = \"Ordine n \" & o.Id & \" per \" & c";
 mostCurrent._activity.setTitle(BA.ObjectToCharSequence("Ordine n "+BA.NumberToString(_o._id)+" per "+_c._denominazione));
-RDebugUtils.currentLine=6815747;
- //BA.debugLineNum = 6815747;BA.debugLine="Label1.Text = \"Ordine n \" & o.Id & \" del \" & o.Da";
+RDebugUtils.currentLine=8650755;
+ //BA.debugLineNum = 8650755;BA.debugLine="Label1.Text = \"Ordine n \" & o.Id & \" del \" & o.Da";
 mostCurrent._label1.setText(BA.ObjectToCharSequence("Ordine n "+BA.NumberToString(_o._id)+" del "+_o._getdataformattata(null)));
-RDebugUtils.currentLine=6815748;
- //BA.debugLineNum = 6815748;BA.debugLine="Label2.Text = \"Totale: \" & NumberFormat2(o.Totale";
+RDebugUtils.currentLine=8650756;
+ //BA.debugLineNum = 8650756;BA.debugLine="Label2.Text = \"Totale: \" & NumberFormat2(o.Totale";
 mostCurrent._label2.setText(BA.ObjectToCharSequence("Totale: "+anywheresoftware.b4a.keywords.Common.NumberFormat2(_o._totale(null),(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)));
-RDebugUtils.currentLine=6815749;
- //BA.debugLineNum = 6815749;BA.debugLine="For Each v As VoceOrdine In o.Voci";
+RDebugUtils.currentLine=8650757;
+ //BA.debugLineNum = 8650757;BA.debugLine="For Each v As VoceOrdine In o.Voci";
 {
 final anywheresoftware.b4a.BA.IterableList group5 = _o._voci;
 final int groupLen5 = group5.getSize()
@@ -410,22 +410,22 @@ final int groupLen5 = group5.getSize()
 ;
 for (; index5 < groupLen5;index5++){
 _v = (app.aegdistribuzione.voceordine)(group5.Get(index5));
-RDebugUtils.currentLine=6815750;
- //BA.debugLineNum = 6815750;BA.debugLine="ListView1.FastScrollEnabled=True";
+RDebugUtils.currentLine=8650758;
+ //BA.debugLineNum = 8650758;BA.debugLine="ListView1.FastScrollEnabled=True";
 mostCurrent._listview1.setFastScrollEnabled(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=6815751;
- //BA.debugLineNum = 6815751;BA.debugLine="ListView1.SingleLineLayout.Label.TextColor = Col";
+RDebugUtils.currentLine=8650759;
+ //BA.debugLineNum = 8650759;BA.debugLine="ListView1.SingleLineLayout.Label.TextColor = Col";
 mostCurrent._listview1.getSingleLineLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
-RDebugUtils.currentLine=6815752;
- //BA.debugLineNum = 6815752;BA.debugLine="ListView1.SingleLineLayout.Label.TextSize = 18";
+RDebugUtils.currentLine=8650760;
+ //BA.debugLineNum = 8650760;BA.debugLine="ListView1.SingleLineLayout.Label.TextSize = 18";
 mostCurrent._listview1.getSingleLineLayout().Label.setTextSize((float) (18));
-RDebugUtils.currentLine=6815753;
- //BA.debugLineNum = 6815753;BA.debugLine="ListView1.AddSingleLine(v.Qta & \"x \"  & v.DescAr";
+RDebugUtils.currentLine=8650761;
+ //BA.debugLineNum = 8650761;BA.debugLine="ListView1.AddSingleLine(v.Qta & \"x \"  & v.DescAr";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence(BA.NumberToString(_v._qta)+"x "+_v._descart+" ("+anywheresoftware.b4a.keywords.Common.NumberFormat2(_v._prezzo,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.False)+")"));
  }
 };
-RDebugUtils.currentLine=6815755;
- //BA.debugLineNum = 6815755;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8650763;
+ //BA.debugLineNum = 8650763;BA.debugLine="End Sub";
 return "";
 }
 }

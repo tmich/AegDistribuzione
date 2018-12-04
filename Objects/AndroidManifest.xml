@@ -44,6 +44,13 @@
 			android:label="AEG Distribuzione"
 			android:screenOrientation="portrait">
 		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".articoliactivity"
+			android:label="AEG Distribuzione"
+			android:screenOrientation="portrait">
+		</activity>
 		<service android:name=".starter">
 		</service>
 		<receiver android:name=".starter$starter_BR">
@@ -73,13 +80,6 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".clientiactivity"
-			android:label="AEG Distribuzione"
-			android:screenOrientation="portrait">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".articoliactivity"
 			android:label="AEG Distribuzione"
 			android:screenOrientation="portrait">
 		</activity>

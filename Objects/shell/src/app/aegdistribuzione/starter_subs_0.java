@@ -8,7 +8,7 @@ public class starter_subs_0 {
 
 public static RemoteObject  _application_error(RemoteObject _error,RemoteObject _stacktrace) throws Exception{
 try {
-		Debug.PushSubsStack("Application_Error (starter) ","starter",4,starter.processBA,starter.mostCurrent,35);
+		Debug.PushSubsStack("Application_Error (starter) ","starter",8,starter.processBA,starter.mostCurrent,35);
 if (RapidSub.canDelegate("application_error")) { return app.aegdistribuzione.starter.remoteMe.runUserSub(false, "starter","application_error", _error, _stacktrace);}
 Debug.locals.put("Error", _error);
 Debug.locals.put("StackTrace", _stacktrace);
@@ -16,7 +16,7 @@ Debug.locals.put("StackTrace", _stacktrace);
 Debug.ShouldStop(4);
  BA.debugLineNum = 36;BA.debugLine="Return True";
 Debug.ShouldStop(8);
-Debug.CheckDeviceExceptions();if (true) return starter.mostCurrent.__c.getField(true,"True");
+if (true) return starter.mostCurrent.__c.getField(true,"True");
  BA.debugLineNum = 37;BA.debugLine="End Sub";
 Debug.ShouldStop(16);
 return RemoteObject.createImmutable(false);
@@ -40,7 +40,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _service_create() throws Exception{
 try {
-		Debug.PushSubsStack("Service_Create (starter) ","starter",4,starter.processBA,starter.mostCurrent,14);
+		Debug.PushSubsStack("Service_Create (starter) ","starter",8,starter.processBA,starter.mostCurrent,14);
 if (RapidSub.canDelegate("service_create")) { return app.aegdistribuzione.starter.remoteMe.runUserSub(false, "starter","service_create");}
 RemoteObject _jo = RemoteObject.declareNull("anywheresoftware.b4j.object.JavaObject");
  BA.debugLineNum = 14;BA.debugLine="Sub Service_Create";
@@ -72,7 +72,7 @@ finally {
 		}}
 public static RemoteObject  _service_destroy() throws Exception{
 try {
-		Debug.PushSubsStack("Service_Destroy (starter) ","starter",4,starter.processBA,starter.mostCurrent,39);
+		Debug.PushSubsStack("Service_Destroy (starter) ","starter",8,starter.processBA,starter.mostCurrent,39);
 if (RapidSub.canDelegate("service_destroy")) { return app.aegdistribuzione.starter.remoteMe.runUserSub(false, "starter","service_destroy");}
  BA.debugLineNum = 39;BA.debugLine="Sub Service_Destroy";
 Debug.ShouldStop(64);
@@ -88,7 +88,7 @@ finally {
 		}}
 public static RemoteObject  _service_start(RemoteObject _startingintent) throws Exception{
 try {
-		Debug.PushSubsStack("Service_Start (starter) ","starter",4,starter.processBA,starter.mostCurrent,25);
+		Debug.PushSubsStack("Service_Start (starter) ","starter",8,starter.processBA,starter.mostCurrent,25);
 if (RapidSub.canDelegate("service_start")) { return app.aegdistribuzione.starter.remoteMe.runUserSub(false, "starter","service_start", _startingintent);}
 Debug.locals.put("StartingIntent", _startingintent);
  BA.debugLineNum = 25;BA.debugLine="Sub Service_Start (StartingIntent As Intent)";
@@ -105,7 +105,7 @@ finally {
 		}}
 public static RemoteObject  _service_taskremoved() throws Exception{
 try {
-		Debug.PushSubsStack("Service_TaskRemoved (starter) ","starter",4,starter.processBA,starter.mostCurrent,30);
+		Debug.PushSubsStack("Service_TaskRemoved (starter) ","starter",8,starter.processBA,starter.mostCurrent,30);
 if (RapidSub.canDelegate("service_taskremoved")) { return app.aegdistribuzione.starter.remoteMe.runUserSub(false, "starter","service_taskremoved");}
  BA.debugLineNum = 30;BA.debugLine="Sub Service_TaskRemoved";
 Debug.ShouldStop(536870912);

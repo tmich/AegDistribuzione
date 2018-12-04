@@ -3,10 +3,10 @@ app.aegdistribuzione
 9
 database
 apiclient
-utente
 ordine
-cliente
 voceordine
+utente
+cliente
 articolo
 preferito
 customlistview
@@ -86,7 +86,7 @@ ordineactivity,clv2_itemclick,0,0,75,80
 ,clv2
 
 customlistview,asview
-ordineactivity,getresult,1,1,109,117
+ordineactivity,getresult,1,0,109,117
 ,m_ordine,starter,db,,btninvia,,lbltotale,starter,user,,clv2,,button1,,label1,,label2,,spinner1
 ,m_ordine,,button1,,label1,,label2,,spinner1
 ordine,aggiungi,,aggiorna,ordine,contiene,database,nuovavoce,voceordine,initialize,database,getordineincorso,,caricavoci,ordine,totale,ordine,initialize,customlistview,clear,customlistview,add,,createlistitem,customlistview,asview,customlistview,setscrollviewcontentsize,customlistview,insertat,customlistview,insertatimpl,customlistview,createpanel,customlistview,getscrollviewcontentsize,customlistview,cleanafteranimation,customlistview,getpaneloffset,customlistview,getscrollviewoffset,customlistview,getscrollviewvisiblesize,customlistview,setpaneloffset,voceordine,totale
@@ -234,15 +234,11 @@ ordine,totale,0,0,94,101
 
 
 voceordine,totale
-ordine,aggiungi,0,1,47,55
+ordine,aggiungi,0,0,47,55
 starter,db
 
 ,contiene,database,nuovavoce,voceordine,initialize
 ordine,initialize,0,0,11,18
-
-
-
-ordine,getdataformattata,0,0,84,86
 
 
 
@@ -254,6 +250,10 @@ ordine,fromjson,0,0,57,82
 
 
 voceordine,initialize
+ordine,getdataformattata,0,0,84,86
+
+
+
 ordine,contiene,0,0,37,45
 
 
@@ -290,18 +290,22 @@ apiclient,geterrore,0,0,24,26
 
 
 
-apiclient,initialize,0,0,9,18
-
-
-
-apiclient,login,0,0,345,378
-
-
-utente,initialize
 apiclient,class_globals,0,0,1,6
 
 
 
+apiclient,creacliente,0,1,345,374
+
+
+cliente,initialize
+apiclient,initialize,0,0,9,18
+
+
+
+apiclient,login,0,0,376,409
+
+
+utente,initialize
 apiclient,scaricaarticoli,0,0,98,126
 
 
@@ -582,6 +586,54 @@ schedaclienteactivity,visualizzascheda,0,0,28,33
 ,cli,starter,db,,listview1
 ,cli
 ,caricapreferiti,database,getpreferiticliente,,singplur,preferito,initialize
+articoliactivity,activity_create,1,0,31,36
+,btnannulla,,btncerca,,label1,,lvarticoli,,txcerca,,forresult,,oime
+,btnannulla,,btncerca,,label1,,lvarticoli,,txcerca,,forresult
+
+articoliactivity,activity_pause,0,0,48,50
+
+
+
+articoliactivity,activity_resume,0,0,38,46
+starter,db,,lvarticoli
+
+,aggiornalista,database,getarticoli,articolo,initialize
+articoliactivity,aggiornalista,0,0,52,62
+,lvarticoli
+
+
+articoliactivity,btnaggiorna_click,0,0,64,74
+starter,client,starter,db,,lvarticoli
+
+apiclient,scaricaarticoli,apiclient,getsuccesso,database,salvaarticoli,,aggiornalista,database,getarticoli,articolo,initialize
+articoliactivity,btnannulla_click,1,0,88,96
+,txcerca,,btncerca,,btnannulla,,oime,,label1,starter,db,,lvarticoli
+
+,aggiornalista,database,getarticoli,articolo,initialize
+articoliactivity,btncerca_click,0,0,80,86
+,label1,,txcerca,,oime,,btncerca,,btnannulla
+
+
+articoliactivity,globals,0,1,12,22
+
+
+
+articoliactivity,lvarticoli_itemclick,1,0,98,108
+,oime,,forresult
+,forresult
+
+articoliactivity,process_globals,0,1,6,10
+
+
+
+articoliactivity,scegliarticoloperordine,0,0,24,29
+,forresult,,lvarticoli,starter,db
+,forresult
+,aggiornalista,database,getarticoli,articolo,initialize
+articoliactivity,txcerca_textchanged,0,0,76,78
+starter,db,,lvarticoli
+
+,aggiornalista,database,cercaarticolipernome,articolo,initialize
 starter,application_error,0,0,35,37
 
 
@@ -678,95 +730,47 @@ dettaglioordineactivity,process_globals,0,1,6,10
 
 
 
-clientiactivity,activity_create,1,0,23,27
+clientiactivity,activity_create,1,0,24,28
 ,btnannulla,,btncerca,,label1,,lvclienti,,txcerca,,oime
 ,btnannulla,,btncerca,,label1,,lvclienti,,txcerca
 
-clientiactivity,activity_pause,0,0,56,58
+clientiactivity,activity_pause,0,0,60,62
 
 
 
-clientiactivity,activity_resume,0,0,41,54
+clientiactivity,activity_resume,0,0,45,58
 ,txcerca,starter,db,,lvclienti
 
 ,aggiornalista,database,cercaclientipernome,database,getclienti,cliente,initialize
-clientiactivity,aggiornalista,0,0,29,39
+clientiactivity,aggiornalista,0,0,30,43
 ,lvclienti
 
 
-clientiactivity,btnaggiorna_click,0,0,88,98
+clientiactivity,btnaggiorna_click,0,0,115,125
 starter,client,starter,db,,lvclienti
 
 apiclient,scaricaclienti,apiclient,getsuccesso,database,salvaclienti,,aggiornalista,database,getclienti,cliente,initialize
-clientiactivity,btnannulla_click,1,0,78,86
+clientiactivity,btnannulla_click,1,0,105,113
 ,txcerca,,btncerca,,btnannulla,,oime,,label1,starter,db,,lvclienti
 
 ,aggiornalista,database,getclienti,cliente,initialize
-clientiactivity,btncerca_click,0,0,70,76
+clientiactivity,btncerca_click,0,0,97,103
 ,label1,,txcerca,,oime,,btncerca,,btnannulla
 
 
-clientiactivity,globals,0,1,12,21
+clientiactivity,globals,0,1,12,22
 
 
 
-clientiactivity,lvclienti_itemclick,0,0,61,64
+clientiactivity,lvclienti_itemclick,1,1,65,91
+,bd,starter,client
 
-
-
+cliente,initialize,apiclient,creacliente
 clientiactivity,process_globals,0,1,6,10
 
 
 
-clientiactivity,txcerca_textchanged,0,0,66,68
+clientiactivity,txcerca_textchanged,0,0,93,95
 starter,db,,lvclienti
 
 ,aggiornalista,database,cercaclientipernome,cliente,initialize
-articoliactivity,activity_create,1,0,31,36
-,btnannulla,,btncerca,,label1,,lvarticoli,,txcerca,,forresult,,oime
-,btnannulla,,btncerca,,label1,,lvarticoli,,txcerca,,forresult
-
-articoliactivity,activity_pause,0,0,48,50
-
-
-
-articoliactivity,activity_resume,0,0,38,46
-starter,db,,lvarticoli
-
-,aggiornalista,database,getarticoli,articolo,initialize
-articoliactivity,aggiornalista,0,0,52,62
-,lvarticoli
-
-
-articoliactivity,btnaggiorna_click,0,0,64,74
-starter,client,starter,db,,lvarticoli
-
-apiclient,scaricaarticoli,apiclient,getsuccesso,database,salvaarticoli,,aggiornalista,database,getarticoli,articolo,initialize
-articoliactivity,btnannulla_click,1,0,88,96
-,txcerca,,btncerca,,btnannulla,,oime,,label1,starter,db,,lvarticoli
-
-,aggiornalista,database,getarticoli,articolo,initialize
-articoliactivity,btncerca_click,0,0,80,86
-,label1,,txcerca,,oime,,btncerca,,btnannulla
-
-
-articoliactivity,globals,0,1,12,22
-
-
-
-articoliactivity,lvarticoli_itemclick,1,0,98,108
-,oime,,forresult
-,forresult
-
-articoliactivity,process_globals,0,1,6,10
-
-
-
-articoliactivity,scegliarticoloperordine,0,0,24,29
-,forresult,,lvarticoli,starter,db
-,forresult
-,aggiornalista,database,getarticoli,articolo,initialize
-articoliactivity,txcerca_textchanged,0,0,76,78
-starter,db,,lvarticoli
-
-,aggiornalista,database,cercaarticolipernome,articolo,initialize

@@ -344,40 +344,40 @@ public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2serv
 public app.aegdistribuzione.main _main = null;
 public app.aegdistribuzione.ordineactivity _ordineactivity = null;
 public app.aegdistribuzione.schedaclienteactivity _schedaclienteactivity = null;
+public app.aegdistribuzione.articoliactivity _articoliactivity = null;
 public app.aegdistribuzione.starter _starter = null;
 public app.aegdistribuzione.scaricadatiactivity _scaricadatiactivity = null;
 public app.aegdistribuzione.dettaglioordineactivity _dettaglioordineactivity = null;
 public app.aegdistribuzione.clientiactivity _clientiactivity = null;
-public app.aegdistribuzione.articoliactivity _articoliactivity = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="loginactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=4784128;
- //BA.debugLineNum = 4784128;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=4784130;
- //BA.debugLineNum = 4784130;BA.debugLine="Activity.LoadLayout(\"loginlayout\")";
+RDebugUtils.currentLine=7536640;
+ //BA.debugLineNum = 7536640;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=7536642;
+ //BA.debugLineNum = 7536642;BA.debugLine="Activity.LoadLayout(\"loginlayout\")";
 mostCurrent._activity.LoadLayout("loginlayout",mostCurrent.activityBA);
-RDebugUtils.currentLine=4784132;
- //BA.debugLineNum = 4784132;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7536644;
+ //BA.debugLineNum = 7536644;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="loginactivity";
-RDebugUtils.currentLine=4915200;
- //BA.debugLineNum = 4915200;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=4915202;
- //BA.debugLineNum = 4915202;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7667712;
+ //BA.debugLineNum = 7667712;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=7667714;
+ //BA.debugLineNum = 7667714;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="loginactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=4849664;
- //BA.debugLineNum = 4849664;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=4849666;
- //BA.debugLineNum = 4849666;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7602176;
+ //BA.debugLineNum = 7602176;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=7602178;
+ //BA.debugLineNum = 7602178;BA.debugLine="End Sub";
 return "";
 }
 public static void  _btlogin_click() throws Exception{
@@ -408,14 +408,14 @@ return;
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=4980737;
- //BA.debugLineNum = 4980737;BA.debugLine="Dim username As String = txNome.Text";
+RDebugUtils.currentLine=7733249;
+ //BA.debugLineNum = 7733249;BA.debugLine="Dim username As String = txNome.Text";
 _username = parent.mostCurrent._txnome.getText();
-RDebugUtils.currentLine=4980738;
- //BA.debugLineNum = 4980738;BA.debugLine="Dim password As String = txPassword.Text";
+RDebugUtils.currentLine=7733250;
+ //BA.debugLineNum = 7733250;BA.debugLine="Dim password As String = txPassword.Text";
 _password = parent.mostCurrent._txpassword.getText();
-RDebugUtils.currentLine=4980740;
- //BA.debugLineNum = 4980740;BA.debugLine="If username.Trim().Length == 0 Or password.Trim()";
+RDebugUtils.currentLine=7733252;
+ //BA.debugLineNum = 7733252;BA.debugLine="If username.Trim().Length == 0 Or password.Trim()";
 if (true) break;
 
 case 1:
@@ -428,8 +428,8 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=4980741;
- //BA.debugLineNum = 4980741;BA.debugLine="Return";
+RDebugUtils.currentLine=7733253;
+ //BA.debugLineNum = 7733253;BA.debugLine="Return";
 if (true) return ;
  if (true) break;
 
@@ -437,11 +437,11 @@ case 4:
 //C
 this.state = 5;
 ;
-RDebugUtils.currentLine=4980744;
- //BA.debugLineNum = 4980744;BA.debugLine="ProgressDialogShow2(\"Accesso in corso\", False)";
+RDebugUtils.currentLine=7733256;
+ //BA.debugLineNum = 7733256;BA.debugLine="ProgressDialogShow2(\"Accesso in corso\", False)";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow2(mostCurrent.activityBA,BA.ObjectToCharSequence("Accesso in corso"),anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=4980746;
- //BA.debugLineNum = 4980746;BA.debugLine="Wait For (Starter.client.Login(username, password";
+RDebugUtils.currentLine=7733258;
+ //BA.debugLineNum = 7733258;BA.debugLine="Wait For (Starter.client.Login(username, password";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "loginactivity", "btlogin_click"), parent.mostCurrent._starter._client._login(null,_username,_password));
 this.state = 11;
 return;
@@ -450,8 +450,8 @@ case 11:
 this.state = 5;
 _result = (app.aegdistribuzione.utente) result[0];
 ;
-RDebugUtils.currentLine=4980748;
- //BA.debugLineNum = 4980748;BA.debugLine="If Starter.client.Successo Then";
+RDebugUtils.currentLine=7733260;
+ //BA.debugLineNum = 7733260;BA.debugLine="If Starter.client.Successo Then";
 if (true) break;
 
 case 5:
@@ -466,28 +466,28 @@ this.state = 9;
 case 7:
 //C
 this.state = 10;
-RDebugUtils.currentLine=4980749;
- //BA.debugLineNum = 4980749;BA.debugLine="Starter.User = Result";
+RDebugUtils.currentLine=7733261;
+ //BA.debugLineNum = 7733261;BA.debugLine="Starter.User = Result";
 parent.mostCurrent._starter._user = _result;
-RDebugUtils.currentLine=4980750;
- //BA.debugLineNum = 4980750;BA.debugLine="Starter.db.SalvaUtente(Result)";
+RDebugUtils.currentLine=7733262;
+ //BA.debugLineNum = 7733262;BA.debugLine="Starter.db.SalvaUtente(Result)";
 parent.mostCurrent._starter._db._salvautente(null,_result);
-RDebugUtils.currentLine=4980751;
- //BA.debugLineNum = 4980751;BA.debugLine="StartActivity(Main)";
+RDebugUtils.currentLine=7733263;
+ //BA.debugLineNum = 7733263;BA.debugLine="StartActivity(Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(parent.mostCurrent._main.getObject()));
-RDebugUtils.currentLine=4980752;
- //BA.debugLineNum = 4980752;BA.debugLine="Activity.Finish()";
+RDebugUtils.currentLine=7733264;
+ //BA.debugLineNum = 7733264;BA.debugLine="Activity.Finish()";
 parent.mostCurrent._activity.Finish();
  if (true) break;
 
 case 9:
 //C
 this.state = 10;
-RDebugUtils.currentLine=4980754;
- //BA.debugLineNum = 4980754;BA.debugLine="ProgressDialogHide";
+RDebugUtils.currentLine=7733266;
+ //BA.debugLineNum = 7733266;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
-RDebugUtils.currentLine=4980755;
- //BA.debugLineNum = 4980755;BA.debugLine="Msgbox(Starter.client.Errore, \"Accesso\")";
+RDebugUtils.currentLine=7733267;
+ //BA.debugLineNum = 7733267;BA.debugLine="Msgbox(Starter.client.Errore, \"Accesso\")";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence(parent.mostCurrent._starter._client._geterrore(null)),BA.ObjectToCharSequence("Accesso"),mostCurrent.activityBA);
  if (true) break;
 
@@ -495,8 +495,8 @@ case 10:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=4980757;
- //BA.debugLineNum = 4980757;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7733269;
+ //BA.debugLineNum = 7733269;BA.debugLine="End Sub";
 if (true) break;
 
             }

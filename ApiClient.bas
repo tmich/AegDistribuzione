@@ -1,5 +1,5 @@
 ﻿B4A=true
-Group=Default Group
+Group=Classes
 ModulesStructureVersion=1
 Type=Class
 Version=8.5
@@ -346,6 +346,37 @@ Public Sub Invia(ord As Ordine) As ResumableSub
 	End Try
 	
 	Return Null
+End Sub
+
+Public Sub CreaCliente(cli As Cliente, fittizio As Int) As ResumableSub
+	m_successo = False
+	Dim form As Map
+	form.Initialize
+	form.Put("codice", cli.Codice)
+	form.Put("denominazione", cli.Denominazione)
+	form.Put("indirizzo", cli.Indirizzo)
+	form.Put("part_iva", cli.PartitaIVA)
+	form.Put("fittizio", fittizio)
+	m_job.PostMultipart(m_url & "/clienti", form, Null)
+	Wait For (m_job) JobDone
+	
+	If m_job.Success Then
+		Dim parser As JSONParser
+		parser.Initialize(m_job.GetString)
+		Dim root As Map = parser.NextObject
+		Dim objects As List = root.Get("data")
+		for	Each m As Map In objects
+			Dim cod As String = m.Get("codice")
+			Dim Denom As String = m.Get("denominazione")
+			Dim id As Int = m.Get("id")
+			Dim indir As String = m.Get("indirizzo")
+			Dim piva As String = m.Get("part_iva")
+			Dim dtum As String = m.Get("data_ultima_modifica")
+		Next
+		Dim c As Cliente
+		c.Initialize(id,cod,Denom,indir,piva,dtum)
+		Return c
+	End If
 End Sub
 
 Public Sub Login(username As String, password As String) As ResumableSub

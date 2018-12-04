@@ -1,5 +1,5 @@
 ﻿B4A=true
-Group=Default Group
+Group=Classes
 ModulesStructureVersion=1
 Type=Service
 Version=8.5

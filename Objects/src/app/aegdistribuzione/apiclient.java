@@ -39,12 +39,12 @@ public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2serv
 public app.aegdistribuzione.main _main = null;
 public app.aegdistribuzione.ordineactivity _ordineactivity = null;
 public app.aegdistribuzione.schedaclienteactivity _schedaclienteactivity = null;
+public app.aegdistribuzione.articoliactivity _articoliactivity = null;
 public app.aegdistribuzione.starter _starter = null;
 public app.aegdistribuzione.loginactivity _loginactivity = null;
 public app.aegdistribuzione.scaricadatiactivity _scaricadatiactivity = null;
 public app.aegdistribuzione.dettaglioordineactivity _dettaglioordineactivity = null;
 public app.aegdistribuzione.clientiactivity _clientiactivity = null;
-public app.aegdistribuzione.articoliactivity _articoliactivity = null;
 public anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _invia(app.aegdistribuzione.apiclient __ref,app.aegdistribuzione.ordine _ord) throws Exception{
 RDebugUtils.currentModule="apiclient";
 if (Debug.shouldDelegate(ba, "invia"))
@@ -80,35 +80,35 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=12779521;
- //BA.debugLineNum = 12779521;BA.debugLine="m_successo = False";
+RDebugUtils.currentLine=4259841;
+ //BA.debugLineNum = 4259841;BA.debugLine="m_successo = False";
 __ref._m_successo = parent.__c.False;
-RDebugUtils.currentLine=12779522;
- //BA.debugLineNum = 12779522;BA.debugLine="Dim ordn As Ordine";
+RDebugUtils.currentLine=4259842;
+ //BA.debugLineNum = 4259842;BA.debugLine="Dim ordn As Ordine";
 _ordn = new app.aegdistribuzione.ordine();
-RDebugUtils.currentLine=12779523;
- //BA.debugLineNum = 12779523;BA.debugLine="Dim form As Map";
+RDebugUtils.currentLine=4259843;
+ //BA.debugLineNum = 4259843;BA.debugLine="Dim form As Map";
 _form = new anywheresoftware.b4a.objects.collections.Map();
-RDebugUtils.currentLine=12779525;
- //BA.debugLineNum = 12779525;BA.debugLine="ordn.Initialize(0,0,0,\"\",\"\")";
+RDebugUtils.currentLine=4259845;
+ //BA.debugLineNum = 4259845;BA.debugLine="ordn.Initialize(0,0,0,\"\",\"\")";
 _ordn._initialize(null,ba,(int) (0),(int) (0),(int) (0),"","");
-RDebugUtils.currentLine=12779526;
- //BA.debugLineNum = 12779526;BA.debugLine="form.Initialize";
+RDebugUtils.currentLine=4259846;
+ //BA.debugLineNum = 4259846;BA.debugLine="form.Initialize";
 _form.Initialize();
-RDebugUtils.currentLine=12779527;
- //BA.debugLineNum = 12779527;BA.debugLine="form.Put(\"id_cliente\", ord.IdCliente)";
+RDebugUtils.currentLine=4259847;
+ //BA.debugLineNum = 4259847;BA.debugLine="form.Put(\"id_cliente\", ord.IdCliente)";
 _form.Put((Object)("id_cliente"),(Object)(_ord._idcliente));
-RDebugUtils.currentLine=12779528;
- //BA.debugLineNum = 12779528;BA.debugLine="form.Put(\"id_utente\", Starter.User.Id)";
+RDebugUtils.currentLine=4259848;
+ //BA.debugLineNum = 4259848;BA.debugLine="form.Put(\"id_utente\", Starter.User.Id)";
 _form.Put((Object)("id_utente"),(Object)(parent._starter._user._id));
-RDebugUtils.currentLine=12779529;
- //BA.debugLineNum = 12779529;BA.debugLine="form.Put(\"data\", ord.ToJson)";
+RDebugUtils.currentLine=4259849;
+ //BA.debugLineNum = 4259849;BA.debugLine="form.Put(\"data\", ord.ToJson)";
 _form.Put((Object)("data"),(Object)(_ord._tojson(null)));
-RDebugUtils.currentLine=12779530;
- //BA.debugLineNum = 12779530;BA.debugLine="m_job.PostMultipart(m_url & \"/ordine\", form, Null";
+RDebugUtils.currentLine=4259850;
+ //BA.debugLineNum = 4259850;BA.debugLine="m_job.PostMultipart(m_url & \"/ordine\", form, Null";
 __ref._m_job._postmultipart(__ref._m_url+"/ordine",_form,(anywheresoftware.b4a.objects.collections.List) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.List(), (java.util.List)(parent.__c.Null)));
-RDebugUtils.currentLine=12779531;
- //BA.debugLineNum = 12779531;BA.debugLine="Wait For (m_job) JobDone";
+RDebugUtils.currentLine=4259851;
+ //BA.debugLineNum = 4259851;BA.debugLine="Wait For (m_job) JobDone";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "apiclient", "invia"), (Object)(__ref._m_job));
 this.state = 13;
 return;
@@ -116,8 +116,8 @@ case 13:
 //C
 this.state = 1;
 ;
-RDebugUtils.currentLine=12779533;
- //BA.debugLineNum = 12779533;BA.debugLine="Try";
+RDebugUtils.currentLine=4259853;
+ //BA.debugLineNum = 4259853;BA.debugLine="Try";
 if (true) break;
 
 case 1:
@@ -131,8 +131,8 @@ case 3:
 //C
 this.state = 4;
 this.catchState = 11;
-RDebugUtils.currentLine=12779534;
- //BA.debugLineNum = 12779534;BA.debugLine="If m_job.Success Then";
+RDebugUtils.currentLine=4259854;
+ //BA.debugLineNum = 4259854;BA.debugLine="If m_job.Success Then";
 if (true) break;
 
 case 4:
@@ -147,14 +147,14 @@ this.state = 8;
 case 6:
 //C
 this.state = 9;
-RDebugUtils.currentLine=12779535;
- //BA.debugLineNum = 12779535;BA.debugLine="m_successo = True";
+RDebugUtils.currentLine=4259855;
+ //BA.debugLineNum = 4259855;BA.debugLine="m_successo = True";
 __ref._m_successo = parent.__c.True;
-RDebugUtils.currentLine=12779536;
- //BA.debugLineNum = 12779536;BA.debugLine="ordn.FromJson(m_job.GetString)";
+RDebugUtils.currentLine=4259856;
+ //BA.debugLineNum = 4259856;BA.debugLine="ordn.FromJson(m_job.GetString)";
 _ordn._fromjson(null,__ref._m_job._getstring());
-RDebugUtils.currentLine=12779537;
- //BA.debugLineNum = 12779537;BA.debugLine="Return ordn";
+RDebugUtils.currentLine=4259857;
+ //BA.debugLineNum = 4259857;BA.debugLine="Return ordn";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(_ordn));return;};
  if (true) break;
@@ -162,8 +162,8 @@ parent.__c.ReturnFromResumableSub(this,(Object)(_ordn));return;};
 case 8:
 //C
 this.state = 9;
-RDebugUtils.currentLine=12779539;
- //BA.debugLineNum = 12779539;BA.debugLine="m_errore = m_job.ErrorMessage";
+RDebugUtils.currentLine=4259859;
+ //BA.debugLineNum = 4259859;BA.debugLine="m_errore = m_job.ErrorMessage";
 __ref._m_errore = __ref._m_job._errormessage;
  if (true) break;
 
@@ -177,11 +177,11 @@ case 11:
 //C
 this.state = 12;
 this.catchState = 0;
-RDebugUtils.currentLine=12779542;
- //BA.debugLineNum = 12779542;BA.debugLine="Log(LastException)";
+RDebugUtils.currentLine=4259862;
+ //BA.debugLineNum = 4259862;BA.debugLine="Log(LastException)";
 parent.__c.Log(BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())));
-RDebugUtils.currentLine=12779543;
- //BA.debugLineNum = 12779543;BA.debugLine="m_errore = \"Errore di connessione\"";
+RDebugUtils.currentLine=4259863;
+ //BA.debugLineNum = 4259863;BA.debugLine="m_errore = \"Errore di connessione\"";
 __ref._m_errore = "Errore di connessione";
  if (true) break;
 if (true) break;
@@ -191,12 +191,12 @@ case 12:
 this.state = -1;
 this.catchState = 0;
 ;
-RDebugUtils.currentLine=12779546;
- //BA.debugLineNum = 12779546;BA.debugLine="Return Null";
+RDebugUtils.currentLine=4259866;
+ //BA.debugLineNum = 4259866;BA.debugLine="Return Null";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,parent.__c.Null);return;};
-RDebugUtils.currentLine=12779547;
- //BA.debugLineNum = 12779547;BA.debugLine="End Sub";
+RDebugUtils.currentLine=4259867;
+ //BA.debugLineNum = 4259867;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -215,13 +215,13 @@ __ref = this;
 RDebugUtils.currentModule="apiclient";
 if (Debug.shouldDelegate(ba, "getsuccesso"))
 	 {return ((Boolean) Debug.delegate(ba, "getsuccesso", null));}
-RDebugUtils.currentLine=5177344;
- //BA.debugLineNum = 5177344;BA.debugLine="Public Sub getSuccesso As Boolean";
-RDebugUtils.currentLine=5177345;
- //BA.debugLineNum = 5177345;BA.debugLine="Return m_successo";
+RDebugUtils.currentLine=3735552;
+ //BA.debugLineNum = 3735552;BA.debugLine="Public Sub getSuccesso As Boolean";
+RDebugUtils.currentLine=3735553;
+ //BA.debugLineNum = 3735553;BA.debugLine="Return m_successo";
 if (true) return __ref._m_successo;
-RDebugUtils.currentLine=5177346;
- //BA.debugLineNum = 5177346;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3735554;
+ //BA.debugLineNum = 3735554;BA.debugLine="End Sub";
 return false;
 }
 public anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _storicoordinipercliente(app.aegdistribuzione.apiclient __ref,int _id_cliente) throws Exception{
@@ -283,20 +283,20 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=17563649;
- //BA.debugLineNum = 17563649;BA.debugLine="m_successo = False";
+RDebugUtils.currentLine=3997697;
+ //BA.debugLineNum = 3997697;BA.debugLine="m_successo = False";
 __ref._m_successo = parent.__c.False;
-RDebugUtils.currentLine=17563650;
- //BA.debugLineNum = 17563650;BA.debugLine="Dim m_ordini As List";
+RDebugUtils.currentLine=3997698;
+ //BA.debugLineNum = 3997698;BA.debugLine="Dim m_ordini As List";
 _m_ordini = new anywheresoftware.b4a.objects.collections.List();
-RDebugUtils.currentLine=17563651;
- //BA.debugLineNum = 17563651;BA.debugLine="m_ordini.Initialize";
+RDebugUtils.currentLine=3997699;
+ //BA.debugLineNum = 3997699;BA.debugLine="m_ordini.Initialize";
 _m_ordini.Initialize();
-RDebugUtils.currentLine=17563652;
- //BA.debugLineNum = 17563652;BA.debugLine="m_job.Download(m_url & \"/storico_ordini/\" & id_cl";
+RDebugUtils.currentLine=3997700;
+ //BA.debugLineNum = 3997700;BA.debugLine="m_job.Download(m_url & \"/storico_ordini/\" & id_cl";
 __ref._m_job._download(__ref._m_url+"/storico_ordini/"+BA.NumberToString(_id_cliente));
-RDebugUtils.currentLine=17563653;
- //BA.debugLineNum = 17563653;BA.debugLine="Wait For (m_job) JobDone";
+RDebugUtils.currentLine=3997701;
+ //BA.debugLineNum = 3997701;BA.debugLine="Wait For (m_job) JobDone";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "apiclient", "storicoordinipercliente"), (Object)(__ref._m_job));
 this.state = 19;
 return;
@@ -304,8 +304,8 @@ case 19:
 //C
 this.state = 1;
 ;
-RDebugUtils.currentLine=17563655;
- //BA.debugLineNum = 17563655;BA.debugLine="If m_job.Success Then";
+RDebugUtils.currentLine=3997703;
+ //BA.debugLineNum = 3997703;BA.debugLine="If m_job.Success Then";
 if (true) break;
 
 case 1:
@@ -318,25 +318,25 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=17563656;
- //BA.debugLineNum = 17563656;BA.debugLine="m_successo = True";
+RDebugUtils.currentLine=3997704;
+ //BA.debugLineNum = 3997704;BA.debugLine="m_successo = True";
 __ref._m_successo = parent.__c.True;
-RDebugUtils.currentLine=17563657;
- //BA.debugLineNum = 17563657;BA.debugLine="Dim parser As JSONParser";
+RDebugUtils.currentLine=3997705;
+ //BA.debugLineNum = 3997705;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
-RDebugUtils.currentLine=17563658;
- //BA.debugLineNum = 17563658;BA.debugLine="parser.Initialize(m_job.GetString)";
+RDebugUtils.currentLine=3997706;
+ //BA.debugLineNum = 3997706;BA.debugLine="parser.Initialize(m_job.GetString)";
 _parser.Initialize(__ref._m_job._getstring());
-RDebugUtils.currentLine=17563659;
- //BA.debugLineNum = 17563659;BA.debugLine="Dim root As Map = parser.NextObject";
+RDebugUtils.currentLine=3997707;
+ //BA.debugLineNum = 3997707;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
-RDebugUtils.currentLine=17563660;
- //BA.debugLineNum = 17563660;BA.debugLine="Dim objects As List = root.Get(\"data\")";
+RDebugUtils.currentLine=3997708;
+ //BA.debugLineNum = 3997708;BA.debugLine="Dim objects As List = root.Get(\"data\")";
 _objects = new anywheresoftware.b4a.objects.collections.List();
 _objects.setObject((java.util.List)(_root.Get((Object)("data"))));
-RDebugUtils.currentLine=17563662;
- //BA.debugLineNum = 17563662;BA.debugLine="For Each m As Map In objects";
+RDebugUtils.currentLine=3997710;
+ //BA.debugLineNum = 3997710;BA.debugLine="For Each m As Map In objects";
 if (true) break;
 
 case 4:
@@ -366,33 +366,33 @@ if (true) break;
 case 6:
 //C
 this.state = 7;
-RDebugUtils.currentLine=17563663;
- //BA.debugLineNum = 17563663;BA.debugLine="Dim dt_inv As String = m.Get(\"data_invio\")";
+RDebugUtils.currentLine=3997711;
+ //BA.debugLineNum = 3997711;BA.debugLine="Dim dt_inv As String = m.Get(\"data_invio\")";
 _dt_inv = BA.ObjectToString(_m.Get((Object)("data_invio")));
-RDebugUtils.currentLine=17563664;
- //BA.debugLineNum = 17563664;BA.debugLine="Dim oid As Int = m.Get(\"id\")";
+RDebugUtils.currentLine=3997712;
+ //BA.debugLineNum = 3997712;BA.debugLine="Dim oid As Int = m.Get(\"id\")";
 _oid = (int)(BA.ObjectToNumber(_m.Get((Object)("id"))));
-RDebugUtils.currentLine=17563665;
- //BA.debugLineNum = 17563665;BA.debugLine="Dim cId As Int = m.Get(\"id_cliente\")";
+RDebugUtils.currentLine=3997713;
+ //BA.debugLineNum = 3997713;BA.debugLine="Dim cId As Int = m.Get(\"id_cliente\")";
 _cid = (int)(BA.ObjectToNumber(_m.Get((Object)("id_cliente"))));
-RDebugUtils.currentLine=17563666;
- //BA.debugLineNum = 17563666;BA.debugLine="Dim uId As Int = m.Get(\"id_utente\")";
+RDebugUtils.currentLine=3997714;
+ //BA.debugLineNum = 3997714;BA.debugLine="Dim uId As Int = m.Get(\"id_utente\")";
 _uid = (int)(BA.ObjectToNumber(_m.Get((Object)("id_utente"))));
-RDebugUtils.currentLine=17563667;
- //BA.debugLineNum = 17563667;BA.debugLine="Dim nt As String = m.Get(\"note\")";
+RDebugUtils.currentLine=3997715;
+ //BA.debugLineNum = 3997715;BA.debugLine="Dim nt As String = m.Get(\"note\")";
 _nt = BA.ObjectToString(_m.Get((Object)("note")));
-RDebugUtils.currentLine=17563668;
- //BA.debugLineNum = 17563668;BA.debugLine="Dim ordn As Ordine";
+RDebugUtils.currentLine=3997716;
+ //BA.debugLineNum = 3997716;BA.debugLine="Dim ordn As Ordine";
 _ordn = new app.aegdistribuzione.ordine();
-RDebugUtils.currentLine=17563669;
- //BA.debugLineNum = 17563669;BA.debugLine="ordn.Initialize(oid,cId,uId,dt_inv,nt)";
+RDebugUtils.currentLine=3997717;
+ //BA.debugLineNum = 3997717;BA.debugLine="ordn.Initialize(oid,cId,uId,dt_inv,nt)";
 _ordn._initialize(null,ba,_oid,_cid,_uid,_dt_inv,_nt);
-RDebugUtils.currentLine=17563671;
- //BA.debugLineNum = 17563671;BA.debugLine="Dim righe As List = m.Get(\"righe\")";
+RDebugUtils.currentLine=3997719;
+ //BA.debugLineNum = 3997719;BA.debugLine="Dim righe As List = m.Get(\"righe\")";
 _righe = new anywheresoftware.b4a.objects.collections.List();
 _righe.setObject((java.util.List)(_m.Get((Object)("righe"))));
-RDebugUtils.currentLine=17563672;
- //BA.debugLineNum = 17563672;BA.debugLine="For Each r As Map In righe";
+RDebugUtils.currentLine=3997720;
+ //BA.debugLineNum = 3997720;BA.debugLine="For Each r As Map In righe";
 if (true) break;
 
 case 7:
@@ -422,8 +422,8 @@ if (true) break;
 case 9:
 //C
 this.state = 10;
-RDebugUtils.currentLine=17563673;
- //BA.debugLineNum = 17563673;BA.debugLine="Try";
+RDebugUtils.currentLine=3997721;
+ //BA.debugLineNum = 3997721;BA.debugLine="Try";
 if (true) break;
 
 case 10:
@@ -437,35 +437,35 @@ case 12:
 //C
 this.state = 15;
 this.catchState = 14;
-RDebugUtils.currentLine=17563674;
- //BA.debugLineNum = 17563674;BA.debugLine="Dim v As VoceOrdine";
+RDebugUtils.currentLine=3997722;
+ //BA.debugLineNum = 3997722;BA.debugLine="Dim v As VoceOrdine";
 _v = new app.aegdistribuzione.voceordine();
-RDebugUtils.currentLine=17563675;
- //BA.debugLineNum = 17563675;BA.debugLine="Dim id As Int = r.Get(\"id\")";
+RDebugUtils.currentLine=3997723;
+ //BA.debugLineNum = 3997723;BA.debugLine="Dim id As Int = r.Get(\"id\")";
 _id = (int)(BA.ObjectToNumber(_r.Get((Object)("id"))));
-RDebugUtils.currentLine=17563676;
- //BA.debugLineNum = 17563676;BA.debugLine="Dim oid As Int = ordn.Id";
+RDebugUtils.currentLine=3997724;
+ //BA.debugLineNum = 3997724;BA.debugLine="Dim oid As Int = ordn.Id";
 _oid = _ordn._id;
-RDebugUtils.currentLine=17563677;
- //BA.debugLineNum = 17563677;BA.debugLine="Dim cod As String = r.Get(\"cod_art\")";
+RDebugUtils.currentLine=3997725;
+ //BA.debugLineNum = 3997725;BA.debugLine="Dim cod As String = r.Get(\"cod_art\")";
 _cod = BA.ObjectToString(_r.Get((Object)("cod_art")));
-RDebugUtils.currentLine=17563678;
- //BA.debugLineNum = 17563678;BA.debugLine="Dim desc As String = r.Get(\"desc_art\")";
+RDebugUtils.currentLine=3997726;
+ //BA.debugLineNum = 3997726;BA.debugLine="Dim desc As String = r.Get(\"desc_art\")";
 _desc = BA.ObjectToString(_r.Get((Object)("desc_art")));
-RDebugUtils.currentLine=17563679;
- //BA.debugLineNum = 17563679;BA.debugLine="Dim note As String = r.Get(\"note\")";
+RDebugUtils.currentLine=3997727;
+ //BA.debugLineNum = 3997727;BA.debugLine="Dim note As String = r.Get(\"note\")";
 _note = BA.ObjectToString(_r.Get((Object)("note")));
-RDebugUtils.currentLine=17563680;
- //BA.debugLineNum = 17563680;BA.debugLine="Dim prezzo As Float = r.Get(\"prez_art\")";
+RDebugUtils.currentLine=3997728;
+ //BA.debugLineNum = 3997728;BA.debugLine="Dim prezzo As Float = r.Get(\"prez_art\")";
 _prezzo = (float)(BA.ObjectToNumber(_r.Get((Object)("prez_art"))));
-RDebugUtils.currentLine=17563681;
- //BA.debugLineNum = 17563681;BA.debugLine="Dim qta As Int = r.Get(\"qta\")";
+RDebugUtils.currentLine=3997729;
+ //BA.debugLineNum = 3997729;BA.debugLine="Dim qta As Int = r.Get(\"qta\")";
 _qta = (int)(BA.ObjectToNumber(_r.Get((Object)("qta"))));
-RDebugUtils.currentLine=17563682;
- //BA.debugLineNum = 17563682;BA.debugLine="v.Initialize(id, cod, desc, oid, note, prezzo";
+RDebugUtils.currentLine=3997730;
+ //BA.debugLineNum = 3997730;BA.debugLine="v.Initialize(id, cod, desc, oid, note, prezzo";
 _v._initialize(null,ba,_id,_cod,_desc,_oid,_note,_prezzo,_qta);
-RDebugUtils.currentLine=17563683;
- //BA.debugLineNum = 17563683;BA.debugLine="ordn.Voci.Add(v)";
+RDebugUtils.currentLine=3997731;
+ //BA.debugLineNum = 3997731;BA.debugLine="ordn.Voci.Add(v)";
 _ordn._voci.Add((Object)(_v));
  if (true) break;
 
@@ -473,8 +473,8 @@ case 14:
 //C
 this.state = 15;
 this.catchState = 0;
-RDebugUtils.currentLine=17563685;
- //BA.debugLineNum = 17563685;BA.debugLine="Log(LastException)";
+RDebugUtils.currentLine=3997733;
+ //BA.debugLineNum = 3997733;BA.debugLine="Log(LastException)";
 parent.__c.Log(BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())));
  if (true) break;
 if (true) break;
@@ -491,8 +491,8 @@ case 16:
 //C
 this.state = 21;
 ;
-RDebugUtils.currentLine=17563689;
- //BA.debugLineNum = 17563689;BA.debugLine="m_ordini.Add(ordn)";
+RDebugUtils.currentLine=3997737;
+ //BA.debugLineNum = 3997737;BA.debugLine="m_ordini.Add(ordn)";
 _m_ordini.Add((Object)(_ordn));
  if (true) break;
 if (true) break;
@@ -507,12 +507,12 @@ case 18:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=17563693;
- //BA.debugLineNum = 17563693;BA.debugLine="Return m_ordini";
+RDebugUtils.currentLine=3997741;
+ //BA.debugLineNum = 3997741;BA.debugLine="Return m_ordini";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(_m_ordini));return;};
-RDebugUtils.currentLine=17563694;
- //BA.debugLineNum = 17563694;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3997742;
+ //BA.debugLineNum = 3997742;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -571,20 +571,20 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=20185089;
- //BA.debugLineNum = 20185089;BA.debugLine="m_successo = False";
+RDebugUtils.currentLine=4194305;
+ //BA.debugLineNum = 4194305;BA.debugLine="m_successo = False";
 __ref._m_successo = parent.__c.False;
-RDebugUtils.currentLine=20185090;
- //BA.debugLineNum = 20185090;BA.debugLine="Dim m_preferiti As List";
+RDebugUtils.currentLine=4194306;
+ //BA.debugLineNum = 4194306;BA.debugLine="Dim m_preferiti As List";
 _m_preferiti = new anywheresoftware.b4a.objects.collections.List();
-RDebugUtils.currentLine=20185091;
- //BA.debugLineNum = 20185091;BA.debugLine="m_preferiti.Initialize";
+RDebugUtils.currentLine=4194307;
+ //BA.debugLineNum = 4194307;BA.debugLine="m_preferiti.Initialize";
 _m_preferiti.Initialize();
-RDebugUtils.currentLine=20185092;
- //BA.debugLineNum = 20185092;BA.debugLine="m_job.Download(m_url & \"/preferiti/\" & id_cliente";
+RDebugUtils.currentLine=4194308;
+ //BA.debugLineNum = 4194308;BA.debugLine="m_job.Download(m_url & \"/preferiti/\" & id_cliente";
 __ref._m_job._download(__ref._m_url+"/preferiti/"+BA.NumberToString(_id_cliente));
-RDebugUtils.currentLine=20185093;
- //BA.debugLineNum = 20185093;BA.debugLine="Wait For (m_job) JobDone";
+RDebugUtils.currentLine=4194309;
+ //BA.debugLineNum = 4194309;BA.debugLine="Wait For (m_job) JobDone";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "apiclient", "scaricapreferitipercliente"), (Object)(__ref._m_job));
 this.state = 9;
 return;
@@ -592,8 +592,8 @@ case 9:
 //C
 this.state = 1;
 ;
-RDebugUtils.currentLine=20185095;
- //BA.debugLineNum = 20185095;BA.debugLine="If m_job.Success Then";
+RDebugUtils.currentLine=4194311;
+ //BA.debugLineNum = 4194311;BA.debugLine="If m_job.Success Then";
 if (true) break;
 
 case 1:
@@ -606,25 +606,25 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=20185096;
- //BA.debugLineNum = 20185096;BA.debugLine="m_successo = True";
+RDebugUtils.currentLine=4194312;
+ //BA.debugLineNum = 4194312;BA.debugLine="m_successo = True";
 __ref._m_successo = parent.__c.True;
-RDebugUtils.currentLine=20185097;
- //BA.debugLineNum = 20185097;BA.debugLine="Dim parser As JSONParser";
+RDebugUtils.currentLine=4194313;
+ //BA.debugLineNum = 4194313;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
-RDebugUtils.currentLine=20185098;
- //BA.debugLineNum = 20185098;BA.debugLine="parser.Initialize(m_job.GetString)";
+RDebugUtils.currentLine=4194314;
+ //BA.debugLineNum = 4194314;BA.debugLine="parser.Initialize(m_job.GetString)";
 _parser.Initialize(__ref._m_job._getstring());
-RDebugUtils.currentLine=20185099;
- //BA.debugLineNum = 20185099;BA.debugLine="Dim root As Map = parser.NextObject";
+RDebugUtils.currentLine=4194315;
+ //BA.debugLineNum = 4194315;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
-RDebugUtils.currentLine=20185100;
- //BA.debugLineNum = 20185100;BA.debugLine="Dim objects As List = root.Get(\"data\")";
+RDebugUtils.currentLine=4194316;
+ //BA.debugLineNum = 4194316;BA.debugLine="Dim objects As List = root.Get(\"data\")";
 _objects = new anywheresoftware.b4a.objects.collections.List();
 _objects.setObject((java.util.List)(_root.Get((Object)("data"))));
-RDebugUtils.currentLine=20185102;
- //BA.debugLineNum = 20185102;BA.debugLine="For Each m As Map In objects";
+RDebugUtils.currentLine=4194318;
+ //BA.debugLineNum = 4194318;BA.debugLine="For Each m As Map In objects";
 if (true) break;
 
 case 4:
@@ -654,29 +654,29 @@ if (true) break;
 case 6:
 //C
 this.state = 11;
-RDebugUtils.currentLine=20185103;
- //BA.debugLineNum = 20185103;BA.debugLine="Dim cod As String = m.Get(\"cod_art\")";
+RDebugUtils.currentLine=4194319;
+ //BA.debugLineNum = 4194319;BA.debugLine="Dim cod As String = m.Get(\"cod_art\")";
 _cod = BA.ObjectToString(_m.Get((Object)("cod_art")));
-RDebugUtils.currentLine=20185104;
- //BA.debugLineNum = 20185104;BA.debugLine="Dim desc As String = m.Get(\"desc_art\")";
+RDebugUtils.currentLine=4194320;
+ //BA.debugLineNum = 4194320;BA.debugLine="Dim desc As String = m.Get(\"desc_art\")";
 _desc = BA.ObjectToString(_m.Get((Object)("desc_art")));
-RDebugUtils.currentLine=20185105;
- //BA.debugLineNum = 20185105;BA.debugLine="Dim id As Int = m.Get(\"id_art\")";
+RDebugUtils.currentLine=4194321;
+ //BA.debugLineNum = 4194321;BA.debugLine="Dim id As Int = m.Get(\"id_art\")";
 _id = (int)(BA.ObjectToNumber(_m.Get((Object)("id_art"))));
-RDebugUtils.currentLine=20185106;
- //BA.debugLineNum = 20185106;BA.debugLine="Dim cid As String = m.Get(\"id_cliente\")";
+RDebugUtils.currentLine=4194322;
+ //BA.debugLineNum = 4194322;BA.debugLine="Dim cid As String = m.Get(\"id_cliente\")";
 _cid = BA.ObjectToString(_m.Get((Object)("id_cliente")));
-RDebugUtils.currentLine=20185107;
- //BA.debugLineNum = 20185107;BA.debugLine="Dim occ As String = m.Get(\"occorrenze\")";
+RDebugUtils.currentLine=4194323;
+ //BA.debugLineNum = 4194323;BA.debugLine="Dim occ As String = m.Get(\"occorrenze\")";
 _occ = BA.ObjectToString(_m.Get((Object)("occorrenze")));
-RDebugUtils.currentLine=20185109;
- //BA.debugLineNum = 20185109;BA.debugLine="Dim pr As Preferito";
+RDebugUtils.currentLine=4194325;
+ //BA.debugLineNum = 4194325;BA.debugLine="Dim pr As Preferito";
 _pr = new app.aegdistribuzione.preferito();
-RDebugUtils.currentLine=20185110;
- //BA.debugLineNum = 20185110;BA.debugLine="pr.Initialize(id, cod, desc, cid, occ)";
+RDebugUtils.currentLine=4194326;
+ //BA.debugLineNum = 4194326;BA.debugLine="pr.Initialize(id, cod, desc, cid, occ)";
 _pr._initialize(null,ba,_id,_cod,_desc,(int)(Double.parseDouble(_cid)),(int)(Double.parseDouble(_occ)));
-RDebugUtils.currentLine=20185111;
- //BA.debugLineNum = 20185111;BA.debugLine="m_preferiti.Add(pr)";
+RDebugUtils.currentLine=4194327;
+ //BA.debugLineNum = 4194327;BA.debugLine="m_preferiti.Add(pr)";
 _m_preferiti.Add((Object)(_pr));
  if (true) break;
 if (true) break;
@@ -691,12 +691,12 @@ case 8:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=20185115;
- //BA.debugLineNum = 20185115;BA.debugLine="Return m_preferiti";
+RDebugUtils.currentLine=4194331;
+ //BA.debugLineNum = 4194331;BA.debugLine="Return m_preferiti";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(_m_preferiti));return;};
-RDebugUtils.currentLine=20185116;
- //BA.debugLineNum = 20185116;BA.debugLine="End Sub";
+RDebugUtils.currentLine=4194332;
+ //BA.debugLineNum = 4194332;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -708,14 +708,227 @@ __ref = this;
 RDebugUtils.currentModule="apiclient";
 if (Debug.shouldDelegate(ba, "geterrore"))
 	 {return ((String) Debug.delegate(ba, "geterrore", null));}
-RDebugUtils.currentLine=12320768;
- //BA.debugLineNum = 12320768;BA.debugLine="Public Sub getErrore As String";
-RDebugUtils.currentLine=12320769;
- //BA.debugLineNum = 12320769;BA.debugLine="Return m_errore";
+RDebugUtils.currentLine=3801088;
+ //BA.debugLineNum = 3801088;BA.debugLine="Public Sub getErrore As String";
+RDebugUtils.currentLine=3801089;
+ //BA.debugLineNum = 3801089;BA.debugLine="Return m_errore";
 if (true) return __ref._m_errore;
-RDebugUtils.currentLine=12320770;
- //BA.debugLineNum = 12320770;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3801090;
+ //BA.debugLineNum = 3801090;BA.debugLine="End Sub";
 return "";
+}
+public String  _class_globals(app.aegdistribuzione.apiclient __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="apiclient";
+RDebugUtils.currentLine=3604480;
+ //BA.debugLineNum = 3604480;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=3604481;
+ //BA.debugLineNum = 3604481;BA.debugLine="Dim m_job As HttpJob";
+_m_job = new anywheresoftware.b4a.samples.httputils2.httpjob();
+RDebugUtils.currentLine=3604482;
+ //BA.debugLineNum = 3604482;BA.debugLine="Dim m_successo As Boolean";
+_m_successo = false;
+RDebugUtils.currentLine=3604483;
+ //BA.debugLineNum = 3604483;BA.debugLine="Dim m_url As String";
+_m_url = "";
+RDebugUtils.currentLine=3604484;
+ //BA.debugLineNum = 3604484;BA.debugLine="Dim m_errore As String";
+_m_errore = "";
+RDebugUtils.currentLine=3604485;
+ //BA.debugLineNum = 3604485;BA.debugLine="End Sub";
+return "";
+}
+public anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _creacliente(app.aegdistribuzione.apiclient __ref,app.aegdistribuzione.cliente _cli,int _fittizio) throws Exception{
+RDebugUtils.currentModule="apiclient";
+if (Debug.shouldDelegate(ba, "creacliente"))
+	 {return ((anywheresoftware.b4a.keywords.Common.ResumableSubWrapper) Debug.delegate(ba, "creacliente", new Object[] {_cli,_fittizio}));}
+ResumableSub_CreaCliente rsub = new ResumableSub_CreaCliente(this,__ref,_cli,_fittizio);
+rsub.resume(ba, null);
+return (anywheresoftware.b4a.keywords.Common.ResumableSubWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.keywords.Common.ResumableSubWrapper(), rsub);
+}
+public static class ResumableSub_CreaCliente extends BA.ResumableSub {
+public ResumableSub_CreaCliente(app.aegdistribuzione.apiclient parent,app.aegdistribuzione.apiclient __ref,app.aegdistribuzione.cliente _cli,int _fittizio) {
+this.parent = parent;
+this.__ref = __ref;
+this._cli = _cli;
+this._fittizio = _fittizio;
+this.__ref = parent;
+}
+app.aegdistribuzione.apiclient __ref;
+app.aegdistribuzione.apiclient parent;
+app.aegdistribuzione.cliente _cli;
+int _fittizio;
+anywheresoftware.b4a.objects.collections.Map _form = null;
+anywheresoftware.b4a.objects.collections.JSONParser _parser = null;
+anywheresoftware.b4a.objects.collections.Map _root = null;
+anywheresoftware.b4a.objects.collections.List _objects = null;
+anywheresoftware.b4a.objects.collections.Map _m = null;
+String _cod = "";
+String _denom = "";
+int _id = 0;
+String _indir = "";
+String _piva = "";
+String _dtum = "";
+app.aegdistribuzione.cliente _c = null;
+anywheresoftware.b4a.BA.IterableList group16;
+int index16;
+int groupLen16;
+
+@Override
+public void resume(BA ba, Object[] result) throws Exception{
+RDebugUtils.currentModule="apiclient";
+
+    while (true) {
+        switch (state) {
+            case -1:
+{
+parent.__c.ReturnFromResumableSub(this,null);return;}
+case 0:
+//C
+this.state = 1;
+RDebugUtils.currentLine=13369345;
+ //BA.debugLineNum = 13369345;BA.debugLine="m_successo = False";
+__ref._m_successo = parent.__c.False;
+RDebugUtils.currentLine=13369346;
+ //BA.debugLineNum = 13369346;BA.debugLine="Dim form As Map";
+_form = new anywheresoftware.b4a.objects.collections.Map();
+RDebugUtils.currentLine=13369347;
+ //BA.debugLineNum = 13369347;BA.debugLine="form.Initialize";
+_form.Initialize();
+RDebugUtils.currentLine=13369348;
+ //BA.debugLineNum = 13369348;BA.debugLine="form.Put(\"codice\", cli.Codice)";
+_form.Put((Object)("codice"),(Object)(_cli._codice));
+RDebugUtils.currentLine=13369349;
+ //BA.debugLineNum = 13369349;BA.debugLine="form.Put(\"denominazione\", cli.Denominazione)";
+_form.Put((Object)("denominazione"),(Object)(_cli._denominazione));
+RDebugUtils.currentLine=13369350;
+ //BA.debugLineNum = 13369350;BA.debugLine="form.Put(\"indirizzo\", cli.Indirizzo)";
+_form.Put((Object)("indirizzo"),(Object)(_cli._indirizzo));
+RDebugUtils.currentLine=13369351;
+ //BA.debugLineNum = 13369351;BA.debugLine="form.Put(\"part_iva\", cli.PartitaIVA)";
+_form.Put((Object)("part_iva"),(Object)(_cli._partitaiva));
+RDebugUtils.currentLine=13369352;
+ //BA.debugLineNum = 13369352;BA.debugLine="form.Put(\"fittizio\", fittizio)";
+_form.Put((Object)("fittizio"),(Object)(_fittizio));
+RDebugUtils.currentLine=13369353;
+ //BA.debugLineNum = 13369353;BA.debugLine="m_job.PostMultipart(m_url & \"/clienti\", form, Nul";
+__ref._m_job._postmultipart(__ref._m_url+"/clienti",_form,(anywheresoftware.b4a.objects.collections.List) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.List(), (java.util.List)(parent.__c.Null)));
+RDebugUtils.currentLine=13369354;
+ //BA.debugLineNum = 13369354;BA.debugLine="Wait For (m_job) JobDone";
+parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "apiclient", "creacliente"), (Object)(__ref._m_job));
+this.state = 9;
+return;
+case 9:
+//C
+this.state = 1;
+;
+RDebugUtils.currentLine=13369356;
+ //BA.debugLineNum = 13369356;BA.debugLine="If m_job.Success Then";
+if (true) break;
+
+case 1:
+//if
+this.state = 8;
+if (__ref._m_job._success) { 
+this.state = 3;
+}if (true) break;
+
+case 3:
+//C
+this.state = 4;
+RDebugUtils.currentLine=13369357;
+ //BA.debugLineNum = 13369357;BA.debugLine="Dim parser As JSONParser";
+_parser = new anywheresoftware.b4a.objects.collections.JSONParser();
+RDebugUtils.currentLine=13369358;
+ //BA.debugLineNum = 13369358;BA.debugLine="parser.Initialize(m_job.GetString)";
+_parser.Initialize(__ref._m_job._getstring());
+RDebugUtils.currentLine=13369359;
+ //BA.debugLineNum = 13369359;BA.debugLine="Dim root As Map = parser.NextObject";
+_root = new anywheresoftware.b4a.objects.collections.Map();
+_root = _parser.NextObject();
+RDebugUtils.currentLine=13369360;
+ //BA.debugLineNum = 13369360;BA.debugLine="Dim objects As List = root.Get(\"data\")";
+_objects = new anywheresoftware.b4a.objects.collections.List();
+_objects.setObject((java.util.List)(_root.Get((Object)("data"))));
+RDebugUtils.currentLine=13369361;
+ //BA.debugLineNum = 13369361;BA.debugLine="for	Each m As Map In objects";
+if (true) break;
+
+case 4:
+//for
+this.state = 7;
+_m = new anywheresoftware.b4a.objects.collections.Map();
+group16 = _objects;
+index16 = 0;
+groupLen16 = group16.getSize();
+this.state = 10;
+if (true) break;
+
+case 10:
+//C
+this.state = 7;
+if (index16 < groupLen16) {
+this.state = 6;
+_m.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(group16.Get(index16)));}
+if (true) break;
+
+case 11:
+//C
+this.state = 10;
+index16++;
+if (true) break;
+
+case 6:
+//C
+this.state = 11;
+RDebugUtils.currentLine=13369362;
+ //BA.debugLineNum = 13369362;BA.debugLine="Dim cod As String = m.Get(\"codice\")";
+_cod = BA.ObjectToString(_m.Get((Object)("codice")));
+RDebugUtils.currentLine=13369363;
+ //BA.debugLineNum = 13369363;BA.debugLine="Dim Denom As String = m.Get(\"denominazione\")";
+_denom = BA.ObjectToString(_m.Get((Object)("denominazione")));
+RDebugUtils.currentLine=13369364;
+ //BA.debugLineNum = 13369364;BA.debugLine="Dim id As Int = m.Get(\"id\")";
+_id = (int)(BA.ObjectToNumber(_m.Get((Object)("id"))));
+RDebugUtils.currentLine=13369365;
+ //BA.debugLineNum = 13369365;BA.debugLine="Dim indir As String = m.Get(\"indirizzo\")";
+_indir = BA.ObjectToString(_m.Get((Object)("indirizzo")));
+RDebugUtils.currentLine=13369366;
+ //BA.debugLineNum = 13369366;BA.debugLine="Dim piva As String = m.Get(\"part_iva\")";
+_piva = BA.ObjectToString(_m.Get((Object)("part_iva")));
+RDebugUtils.currentLine=13369367;
+ //BA.debugLineNum = 13369367;BA.debugLine="Dim dtum As String = m.Get(\"data_ultima_modific";
+_dtum = BA.ObjectToString(_m.Get((Object)("data_ultima_modifica")));
+ if (true) break;
+if (true) break;
+
+case 7:
+//C
+this.state = 8;
+;
+RDebugUtils.currentLine=13369369;
+ //BA.debugLineNum = 13369369;BA.debugLine="Dim c As Cliente";
+_c = new app.aegdistribuzione.cliente();
+RDebugUtils.currentLine=13369370;
+ //BA.debugLineNum = 13369370;BA.debugLine="c.Initialize(id,cod,Denom,indir,piva,dtum)";
+_c._initialize(null,ba,_id,_cod,_denom,_indir,_piva,_dtum);
+RDebugUtils.currentLine=13369371;
+ //BA.debugLineNum = 13369371;BA.debugLine="Return c";
+if (true) {
+parent.__c.ReturnFromResumableSub(this,(Object)(_c));return;};
+ if (true) break;
+
+case 8:
+//C
+this.state = -1;
+;
+RDebugUtils.currentLine=13369373;
+ //BA.debugLineNum = 13369373;BA.debugLine="End Sub";
+if (true) break;
+
+            }
+        }
+    }
 }
 public String  _initialize(app.aegdistribuzione.apiclient __ref,anywheresoftware.b4a.BA _ba) throws Exception{
 __ref = this;
@@ -723,16 +936,16 @@ innerInitialize(_ba);
 RDebugUtils.currentModule="apiclient";
 if (Debug.shouldDelegate(ba, "initialize"))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
-RDebugUtils.currentLine=5111808;
- //BA.debugLineNum = 5111808;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=5111809;
- //BA.debugLineNum = 5111809;BA.debugLine="m_job.Initialize(\"\", Me)";
+RDebugUtils.currentLine=3670016;
+ //BA.debugLineNum = 3670016;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=3670017;
+ //BA.debugLineNum = 3670017;BA.debugLine="m_job.Initialize(\"\", Me)";
 __ref._m_job._initialize(ba,"",this);
-RDebugUtils.currentLine=5111811;
- //BA.debugLineNum = 5111811;BA.debugLine="m_url = \"http://80.211.227.37:5002/api/v2\"";
+RDebugUtils.currentLine=3670019;
+ //BA.debugLineNum = 3670019;BA.debugLine="m_url = \"http://80.211.227.37:5002/api/v2\"";
 __ref._m_url = "http://80.211.227.37:5002/api/v2";
-RDebugUtils.currentLine=5111817;
- //BA.debugLineNum = 5111817;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3670025;
+ //BA.debugLineNum = 3670025;BA.debugLine="End Sub";
 return "";
 }
 public anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _login(app.aegdistribuzione.apiclient __ref,String _username,String _password) throws Exception{
@@ -776,29 +989,29 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=5505025;
- //BA.debugLineNum = 5505025;BA.debugLine="m_successo = False";
+RDebugUtils.currentLine=4325377;
+ //BA.debugLineNum = 4325377;BA.debugLine="m_successo = False";
 __ref._m_successo = parent.__c.False;
-RDebugUtils.currentLine=5505026;
- //BA.debugLineNum = 5505026;BA.debugLine="Dim user As Utente";
+RDebugUtils.currentLine=4325378;
+ //BA.debugLineNum = 4325378;BA.debugLine="Dim user As Utente";
 _user = new app.aegdistribuzione.utente();
-RDebugUtils.currentLine=5505027;
- //BA.debugLineNum = 5505027;BA.debugLine="Dim form As Map";
+RDebugUtils.currentLine=4325379;
+ //BA.debugLineNum = 4325379;BA.debugLine="Dim form As Map";
 _form = new anywheresoftware.b4a.objects.collections.Map();
-RDebugUtils.currentLine=5505028;
- //BA.debugLineNum = 5505028;BA.debugLine="form.Initialize";
+RDebugUtils.currentLine=4325380;
+ //BA.debugLineNum = 4325380;BA.debugLine="form.Initialize";
 _form.Initialize();
-RDebugUtils.currentLine=5505029;
- //BA.debugLineNum = 5505029;BA.debugLine="form.Put(\"username\", username)";
+RDebugUtils.currentLine=4325381;
+ //BA.debugLineNum = 4325381;BA.debugLine="form.Put(\"username\", username)";
 _form.Put((Object)("username"),(Object)(_username));
-RDebugUtils.currentLine=5505030;
- //BA.debugLineNum = 5505030;BA.debugLine="form.Put(\"password\", password)";
+RDebugUtils.currentLine=4325382;
+ //BA.debugLineNum = 4325382;BA.debugLine="form.Put(\"password\", password)";
 _form.Put((Object)("password"),(Object)(_password));
-RDebugUtils.currentLine=5505031;
- //BA.debugLineNum = 5505031;BA.debugLine="m_job.PostMultipart(m_url & \"/login\", form, Null)";
+RDebugUtils.currentLine=4325383;
+ //BA.debugLineNum = 4325383;BA.debugLine="m_job.PostMultipart(m_url & \"/login\", form, Null)";
 __ref._m_job._postmultipart(__ref._m_url+"/login",_form,(anywheresoftware.b4a.objects.collections.List) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.List(), (java.util.List)(parent.__c.Null)));
-RDebugUtils.currentLine=5505032;
- //BA.debugLineNum = 5505032;BA.debugLine="Wait For (m_job) JobDone";
+RDebugUtils.currentLine=4325384;
+ //BA.debugLineNum = 4325384;BA.debugLine="Wait For (m_job) JobDone";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "apiclient", "login"), (Object)(__ref._m_job));
 this.state = 15;
 return;
@@ -806,8 +1019,8 @@ case 15:
 //C
 this.state = 1;
 ;
-RDebugUtils.currentLine=5505034;
- //BA.debugLineNum = 5505034;BA.debugLine="Try";
+RDebugUtils.currentLine=4325386;
+ //BA.debugLineNum = 4325386;BA.debugLine="Try";
 if (true) break;
 
 case 1:
@@ -821,8 +1034,8 @@ case 3:
 //C
 this.state = 4;
 this.catchState = 13;
-RDebugUtils.currentLine=5505035;
- //BA.debugLineNum = 5505035;BA.debugLine="If m_job.Success Then";
+RDebugUtils.currentLine=4325387;
+ //BA.debugLineNum = 4325387;BA.debugLine="If m_job.Success Then";
 if (true) break;
 
 case 4:
@@ -831,8 +1044,8 @@ this.state = 11;
 if (__ref._m_job._success) { 
 this.state = 6;
 }else 
-{RDebugUtils.currentLine=5505046;
- //BA.debugLineNum = 5505046;BA.debugLine="Else If m_job.Response.StatusCode == 404 Then";
+{RDebugUtils.currentLine=4325398;
+ //BA.debugLineNum = 4325398;BA.debugLine="Else If m_job.Response.StatusCode == 404 Then";
 if (__ref._m_job._response.getStatusCode()==404) { 
 this.state = 8;
 }else {
@@ -843,32 +1056,32 @@ if (true) break;
 case 6:
 //C
 this.state = 11;
-RDebugUtils.currentLine=5505036;
- //BA.debugLineNum = 5505036;BA.debugLine="m_successo = True";
+RDebugUtils.currentLine=4325388;
+ //BA.debugLineNum = 4325388;BA.debugLine="m_successo = True";
 __ref._m_successo = parent.__c.True;
-RDebugUtils.currentLine=5505037;
- //BA.debugLineNum = 5505037;BA.debugLine="Dim parser As JSONParser";
+RDebugUtils.currentLine=4325389;
+ //BA.debugLineNum = 4325389;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
-RDebugUtils.currentLine=5505038;
- //BA.debugLineNum = 5505038;BA.debugLine="parser.Initialize(m_job.GetString)";
+RDebugUtils.currentLine=4325390;
+ //BA.debugLineNum = 4325390;BA.debugLine="parser.Initialize(m_job.GetString)";
 _parser.Initialize(__ref._m_job._getstring());
-RDebugUtils.currentLine=5505039;
- //BA.debugLineNum = 5505039;BA.debugLine="Dim root As Map = parser.NextObject";
+RDebugUtils.currentLine=4325391;
+ //BA.debugLineNum = 4325391;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
-RDebugUtils.currentLine=5505040;
- //BA.debugLineNum = 5505040;BA.debugLine="Dim objects As List = root.Get(\"data\")";
+RDebugUtils.currentLine=4325392;
+ //BA.debugLineNum = 4325392;BA.debugLine="Dim objects As List = root.Get(\"data\")";
 _objects = new anywheresoftware.b4a.objects.collections.List();
 _objects.setObject((java.util.List)(_root.Get((Object)("data"))));
-RDebugUtils.currentLine=5505042;
- //BA.debugLineNum = 5505042;BA.debugLine="Dim m As Map = objects.Get(0)";
+RDebugUtils.currentLine=4325394;
+ //BA.debugLineNum = 4325394;BA.debugLine="Dim m As Map = objects.Get(0)";
 _m = new anywheresoftware.b4a.objects.collections.Map();
 _m.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(_objects.Get((int) (0))));
-RDebugUtils.currentLine=5505043;
- //BA.debugLineNum = 5505043;BA.debugLine="user.Initialize(m.Get(\"id\"), m.Get(\"username\"),";
+RDebugUtils.currentLine=4325395;
+ //BA.debugLineNum = 4325395;BA.debugLine="user.Initialize(m.Get(\"id\"), m.Get(\"username\"),";
 _user._initialize(null,ba,(int)(BA.ObjectToNumber(_m.Get((Object)("id")))),BA.ObjectToString(_m.Get((Object)("username"))),BA.ObjectToString(_m.Get((Object)("ultimo_accesso"))));
-RDebugUtils.currentLine=5505045;
- //BA.debugLineNum = 5505045;BA.debugLine="Return user";
+RDebugUtils.currentLine=4325397;
+ //BA.debugLineNum = 4325397;BA.debugLine="Return user";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(_user));return;};
  if (true) break;
@@ -876,16 +1089,16 @@ parent.__c.ReturnFromResumableSub(this,(Object)(_user));return;};
 case 8:
 //C
 this.state = 11;
-RDebugUtils.currentLine=5505047;
- //BA.debugLineNum = 5505047;BA.debugLine="m_errore = \"Nome utente o password errata\"";
+RDebugUtils.currentLine=4325399;
+ //BA.debugLineNum = 4325399;BA.debugLine="m_errore = \"Nome utente o password errata\"";
 __ref._m_errore = "Nome utente o password errata";
  if (true) break;
 
 case 10:
 //C
 this.state = 11;
-RDebugUtils.currentLine=5505049;
- //BA.debugLineNum = 5505049;BA.debugLine="m_errore = m_job.ErrorMessage";
+RDebugUtils.currentLine=4325401;
+ //BA.debugLineNum = 4325401;BA.debugLine="m_errore = m_job.ErrorMessage";
 __ref._m_errore = __ref._m_job._errormessage;
  if (true) break;
 
@@ -899,11 +1112,11 @@ case 13:
 //C
 this.state = 14;
 this.catchState = 0;
-RDebugUtils.currentLine=5505052;
- //BA.debugLineNum = 5505052;BA.debugLine="Log(LastException)";
+RDebugUtils.currentLine=4325404;
+ //BA.debugLineNum = 4325404;BA.debugLine="Log(LastException)";
 parent.__c.Log(BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())));
-RDebugUtils.currentLine=5505053;
- //BA.debugLineNum = 5505053;BA.debugLine="m_errore = \"Errore di connessione\"";
+RDebugUtils.currentLine=4325405;
+ //BA.debugLineNum = 4325405;BA.debugLine="m_errore = \"Errore di connessione\"";
 __ref._m_errore = "Errore di connessione";
  if (true) break;
 if (true) break;
@@ -913,12 +1126,12 @@ case 14:
 this.state = -1;
 this.catchState = 0;
 ;
-RDebugUtils.currentLine=5505056;
- //BA.debugLineNum = 5505056;BA.debugLine="Return Null";
+RDebugUtils.currentLine=4325408;
+ //BA.debugLineNum = 4325408;BA.debugLine="Return Null";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,parent.__c.Null);return;};
-RDebugUtils.currentLine=5505057;
- //BA.debugLineNum = 5505057;BA.debugLine="End Sub";
+RDebugUtils.currentLine=4325409;
+ //BA.debugLineNum = 4325409;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -931,27 +1144,6 @@ ba.setLastException(e0);}
             }
         }
     }
-}
-public String  _class_globals(app.aegdistribuzione.apiclient __ref) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="apiclient";
-RDebugUtils.currentLine=5046272;
- //BA.debugLineNum = 5046272;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=5046273;
- //BA.debugLineNum = 5046273;BA.debugLine="Dim m_job As HttpJob";
-_m_job = new anywheresoftware.b4a.samples.httputils2.httpjob();
-RDebugUtils.currentLine=5046274;
- //BA.debugLineNum = 5046274;BA.debugLine="Dim m_successo As Boolean";
-_m_successo = false;
-RDebugUtils.currentLine=5046275;
- //BA.debugLineNum = 5046275;BA.debugLine="Dim m_url As String";
-_m_url = "";
-RDebugUtils.currentLine=5046276;
- //BA.debugLineNum = 5046276;BA.debugLine="Dim m_errore As String";
-_m_errore = "";
-RDebugUtils.currentLine=5046277;
- //BA.debugLineNum = 5046277;BA.debugLine="End Sub";
-return "";
 }
 public anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _scaricaarticoli(app.aegdistribuzione.apiclient __ref) throws Exception{
 RDebugUtils.currentModule="apiclient";
@@ -997,20 +1189,20 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=5242881;
- //BA.debugLineNum = 5242881;BA.debugLine="m_successo = False";
+RDebugUtils.currentLine=3866625;
+ //BA.debugLineNum = 3866625;BA.debugLine="m_successo = False";
 __ref._m_successo = parent.__c.False;
-RDebugUtils.currentLine=5242882;
- //BA.debugLineNum = 5242882;BA.debugLine="Dim m_articoli As List";
+RDebugUtils.currentLine=3866626;
+ //BA.debugLineNum = 3866626;BA.debugLine="Dim m_articoli As List";
 _m_articoli = new anywheresoftware.b4a.objects.collections.List();
-RDebugUtils.currentLine=5242883;
- //BA.debugLineNum = 5242883;BA.debugLine="m_articoli.Initialize";
+RDebugUtils.currentLine=3866627;
+ //BA.debugLineNum = 3866627;BA.debugLine="m_articoli.Initialize";
 _m_articoli.Initialize();
-RDebugUtils.currentLine=5242884;
- //BA.debugLineNum = 5242884;BA.debugLine="m_job.Download(m_url & \"/articoli\")";
+RDebugUtils.currentLine=3866628;
+ //BA.debugLineNum = 3866628;BA.debugLine="m_job.Download(m_url & \"/articoli\")";
 __ref._m_job._download(__ref._m_url+"/articoli");
-RDebugUtils.currentLine=5242885;
- //BA.debugLineNum = 5242885;BA.debugLine="Wait For (m_job) JobDone";
+RDebugUtils.currentLine=3866629;
+ //BA.debugLineNum = 3866629;BA.debugLine="Wait For (m_job) JobDone";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "apiclient", "scaricaarticoli"), (Object)(__ref._m_job));
 this.state = 9;
 return;
@@ -1018,8 +1210,8 @@ case 9:
 //C
 this.state = 1;
 ;
-RDebugUtils.currentLine=5242887;
- //BA.debugLineNum = 5242887;BA.debugLine="If m_job.Success Then";
+RDebugUtils.currentLine=3866631;
+ //BA.debugLineNum = 3866631;BA.debugLine="If m_job.Success Then";
 if (true) break;
 
 case 1:
@@ -1032,25 +1224,25 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=5242888;
- //BA.debugLineNum = 5242888;BA.debugLine="m_successo = True";
+RDebugUtils.currentLine=3866632;
+ //BA.debugLineNum = 3866632;BA.debugLine="m_successo = True";
 __ref._m_successo = parent.__c.True;
-RDebugUtils.currentLine=5242889;
- //BA.debugLineNum = 5242889;BA.debugLine="Dim parser As JSONParser";
+RDebugUtils.currentLine=3866633;
+ //BA.debugLineNum = 3866633;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
-RDebugUtils.currentLine=5242890;
- //BA.debugLineNum = 5242890;BA.debugLine="parser.Initialize(m_job.GetString)";
+RDebugUtils.currentLine=3866634;
+ //BA.debugLineNum = 3866634;BA.debugLine="parser.Initialize(m_job.GetString)";
 _parser.Initialize(__ref._m_job._getstring());
-RDebugUtils.currentLine=5242891;
- //BA.debugLineNum = 5242891;BA.debugLine="Dim root As Map = parser.NextObject";
+RDebugUtils.currentLine=3866635;
+ //BA.debugLineNum = 3866635;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
-RDebugUtils.currentLine=5242892;
- //BA.debugLineNum = 5242892;BA.debugLine="Dim objects As List = root.Get(\"data\")";
+RDebugUtils.currentLine=3866636;
+ //BA.debugLineNum = 3866636;BA.debugLine="Dim objects As List = root.Get(\"data\")";
 _objects = new anywheresoftware.b4a.objects.collections.List();
 _objects.setObject((java.util.List)(_root.Get((Object)("data"))));
-RDebugUtils.currentLine=5242894;
- //BA.debugLineNum = 5242894;BA.debugLine="For Each ob In objects";
+RDebugUtils.currentLine=3866638;
+ //BA.debugLineNum = 3866638;BA.debugLine="For Each ob In objects";
 if (true) break;
 
 case 4:
@@ -1079,33 +1271,33 @@ if (true) break;
 case 6:
 //C
 this.state = 11;
-RDebugUtils.currentLine=5242895;
- //BA.debugLineNum = 5242895;BA.debugLine="Dim m As Map = ob";
+RDebugUtils.currentLine=3866639;
+ //BA.debugLineNum = 3866639;BA.debugLine="Dim m As Map = ob";
 _m = new anywheresoftware.b4a.objects.collections.Map();
 _m.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(_ob));
-RDebugUtils.currentLine=5242896;
- //BA.debugLineNum = 5242896;BA.debugLine="Dim cod As String = m.Get(\"codice\")";
+RDebugUtils.currentLine=3866640;
+ //BA.debugLineNum = 3866640;BA.debugLine="Dim cod As String = m.Get(\"codice\")";
 _cod = BA.ObjectToString(_m.Get((Object)("codice")));
-RDebugUtils.currentLine=5242897;
- //BA.debugLineNum = 5242897;BA.debugLine="Dim dtum As String = m.Get(\"data_ultima_modific";
+RDebugUtils.currentLine=3866641;
+ //BA.debugLineNum = 3866641;BA.debugLine="Dim dtum As String = m.Get(\"data_ultima_modific";
 _dtum = BA.ObjectToString(_m.Get((Object)("data_ultima_modifica")));
-RDebugUtils.currentLine=5242898;
- //BA.debugLineNum = 5242898;BA.debugLine="Dim descr As String = m.Get(\"descrizione\")";
+RDebugUtils.currentLine=3866642;
+ //BA.debugLineNum = 3866642;BA.debugLine="Dim descr As String = m.Get(\"descrizione\")";
 _descr = BA.ObjectToString(_m.Get((Object)("descrizione")));
-RDebugUtils.currentLine=5242899;
- //BA.debugLineNum = 5242899;BA.debugLine="Dim id As Int = m.Get(\"id\")";
+RDebugUtils.currentLine=3866643;
+ //BA.debugLineNum = 3866643;BA.debugLine="Dim id As Int = m.Get(\"id\")";
 _id = (int)(BA.ObjectToNumber(_m.Get((Object)("id"))));
-RDebugUtils.currentLine=5242900;
- //BA.debugLineNum = 5242900;BA.debugLine="Dim prz As Float = m.Get(\"prezzo\")";
+RDebugUtils.currentLine=3866644;
+ //BA.debugLineNum = 3866644;BA.debugLine="Dim prz As Float = m.Get(\"prezzo\")";
 _prz = (float)(BA.ObjectToNumber(_m.Get((Object)("prezzo"))));
-RDebugUtils.currentLine=5242901;
- //BA.debugLineNum = 5242901;BA.debugLine="Dim a As Articolo";
+RDebugUtils.currentLine=3866645;
+ //BA.debugLineNum = 3866645;BA.debugLine="Dim a As Articolo";
 _a = new app.aegdistribuzione.articolo();
-RDebugUtils.currentLine=5242902;
- //BA.debugLineNum = 5242902;BA.debugLine="a.Initialize(id,cod,descr,prz,dtum)";
+RDebugUtils.currentLine=3866646;
+ //BA.debugLineNum = 3866646;BA.debugLine="a.Initialize(id,cod,descr,prz,dtum)";
 _a._initialize(null,ba,_id,_cod,_descr,_prz,_dtum);
-RDebugUtils.currentLine=5242903;
- //BA.debugLineNum = 5242903;BA.debugLine="m_articoli.Add(a)";
+RDebugUtils.currentLine=3866647;
+ //BA.debugLineNum = 3866647;BA.debugLine="m_articoli.Add(a)";
 _m_articoli.Add((Object)(_a));
  if (true) break;
 if (true) break;
@@ -1120,12 +1312,12 @@ case 8:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=5242907;
- //BA.debugLineNum = 5242907;BA.debugLine="Return m_articoli";
+RDebugUtils.currentLine=3866651;
+ //BA.debugLineNum = 3866651;BA.debugLine="Return m_articoli";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(_m_articoli));return;};
-RDebugUtils.currentLine=5242908;
- //BA.debugLineNum = 5242908;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3866652;
+ //BA.debugLineNum = 3866652;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -1177,20 +1369,20 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=5308417;
- //BA.debugLineNum = 5308417;BA.debugLine="m_successo = False";
+RDebugUtils.currentLine=3932161;
+ //BA.debugLineNum = 3932161;BA.debugLine="m_successo = False";
 __ref._m_successo = parent.__c.False;
-RDebugUtils.currentLine=5308418;
- //BA.debugLineNum = 5308418;BA.debugLine="Dim m_clienti As List";
+RDebugUtils.currentLine=3932162;
+ //BA.debugLineNum = 3932162;BA.debugLine="Dim m_clienti As List";
 _m_clienti = new anywheresoftware.b4a.objects.collections.List();
-RDebugUtils.currentLine=5308419;
- //BA.debugLineNum = 5308419;BA.debugLine="m_clienti.Initialize";
+RDebugUtils.currentLine=3932163;
+ //BA.debugLineNum = 3932163;BA.debugLine="m_clienti.Initialize";
 _m_clienti.Initialize();
-RDebugUtils.currentLine=5308420;
- //BA.debugLineNum = 5308420;BA.debugLine="m_job.Download(m_url & \"/clienti\")";
+RDebugUtils.currentLine=3932164;
+ //BA.debugLineNum = 3932164;BA.debugLine="m_job.Download(m_url & \"/clienti\")";
 __ref._m_job._download(__ref._m_url+"/clienti");
-RDebugUtils.currentLine=5308421;
- //BA.debugLineNum = 5308421;BA.debugLine="Wait For (m_job) JobDone";
+RDebugUtils.currentLine=3932165;
+ //BA.debugLineNum = 3932165;BA.debugLine="Wait For (m_job) JobDone";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "apiclient", "scaricaclienti"), (Object)(__ref._m_job));
 this.state = 9;
 return;
@@ -1198,8 +1390,8 @@ case 9:
 //C
 this.state = 1;
 ;
-RDebugUtils.currentLine=5308423;
- //BA.debugLineNum = 5308423;BA.debugLine="If m_job.Success Then";
+RDebugUtils.currentLine=3932167;
+ //BA.debugLineNum = 3932167;BA.debugLine="If m_job.Success Then";
 if (true) break;
 
 case 1:
@@ -1212,25 +1404,25 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=5308424;
- //BA.debugLineNum = 5308424;BA.debugLine="m_successo = True";
+RDebugUtils.currentLine=3932168;
+ //BA.debugLineNum = 3932168;BA.debugLine="m_successo = True";
 __ref._m_successo = parent.__c.True;
-RDebugUtils.currentLine=5308425;
- //BA.debugLineNum = 5308425;BA.debugLine="Dim parser As JSONParser";
+RDebugUtils.currentLine=3932169;
+ //BA.debugLineNum = 3932169;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
-RDebugUtils.currentLine=5308426;
- //BA.debugLineNum = 5308426;BA.debugLine="parser.Initialize(m_job.GetString)";
+RDebugUtils.currentLine=3932170;
+ //BA.debugLineNum = 3932170;BA.debugLine="parser.Initialize(m_job.GetString)";
 _parser.Initialize(__ref._m_job._getstring());
-RDebugUtils.currentLine=5308427;
- //BA.debugLineNum = 5308427;BA.debugLine="Dim root As Map = parser.NextObject";
+RDebugUtils.currentLine=3932171;
+ //BA.debugLineNum = 3932171;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
-RDebugUtils.currentLine=5308428;
- //BA.debugLineNum = 5308428;BA.debugLine="Dim objects As List = root.Get(\"data\")";
+RDebugUtils.currentLine=3932172;
+ //BA.debugLineNum = 3932172;BA.debugLine="Dim objects As List = root.Get(\"data\")";
 _objects = new anywheresoftware.b4a.objects.collections.List();
 _objects.setObject((java.util.List)(_root.Get((Object)("data"))));
-RDebugUtils.currentLine=5308431;
- //BA.debugLineNum = 5308431;BA.debugLine="For Each ob In objects";
+RDebugUtils.currentLine=3932175;
+ //BA.debugLineNum = 3932175;BA.debugLine="For Each ob In objects";
 if (true) break;
 
 case 4:
@@ -1259,36 +1451,36 @@ if (true) break;
 case 6:
 //C
 this.state = 11;
-RDebugUtils.currentLine=5308432;
- //BA.debugLineNum = 5308432;BA.debugLine="Dim m As Map = ob";
+RDebugUtils.currentLine=3932176;
+ //BA.debugLineNum = 3932176;BA.debugLine="Dim m As Map = ob";
 _m = new anywheresoftware.b4a.objects.collections.Map();
 _m.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(_ob));
-RDebugUtils.currentLine=5308433;
- //BA.debugLineNum = 5308433;BA.debugLine="Dim cod As String = m.Get(\"codice\")";
+RDebugUtils.currentLine=3932177;
+ //BA.debugLineNum = 3932177;BA.debugLine="Dim cod As String = m.Get(\"codice\")";
 _cod = BA.ObjectToString(_m.Get((Object)("codice")));
-RDebugUtils.currentLine=5308434;
- //BA.debugLineNum = 5308434;BA.debugLine="Dim denom As String = m.Get(\"denominazione\")";
+RDebugUtils.currentLine=3932178;
+ //BA.debugLineNum = 3932178;BA.debugLine="Dim denom As String = m.Get(\"denominazione\")";
 _denom = BA.ObjectToString(_m.Get((Object)("denominazione")));
-RDebugUtils.currentLine=5308435;
- //BA.debugLineNum = 5308435;BA.debugLine="Dim id As Int = m.Get(\"id\")";
+RDebugUtils.currentLine=3932179;
+ //BA.debugLineNum = 3932179;BA.debugLine="Dim id As Int = m.Get(\"id\")";
 _id = (int)(BA.ObjectToNumber(_m.Get((Object)("id"))));
-RDebugUtils.currentLine=5308436;
- //BA.debugLineNum = 5308436;BA.debugLine="Dim indir As String = m.Get(\"indirizzo\")";
+RDebugUtils.currentLine=3932180;
+ //BA.debugLineNum = 3932180;BA.debugLine="Dim indir As String = m.Get(\"indirizzo\")";
 _indir = BA.ObjectToString(_m.Get((Object)("indirizzo")));
-RDebugUtils.currentLine=5308437;
- //BA.debugLineNum = 5308437;BA.debugLine="Dim piva As String = m.Get(\"part_iva\")";
+RDebugUtils.currentLine=3932181;
+ //BA.debugLineNum = 3932181;BA.debugLine="Dim piva As String = m.Get(\"part_iva\")";
 _piva = BA.ObjectToString(_m.Get((Object)("part_iva")));
-RDebugUtils.currentLine=5308438;
- //BA.debugLineNum = 5308438;BA.debugLine="Dim dtum As String = m.Get(\"data_ultima_modific";
+RDebugUtils.currentLine=3932182;
+ //BA.debugLineNum = 3932182;BA.debugLine="Dim dtum As String = m.Get(\"data_ultima_modific";
 _dtum = BA.ObjectToString(_m.Get((Object)("data_ultima_modifica")));
-RDebugUtils.currentLine=5308439;
- //BA.debugLineNum = 5308439;BA.debugLine="Dim c As Cliente";
+RDebugUtils.currentLine=3932183;
+ //BA.debugLineNum = 3932183;BA.debugLine="Dim c As Cliente";
 _c = new app.aegdistribuzione.cliente();
-RDebugUtils.currentLine=5308440;
- //BA.debugLineNum = 5308440;BA.debugLine="c.Initialize(id,cod,denom,indir,piva,dtum)";
+RDebugUtils.currentLine=3932184;
+ //BA.debugLineNum = 3932184;BA.debugLine="c.Initialize(id,cod,denom,indir,piva,dtum)";
 _c._initialize(null,ba,_id,_cod,_denom,_indir,_piva,_dtum);
-RDebugUtils.currentLine=5308441;
- //BA.debugLineNum = 5308441;BA.debugLine="m_clienti.Add(c)";
+RDebugUtils.currentLine=3932185;
+ //BA.debugLineNum = 3932185;BA.debugLine="m_clienti.Add(c)";
 _m_clienti.Add((Object)(_c));
  if (true) break;
 if (true) break;
@@ -1303,12 +1495,12 @@ case 8:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=5308445;
- //BA.debugLineNum = 5308445;BA.debugLine="Return m_clienti";
+RDebugUtils.currentLine=3932189;
+ //BA.debugLineNum = 3932189;BA.debugLine="Return m_clienti";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(_m_clienti));return;};
-RDebugUtils.currentLine=5308446;
- //BA.debugLineNum = 5308446;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3932190;
+ //BA.debugLineNum = 3932190;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -1358,20 +1550,20 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=5439489;
- //BA.debugLineNum = 5439489;BA.debugLine="m_successo = False";
+RDebugUtils.currentLine=4128769;
+ //BA.debugLineNum = 4128769;BA.debugLine="m_successo = False";
 __ref._m_successo = parent.__c.False;
-RDebugUtils.currentLine=5439490;
- //BA.debugLineNum = 5439490;BA.debugLine="Dim m_preferiti As List";
+RDebugUtils.currentLine=4128770;
+ //BA.debugLineNum = 4128770;BA.debugLine="Dim m_preferiti As List";
 _m_preferiti = new anywheresoftware.b4a.objects.collections.List();
-RDebugUtils.currentLine=5439491;
- //BA.debugLineNum = 5439491;BA.debugLine="m_preferiti.Initialize";
+RDebugUtils.currentLine=4128771;
+ //BA.debugLineNum = 4128771;BA.debugLine="m_preferiti.Initialize";
 _m_preferiti.Initialize();
-RDebugUtils.currentLine=5439492;
- //BA.debugLineNum = 5439492;BA.debugLine="m_job.Download(m_url & \"/preferiti\")";
+RDebugUtils.currentLine=4128772;
+ //BA.debugLineNum = 4128772;BA.debugLine="m_job.Download(m_url & \"/preferiti\")";
 __ref._m_job._download(__ref._m_url+"/preferiti");
-RDebugUtils.currentLine=5439493;
- //BA.debugLineNum = 5439493;BA.debugLine="Wait For (m_job) JobDone";
+RDebugUtils.currentLine=4128773;
+ //BA.debugLineNum = 4128773;BA.debugLine="Wait For (m_job) JobDone";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "apiclient", "scaricapreferiti"), (Object)(__ref._m_job));
 this.state = 9;
 return;
@@ -1379,8 +1571,8 @@ case 9:
 //C
 this.state = 1;
 ;
-RDebugUtils.currentLine=5439495;
- //BA.debugLineNum = 5439495;BA.debugLine="If m_job.Success Then";
+RDebugUtils.currentLine=4128775;
+ //BA.debugLineNum = 4128775;BA.debugLine="If m_job.Success Then";
 if (true) break;
 
 case 1:
@@ -1393,25 +1585,25 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=5439496;
- //BA.debugLineNum = 5439496;BA.debugLine="m_successo = True";
+RDebugUtils.currentLine=4128776;
+ //BA.debugLineNum = 4128776;BA.debugLine="m_successo = True";
 __ref._m_successo = parent.__c.True;
-RDebugUtils.currentLine=5439497;
- //BA.debugLineNum = 5439497;BA.debugLine="Dim parser As JSONParser";
+RDebugUtils.currentLine=4128777;
+ //BA.debugLineNum = 4128777;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
-RDebugUtils.currentLine=5439498;
- //BA.debugLineNum = 5439498;BA.debugLine="parser.Initialize(m_job.GetString)";
+RDebugUtils.currentLine=4128778;
+ //BA.debugLineNum = 4128778;BA.debugLine="parser.Initialize(m_job.GetString)";
 _parser.Initialize(__ref._m_job._getstring());
-RDebugUtils.currentLine=5439499;
- //BA.debugLineNum = 5439499;BA.debugLine="Dim root As Map = parser.NextObject";
+RDebugUtils.currentLine=4128779;
+ //BA.debugLineNum = 4128779;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
-RDebugUtils.currentLine=5439500;
- //BA.debugLineNum = 5439500;BA.debugLine="Dim objects As List = root.Get(\"data\")";
+RDebugUtils.currentLine=4128780;
+ //BA.debugLineNum = 4128780;BA.debugLine="Dim objects As List = root.Get(\"data\")";
 _objects = new anywheresoftware.b4a.objects.collections.List();
 _objects.setObject((java.util.List)(_root.Get((Object)("data"))));
-RDebugUtils.currentLine=5439502;
- //BA.debugLineNum = 5439502;BA.debugLine="For Each m As Map In objects";
+RDebugUtils.currentLine=4128782;
+ //BA.debugLineNum = 4128782;BA.debugLine="For Each m As Map In objects";
 if (true) break;
 
 case 4:
@@ -1441,29 +1633,29 @@ if (true) break;
 case 6:
 //C
 this.state = 11;
-RDebugUtils.currentLine=5439503;
- //BA.debugLineNum = 5439503;BA.debugLine="Dim cod As String = m.Get(\"cod_art\")";
+RDebugUtils.currentLine=4128783;
+ //BA.debugLineNum = 4128783;BA.debugLine="Dim cod As String = m.Get(\"cod_art\")";
 _cod = BA.ObjectToString(_m.Get((Object)("cod_art")));
-RDebugUtils.currentLine=5439504;
- //BA.debugLineNum = 5439504;BA.debugLine="Dim desc As String = m.Get(\"desc_art\")";
+RDebugUtils.currentLine=4128784;
+ //BA.debugLineNum = 4128784;BA.debugLine="Dim desc As String = m.Get(\"desc_art\")";
 _desc = BA.ObjectToString(_m.Get((Object)("desc_art")));
-RDebugUtils.currentLine=5439505;
- //BA.debugLineNum = 5439505;BA.debugLine="Dim id As Int = m.Get(\"id_art\")";
+RDebugUtils.currentLine=4128785;
+ //BA.debugLineNum = 4128785;BA.debugLine="Dim id As Int = m.Get(\"id_art\")";
 _id = (int)(BA.ObjectToNumber(_m.Get((Object)("id_art"))));
-RDebugUtils.currentLine=5439506;
- //BA.debugLineNum = 5439506;BA.debugLine="Dim cid As String = m.Get(\"id_cliente\")";
+RDebugUtils.currentLine=4128786;
+ //BA.debugLineNum = 4128786;BA.debugLine="Dim cid As String = m.Get(\"id_cliente\")";
 _cid = BA.ObjectToString(_m.Get((Object)("id_cliente")));
-RDebugUtils.currentLine=5439507;
- //BA.debugLineNum = 5439507;BA.debugLine="Dim occ As String = m.Get(\"occorrenze\")";
+RDebugUtils.currentLine=4128787;
+ //BA.debugLineNum = 4128787;BA.debugLine="Dim occ As String = m.Get(\"occorrenze\")";
 _occ = BA.ObjectToString(_m.Get((Object)("occorrenze")));
-RDebugUtils.currentLine=5439509;
- //BA.debugLineNum = 5439509;BA.debugLine="Dim pr As Preferito";
+RDebugUtils.currentLine=4128789;
+ //BA.debugLineNum = 4128789;BA.debugLine="Dim pr As Preferito";
 _pr = new app.aegdistribuzione.preferito();
-RDebugUtils.currentLine=5439510;
- //BA.debugLineNum = 5439510;BA.debugLine="pr.Initialize(id, cod, desc, cid, occ)";
+RDebugUtils.currentLine=4128790;
+ //BA.debugLineNum = 4128790;BA.debugLine="pr.Initialize(id, cod, desc, cid, occ)";
 _pr._initialize(null,ba,_id,_cod,_desc,(int)(Double.parseDouble(_cid)),(int)(Double.parseDouble(_occ)));
-RDebugUtils.currentLine=5439511;
- //BA.debugLineNum = 5439511;BA.debugLine="m_preferiti.Add(pr)";
+RDebugUtils.currentLine=4128791;
+ //BA.debugLineNum = 4128791;BA.debugLine="m_preferiti.Add(pr)";
 _m_preferiti.Add((Object)(_pr));
  if (true) break;
 if (true) break;
@@ -1478,12 +1670,12 @@ case 8:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=5439515;
- //BA.debugLineNum = 5439515;BA.debugLine="Return m_preferiti";
+RDebugUtils.currentLine=4128795;
+ //BA.debugLineNum = 4128795;BA.debugLine="Return m_preferiti";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(_m_preferiti));return;};
-RDebugUtils.currentLine=5439516;
- //BA.debugLineNum = 5439516;BA.debugLine="End Sub";
+RDebugUtils.currentLine=4128796;
+ //BA.debugLineNum = 4128796;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -1547,20 +1739,20 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=5373953;
- //BA.debugLineNum = 5373953;BA.debugLine="m_successo = False";
+RDebugUtils.currentLine=4063233;
+ //BA.debugLineNum = 4063233;BA.debugLine="m_successo = False";
 __ref._m_successo = parent.__c.False;
-RDebugUtils.currentLine=5373954;
- //BA.debugLineNum = 5373954;BA.debugLine="Dim m_ordini As List";
+RDebugUtils.currentLine=4063234;
+ //BA.debugLineNum = 4063234;BA.debugLine="Dim m_ordini As List";
 _m_ordini = new anywheresoftware.b4a.objects.collections.List();
-RDebugUtils.currentLine=5373955;
- //BA.debugLineNum = 5373955;BA.debugLine="m_ordini.Initialize";
+RDebugUtils.currentLine=4063235;
+ //BA.debugLineNum = 4063235;BA.debugLine="m_ordini.Initialize";
 _m_ordini.Initialize();
-RDebugUtils.currentLine=5373956;
- //BA.debugLineNum = 5373956;BA.debugLine="m_job.Download(m_url & \"/storico_ordini\")";
+RDebugUtils.currentLine=4063236;
+ //BA.debugLineNum = 4063236;BA.debugLine="m_job.Download(m_url & \"/storico_ordini\")";
 __ref._m_job._download(__ref._m_url+"/storico_ordini");
-RDebugUtils.currentLine=5373957;
- //BA.debugLineNum = 5373957;BA.debugLine="Wait For (m_job) JobDone";
+RDebugUtils.currentLine=4063237;
+ //BA.debugLineNum = 4063237;BA.debugLine="Wait For (m_job) JobDone";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "apiclient", "storicoordini"), (Object)(__ref._m_job));
 this.state = 19;
 return;
@@ -1568,8 +1760,8 @@ case 19:
 //C
 this.state = 1;
 ;
-RDebugUtils.currentLine=5373959;
- //BA.debugLineNum = 5373959;BA.debugLine="If m_job.Success Then";
+RDebugUtils.currentLine=4063239;
+ //BA.debugLineNum = 4063239;BA.debugLine="If m_job.Success Then";
 if (true) break;
 
 case 1:
@@ -1582,25 +1774,25 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=5373960;
- //BA.debugLineNum = 5373960;BA.debugLine="m_successo = True";
+RDebugUtils.currentLine=4063240;
+ //BA.debugLineNum = 4063240;BA.debugLine="m_successo = True";
 __ref._m_successo = parent.__c.True;
-RDebugUtils.currentLine=5373961;
- //BA.debugLineNum = 5373961;BA.debugLine="Dim parser As JSONParser";
+RDebugUtils.currentLine=4063241;
+ //BA.debugLineNum = 4063241;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
-RDebugUtils.currentLine=5373962;
- //BA.debugLineNum = 5373962;BA.debugLine="parser.Initialize(m_job.GetString)";
+RDebugUtils.currentLine=4063242;
+ //BA.debugLineNum = 4063242;BA.debugLine="parser.Initialize(m_job.GetString)";
 _parser.Initialize(__ref._m_job._getstring());
-RDebugUtils.currentLine=5373963;
- //BA.debugLineNum = 5373963;BA.debugLine="Dim root As Map = parser.NextObject";
+RDebugUtils.currentLine=4063243;
+ //BA.debugLineNum = 4063243;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
-RDebugUtils.currentLine=5373964;
- //BA.debugLineNum = 5373964;BA.debugLine="Dim objects As List = root.Get(\"data\")";
+RDebugUtils.currentLine=4063244;
+ //BA.debugLineNum = 4063244;BA.debugLine="Dim objects As List = root.Get(\"data\")";
 _objects = new anywheresoftware.b4a.objects.collections.List();
 _objects.setObject((java.util.List)(_root.Get((Object)("data"))));
-RDebugUtils.currentLine=5373966;
- //BA.debugLineNum = 5373966;BA.debugLine="For Each m As Map In objects";
+RDebugUtils.currentLine=4063246;
+ //BA.debugLineNum = 4063246;BA.debugLine="For Each m As Map In objects";
 if (true) break;
 
 case 4:
@@ -1630,33 +1822,33 @@ if (true) break;
 case 6:
 //C
 this.state = 7;
-RDebugUtils.currentLine=5373967;
- //BA.debugLineNum = 5373967;BA.debugLine="Dim dt_inv As String = m.Get(\"data_invio\")";
+RDebugUtils.currentLine=4063247;
+ //BA.debugLineNum = 4063247;BA.debugLine="Dim dt_inv As String = m.Get(\"data_invio\")";
 _dt_inv = BA.ObjectToString(_m.Get((Object)("data_invio")));
-RDebugUtils.currentLine=5373968;
- //BA.debugLineNum = 5373968;BA.debugLine="Dim oid As Int = m.Get(\"id\")";
+RDebugUtils.currentLine=4063248;
+ //BA.debugLineNum = 4063248;BA.debugLine="Dim oid As Int = m.Get(\"id\")";
 _oid = (int)(BA.ObjectToNumber(_m.Get((Object)("id"))));
-RDebugUtils.currentLine=5373969;
- //BA.debugLineNum = 5373969;BA.debugLine="Dim cId As Int = m.Get(\"id_cliente\")";
+RDebugUtils.currentLine=4063249;
+ //BA.debugLineNum = 4063249;BA.debugLine="Dim cId As Int = m.Get(\"id_cliente\")";
 _cid = (int)(BA.ObjectToNumber(_m.Get((Object)("id_cliente"))));
-RDebugUtils.currentLine=5373970;
- //BA.debugLineNum = 5373970;BA.debugLine="Dim uId As Int = m.Get(\"id_utente\")";
+RDebugUtils.currentLine=4063250;
+ //BA.debugLineNum = 4063250;BA.debugLine="Dim uId As Int = m.Get(\"id_utente\")";
 _uid = (int)(BA.ObjectToNumber(_m.Get((Object)("id_utente"))));
-RDebugUtils.currentLine=5373971;
- //BA.debugLineNum = 5373971;BA.debugLine="Dim nt As String = m.Get(\"note\")";
+RDebugUtils.currentLine=4063251;
+ //BA.debugLineNum = 4063251;BA.debugLine="Dim nt As String = m.Get(\"note\")";
 _nt = BA.ObjectToString(_m.Get((Object)("note")));
-RDebugUtils.currentLine=5373972;
- //BA.debugLineNum = 5373972;BA.debugLine="Dim ordn As Ordine";
+RDebugUtils.currentLine=4063252;
+ //BA.debugLineNum = 4063252;BA.debugLine="Dim ordn As Ordine";
 _ordn = new app.aegdistribuzione.ordine();
-RDebugUtils.currentLine=5373973;
- //BA.debugLineNum = 5373973;BA.debugLine="ordn.Initialize(oid,cId,uId,dt_inv,nt)";
+RDebugUtils.currentLine=4063253;
+ //BA.debugLineNum = 4063253;BA.debugLine="ordn.Initialize(oid,cId,uId,dt_inv,nt)";
 _ordn._initialize(null,ba,_oid,_cid,_uid,_dt_inv,_nt);
-RDebugUtils.currentLine=5373975;
- //BA.debugLineNum = 5373975;BA.debugLine="Dim righe As List = m.Get(\"righe\")";
+RDebugUtils.currentLine=4063255;
+ //BA.debugLineNum = 4063255;BA.debugLine="Dim righe As List = m.Get(\"righe\")";
 _righe = new anywheresoftware.b4a.objects.collections.List();
 _righe.setObject((java.util.List)(_m.Get((Object)("righe"))));
-RDebugUtils.currentLine=5373976;
- //BA.debugLineNum = 5373976;BA.debugLine="For Each r As Map In righe";
+RDebugUtils.currentLine=4063256;
+ //BA.debugLineNum = 4063256;BA.debugLine="For Each r As Map In righe";
 if (true) break;
 
 case 7:
@@ -1686,8 +1878,8 @@ if (true) break;
 case 9:
 //C
 this.state = 10;
-RDebugUtils.currentLine=5373977;
- //BA.debugLineNum = 5373977;BA.debugLine="Try";
+RDebugUtils.currentLine=4063257;
+ //BA.debugLineNum = 4063257;BA.debugLine="Try";
 if (true) break;
 
 case 10:
@@ -1701,35 +1893,35 @@ case 12:
 //C
 this.state = 15;
 this.catchState = 14;
-RDebugUtils.currentLine=5373978;
- //BA.debugLineNum = 5373978;BA.debugLine="Dim v As VoceOrdine";
+RDebugUtils.currentLine=4063258;
+ //BA.debugLineNum = 4063258;BA.debugLine="Dim v As VoceOrdine";
 _v = new app.aegdistribuzione.voceordine();
-RDebugUtils.currentLine=5373979;
- //BA.debugLineNum = 5373979;BA.debugLine="Dim id As Int = r.Get(\"id\")";
+RDebugUtils.currentLine=4063259;
+ //BA.debugLineNum = 4063259;BA.debugLine="Dim id As Int = r.Get(\"id\")";
 _id = (int)(BA.ObjectToNumber(_r.Get((Object)("id"))));
-RDebugUtils.currentLine=5373980;
- //BA.debugLineNum = 5373980;BA.debugLine="Dim oid As Int = ordn.Id";
+RDebugUtils.currentLine=4063260;
+ //BA.debugLineNum = 4063260;BA.debugLine="Dim oid As Int = ordn.Id";
 _oid = _ordn._id;
-RDebugUtils.currentLine=5373981;
- //BA.debugLineNum = 5373981;BA.debugLine="Dim cod As String = r.Get(\"cod_art\")";
+RDebugUtils.currentLine=4063261;
+ //BA.debugLineNum = 4063261;BA.debugLine="Dim cod As String = r.Get(\"cod_art\")";
 _cod = BA.ObjectToString(_r.Get((Object)("cod_art")));
-RDebugUtils.currentLine=5373982;
- //BA.debugLineNum = 5373982;BA.debugLine="Dim desc As String = r.Get(\"desc_art\")";
+RDebugUtils.currentLine=4063262;
+ //BA.debugLineNum = 4063262;BA.debugLine="Dim desc As String = r.Get(\"desc_art\")";
 _desc = BA.ObjectToString(_r.Get((Object)("desc_art")));
-RDebugUtils.currentLine=5373983;
- //BA.debugLineNum = 5373983;BA.debugLine="Dim note As String = r.Get(\"note\")";
+RDebugUtils.currentLine=4063263;
+ //BA.debugLineNum = 4063263;BA.debugLine="Dim note As String = r.Get(\"note\")";
 _note = BA.ObjectToString(_r.Get((Object)("note")));
-RDebugUtils.currentLine=5373984;
- //BA.debugLineNum = 5373984;BA.debugLine="Dim prezzo As Float = r.Get(\"prez_art\")";
+RDebugUtils.currentLine=4063264;
+ //BA.debugLineNum = 4063264;BA.debugLine="Dim prezzo As Float = r.Get(\"prez_art\")";
 _prezzo = (float)(BA.ObjectToNumber(_r.Get((Object)("prez_art"))));
-RDebugUtils.currentLine=5373985;
- //BA.debugLineNum = 5373985;BA.debugLine="Dim qta As Int = r.Get(\"qta\")";
+RDebugUtils.currentLine=4063265;
+ //BA.debugLineNum = 4063265;BA.debugLine="Dim qta As Int = r.Get(\"qta\")";
 _qta = (int)(BA.ObjectToNumber(_r.Get((Object)("qta"))));
-RDebugUtils.currentLine=5373986;
- //BA.debugLineNum = 5373986;BA.debugLine="v.Initialize(id, cod, desc, oid, note, prezzo";
+RDebugUtils.currentLine=4063266;
+ //BA.debugLineNum = 4063266;BA.debugLine="v.Initialize(id, cod, desc, oid, note, prezzo";
 _v._initialize(null,ba,_id,_cod,_desc,_oid,_note,_prezzo,_qta);
-RDebugUtils.currentLine=5373987;
- //BA.debugLineNum = 5373987;BA.debugLine="ordn.Voci.Add(v)";
+RDebugUtils.currentLine=4063267;
+ //BA.debugLineNum = 4063267;BA.debugLine="ordn.Voci.Add(v)";
 _ordn._voci.Add((Object)(_v));
  if (true) break;
 
@@ -1737,8 +1929,8 @@ case 14:
 //C
 this.state = 15;
 this.catchState = 0;
-RDebugUtils.currentLine=5373989;
- //BA.debugLineNum = 5373989;BA.debugLine="Log(LastException)";
+RDebugUtils.currentLine=4063269;
+ //BA.debugLineNum = 4063269;BA.debugLine="Log(LastException)";
 parent.__c.Log(BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())));
  if (true) break;
 if (true) break;
@@ -1755,8 +1947,8 @@ case 16:
 //C
 this.state = 21;
 ;
-RDebugUtils.currentLine=5373993;
- //BA.debugLineNum = 5373993;BA.debugLine="m_ordini.Add(ordn)";
+RDebugUtils.currentLine=4063273;
+ //BA.debugLineNum = 4063273;BA.debugLine="m_ordini.Add(ordn)";
 _m_ordini.Add((Object)(_ordn));
  if (true) break;
 if (true) break;
@@ -1771,12 +1963,12 @@ case 18:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=5373997;
- //BA.debugLineNum = 5373997;BA.debugLine="Return m_ordini";
+RDebugUtils.currentLine=4063277;
+ //BA.debugLineNum = 4063277;BA.debugLine="Return m_ordini";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(_m_ordini));return;};
-RDebugUtils.currentLine=5373998;
- //BA.debugLineNum = 5373998;BA.debugLine="End Sub";
+RDebugUtils.currentLine=4063278;
+ //BA.debugLineNum = 4063278;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {

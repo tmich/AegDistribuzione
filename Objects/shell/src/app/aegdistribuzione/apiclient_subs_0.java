@@ -19,15 +19,230 @@ apiclient._m_errore = RemoteObject.createImmutable("");__ref.setField("_m_errore
  //BA.debugLineNum = 6;BA.debugLine="End Sub";
 return RemoteObject.createImmutable("");
 }
+public static RemoteObject  _creacliente(RemoteObject __ref,RemoteObject _cli,RemoteObject _fittizio) throws Exception{
+try {
+		Debug.PushSubsStack("CreaCliente (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,345);
+if (RapidSub.canDelegate("creacliente")) { return __ref.runUserSub(false, "apiclient","creacliente", __ref, _cli, _fittizio);}
+ResumableSub_CreaCliente rsub = new ResumableSub_CreaCliente(null,__ref,_cli,_fittizio);
+rsub.remoteResumableSub = anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSubForFilter();
+rsub.resume(null, null);
+return RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.keywords.Common.ResumableSubWrapper"), rsub.remoteResumableSub);
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static class ResumableSub_CreaCliente extends BA.ResumableSub {
+public ResumableSub_CreaCliente(app.aegdistribuzione.apiclient parent,RemoteObject __ref,RemoteObject _cli,RemoteObject _fittizio) {
+this.parent = parent;
+this.__ref = __ref;
+this._cli = _cli;
+this._fittizio = _fittizio;
+}
+java.util.LinkedHashMap<String, Object> rsLocals = new java.util.LinkedHashMap<String, Object>();
+RemoteObject __ref;
+app.aegdistribuzione.apiclient parent;
+RemoteObject _cli;
+RemoteObject _fittizio;
+RemoteObject _form = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.Map");
+RemoteObject _parser = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.JSONParser");
+RemoteObject _root = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.Map");
+RemoteObject _objects = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.List");
+RemoteObject _m = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.Map");
+RemoteObject _cod = RemoteObject.createImmutable("");
+RemoteObject _denom = RemoteObject.createImmutable("");
+RemoteObject _id = RemoteObject.createImmutable(0);
+RemoteObject _indir = RemoteObject.createImmutable("");
+RemoteObject _piva = RemoteObject.createImmutable("");
+RemoteObject _dtum = RemoteObject.createImmutable("");
+RemoteObject _c = RemoteObject.declareNull("app.aegdistribuzione.cliente");
+RemoteObject group16;
+int index16;
+int groupLen16;
+
+@Override
+public void resume(BA ba, RemoteObject result) throws Exception{
+try {
+		Debug.PushSubsStack("CreaCliente (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,345);
+Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
+
+    while (true) {
+        switch (state) {
+            case -1:
+{
+parent.__c.runVoidMethod ("ReturnFromResumableSub",this.remoteResumableSub,RemoteObject.createImmutable(null));return;}
+case 0:
+//C
+this.state = 1;
+Debug.locals.put("_ref", __ref);
+Debug.locals.put("cli", _cli);
+Debug.locals.put("fittizio", _fittizio);
+ BA.debugLineNum = 346;BA.debugLine="m_successo = False";
+Debug.ShouldStop(33554432);
+__ref.setField ("_m_successo",parent.__c.getField(true,"False"));
+ BA.debugLineNum = 347;BA.debugLine="Dim form As Map";
+Debug.ShouldStop(67108864);
+_form = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.Map");Debug.locals.put("form", _form);
+ BA.debugLineNum = 348;BA.debugLine="form.Initialize";
+Debug.ShouldStop(134217728);
+_form.runVoidMethod ("Initialize");
+ BA.debugLineNum = 349;BA.debugLine="form.Put(\"codice\", cli.Codice)";
+Debug.ShouldStop(268435456);
+_form.runVoidMethod ("Put",(Object)(RemoteObject.createImmutable(("codice"))),(Object)((_cli.getField(true,"_codice"))));
+ BA.debugLineNum = 350;BA.debugLine="form.Put(\"denominazione\", cli.Denominazione)";
+Debug.ShouldStop(536870912);
+_form.runVoidMethod ("Put",(Object)(RemoteObject.createImmutable(("denominazione"))),(Object)((_cli.getField(true,"_denominazione"))));
+ BA.debugLineNum = 351;BA.debugLine="form.Put(\"indirizzo\", cli.Indirizzo)";
+Debug.ShouldStop(1073741824);
+_form.runVoidMethod ("Put",(Object)(RemoteObject.createImmutable(("indirizzo"))),(Object)((_cli.getField(true,"_indirizzo"))));
+ BA.debugLineNum = 352;BA.debugLine="form.Put(\"part_iva\", cli.PartitaIVA)";
+Debug.ShouldStop(-2147483648);
+_form.runVoidMethod ("Put",(Object)(RemoteObject.createImmutable(("part_iva"))),(Object)((_cli.getField(true,"_partitaiva"))));
+ BA.debugLineNum = 353;BA.debugLine="form.Put(\"fittizio\", fittizio)";
+Debug.ShouldStop(1);
+_form.runVoidMethod ("Put",(Object)(RemoteObject.createImmutable(("fittizio"))),(Object)((_fittizio)));
+ BA.debugLineNum = 354;BA.debugLine="m_job.PostMultipart(m_url & \"/clienti\", form, Nul";
+Debug.ShouldStop(2);
+__ref.getField(false,"_m_job").runVoidMethod ("_postmultipart",(Object)(RemoteObject.concat(__ref.getField(true,"_m_url"),RemoteObject.createImmutable("/clienti"))),(Object)(_form),RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.collections.List"), parent.__c.getField(false,"Null")));
+ BA.debugLineNum = 355;BA.debugLine="Wait For (m_job) JobDone";
+Debug.ShouldStop(4);
+parent.__c.runVoidMethod ("WaitFor","jobdone", __ref.getField(false, "ba"), anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this), (__ref.getField(false,"_m_job")));
+this.state = 9;
+return;
+case 9:
+//C
+this.state = 1;
+;
+ BA.debugLineNum = 357;BA.debugLine="If m_job.Success Then";
+Debug.ShouldStop(16);
+if (true) break;
+
+case 1:
+//if
+this.state = 8;
+if (__ref.getField(false,"_m_job").getField(true,"_success").<Boolean>get().booleanValue()) { 
+this.state = 3;
+}if (true) break;
+
+case 3:
+//C
+this.state = 4;
+ BA.debugLineNum = 358;BA.debugLine="Dim parser As JSONParser";
+Debug.ShouldStop(32);
+_parser = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.JSONParser");Debug.locals.put("parser", _parser);
+ BA.debugLineNum = 359;BA.debugLine="parser.Initialize(m_job.GetString)";
+Debug.ShouldStop(64);
+_parser.runVoidMethod ("Initialize",(Object)(__ref.getField(false,"_m_job").runMethod(true,"_getstring")));
+ BA.debugLineNum = 360;BA.debugLine="Dim root As Map = parser.NextObject";
+Debug.ShouldStop(128);
+_root = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.Map");
+_root = _parser.runMethod(false,"NextObject");Debug.locals.put("root", _root);Debug.locals.put("root", _root);
+ BA.debugLineNum = 361;BA.debugLine="Dim objects As List = root.Get(\"data\")";
+Debug.ShouldStop(256);
+_objects = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.List");
+_objects.setObject(_root.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("data")))));Debug.locals.put("objects", _objects);
+ BA.debugLineNum = 362;BA.debugLine="for	Each m As Map In objects";
+Debug.ShouldStop(512);
+if (true) break;
+
+case 4:
+//for
+this.state = 7;
+_m = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.Map");
+group16 = _objects;
+index16 = 0;
+groupLen16 = group16.runMethod(true,"getSize").<Integer>get();
+Debug.locals.put("m", _m);
+this.state = 10;
+if (true) break;
+
+case 10:
+//C
+this.state = 7;
+if (index16 < groupLen16) {
+this.state = 6;
+_m.setObject(group16.runMethod(false,"Get",index16));}
+if (true) break;
+
+case 11:
+//C
+this.state = 10;
+index16++;
+Debug.locals.put("m", _m);
+if (true) break;
+
+case 6:
+//C
+this.state = 11;
+ BA.debugLineNum = 363;BA.debugLine="Dim cod As String = m.Get(\"codice\")";
+Debug.ShouldStop(1024);
+_cod = BA.ObjectToString(_m.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("codice")))));Debug.locals.put("cod", _cod);Debug.locals.put("cod", _cod);
+ BA.debugLineNum = 364;BA.debugLine="Dim Denom As String = m.Get(\"denominazione\")";
+Debug.ShouldStop(2048);
+_denom = BA.ObjectToString(_m.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("denominazione")))));Debug.locals.put("Denom", _denom);Debug.locals.put("Denom", _denom);
+ BA.debugLineNum = 365;BA.debugLine="Dim id As Int = m.Get(\"id\")";
+Debug.ShouldStop(4096);
+_id = BA.numberCast(int.class, _m.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("id")))));Debug.locals.put("id", _id);Debug.locals.put("id", _id);
+ BA.debugLineNum = 366;BA.debugLine="Dim indir As String = m.Get(\"indirizzo\")";
+Debug.ShouldStop(8192);
+_indir = BA.ObjectToString(_m.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("indirizzo")))));Debug.locals.put("indir", _indir);Debug.locals.put("indir", _indir);
+ BA.debugLineNum = 367;BA.debugLine="Dim piva As String = m.Get(\"part_iva\")";
+Debug.ShouldStop(16384);
+_piva = BA.ObjectToString(_m.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("part_iva")))));Debug.locals.put("piva", _piva);Debug.locals.put("piva", _piva);
+ BA.debugLineNum = 368;BA.debugLine="Dim dtum As String = m.Get(\"data_ultima_modific";
+Debug.ShouldStop(32768);
+_dtum = BA.ObjectToString(_m.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("data_ultima_modifica")))));Debug.locals.put("dtum", _dtum);Debug.locals.put("dtum", _dtum);
+ if (true) break;
+if (true) break;
+
+case 7:
+//C
+this.state = 8;
+Debug.locals.put("m", _m);
+;
+ BA.debugLineNum = 370;BA.debugLine="Dim c As Cliente";
+Debug.ShouldStop(131072);
+_c = RemoteObject.createNew ("app.aegdistribuzione.cliente");Debug.locals.put("c", _c);
+ BA.debugLineNum = 371;BA.debugLine="c.Initialize(id,cod,Denom,indir,piva,dtum)";
+Debug.ShouldStop(262144);
+_c.runClassMethod (app.aegdistribuzione.cliente.class, "_initialize",__ref.getField(false, "ba"),(Object)(_id),(Object)(_cod),(Object)(_denom),(Object)(_indir),(Object)(_piva),(Object)(_dtum));
+ BA.debugLineNum = 372;BA.debugLine="Return c";
+Debug.ShouldStop(524288);
+if (true) {
+parent.__c.runVoidMethod ("ReturnFromResumableSub",this.remoteResumableSub,(_c));return;};
+ if (true) break;
+
+case 8:
+//C
+this.state = -1;
+;
+ BA.debugLineNum = 374;BA.debugLine="End Sub";
+Debug.ShouldStop(2097152);
+if (true) break;
+
+            }
+        }
+    }
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+}
+public static void  _jobdone(RemoteObject __ref) throws Exception{
+}
 public static RemoteObject  _geterrore(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("getErrore (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,24);
+		Debug.PushSubsStack("getErrore (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,24);
 if (RapidSub.canDelegate("geterrore")) { return __ref.runUserSub(false, "apiclient","geterrore", __ref);}
  BA.debugLineNum = 24;BA.debugLine="Public Sub getErrore As String";
 Debug.ShouldStop(8388608);
  BA.debugLineNum = 25;BA.debugLine="Return m_errore";
 Debug.ShouldStop(16777216);
-Debug.CheckDeviceExceptions();if (true) return __ref.getField(true,"_m_errore");
+if (true) return __ref.getField(true,"_m_errore");
  BA.debugLineNum = 26;BA.debugLine="End Sub";
 Debug.ShouldStop(33554432);
 return RemoteObject.createImmutable("");
@@ -40,13 +255,13 @@ finally {
 		}}
 public static RemoteObject  _getsuccesso(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("getSuccesso (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,20);
+		Debug.PushSubsStack("getSuccesso (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,20);
 if (RapidSub.canDelegate("getsuccesso")) { return __ref.runUserSub(false, "apiclient","getsuccesso", __ref);}
  BA.debugLineNum = 20;BA.debugLine="Public Sub getSuccesso As Boolean";
 Debug.ShouldStop(524288);
  BA.debugLineNum = 21;BA.debugLine="Return m_successo";
 Debug.ShouldStop(1048576);
-Debug.CheckDeviceExceptions();if (true) return __ref.getField(true,"_m_successo");
+if (true) return __ref.getField(true,"_m_successo");
  BA.debugLineNum = 22;BA.debugLine="End Sub";
 Debug.ShouldStop(2097152);
 return RemoteObject.createImmutable(false);
@@ -59,7 +274,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,9);
+		Debug.PushSubsStack("Initialize (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,9);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "apiclient","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -83,7 +298,7 @@ finally {
 		}}
 public static RemoteObject  _invia(RemoteObject __ref,RemoteObject _ord) throws Exception{
 try {
-		Debug.PushSubsStack("Invia (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,316);
+		Debug.PushSubsStack("Invia (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,316);
 if (RapidSub.canDelegate("invia")) { return __ref.runUserSub(false, "apiclient","invia", __ref, _ord);}
 ResumableSub_Invia rsub = new ResumableSub_Invia(null,__ref,_ord);
 rsub.remoteResumableSub = anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSubForFilter();
@@ -112,7 +327,7 @@ RemoteObject _form = RemoteObject.declareNull("anywheresoftware.b4a.objects.coll
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("Invia (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,316);
+		Debug.PushSubsStack("Invia (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,316);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -241,7 +456,7 @@ this.catchState = 0;
 ;
  BA.debugLineNum = 342;BA.debugLine="Return Null";
 Debug.ShouldStop(2097152);
-Debug.CheckDeviceExceptions();if (true) {
+if (true) {
 parent.__c.runVoidMethod ("ReturnFromResumableSub",this.remoteResumableSub,parent.__c.getField(false,"Null"));return;};
  BA.debugLineNum = 343;BA.debugLine="End Sub";
 Debug.ShouldStop(4194304);
@@ -264,11 +479,9 @@ finally {
 			Debug.PopSubsStack();
 		}}
 }
-public static void  _jobdone(RemoteObject __ref) throws Exception{
-}
 public static RemoteObject  _login(RemoteObject __ref,RemoteObject _username,RemoteObject _password) throws Exception{
 try {
-		Debug.PushSubsStack("Login (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,345);
+		Debug.PushSubsStack("Login (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,376);
 if (RapidSub.canDelegate("login")) { return __ref.runUserSub(false, "apiclient","login", __ref, _username, _password);}
 ResumableSub_Login rsub = new ResumableSub_Login(null,__ref,_username,_password);
 rsub.remoteResumableSub = anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSubForFilter();
@@ -303,7 +516,7 @@ RemoteObject _m = RemoteObject.declareNull("anywheresoftware.b4a.objects.collect
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("Login (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,345);
+		Debug.PushSubsStack("Login (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,376);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -319,29 +532,29 @@ this.state = 1;
 Debug.locals.put("_ref", __ref);
 Debug.locals.put("username", _username);
 Debug.locals.put("password", _password);
- BA.debugLineNum = 346;BA.debugLine="m_successo = False";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 377;BA.debugLine="m_successo = False";
+Debug.ShouldStop(16777216);
 __ref.setField ("_m_successo",parent.__c.getField(true,"False"));
- BA.debugLineNum = 347;BA.debugLine="Dim user As Utente";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 378;BA.debugLine="Dim user As Utente";
+Debug.ShouldStop(33554432);
 _user = RemoteObject.createNew ("app.aegdistribuzione.utente");Debug.locals.put("user", _user);
- BA.debugLineNum = 348;BA.debugLine="Dim form As Map";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 379;BA.debugLine="Dim form As Map";
+Debug.ShouldStop(67108864);
 _form = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.Map");Debug.locals.put("form", _form);
- BA.debugLineNum = 349;BA.debugLine="form.Initialize";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 380;BA.debugLine="form.Initialize";
+Debug.ShouldStop(134217728);
 _form.runVoidMethod ("Initialize");
- BA.debugLineNum = 350;BA.debugLine="form.Put(\"username\", username)";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 381;BA.debugLine="form.Put(\"username\", username)";
+Debug.ShouldStop(268435456);
 _form.runVoidMethod ("Put",(Object)(RemoteObject.createImmutable(("username"))),(Object)((_username)));
- BA.debugLineNum = 351;BA.debugLine="form.Put(\"password\", password)";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 382;BA.debugLine="form.Put(\"password\", password)";
+Debug.ShouldStop(536870912);
 _form.runVoidMethod ("Put",(Object)(RemoteObject.createImmutable(("password"))),(Object)((_password)));
- BA.debugLineNum = 352;BA.debugLine="m_job.PostMultipart(m_url & \"/login\", form, Null)";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 383;BA.debugLine="m_job.PostMultipart(m_url & \"/login\", form, Null)";
+Debug.ShouldStop(1073741824);
 __ref.getField(false,"_m_job").runVoidMethod ("_postmultipart",(Object)(RemoteObject.concat(__ref.getField(true,"_m_url"),RemoteObject.createImmutable("/login"))),(Object)(_form),RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.collections.List"), parent.__c.getField(false,"Null")));
- BA.debugLineNum = 353;BA.debugLine="Wait For (m_job) JobDone";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 384;BA.debugLine="Wait For (m_job) JobDone";
+Debug.ShouldStop(-2147483648);
 parent.__c.runVoidMethod ("WaitFor","jobdone", __ref.getField(false, "ba"), anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this), (__ref.getField(false,"_m_job")));
 this.state = 15;
 return;
@@ -349,8 +562,8 @@ case 15:
 //C
 this.state = 1;
 ;
- BA.debugLineNum = 355;BA.debugLine="Try";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 386;BA.debugLine="Try";
+Debug.ShouldStop(2);
 if (true) break;
 
 case 1:
@@ -364,8 +577,8 @@ case 3:
 //C
 this.state = 4;
 this.catchState = 13;
- BA.debugLineNum = 356;BA.debugLine="If m_job.Success Then";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 387;BA.debugLine="If m_job.Success Then";
+Debug.ShouldStop(4);
 if (true) break;
 
 case 4:
@@ -374,8 +587,8 @@ this.state = 11;
 if (__ref.getField(false,"_m_job").getField(true,"_success").<Boolean>get().booleanValue()) { 
 this.state = 6;
 }else 
-{ BA.debugLineNum = 367;BA.debugLine="Else If m_job.Response.StatusCode == 404 Then";
-Debug.ShouldStop(16384);
+{ BA.debugLineNum = 398;BA.debugLine="Else If m_job.Response.StatusCode == 404 Then";
+Debug.ShouldStop(8192);
 if (RemoteObject.solveBoolean("=",__ref.getField(false,"_m_job").getField(false,"_response").runMethod(true,"getStatusCode"),BA.numberCast(double.class, 404))) { 
 this.state = 8;
 }else {
@@ -386,32 +599,32 @@ if (true) break;
 case 6:
 //C
 this.state = 11;
- BA.debugLineNum = 357;BA.debugLine="m_successo = True";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 388;BA.debugLine="m_successo = True";
+Debug.ShouldStop(8);
 __ref.setField ("_m_successo",parent.__c.getField(true,"True"));
- BA.debugLineNum = 358;BA.debugLine="Dim parser As JSONParser";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 389;BA.debugLine="Dim parser As JSONParser";
+Debug.ShouldStop(16);
 _parser = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.JSONParser");Debug.locals.put("parser", _parser);
- BA.debugLineNum = 359;BA.debugLine="parser.Initialize(m_job.GetString)";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 390;BA.debugLine="parser.Initialize(m_job.GetString)";
+Debug.ShouldStop(32);
 _parser.runVoidMethod ("Initialize",(Object)(__ref.getField(false,"_m_job").runMethod(true,"_getstring")));
- BA.debugLineNum = 360;BA.debugLine="Dim root As Map = parser.NextObject";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 391;BA.debugLine="Dim root As Map = parser.NextObject";
+Debug.ShouldStop(64);
 _root = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.Map");
 _root = _parser.runMethod(false,"NextObject");Debug.locals.put("root", _root);Debug.locals.put("root", _root);
- BA.debugLineNum = 361;BA.debugLine="Dim objects As List = root.Get(\"data\")";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 392;BA.debugLine="Dim objects As List = root.Get(\"data\")";
+Debug.ShouldStop(128);
 _objects = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.List");
 _objects.setObject(_root.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("data")))));Debug.locals.put("objects", _objects);
- BA.debugLineNum = 363;BA.debugLine="Dim m As Map = objects.Get(0)";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 394;BA.debugLine="Dim m As Map = objects.Get(0)";
+Debug.ShouldStop(512);
 _m = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.Map");
 _m.setObject(_objects.runMethod(false,"Get",(Object)(BA.numberCast(int.class, 0))));Debug.locals.put("m", _m);
- BA.debugLineNum = 364;BA.debugLine="user.Initialize(m.Get(\"id\"), m.Get(\"username\"),";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 395;BA.debugLine="user.Initialize(m.Get(\"id\"), m.Get(\"username\"),";
+Debug.ShouldStop(1024);
 _user.runClassMethod (app.aegdistribuzione.utente.class, "_initialize",__ref.getField(false, "ba"),(Object)(BA.numberCast(int.class, _m.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("id")))))),(Object)(BA.ObjectToString(_m.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("username")))))),(Object)(BA.ObjectToString(_m.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("ultimo_accesso")))))));
- BA.debugLineNum = 366;BA.debugLine="Return user";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 397;BA.debugLine="Return user";
+Debug.ShouldStop(4096);
 Debug.CheckDeviceExceptions();if (true) {
 parent.__c.runVoidMethod ("ReturnFromResumableSub",this.remoteResumableSub,(_user));return;};
  if (true) break;
@@ -419,16 +632,16 @@ parent.__c.runVoidMethod ("ReturnFromResumableSub",this.remoteResumableSub,(_use
 case 8:
 //C
 this.state = 11;
- BA.debugLineNum = 368;BA.debugLine="m_errore = \"Nome utente o password errata\"";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 399;BA.debugLine="m_errore = \"Nome utente o password errata\"";
+Debug.ShouldStop(16384);
 __ref.setField ("_m_errore",BA.ObjectToString("Nome utente o password errata"));
  if (true) break;
 
 case 10:
 //C
 this.state = 11;
- BA.debugLineNum = 370;BA.debugLine="m_errore = m_job.ErrorMessage";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 401;BA.debugLine="m_errore = m_job.ErrorMessage";
+Debug.ShouldStop(65536);
 __ref.setField ("_m_errore",__ref.getField(false,"_m_job").getField(true,"_errormessage"));
  if (true) break;
 
@@ -443,11 +656,11 @@ case 13:
 //C
 this.state = 14;
 this.catchState = 0;
- BA.debugLineNum = 373;BA.debugLine="Log(LastException)";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 404;BA.debugLine="Log(LastException)";
+Debug.ShouldStop(524288);
 parent.__c.runVoidMethod ("Log",(Object)(BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA")))));
- BA.debugLineNum = 374;BA.debugLine="m_errore = \"Errore di connessione\"";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 405;BA.debugLine="m_errore = \"Errore di connessione\"";
+Debug.ShouldStop(1048576);
 __ref.setField ("_m_errore",BA.ObjectToString("Errore di connessione"));
  if (true) break;
 if (true) break;
@@ -457,12 +670,12 @@ case 14:
 this.state = -1;
 this.catchState = 0;
 ;
- BA.debugLineNum = 377;BA.debugLine="Return Null";
-Debug.ShouldStop(16777216);
-Debug.CheckDeviceExceptions();if (true) {
+ BA.debugLineNum = 408;BA.debugLine="Return Null";
+Debug.ShouldStop(8388608);
+if (true) {
 parent.__c.runVoidMethod ("ReturnFromResumableSub",this.remoteResumableSub,parent.__c.getField(false,"Null"));return;};
- BA.debugLineNum = 378;BA.debugLine="End Sub";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 409;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -484,7 +697,7 @@ finally {
 }
 public static RemoteObject  _scaricaarticoli(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ScaricaArticoli (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,98);
+		Debug.PushSubsStack("ScaricaArticoli (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,98);
 if (RapidSub.canDelegate("scaricaarticoli")) { return __ref.runUserSub(false, "apiclient","scaricaarticoli", __ref);}
 ResumableSub_ScaricaArticoli rsub = new ResumableSub_ScaricaArticoli(null,__ref);
 rsub.remoteResumableSub = anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSubForFilter();
@@ -524,7 +737,7 @@ int groupLen12;
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("ScaricaArticoli (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,98);
+		Debug.PushSubsStack("ScaricaArticoli (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,98);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -664,7 +877,7 @@ this.state = -1;
 ;
  BA.debugLineNum = 125;BA.debugLine="Return m_articoli";
 Debug.ShouldStop(268435456);
-Debug.CheckDeviceExceptions();if (true) {
+if (true) {
 parent.__c.runVoidMethod ("ReturnFromResumableSub",this.remoteResumableSub,(_m_articoli));return;};
  BA.debugLineNum = 126;BA.debugLine="End Sub";
 Debug.ShouldStop(536870912);
@@ -682,7 +895,7 @@ finally {
 }
 public static RemoteObject  _scaricaclienti(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ScaricaClienti (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,128);
+		Debug.PushSubsStack("ScaricaClienti (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,128);
 if (RapidSub.canDelegate("scaricaclienti")) { return __ref.runUserSub(false, "apiclient","scaricaclienti", __ref);}
 ResumableSub_ScaricaClienti rsub = new ResumableSub_ScaricaClienti(null,__ref);
 rsub.remoteResumableSub = anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSubForFilter();
@@ -723,7 +936,7 @@ int groupLen12;
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("ScaricaClienti (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,128);
+		Debug.PushSubsStack("ScaricaClienti (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,128);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -866,7 +1079,7 @@ this.state = -1;
 ;
  BA.debugLineNum = 157;BA.debugLine="Return m_clienti";
 Debug.ShouldStop(268435456);
-Debug.CheckDeviceExceptions();if (true) {
+if (true) {
 parent.__c.runVoidMethod ("ReturnFromResumableSub",this.remoteResumableSub,(_m_clienti));return;};
  BA.debugLineNum = 158;BA.debugLine="End Sub";
 Debug.ShouldStop(536870912);
@@ -884,7 +1097,7 @@ finally {
 }
 public static RemoteObject  _scaricapreferiti(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ScaricaPreferiti (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,256);
+		Debug.PushSubsStack("ScaricaPreferiti (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,256);
 if (RapidSub.canDelegate("scaricapreferiti")) { return __ref.runUserSub(false, "apiclient","scaricapreferiti", __ref);}
 ResumableSub_ScaricaPreferiti rsub = new ResumableSub_ScaricaPreferiti(null,__ref);
 rsub.remoteResumableSub = anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSubForFilter();
@@ -923,7 +1136,7 @@ int groupLen12;
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("ScaricaPreferiti (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,256);
+		Debug.PushSubsStack("ScaricaPreferiti (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,256);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -1060,7 +1273,7 @@ this.state = -1;
 ;
  BA.debugLineNum = 283;BA.debugLine="Return m_preferiti";
 Debug.ShouldStop(67108864);
-Debug.CheckDeviceExceptions();if (true) {
+if (true) {
 parent.__c.runVoidMethod ("ReturnFromResumableSub",this.remoteResumableSub,(_m_preferiti));return;};
  BA.debugLineNum = 284;BA.debugLine="End Sub";
 Debug.ShouldStop(134217728);
@@ -1078,7 +1291,7 @@ finally {
 }
 public static RemoteObject  _scaricapreferitipercliente(RemoteObject __ref,RemoteObject _id_cliente) throws Exception{
 try {
-		Debug.PushSubsStack("ScaricaPreferitiPerCliente (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,286);
+		Debug.PushSubsStack("ScaricaPreferitiPerCliente (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,286);
 if (RapidSub.canDelegate("scaricapreferitipercliente")) { return __ref.runUserSub(false, "apiclient","scaricapreferitipercliente", __ref, _id_cliente);}
 ResumableSub_ScaricaPreferitiPerCliente rsub = new ResumableSub_ScaricaPreferitiPerCliente(null,__ref,_id_cliente);
 rsub.remoteResumableSub = anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSubForFilter();
@@ -1119,7 +1332,7 @@ int groupLen12;
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("ScaricaPreferitiPerCliente (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,286);
+		Debug.PushSubsStack("ScaricaPreferitiPerCliente (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,286);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -1257,7 +1470,7 @@ this.state = -1;
 ;
  BA.debugLineNum = 313;BA.debugLine="Return m_preferiti";
 Debug.ShouldStop(16777216);
-Debug.CheckDeviceExceptions();if (true) {
+if (true) {
 parent.__c.runVoidMethod ("ReturnFromResumableSub",this.remoteResumableSub,(_m_preferiti));return;};
  BA.debugLineNum = 314;BA.debugLine="End Sub";
 Debug.ShouldStop(33554432);
@@ -1275,7 +1488,7 @@ finally {
 }
 public static RemoteObject  _storicoordini(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("StoricoOrdini (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,208);
+		Debug.PushSubsStack("StoricoOrdini (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,208);
 if (RapidSub.canDelegate("storicoordini")) { return __ref.runUserSub(false, "apiclient","storicoordini", __ref);}
 ResumableSub_StoricoOrdini rsub = new ResumableSub_StoricoOrdini(null,__ref);
 rsub.remoteResumableSub = anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSubForFilter();
@@ -1326,7 +1539,7 @@ int groupLen21;
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("StoricoOrdini (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,208);
+		Debug.PushSubsStack("StoricoOrdini (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,208);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -1573,7 +1786,7 @@ this.state = -1;
 ;
  BA.debugLineNum = 253;BA.debugLine="Return m_ordini";
 Debug.ShouldStop(268435456);
-Debug.CheckDeviceExceptions();if (true) {
+if (true) {
 parent.__c.runVoidMethod ("ReturnFromResumableSub",this.remoteResumableSub,(_m_ordini));return;};
  BA.debugLineNum = 254;BA.debugLine="End Sub";
 Debug.ShouldStop(536870912);
@@ -1598,7 +1811,7 @@ finally {
 }
 public static RemoteObject  _storicoordinipercliente(RemoteObject __ref,RemoteObject _id_cliente) throws Exception{
 try {
-		Debug.PushSubsStack("StoricoOrdiniPerCliente (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,160);
+		Debug.PushSubsStack("StoricoOrdiniPerCliente (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,160);
 if (RapidSub.canDelegate("storicoordinipercliente")) { return __ref.runUserSub(false, "apiclient","storicoordinipercliente", __ref, _id_cliente);}
 ResumableSub_StoricoOrdiniPerCliente rsub = new ResumableSub_StoricoOrdiniPerCliente(null,__ref,_id_cliente);
 rsub.remoteResumableSub = anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSubForFilter();
@@ -1651,7 +1864,7 @@ int groupLen21;
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("StoricoOrdiniPerCliente (apiclient) ","apiclient",6,__ref.getField(false, "ba"),__ref,160);
+		Debug.PushSubsStack("StoricoOrdiniPerCliente (apiclient) ","apiclient",3,__ref.getField(false, "ba"),__ref,160);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -1899,7 +2112,7 @@ this.state = -1;
 ;
  BA.debugLineNum = 205;BA.debugLine="Return m_ordini";
 Debug.ShouldStop(4096);
-Debug.CheckDeviceExceptions();if (true) {
+if (true) {
 parent.__c.runVoidMethod ("ReturnFromResumableSub",this.remoteResumableSub,(_m_ordini));return;};
  BA.debugLineNum = 206;BA.debugLine="End Sub";
 Debug.ShouldStop(8192);

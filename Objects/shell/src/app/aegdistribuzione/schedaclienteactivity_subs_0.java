@@ -8,7 +8,7 @@ public class schedaclienteactivity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (schedaclienteactivity) ","schedaclienteactivity",3,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,20);
+		Debug.PushSubsStack("Activity_Create (schedaclienteactivity) ","schedaclienteactivity",4,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,20);
 if (RapidSub.canDelegate("activity_create")) { return app.aegdistribuzione.schedaclienteactivity.remoteMe.runUserSub(false, "schedaclienteactivity","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 20;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -37,7 +37,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (schedaclienteactivity) ","schedaclienteactivity",3,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,48);
+		Debug.PushSubsStack("Activity_Pause (schedaclienteactivity) ","schedaclienteactivity",4,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,48);
 if (RapidSub.canDelegate("activity_pause")) { return app.aegdistribuzione.schedaclienteactivity.remoteMe.runUserSub(false, "schedaclienteactivity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 48;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -54,7 +54,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (schedaclienteactivity) ","schedaclienteactivity",3,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,35);
+		Debug.PushSubsStack("Activity_Resume (schedaclienteactivity) ","schedaclienteactivity",4,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,35);
 if (RapidSub.canDelegate("activity_resume")) { return app.aegdistribuzione.schedaclienteactivity.remoteMe.runUserSub(false, "schedaclienteactivity","activity_resume");}
  BA.debugLineNum = 35;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(4);
@@ -95,7 +95,7 @@ finally {
 		}}
 public static RemoteObject  _btnnuovo_click() throws Exception{
 try {
-		Debug.PushSubsStack("BtnNuovo_Click (schedaclienteactivity) ","schedaclienteactivity",3,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,121);
+		Debug.PushSubsStack("BtnNuovo_Click (schedaclienteactivity) ","schedaclienteactivity",4,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,121);
 if (RapidSub.canDelegate("btnnuovo_click")) { return app.aegdistribuzione.schedaclienteactivity.remoteMe.runUserSub(false, "schedaclienteactivity","btnnuovo_click");}
 RemoteObject _o = RemoteObject.declareNull("app.aegdistribuzione.ordine");
  BA.debugLineNum = 121;BA.debugLine="Sub BtnNuovo_Click";
@@ -118,7 +118,7 @@ finally {
 		}}
 public static RemoteObject  _caricaordiniincorso() throws Exception{
 try {
-		Debug.PushSubsStack("CaricaOrdiniInCorso (schedaclienteactivity) ","schedaclienteactivity",3,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,90);
+		Debug.PushSubsStack("CaricaOrdiniInCorso (schedaclienteactivity) ","schedaclienteactivity",4,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,90);
 if (RapidSub.canDelegate("caricaordiniincorso")) { return app.aegdistribuzione.schedaclienteactivity.remoteMe.runUserSub(false, "schedaclienteactivity","caricaordiniincorso");}
 RemoteObject _ordini = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.List");
 RemoteObject _o = RemoteObject.declareNull("app.aegdistribuzione.ordine");
@@ -171,7 +171,7 @@ finally {
 		}}
 public static RemoteObject  _caricapreferiti() throws Exception{
 try {
-		Debug.PushSubsStack("CaricaPreferiti (schedaclienteactivity) ","schedaclienteactivity",3,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,60);
+		Debug.PushSubsStack("CaricaPreferiti (schedaclienteactivity) ","schedaclienteactivity",4,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,60);
 if (RapidSub.canDelegate("caricapreferiti")) { return app.aegdistribuzione.schedaclienteactivity.remoteMe.runUserSub(false, "schedaclienteactivity","caricapreferiti");}
 RemoteObject _preferiti = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.List");
 RemoteObject _p = RemoteObject.declareNull("app.aegdistribuzione.preferito");
@@ -224,7 +224,7 @@ finally {
 		}}
 public static RemoteObject  _caricastoricoordini() throws Exception{
 try {
-		Debug.PushSubsStack("CaricaStoricoOrdini (schedaclienteactivity) ","schedaclienteactivity",3,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,78);
+		Debug.PushSubsStack("CaricaStoricoOrdini (schedaclienteactivity) ","schedaclienteactivity",4,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,78);
 if (RapidSub.canDelegate("caricastoricoordini")) { return app.aegdistribuzione.schedaclienteactivity.remoteMe.runUserSub(false, "schedaclienteactivity","caricastoricoordini");}
 RemoteObject _ordini = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.List");
 RemoteObject _o = RemoteObject.declareNull("app.aegdistribuzione.ordine");
@@ -290,7 +290,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _listview2_itemclick(RemoteObject _position,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("ListView2_ItemClick (schedaclienteactivity) ","schedaclienteactivity",3,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,115);
+		Debug.PushSubsStack("ListView2_ItemClick (schedaclienteactivity) ","schedaclienteactivity",4,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,115);
 if (RapidSub.canDelegate("listview2_itemclick")) { return app.aegdistribuzione.schedaclienteactivity.remoteMe.runUserSub(false, "schedaclienteactivity","listview2_itemclick", _position, _value);}
 RemoteObject _o = RemoteObject.declareNull("app.aegdistribuzione.ordine");
 Debug.locals.put("Position", _position);
@@ -315,7 +315,7 @@ finally {
 		}}
 public static RemoteObject  _listview3_itemclick(RemoteObject _position,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("ListView3_ItemClick (schedaclienteactivity) ","schedaclienteactivity",3,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,126);
+		Debug.PushSubsStack("ListView3_ItemClick (schedaclienteactivity) ","schedaclienteactivity",4,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,126);
 if (RapidSub.canDelegate("listview3_itemclick")) { return app.aegdistribuzione.schedaclienteactivity.remoteMe.runUserSub(false, "schedaclienteactivity","listview3_itemclick", _position, _value);}
 RemoteObject _o = RemoteObject.declareNull("app.aegdistribuzione.ordine");
 Debug.locals.put("Position", _position);
@@ -345,7 +345,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _singplur(RemoteObject _v) throws Exception{
 try {
-		Debug.PushSubsStack("SingPlur (schedaclienteactivity) ","schedaclienteactivity",3,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,52);
+		Debug.PushSubsStack("SingPlur (schedaclienteactivity) ","schedaclienteactivity",4,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,52);
 if (RapidSub.canDelegate("singplur")) { return app.aegdistribuzione.schedaclienteactivity.remoteMe.runUserSub(false, "schedaclienteactivity","singplur", _v);}
 Debug.locals.put("v", _v);
  BA.debugLineNum = 52;BA.debugLine="Sub SingPlur(v As Int) As String";
@@ -355,11 +355,11 @@ Debug.ShouldStop(1048576);
 if (RemoteObject.solveBoolean("=",_v,BA.numberCast(double.class, 1))) { 
  BA.debugLineNum = 54;BA.debugLine="Return \"a\"";
 Debug.ShouldStop(2097152);
-Debug.CheckDeviceExceptions();if (true) return BA.ObjectToString("a");
+if (true) return BA.ObjectToString("a");
  }else {
  BA.debugLineNum = 56;BA.debugLine="Return \"e\"";
 Debug.ShouldStop(8388608);
-Debug.CheckDeviceExceptions();if (true) return BA.ObjectToString("e");
+if (true) return BA.ObjectToString("e");
  };
  BA.debugLineNum = 58;BA.debugLine="End Sub";
 Debug.ShouldStop(33554432);
@@ -373,7 +373,7 @@ finally {
 		}}
 public static RemoteObject  _tabhost1_tabchanged() throws Exception{
 try {
-		Debug.PushSubsStack("TabHost1_TabChanged (schedaclienteactivity) ","schedaclienteactivity",3,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,102);
+		Debug.PushSubsStack("TabHost1_TabChanged (schedaclienteactivity) ","schedaclienteactivity",4,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,102);
 if (RapidSub.canDelegate("tabhost1_tabchanged")) { return app.aegdistribuzione.schedaclienteactivity.remoteMe.runUserSub(false, "schedaclienteactivity","tabhost1_tabchanged");}
  BA.debugLineNum = 102;BA.debugLine="Sub TabHost1_TabChanged";
 Debug.ShouldStop(32);
@@ -414,7 +414,7 @@ finally {
 		}}
 public static RemoteObject  _visualizzascheda(RemoteObject _c) throws Exception{
 try {
-		Debug.PushSubsStack("VisualizzaScheda (schedaclienteactivity) ","schedaclienteactivity",3,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,28);
+		Debug.PushSubsStack("VisualizzaScheda (schedaclienteactivity) ","schedaclienteactivity",4,schedaclienteactivity.mostCurrent.activityBA,schedaclienteactivity.mostCurrent,28);
 if (RapidSub.canDelegate("visualizzascheda")) { return app.aegdistribuzione.schedaclienteactivity.remoteMe.runUserSub(false, "schedaclienteactivity","visualizzascheda", _c);}
 Debug.locals.put("c", _c);
  BA.debugLineNum = 28;BA.debugLine="Sub VisualizzaScheda(c As Cliente)";

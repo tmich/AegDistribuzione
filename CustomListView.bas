@@ -1,5 +1,5 @@
 ﻿B4A=true
-Group=Default Group
+Group=Classes
 ModulesStructureVersion=1
 Type=Class
 Version=7.3

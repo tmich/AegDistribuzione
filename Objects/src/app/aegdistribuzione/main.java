@@ -347,11 +347,11 @@ public static boolean isAnyActivityVisible() {
 vis = vis | (main.mostCurrent != null);
 vis = vis | (ordineactivity.mostCurrent != null);
 vis = vis | (schedaclienteactivity.mostCurrent != null);
+vis = vis | (articoliactivity.mostCurrent != null);
 vis = vis | (loginactivity.mostCurrent != null);
 vis = vis | (scaricadatiactivity.mostCurrent != null);
 vis = vis | (dettaglioordineactivity.mostCurrent != null);
 vis = vis | (clientiactivity.mostCurrent != null);
-vis = vis | (articoliactivity.mostCurrent != null);
 return vis;}
 
 private static BA killProgramHelper(BA ba) {
@@ -394,6 +394,18 @@ public static void killProgram() {
 			}
             else {
                 BA ba = killProgramHelper(schedaclienteactivity.mostCurrent == null ? null : schedaclienteactivity.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (articoliactivity.previousOne != null) {
+				__a = articoliactivity.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(articoliactivity.mostCurrent == null ? null : articoliactivity.mostCurrent.processBA);
                 if (ba != null) __a = ba.activity;
             }
             if (__a != null)
@@ -448,29 +460,17 @@ BA.applicationContext.stopService(new android.content.Intent(BA.applicationConte
             if (__a != null)
 				__a.finish();}
 
- {
-            Activity __a = null;
-            if (articoliactivity.previousOne != null) {
-				__a = articoliactivity.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(articoliactivity.mostCurrent == null ? null : articoliactivity.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public app.aegdistribuzione.ordineactivity _ordineactivity = null;
 public app.aegdistribuzione.schedaclienteactivity _schedaclienteactivity = null;
+public app.aegdistribuzione.articoliactivity _articoliactivity = null;
 public app.aegdistribuzione.starter _starter = null;
 public app.aegdistribuzione.loginactivity _loginactivity = null;
 public app.aegdistribuzione.scaricadatiactivity _scaricadatiactivity = null;
 public app.aegdistribuzione.dettaglioordineactivity _dettaglioordineactivity = null;
 public app.aegdistribuzione.clientiactivity _clientiactivity = null;
-public app.aegdistribuzione.articoliactivity _articoliactivity = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
@@ -520,39 +520,39 @@ public static String  _btnarticoli_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btnarticoli_click"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnarticoli_click", null));}
-RDebugUtils.currentLine=4587520;
- //BA.debugLineNum = 4587520;BA.debugLine="Sub btnArticoli_Click";
-RDebugUtils.currentLine=4587521;
- //BA.debugLineNum = 4587521;BA.debugLine="StartActivity(ArticoliActivity)";
+RDebugUtils.currentLine=458752;
+ //BA.debugLineNum = 458752;BA.debugLine="Sub btnArticoli_Click";
+RDebugUtils.currentLine=458753;
+ //BA.debugLineNum = 458753;BA.debugLine="StartActivity(ArticoliActivity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._articoliactivity.getObject()));
-RDebugUtils.currentLine=4587522;
- //BA.debugLineNum = 4587522;BA.debugLine="End Sub";
+RDebugUtils.currentLine=458754;
+ //BA.debugLineNum = 458754;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnclienti_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btnclienti_click"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnclienti_click", null));}
-RDebugUtils.currentLine=4521984;
- //BA.debugLineNum = 4521984;BA.debugLine="Sub btnClienti_Click";
-RDebugUtils.currentLine=4521985;
- //BA.debugLineNum = 4521985;BA.debugLine="StartActivity(ClientiActivity)";
+RDebugUtils.currentLine=393216;
+ //BA.debugLineNum = 393216;BA.debugLine="Sub btnClienti_Click";
+RDebugUtils.currentLine=393217;
+ //BA.debugLineNum = 393217;BA.debugLine="StartActivity(ClientiActivity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._clientiactivity.getObject()));
-RDebugUtils.currentLine=4521986;
- //BA.debugLineNum = 4521986;BA.debugLine="End Sub";
+RDebugUtils.currentLine=393218;
+ //BA.debugLineNum = 393218;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imageview3_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "imageview3_click"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "imageview3_click", null));}
-RDebugUtils.currentLine=4456448;
- //BA.debugLineNum = 4456448;BA.debugLine="Sub ImageView3_Click";
-RDebugUtils.currentLine=4456449;
- //BA.debugLineNum = 4456449;BA.debugLine="StartActivity(ScaricaDatiActivity)";
+RDebugUtils.currentLine=327680;
+ //BA.debugLineNum = 327680;BA.debugLine="Sub ImageView3_Click";
+RDebugUtils.currentLine=327681;
+ //BA.debugLineNum = 327681;BA.debugLine="StartActivity(ScaricaDatiActivity)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._scaricadatiactivity.getObject()));
-RDebugUtils.currentLine=4456450;
- //BA.debugLineNum = 4456450;BA.debugLine="End Sub";
+RDebugUtils.currentLine=327682;
+ //BA.debugLineNum = 327682;BA.debugLine="End Sub";
 return "";
 }
 }

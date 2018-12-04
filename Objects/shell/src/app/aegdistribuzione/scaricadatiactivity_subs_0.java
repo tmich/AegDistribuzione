@@ -8,7 +8,7 @@ public class scaricadatiactivity_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (scaricadatiactivity) ","scaricadatiactivity",8,scaricadatiactivity.mostCurrent.activityBA,scaricadatiactivity.mostCurrent,20);
+		Debug.PushSubsStack("Activity_Create (scaricadatiactivity) ","scaricadatiactivity",11,scaricadatiactivity.mostCurrent.activityBA,scaricadatiactivity.mostCurrent,20);
 if (RapidSub.canDelegate("activity_create")) { return app.aegdistribuzione.scaricadatiactivity.remoteMe.runUserSub(false, "scaricadatiactivity","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 20;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -28,7 +28,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (scaricadatiactivity) ","scaricadatiactivity",8,scaricadatiactivity.mostCurrent.activityBA,scaricadatiactivity.mostCurrent,28);
+		Debug.PushSubsStack("Activity_Pause (scaricadatiactivity) ","scaricadatiactivity",11,scaricadatiactivity.mostCurrent.activityBA,scaricadatiactivity.mostCurrent,28);
 if (RapidSub.canDelegate("activity_pause")) { return app.aegdistribuzione.scaricadatiactivity.remoteMe.runUserSub(false, "scaricadatiactivity","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 28;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -45,7 +45,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (scaricadatiactivity) ","scaricadatiactivity",8,scaricadatiactivity.mostCurrent.activityBA,scaricadatiactivity.mostCurrent,24);
+		Debug.PushSubsStack("Activity_Resume (scaricadatiactivity) ","scaricadatiactivity",11,scaricadatiactivity.mostCurrent.activityBA,scaricadatiactivity.mostCurrent,24);
 if (RapidSub.canDelegate("activity_resume")) { return app.aegdistribuzione.scaricadatiactivity.remoteMe.runUserSub(false, "scaricadatiactivity","activity_resume");}
  BA.debugLineNum = 24;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(8388608);
@@ -61,7 +61,7 @@ finally {
 		}}
 public static void  _btnaggiorna_click() throws Exception{
 try {
-		Debug.PushSubsStack("BtnAggiorna_Click (scaricadatiactivity) ","scaricadatiactivity",8,scaricadatiactivity.mostCurrent.activityBA,scaricadatiactivity.mostCurrent,33);
+		Debug.PushSubsStack("BtnAggiorna_Click (scaricadatiactivity) ","scaricadatiactivity",11,scaricadatiactivity.mostCurrent.activityBA,scaricadatiactivity.mostCurrent,33);
 if (RapidSub.canDelegate("btnaggiorna_click")) { app.aegdistribuzione.scaricadatiactivity.remoteMe.runUserSub(false, "scaricadatiactivity","btnaggiorna_click"); return;}
 ResumableSub_BtnAggiorna_Click rsub = new ResumableSub_BtnAggiorna_Click(null);
 rsub.resume(null, null);
@@ -85,7 +85,7 @@ RemoteObject _result = RemoteObject.declareNull("anywheresoftware.b4a.objects.co
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("BtnAggiorna_Click (scaricadatiactivity) ","scaricadatiactivity",8,scaricadatiactivity.mostCurrent.activityBA,scaricadatiactivity.mostCurrent,33);
+		Debug.PushSubsStack("BtnAggiorna_Click (scaricadatiactivity) ","scaricadatiactivity",11,scaricadatiactivity.mostCurrent.activityBA,scaricadatiactivity.mostCurrent,33);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {

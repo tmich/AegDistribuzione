@@ -27,7 +27,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba,RemoteObject _cid,RemoteObject _cod,RemoteObject _denom,RemoteObject _indir,RemoteObject _iva,RemoteObject _dtum) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (cliente) ","cliente",10,__ref.getField(false, "ba"),__ref,12);
+		Debug.PushSubsStack("Initialize (cliente) ","cliente",12,__ref.getField(false, "ba"),__ref,12);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "cliente","initialize", __ref, _ba, _cid, _cod, _denom, _indir, _iva, _dtum);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);

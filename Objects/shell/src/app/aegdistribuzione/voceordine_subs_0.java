@@ -27,7 +27,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba,RemoteObject _vid,RemoteObject _vcod,RemoteObject _vdesc,RemoteObject _oid,RemoteObject _nt,RemoteObject _prz,RemoteObject _q) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (voceordine) ","voceordine",12,__ref.getField(false, "ba"),__ref,12);
+		Debug.PushSubsStack("Initialize (voceordine) ","voceordine",7,__ref.getField(false, "ba"),__ref,12);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "voceordine","initialize", __ref, _ba, _vid, _vcod, _vdesc, _oid, _nt, _prz, _q);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -73,7 +73,7 @@ finally {
 		}}
 public static RemoteObject  _tomap(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ToMap (voceordine) ","voceordine",12,__ref.getField(false, "ba"),__ref,22);
+		Debug.PushSubsStack("ToMap (voceordine) ","voceordine",7,__ref.getField(false, "ba"),__ref,22);
 if (RapidSub.canDelegate("tomap")) { return __ref.runUserSub(false, "voceordine","tomap", __ref);}
 RemoteObject _mv = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.Map");
  BA.debugLineNum = 22;BA.debugLine="Public Sub ToMap As Map";
@@ -104,7 +104,7 @@ Debug.ShouldStop(536870912);
 _mv.runVoidMethod ("Put",(Object)(RemoteObject.createImmutable(("note"))),(Object)((__ref.getField(true,"_note"))));
  BA.debugLineNum = 32;BA.debugLine="Return mv";
 Debug.ShouldStop(-2147483648);
-Debug.CheckDeviceExceptions();if (true) return _mv;
+if (true) return _mv;
  BA.debugLineNum = 33;BA.debugLine="End Sub";
 Debug.ShouldStop(1);
 return RemoteObject.createImmutable(null);
@@ -117,13 +117,13 @@ finally {
 		}}
 public static RemoteObject  _totale(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Totale (voceordine) ","voceordine",12,__ref.getField(false, "ba"),__ref,35);
+		Debug.PushSubsStack("Totale (voceordine) ","voceordine",7,__ref.getField(false, "ba"),__ref,35);
 if (RapidSub.canDelegate("totale")) { return __ref.runUserSub(false, "voceordine","totale", __ref);}
  BA.debugLineNum = 35;BA.debugLine="Public Sub Totale As Float";
 Debug.ShouldStop(4);
  BA.debugLineNum = 36;BA.debugLine="Return Prezzo * Qta";
 Debug.ShouldStop(8);
-Debug.CheckDeviceExceptions();if (true) return BA.numberCast(float.class, RemoteObject.solve(new RemoteObject[] {__ref.getField(true,"_prezzo"),__ref.getField(true,"_qta")}, "*",0, 0));
+if (true) return BA.numberCast(float.class, RemoteObject.solve(new RemoteObject[] {__ref.getField(true,"_prezzo"),__ref.getField(true,"_qta")}, "*",0, 0));
  BA.debugLineNum = 37;BA.debugLine="End Sub";
 Debug.ShouldStop(16);
 return RemoteObject.createImmutable(0f);

@@ -8,7 +8,7 @@ public class ordine_subs_0 {
 
 public static RemoteObject  _aggiungi(RemoteObject __ref,RemoteObject _art,RemoteObject _qta,RemoteObject _nt) throws Exception{
 try {
-		Debug.PushSubsStack("Aggiungi (ordine) ","ordine",9,__ref.getField(false, "ba"),__ref,47);
+		Debug.PushSubsStack("Aggiungi (ordine) ","ordine",6,__ref.getField(false, "ba"),__ref,47);
 if (RapidSub.canDelegate("aggiungi")) { return __ref.runUserSub(false, "ordine","aggiungi", __ref, _art, _qta, _nt);}
 RemoteObject _cnt = RemoteObject.createImmutable(false);
 RemoteObject _v = RemoteObject.declareNull("app.aegdistribuzione.voceordine");
@@ -32,7 +32,7 @@ __ref.getField(false,"_voci").runVoidMethod ("Add",(Object)((_v)));
  };
  BA.debugLineNum = 54;BA.debugLine="Return Not(cnt)";
 Debug.ShouldStop(2097152);
-Debug.CheckDeviceExceptions();if (true) return ordine.__c.runMethod(true,"Not",(Object)(_cnt));
+if (true) return ordine.__c.runMethod(true,"Not",(Object)(_cnt));
  BA.debugLineNum = 55;BA.debugLine="End Sub";
 Debug.ShouldStop(4194304);
 return RemoteObject.createImmutable(false);
@@ -62,7 +62,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _contiene(RemoteObject __ref,RemoteObject _art) throws Exception{
 try {
-		Debug.PushSubsStack("Contiene (ordine) ","ordine",9,__ref.getField(false, "ba"),__ref,37);
+		Debug.PushSubsStack("Contiene (ordine) ","ordine",6,__ref.getField(false, "ba"),__ref,37);
 if (RapidSub.canDelegate("contiene")) { return __ref.runUserSub(false, "ordine","contiene", __ref, _art);}
 RemoteObject _v = RemoteObject.declareNull("app.aegdistribuzione.voceordine");
 Debug.locals.put("art", _art);
@@ -83,14 +83,14 @@ Debug.ShouldStop(64);
 if (RemoteObject.solveBoolean("=",_v.getField(true,"_codart"),_art.getField(true,"_codice"))) { 
  BA.debugLineNum = 40;BA.debugLine="Return True";
 Debug.ShouldStop(128);
-Debug.CheckDeviceExceptions();if (true) return ordine.__c.getField(true,"True");
+if (true) return ordine.__c.getField(true,"True");
  };
  }
 }Debug.locals.put("v", _v);
 ;
  BA.debugLineNum = 44;BA.debugLine="Return False";
 Debug.ShouldStop(2048);
-Debug.CheckDeviceExceptions();if (true) return ordine.__c.getField(true,"False");
+if (true) return ordine.__c.getField(true,"False");
  BA.debugLineNum = 45;BA.debugLine="End Sub";
 Debug.ShouldStop(4096);
 return RemoteObject.createImmutable(false);
@@ -103,7 +103,7 @@ finally {
 		}}
 public static RemoteObject  _fromjson(RemoteObject __ref,RemoteObject _jsonstring) throws Exception{
 try {
-		Debug.PushSubsStack("FromJson (ordine) ","ordine",9,__ref.getField(false, "ba"),__ref,57);
+		Debug.PushSubsStack("FromJson (ordine) ","ordine",6,__ref.getField(false, "ba"),__ref,57);
 if (RapidSub.canDelegate("fromjson")) { return __ref.runUserSub(false, "ordine","fromjson", __ref, _jsonstring);}
 RemoteObject _parser = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.JSONParser");
 RemoteObject _root = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.Map");
@@ -206,13 +206,13 @@ finally {
 		}}
 public static RemoteObject  _getdataformattata(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("getDataFormattata (ordine) ","ordine",9,__ref.getField(false, "ba"),__ref,84);
+		Debug.PushSubsStack("getDataFormattata (ordine) ","ordine",6,__ref.getField(false, "ba"),__ref,84);
 if (RapidSub.canDelegate("getdataformattata")) { return __ref.runUserSub(false, "ordine","getdataformattata", __ref);}
  BA.debugLineNum = 84;BA.debugLine="Public Sub getDataFormattata As String";
 Debug.ShouldStop(524288);
  BA.debugLineNum = 85;BA.debugLine="Return DataInvio";
 Debug.ShouldStop(1048576);
-Debug.CheckDeviceExceptions();if (true) return __ref.getField(true,"_datainvio");
+if (true) return __ref.getField(true,"_datainvio");
  BA.debugLineNum = 86;BA.debugLine="End Sub";
 Debug.ShouldStop(2097152);
 return RemoteObject.createImmutable("");
@@ -225,7 +225,7 @@ finally {
 		}}
 public static RemoteObject  _getdatainvioticks(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("getDataInvioTicks (ordine) ","ordine",9,__ref.getField(false, "ba"),__ref,88);
+		Debug.PushSubsStack("getDataInvioTicks (ordine) ","ordine",6,__ref.getField(false, "ba"),__ref,88);
 if (RapidSub.canDelegate("getdatainvioticks")) { return __ref.runUserSub(false, "ordine","getdatainvioticks", __ref);}
  BA.debugLineNum = 88;BA.debugLine="Public Sub getDataInvioTicks As Long";
 Debug.ShouldStop(8388608);
@@ -234,7 +234,7 @@ Debug.ShouldStop(16777216);
 ordine.__c.getField(false,"DateTime").runMethod(true,"setDateFormat",BA.ObjectToString("dd/MM/yyyy HH:mm:ss"));
  BA.debugLineNum = 91;BA.debugLine="Return DateTime.DateParse(DataInvio)";
 Debug.ShouldStop(67108864);
-Debug.CheckDeviceExceptions();if (true) return ordine.__c.getField(false,"DateTime").runMethod(true,"DateParse",(Object)(__ref.getField(true,"_datainvio")));
+if (true) return ordine.__c.getField(false,"DateTime").runMethod(true,"DateParse",(Object)(__ref.getField(true,"_datainvio")));
  BA.debugLineNum = 92;BA.debugLine="End Sub";
 Debug.ShouldStop(134217728);
 return RemoteObject.createImmutable(0L);
@@ -247,7 +247,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba,RemoteObject _oid,RemoteObject _cid,RemoteObject _uid,RemoteObject _dtinv,RemoteObject _nt) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (ordine) ","ordine",9,__ref.getField(false, "ba"),__ref,11);
+		Debug.PushSubsStack("Initialize (ordine) ","ordine",6,__ref.getField(false, "ba"),__ref,11);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "ordine","initialize", __ref, _ba, _oid, _cid, _uid, _dtinv, _nt);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -288,13 +288,13 @@ finally {
 		}}
 public static RemoteObject  _numvoci(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("NumVoci (ordine) ","ordine",9,__ref.getField(false, "ba"),__ref,103);
+		Debug.PushSubsStack("NumVoci (ordine) ","ordine",6,__ref.getField(false, "ba"),__ref,103);
 if (RapidSub.canDelegate("numvoci")) { return __ref.runUserSub(false, "ordine","numvoci", __ref);}
  BA.debugLineNum = 103;BA.debugLine="Public Sub NumVoci As Int";
 Debug.ShouldStop(64);
  BA.debugLineNum = 104;BA.debugLine="Return Voci.Size";
 Debug.ShouldStop(128);
-Debug.CheckDeviceExceptions();if (true) return __ref.getField(false,"_voci").runMethod(true,"getSize");
+if (true) return __ref.getField(false,"_voci").runMethod(true,"getSize");
  BA.debugLineNum = 105;BA.debugLine="End Sub";
 Debug.ShouldStop(256);
 return RemoteObject.createImmutable(0);
@@ -307,7 +307,7 @@ finally {
 		}}
 public static RemoteObject  _tojson(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ToJson (ordine) ","ordine",9,__ref.getField(false, "ba"),__ref,107);
+		Debug.PushSubsStack("ToJson (ordine) ","ordine",6,__ref.getField(false, "ba"),__ref,107);
 if (RapidSub.canDelegate("tojson")) { return __ref.runUserSub(false, "ordine","tojson", __ref);}
 RemoteObject _m = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.Map");
 RemoteObject _js = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.JSONParser.JSONGenerator");
@@ -365,7 +365,7 @@ Debug.ShouldStop(33554432);
 ordine.__c.runVoidMethod ("Log",(Object)(_js.runMethod(true,"ToPrettyString",(Object)(BA.numberCast(int.class, 4)))));
  BA.debugLineNum = 123;BA.debugLine="Return js.ToString()";
 Debug.ShouldStop(67108864);
-Debug.CheckDeviceExceptions();if (true) return _js.runMethod(true,"ToString");
+if (true) return _js.runMethod(true,"ToString");
  BA.debugLineNum = 124;BA.debugLine="End Sub";
 Debug.ShouldStop(134217728);
 return RemoteObject.createImmutable("");
@@ -378,7 +378,7 @@ finally {
 		}}
 public static RemoteObject  _totale(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Totale (ordine) ","ordine",9,__ref.getField(false, "ba"),__ref,94);
+		Debug.PushSubsStack("Totale (ordine) ","ordine",6,__ref.getField(false, "ba"),__ref,94);
 if (RapidSub.canDelegate("totale")) { return __ref.runUserSub(false, "ordine","totale", __ref);}
 RemoteObject _tot = RemoteObject.createImmutable(0f);
 RemoteObject _v = RemoteObject.declareNull("app.aegdistribuzione.voceordine");
@@ -405,7 +405,7 @@ _tot = BA.numberCast(float.class, RemoteObject.solve(new RemoteObject[] {_tot,_v
 ;
  BA.debugLineNum = 100;BA.debugLine="Return tot";
 Debug.ShouldStop(8);
-Debug.CheckDeviceExceptions();if (true) return _tot;
+if (true) return _tot;
  BA.debugLineNum = 101;BA.debugLine="End Sub";
 Debug.ShouldStop(16);
 return RemoteObject.createImmutable(0f);
