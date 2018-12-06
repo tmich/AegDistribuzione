@@ -1,29 +1,32 @@
 ﻿Build1=Default,app.aegdistribuzione
 File1=ArticoliLayout.bal
-File10=Loyal_Customers.jpg
-File11=loyal_customers_bn.jpg
-File12=MainLayout.bal
-File13=OrdineLayout.bal
-File14=OrdiniInCorsoLayout.bal
-File15=OrdinInCorsoLayout.bal
-File16=pastry.jpg
-File17=pastry_bn.jpg
-File18=persona.png
-File19=persona_piu.png
+File10=loginlayout.bal
+File11=logo.png
+File12=Loyal_Customers.jpg
+File13=loyal_customers_bn.jpg
+File14=Main2Layout.bal
+File15=MainLayout.bal
+File16=OrdineLayout.bal
+File17=OrdiniInCorsoLayout.bal
+File18=OrdinInCorsoLayout.bal
+File19=pastry.jpg
 File2=articolo.png
-File20=ScaricaDatiLayout.bal
-File21=SchedaClienteLayout.bal
-File22=shipping.png
-File23=shipping_bn.png
-File24=stella.png
-File25=StoricoOrdiniLayout.bal
-File3=cellitem.bal
-File4=clessidra.png
-File5=ClientiLayout.bal
-File6=DettaglioOrdineLayout.bal
-File7=ListaPreferitiLayout.bal
-File8=loginlayout.bal
-File9=logo.png
+File20=pastry_bn.jpg
+File21=persona.png
+File22=persona_piu.png
+File23=ScaricaDatiLayout.bal
+File24=SchedaClienteLayout.bal
+File25=shipping.png
+File26=shipping_bn.png
+File27=stella.png
+File28=StoricoOrdiniLayout.bal
+File3=Business.jpg
+File4=cellitem.bal
+File5=clessidra.png
+File6=ClientiLayout.bal
+File7=cloud_ok.png
+File8=DettaglioOrdineLayout.bal
+File9=ListaPreferitiLayout.bal
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup11=Default Group
@@ -42,6 +45,9 @@ FileGroup22=Default Group
 FileGroup23=Default Group
 FileGroup24=Default Group
 FileGroup25=Default Group
+FileGroup26=Default Group
+FileGroup27=Default Group
+FileGroup28=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
 FileGroup5=Default Group
@@ -52,9 +58,9 @@ FileGroup9=Default Group
 Group=Activities
 IconFile=
 Library1=core
-Library10=maskededittext
-Library11=betterdialogs
-Library12=id
+Library10=betterdialogs
+Library11=id
+Library12=maskededittext
 Library2=sql
 Library3=okhttputils2
 Library4=json
@@ -64,27 +70,28 @@ Library7=xui
 Library8=ime
 Library9=okhttp
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~'End of default text.~\n~~\n~AddPermission(android.permission.WRITE_EXTERNAL_STORAGE)~\n~SetApplicationAttribute(android:theme, "@android:style/Theme.Holo.Light")
-Module1=ClientiActivity
-Module10=Starter
-Module11=LoginActivity
-Module12=Utente
-Module13=ScaricaDatiActivity
-Module14=DettaglioOrdineActivity
-Module15=Articolo
-Module16=Preferito
-Module17=CustomListView
-Module18=OrdiniInCorsoActivity
-Module2=ApiClient
-Module3=Cliente
-Module4=OrdineActivity
-Module5=Database
+Module1=OrdineActivity
+Module10=Ordine
+Module11=VoceOrdine
+Module12=Starter
+Module13=LoginActivity
+Module14=Utente
+Module15=ScaricaDatiActivity
+Module16=DettaglioOrdineActivity
+Module17=Preferito
+Module18=CustomListView
+Module19=Utils
+Module2=Database
+Module3=Articolo
+Module4=OrdiniInCorsoActivity
+Module5=ApiClient
 Module6=SchedaClienteActivity
-Module7=ArticoliActivity
-Module8=Ordine
-Module9=VoceOrdine
-NumberOfFiles=25
+Module7=ClientiActivity
+Module8=Cliente
+Module9=ArticoliActivity
+NumberOfFiles=28
 NumberOfLibraries=12
-NumberOfModules=18
+NumberOfModules=19
 Version=8.5
 @EndOfDesignText@
 #Region  Project Attributes 
@@ -121,16 +128,21 @@ Sub Globals
 	Private lblUser As Label
 End Sub
 
+Sub ControlloUtente() As Boolean
+	If Starter.User == Null Then
+		Return False
+	End If
+	Return True
+End Sub
+
+
+Sub MostraLogin
+	StartActivity(LoginActivity)
+	Activity.Finish
+End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
-	Activity.LoadLayout("MainLayout")
-	If Starter.User == Null Then
-		StartActivity(LoginActivity)
-	End If
-	
-	'Label1.Text = Application.LabelName & " " & Application.VersionName
-	lblVersione.Text = "v" & Application.VersionName
-	lblUser.Text = Starter.User.Nome
+	Activity.LoadLayout("Main2Layout")
 	oIme.Initialize("Keyboard")
 End Sub
 
@@ -141,11 +153,13 @@ Sub Aggiorna
 End Sub
 
 Sub Activity_Resume
-	If Starter.User == Null Then
-		StartActivity(LoginActivity)
+	If ControlloUtente = False Then
+		MostraLogin
+	Else
+		lblVersione.Text = "v" & Application.VersionName
+		lblUser.Text = Starter.User.Nome
+		Aggiorna
 	End If
-	
-	Aggiorna
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)

@@ -53,14 +53,6 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
-Sub SingPlur(v As Int) As String
-	If v == 1 Then
-		Return "a"
-	Else
-		Return "e"
-	End If
-End Sub
-
 Private Sub CaricaPreferiti
 	Dim preferiti As List = Starter.db.GetPreferitiCliente(cli.Id)
 	ListView1.Clear
@@ -75,19 +67,22 @@ Private Sub CaricaPreferiti
 	ListView1.TwoLinesAndBitmap.SecondLabel.TextSize = 16
 	For Each p As Preferito In preferiti
 '		ListView1.AddSingleLine2(p.Descrizione, p)
-		ListView1.AddTwoLinesAndBitmap2(p.Descrizione, p.Occorrenze & " volt" & SingPlur(p.Occorrenze), LoadBitmap(File.DirAssets, "stella.png"), p)
+		ListView1.AddTwoLinesAndBitmap2(p.Descrizione, p.Occorrenze & " volt" & Utils.SingPlur(p.Occorrenze), LoadBitmap(File.DirAssets, "stella.png"), p)
 	Next
 End Sub
 
 Private Sub CaricaStoricoOrdini
 	Dim ordini As List = Starter.db.OrdiniPerCliente(cli.Id)
 	ListView2.Clear
-	ListView2.SingleLineLayout.Label.Gravity = Gravity.TOP
+	ListView2.TwoLinesAndBitmap.Label.Gravity = Gravity.TOP
 	ListView2.SingleLineLayout.ItemHeight = 60
-	ListView2.SingleLineLayout.Label.TextColor = Colors.Black
-	ListView2.SingleLineLayout.Label.TextSize = 22
+	ListView2.TwoLinesAndBitmap.Label.TextColor = Colors.Black
+	ListView2.TwoLinesAndBitmap.Label.TextSize = 22
+	Dim bmp As Bitmap = LoadBitmap(File.DirAssets, "cloud_ok.png")
 	For Each o As Ordine In ordini
-		ListView2.AddSingleLine2("Ordine del " & o.DataFormattata, o)
+		ListView2.AddTwoLinesAndBitmap2("Ordine n. " & o.Id & " inviato il " & o.DataFormattata, _
+				o.Voci.Size & " pezz" & Utils.SingPlurM(o.Voci.Size) & TAB & NumberFormat2(o.Totale, 1, 2, 2, False) & " €", _
+				bmp, o)
 	Next
 End Sub
 
@@ -105,9 +100,11 @@ Private Sub CaricaOrdiniInCorso
 	For Each o As Ordine In ordini
 		'lvOrdiniInCorso.Height = lvOrdiniInCorso.Height + 60dip
 		'TabHost1.Height = TabHost1.Height - height
-		lvOrdiniInCorso.AddTwoLinesAndBitmap2("Ordine n. " & o.Id, _
-				o.Voci.Size & " pezzi " & TAB & NumberFormat2(o.Totale, 1, 2, 2, False) & " €", _
-				bmp, o)
+		Dim riga2 As String = o.Voci.Size & " pezzi " & TAB & NumberFormat2(o.Totale, 1, 2, 2, False) & " €"
+		If o.Note <> Null Then
+			riga2 = riga2 & TAB & TAB & "Note: " & o.Note
+		End If
+		lvOrdiniInCorso.AddTwoLinesAndBitmap2("Ordine n. " & o.Id, riga2 , bmp, o)
 	Next
 	
 	pnlOrdiniInCorso.Visible = (lvOrdiniInCorso.Size > 0)
@@ -204,18 +201,12 @@ Sub lvOrdiniInCorso_ItemClick (Position As Int, Value As Object)
 	CallSubDelayed2(OrdineActivity, "Carica", ord)
 End Sub
 
+' Preferiti
 Sub ListView1_ItemClick (Position As Int, Value As Object)
 	Dim p As Preferito = Value
 	Dim a As Articolo = Starter.db.GetArticolo(p.IdArt)
 	Dim o As Ordine
-	If lvOrdiniInCorso.Size = 0 Then
-		o = Starter.db.NuovoOrdine(cli)
-	Else If lvOrdiniInCorso.Size = 1 Then
-		o = lvOrdiniInCorso.GetItem(0)
-	Else
-		Return
-	End If
-	
+		
 	Dim dlgp As BD_CustomDlgParams
 	Dim spQta As Spinner
 	spQta.Initialize("Spqta")
@@ -234,6 +225,16 @@ Sub ListView1_ItemClick (Position As Int, Value As Object)
 	Dim i As Int = BD.CustomDialog(dlgp, "")
 	
 	If i = DialogResponse.POSITIVE Then
+		
+		If lvOrdiniInCorso.Size = 0 Then
+			o = Starter.db.NuovoOrdine(cli)
+		Else If lvOrdiniInCorso.Size = 1 Then
+			o = lvOrdiniInCorso.GetItem(0)
+		Else
+			' Più di un ordine aperto, non decido ed esco
+			Return
+		End If
+		
 		Dim qta As Int = spQta.SelectedItem
 		If o.Aggiungi(a, qta, "") Then
 			' ToastMessageShow("Articolo aggiunto all'ordine " & o.Id, False)

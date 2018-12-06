@@ -27,7 +27,7 @@ Sub Globals
 	Dim lblIndirizzo As Label
 	Private clv2 As CustomListView
 	Private Spinner1 As Spinner
-	Private Button1 As B4XView
+	'Private Button1 As B4XView
 	Private lblOrdine As Label
 	Private lblTotale As Label
 	Private btnInvia As Button

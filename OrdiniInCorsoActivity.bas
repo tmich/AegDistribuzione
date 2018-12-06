@@ -44,9 +44,11 @@ Sub Aggiorna
 	Dim bmp As Bitmap = LoadBitmap(File.DirAssets, "clessidra.png")
 	For Each o As Ordine In ordini
 		Dim cli As Cliente = Starter.db.GetCliente(o.IdCliente)
-		lvOrdiniInCorso.AddTwoLinesAndBitmap2(cli.Denominazione & ": ordine n. " & o.Id, _
-				o.Voci.Size & " pezzi " & TAB & NumberFormat2(o.Totale, 1, 2, 2, False) & " €", _
-				bmp, o)
+		Dim riga2 As String = o.Voci.Size & " pezz" & Utils.SingPlurM(o.Voci.Size) & TAB & NumberFormat2(o.Totale, 1, 2, 2, False) & " €"
+		If o.Note <> Null Then
+			riga2 = riga2 & TAB & TAB & "Note: " & o.Note
+		End If
+		lvOrdiniInCorso.AddTwoLinesAndBitmap2(cli.Denominazione & ": ordine n. " & o.Id, riga2, bmp, o)
 	Next
 	
 	If lvOrdiniInCorso.Size = 0 Then
@@ -86,6 +88,7 @@ End Sub
 
 Sub btnAggiorna_Click
 	ProgressDialogShow2("Aggiornamento in corso", False)
+	Sleep(300)
 	Aggiorna
 	ProgressDialogHide
 End Sub
