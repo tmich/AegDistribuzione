@@ -36,7 +36,7 @@ End Sub
 Sub CreateTables
 	' Cliente
 	Sql1.ExecNonQuery("DROP TABLE IF EXISTS cliente;")
-	Sql1.ExecNonQuery("CREATE TABLE cliente (id INTEGER PRIMARY KEY, codice TEXT, denominazione TEXT, indirizzo TEXT, piva TEXT, data_ultima_modifica TEXT);")
+	Sql1.ExecNonQuery("CREATE TABLE cliente (id INTEGER PRIMARY KEY, codice TEXT, denominazione TEXT, indirizzo TEXT, piva TEXT, data_ultima_modifica TEXT, fittizio INT default(0));")
 	
 	' Articolo
 	Sql1.ExecNonQuery("DROP TABLE IF EXISTS articolo;")
@@ -116,6 +116,36 @@ Public Sub CercaArticoliPerNome(denom As String) As List
 	Return Articoli
 End Sub
 
+public Sub GetArticolo(id_art As Int) As Articolo
+	Dim art As Articolo
+	Dim Cursor1 As Cursor = Sql1.ExecQuery2("SELECT id, codice, descrizione, prezzo, data_ultima_modifica FROM articolo WHERE id = ?;", _
+					Array As String(id_art))
+	If Cursor1.RowCount = 1 Then
+		Cursor1.Position = 0
+		Dim prezzo As Float = Cursor1.GetString("prezzo")
+		art.Initialize(Cursor1.GetInt("id"), Cursor1.GetString("codice"), Cursor1.GetString("descrizione"), _
+					 prezzo, Cursor1.GetString("data_ultima_modifica"))
+		Cursor1.Close
+		Return art
+	End If
+	Return Null
+End Sub
+
+public Sub GetArticoloPerCodice(cod As String) As Articolo
+	Dim art As Articolo
+	Dim Cursor1 As Cursor = Sql1.ExecQuery2("SELECT id, codice, descrizione, prezzo, data_ultima_modifica FROM articolo WHERE codice = ?;", _
+					Array As String(cod))
+	If Cursor1.RowCount = 1 Then
+		Cursor1.Position = 0
+		Dim prezzo As Float = Cursor1.GetString("prezzo")
+		art.Initialize(Cursor1.GetInt("id"), Cursor1.GetString("codice"), Cursor1.GetString("descrizione"), _
+					 prezzo, Cursor1.GetString("data_ultima_modifica"))
+		Cursor1.Close
+		Return art
+	End If
+	Return Null
+End Sub
+
 public Sub GetArticoli() As List
 	Dim Articoli As List
 	Articoli.Initialize
@@ -137,8 +167,8 @@ Public Sub GetClienti() As List
 	Dim Clienti As List
 	Clienti.Initialize
 	Dim Cursor1 As Cursor
-	Cursor1 = Sql1.ExecQuery2("SELECT id, codice, denominazione, indirizzo, piva, data_ultima_modifica " & _
-							  " FROM cliente ORDER BY denominazione LIMIT ?;", _
+	Cursor1 = Sql1.ExecQuery2("SELECT id, codice, denominazione, indirizzo, piva, data_ultima_modifica, fittizio " & _
+							  " FROM cliente ORDER BY fittizio desc, denominazione LIMIT ?;", _
 							  Array As String(MAX_RESULTS))
 	Sql1.BeginTransaction
 	For i=0 To Cursor1.RowCount - 1
@@ -146,6 +176,7 @@ Public Sub GetClienti() As List
 		Cursor1.Position=i
 		c.Initialize(Cursor1.GetInt("id"), Cursor1.GetString("codice"), Cursor1.GetString("denominazione"), _
 					 Cursor1.GetString("indirizzo"), Cursor1.GetString("piva"), Cursor1.GetString("data_ultima_modifica"))
+		c.Fittizio = Cursor1.GetInt("fittizio") == 1
 		Clienti.Add(c)
 	Next
 	Sql1.TransactionSuccessful
@@ -210,6 +241,44 @@ Private Sub CaricaVoci(IdOrdine As Int) As List
 	Return voci
 End Sub
 
+Public Sub EsistonoArticoli() As Boolean
+	Dim Cursor1 As Cursor = Sql1.ExecQuery("SELECT id FROM articolo LIMIT 10;")
+	Dim esistono As Boolean = Cursor1.RowCount > 0
+	Cursor1.Close
+	Return esistono
+End Sub
+
+Public Sub EsistonoClienti() As Boolean
+	Dim Cursor1 As Cursor = Sql1.ExecQuery("SELECT id FROM cliente LIMIT 10;")
+	Dim Esistono As Boolean = Cursor1.RowCount > 0
+	Cursor1.Close
+	Return Esistono
+End Sub
+
+Public Sub EsistonoOrdiniInCorso() As Boolean
+	Dim Cursor1 As Cursor = Sql1.ExecQuery("SELECT id FROM ordine_in_corso LIMIT 10;")
+	Dim Esistono As Boolean = Cursor1.RowCount > 0
+	Cursor1.Close
+	Return Esistono
+End Sub
+
+Public Sub OrdiniInCorso() As List
+	Dim Ordini As List
+	Ordini.Initialize
+	Dim Cursor1 As Cursor
+	Cursor1 = Sql1.ExecQuery("SELECT id,id_cliente,note FROM ordine_in_corso DESC;")
+	For i=0 To Cursor1.RowCount - 1
+		Cursor1.Position = i
+		Dim o As Ordine
+		o.Initialize(Cursor1.GetInt("id"), Cursor1.GetInt("id_cliente"), Starter.User.Id, _
+					 "", Cursor1.GetString("note"))
+		o.Voci.AddAll(CaricaVociOrdineInCorso(o.Id))
+		Ordini.Add(o)
+	Next
+	Cursor1.Close
+	Return Ordini
+End Sub
+
 Public Sub OrdiniInCorsoPerCliente(IdCliente As Int) As List
 	Dim Ordini As List
 	Ordini.Initialize
@@ -246,12 +315,34 @@ Private Sub CaricaVociOrdineInCorso(IdOrdineInCorso As Int) As List
 	Return voci
 End Sub
 
+Public Sub SalvaCliente(c As Cliente)
+	Sql1.BeginTransaction
+	Sql1.ExecNonQuery2("DELETE FROM cliente WHERE id = ?", Array As Object(c.Id))
+	Dim qry As String = "INSERT INTO cliente (id, codice,denominazione,indirizzo,piva,data_ultima_modifica,fittizio) VALUES(?,?,?,?,?,?,?);"
+	Dim fitt As Int = 0
+	If c.Fittizio Then fitt = 1
+	Sql1.ExecNonQuery2(qry, Array As Object(c.Id, c.Codice, c.Denominazione, c.Indirizzo, c.PartitaIVA, c.DataUltimaModifica, fitt))
+	Sql1.TransactionSuccessful
+	Sql1.EndTransaction
+End Sub
+
+Public Sub SalvaVoceOrdineInCorso(v As VoceOrdine)
+	Sql1.BeginTransaction
+	Sql1.ExecNonQuery2("DELETE FROM voce_ordine_in_corso WHERE id = ?", Array As Object(v.Id))
+	Sql1.ExecNonQuery2("INSERT INTO voce_ordine_in_corso (id, cod_art,desc_art,id_ordine,qta,prezzo,note) VALUES(?,?,?,?,?,?,?);", _
+							Array As Object(v.Id,v.CodArt,v.DescArt,v.IdOrdine,v.Qta,v.Prezzo,v.Note))
+	Sql1.TransactionSuccessful
+	Sql1.EndTransaction
+End Sub
+
 Public Sub SalvaClienti(clienti As List)
 	Sql1.BeginTransaction
 	Sql1.ExecNonQuery("DELETE FROM cliente")
-	Dim qry As String = "INSERT INTO cliente (id, codice,denominazione,indirizzo,piva,data_ultima_modifica) VALUES(?,?,?,?,?,?);"
+	Dim qry As String = "INSERT INTO cliente (id, codice,denominazione,indirizzo,piva,data_ultima_modifica, fittizio) VALUES(?,?,?,?,?,?,?);"
 	For Each c As Cliente In clienti
-		Sql1.ExecNonQuery2(qry, Array As Object(c.Id, c.Codice, c.Denominazione, c.Indirizzo, c.PartitaIVA, c.DataUltimaModifica))
+		Dim fitt As Int = 0
+		If c.Fittizio Then fitt = 1
+		Sql1.ExecNonQuery2(qry, Array As Object(c.Id, c.Codice, c.Denominazione, c.Indirizzo, c.PartitaIVA, c.DataUltimaModifica, fitt))
 	Next
 	Sql1.TransactionSuccessful
 	Sql1.EndTransaction
@@ -373,11 +464,12 @@ Public Sub SalvaPreferitiPerCliente(preferiti As List, id_cliente As Int)
 End Sub
 
 Public Sub SalvaOrdineInCorso(o As Ordine)
-	Sql1.BeginTransaction
-	Sql1.ExecNonQuery2("INSERT INTO ordine_in_corso (id_cliente, note) VALUES(?,?);", Array As Object(o.IdCliente, o.Note))
+	Sql1.BeginTransaction 
+	Sql1.ExecNonQuery2("UPDATE ordine_in_corso SET id_cliente = ?, note = ? WHERE id = ?;", _
+					Array As Object(o.IdCliente, o.Note, o.Id))
 	For Each v As VoceOrdine In o.Voci
-		Sql1.ExecNonQuery2("INSERT INTO voce_ordine_in_corso (cod_art,desc_art,id_ordine,qta,prezzo,note) VALUES(?,?,?,?,?,?);", _
-							Array As Object(v.CodArt,v.DescArt,v.IdOrdine,v.Qta,v.Prezzo,v.Note))
+		Sql1.ExecNonQuery2("UPDATE voce_ordine_in_corso SET cod_art=?, desc_art=?,id_ordine=?,qta=?,prezzo=?,note=? WHERE id = ?;", _
+							Array As Object(v.CodArt,v.DescArt,v.IdOrdine,v.Qta,v.Prezzo,v.Note,v.Id))
 	Next
 	Sql1.TransactionSuccessful
 	Sql1.EndTransaction
@@ -448,6 +540,13 @@ End Sub
 Public Sub SalvaUtente(usr As Utente)
 	Sql1.BeginTransaction
 	Sql1.ExecNonQuery2("INSERT INTO utente (id, username, ultimo_accesso) VALUES(?, ?, ?);", Array As Object(usr.Id, usr.Nome, usr.UltimoAccesso))
+	Sql1.TransactionSuccessful
+	Sql1.EndTransaction
+End Sub
+
+Public Sub EliminaCliente(id As Int)
+	Sql1.BeginTransaction
+	Sql1.ExecNonQuery2("DELETE FROM cliente WHERE id = ?", Array As Object(id))
 	Sql1.TransactionSuccessful
 	Sql1.EndTransaction
 End Sub

@@ -1,22 +1,30 @@
 ﻿Build1=Default,app.aegdistribuzione
 File1=ArticoliLayout.bal
-File10=OrdineLayout.bal
-File11=OrdinInCorsoLayout.bal
-File12=persona.png
-File13=persona_piu.png
-File14=prodotti.jpg
-File15=ScaricaDatiLayout.bal
-File16=SchedaClienteLayout.bal
-File17=stella.png
-File18=StoricoOrdiniLayout.bal
+File10=Loyal_Customers.jpg
+File11=loyal_customers_bn.jpg
+File12=MainLayout.bal
+File13=OrdineLayout.bal
+File14=OrdiniInCorsoLayout.bal
+File15=OrdinInCorsoLayout.bal
+File16=pastry.jpg
+File17=pastry_bn.jpg
+File18=persona.png
+File19=persona_piu.png
 File2=articolo.png
+File20=prodotti.jpg
+File21=ScaricaDatiLayout.bal
+File22=SchedaClienteLayout.bal
+File23=shipping.png
+File24=shipping_bn.png
+File25=stella.png
+File26=StoricoOrdiniLayout.bal
 File3=cellitem.bal
-File4=ClientiLayout.bal
-File5=DettaglioOrdineLayout.bal
-File6=ListaPreferitiLayout.bal
-File7=loginlayout.bal
-File8=Loyal_Customers.jpg
-File9=MainLayout.bal
+File4=clessidra.png
+File5=ClientiLayout.bal
+File6=DettaglioOrdineLayout.bal
+File7=ListaPreferitiLayout.bal
+File8=loginlayout.bal
+File9=logo.png
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup11=Default Group
@@ -27,7 +35,15 @@ FileGroup15=Default Group
 FileGroup16=Default Group
 FileGroup17=Default Group
 FileGroup18=Default Group
+FileGroup19=Default Group
 FileGroup2=Default Group
+FileGroup20=Default Group
+FileGroup21=Default Group
+FileGroup22=Default Group
+FileGroup23=Default Group
+FileGroup24=Default Group
+FileGroup25=Default Group
+FileGroup26=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
 FileGroup5=Default Group
@@ -40,6 +56,7 @@ IconFile=
 Library1=core
 Library10=maskededittext
 Library11=betterdialogs
+Library12=id
 Library2=sql
 Library3=okhttputils2
 Library4=json
@@ -49,32 +66,33 @@ Library7=xui
 Library8=ime
 Library9=okhttp
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~'End of default text.~\n~~\n~AddPermission(android.permission.WRITE_EXTERNAL_STORAGE)~\n~SetApplicationAttribute(android:theme, "@android:style/Theme.Holo.Light")
-Module1=OrdineActivity
-Module10=Utente
-Module11=ScaricaDatiActivity
-Module12=Cliente
-Module13=DettaglioOrdineActivity
-Module14=ClientiActivity
+Module1=ClientiActivity
+Module10=Starter
+Module11=LoginActivity
+Module12=Utente
+Module13=ScaricaDatiActivity
+Module14=DettaglioOrdineActivity
 Module15=Articolo
 Module16=Preferito
 Module17=CustomListView
-Module2=Database
-Module3=ApiClient
-Module4=SchedaClienteActivity
-Module5=ArticoliActivity
-Module6=Ordine
-Module7=VoceOrdine
-Module8=Starter
-Module9=LoginActivity
-NumberOfFiles=18
-NumberOfLibraries=11
-NumberOfModules=17
+Module18=OrdiniInCorsoActivity
+Module2=ApiClient
+Module3=Cliente
+Module4=OrdineActivity
+Module5=Database
+Module6=SchedaClienteActivity
+Module7=ArticoliActivity
+Module8=Ordine
+Module9=VoceOrdine
+NumberOfFiles=26
+NumberOfLibraries=12
+NumberOfModules=18
 Version=8.5
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: AEG Distribuzione
 	#VersionCode: 1
-	#VersionName: 
+	#VersionName: 1.0
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: False
@@ -82,7 +100,7 @@ Version=8.5
 
 #Region  Activity Attributes 
 	#FullScreen: False
-	#IncludeTitle: True
+	#IncludeTitle: False
 #End Region
 
 Sub Process_Globals
@@ -94,31 +112,61 @@ End Sub
 Sub Globals
 	'These global variables will be redeclared each time the activity is created.
 	'These variables can only be accessed from this module.
-
+	Dim txCerca As EditText
+	Dim btnCerca As Button
+	Dim btnAnnulla As Button
+	Dim Label1 As Label
+	Dim oIme As IME
+	Private btnOrdiniInCorso As Button
+	Private btnClienti As Button
+	Private btnArticoli As Button
 End Sub
 
 
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("MainLayout")
-	
 	If Starter.User == Null Then
 		StartActivity(LoginActivity)
 	End If
+	
+	Label1.Text = Application.LabelName & " " & Application.VersionName
+	oIme.Initialize("Keyboard")
+End Sub
+
+Sub Aggiorna
+	btnClienti.Enabled = Starter.db.EsistonoClienti
+	btnArticoli.Enabled = Starter.db.EsistonoArticoli
+	btnOrdiniInCorso.Enabled = Starter.db.EsistonoOrdiniInCorso
 End Sub
 
 Sub Activity_Resume
 	If Starter.User == Null Then
 		StartActivity(LoginActivity)
 	End If
+	
+	Aggiorna
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
+Sub btnCerca_Click
+	Label1.Visible = False
+	txCerca.Visible = True
+	oIme.ShowKeyboard(txCerca)
+	btnCerca.Visible = False
+	btnAnnulla.Visible = True
+End Sub
 
-Sub ImageView3_Click
-	StartActivity(ScaricaDatiActivity)
+Sub btnAnnulla_Click
+	txCerca.Visible = False
+	btnCerca.Visible = True
+	btnAnnulla.Visible = False
+	txCerca.Text = ""
+	oIme.HideKeyboard
+	Label1.Visible = True
+	'AggiornaLista(Starter.db.GetClienti())
 End Sub
 
 Sub btnClienti_Click
@@ -127,4 +175,12 @@ End Sub
 
 Sub btnArticoli_Click
 	StartActivity(ArticoliActivity)
+End Sub
+
+Sub btnAggiorna_Click
+	StartActivity(ScaricaDatiActivity)
+End Sub
+
+Sub btnOrdiniInCorso_Click
+	StartActivity(OrdiniInCorsoActivity)
 End Sub

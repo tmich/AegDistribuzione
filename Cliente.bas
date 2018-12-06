@@ -12,6 +12,7 @@ Sub Class_Globals
 	Public PartitaIVA As String
 	Public DataUltimaModifica As String
 	Public Ordini As List
+	Public Fittizio As Boolean
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
@@ -22,5 +23,7 @@ Public Sub Initialize(cId As Int, Cod As String, Denom As String, Indir As Strin
 	Indirizzo = Indir
 	PartitaIVA = Iva
 	DataUltimaModifica = dtum
+	Fittizio = False
 	Ordini.Initialize
+	If Cod.StartsWith("$TMP") Then Fittizio = True
 End Sub

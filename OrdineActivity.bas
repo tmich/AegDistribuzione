@@ -22,6 +22,7 @@ Sub Globals
 	Dim m_cliente As Cliente
 	Dim Label1 As B4XView
 	Dim Label2 As B4XView
+	Dim Label3 As B4XView
 	Dim lblCliente As Label
 	Dim lblIndirizzo As Label
 	Private clv2 As CustomListView
@@ -30,15 +31,18 @@ Sub Globals
 	Private lblOrdine As Label
 	Private lblTotale As Label
 	Private btnInvia As Button
+	Dim BD As BetterDialogs
+	Dim btnNotaOrdine As Button
 End Sub
 
-Sub CreateListItem(Text As String, Qta As Int, Prezzo As Float, Width As Int, Height As Int) As Panel
+Sub CreateListItem(Text As String, Qta As Int, Prezzo As Float, Note As String, Width As Int, Height As Int) As Panel
 	Dim p As Panel
 	p.Initialize("")
 	p.SetLayout(0, 0, Width, Height)
 	p.LoadLayout("CellItem")
 	Label1.Text = Text
-	Label2.Text = NumberFormat2(Prezzo, 0, 2, 2, False) & " €"
+	Label2.Text = NumberFormat2(Prezzo, 1, 2, 2, False) & " €"
+	Label3.Text = Note
 	For i = 1 To 30
 		Spinner1.Add(i)
 		If i == Qta - 1 Then
@@ -54,7 +58,7 @@ Sub Activity_Create(FirstTime As Boolean)
 End Sub
 
 Sub Activity_Resume
-
+	'Aggiorna
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
@@ -64,48 +68,56 @@ End Sub
 Public Sub Carica(ord As Ordine)
 	m_ordine = ord
 	m_cliente = Starter.db.GetCliente(m_ordine.IdCliente)
-	lblCliente.Text = m_cliente.Denominazione
-	lblIndirizzo.Text = m_cliente.Indirizzo
-	lblOrdine.Text = "Ordine n° " & m_ordine.Id
-	lblTotale.Text = NumberFormat2(m_ordine.Totale, 0, 2, 2, False) & " €"
-	CaricaVoci
+	Aggiorna
 End Sub
 
 Private Sub CaricaVoci()
 	clv2.Clear
 	For Each v As VoceOrdine In m_ordine.Voci
-		clv2.Add(CreateListItem(v.DescArt, v.Qta, v.Prezzo, clv2.AsView.Width, 100dip), v.Id)
+		clv2.Add(CreateListItem(v.DescArt, v.Qta, v.Prezzo, v.Note, clv2.AsView.Width, 70dip), v)
 	Next
 End Sub
 
 Sub clv2_ItemClick(Index As Int, Value As Object)
 	clv2.AsView.BringToFront
-	Log(Index & " = " & Value)
-	
-	'clv2.InsertAt(Index, CreateListItem($"Item !!!"$, clv2.AsView.Width, 60dip), $"Item !!!"$)
-End Sub
-
-Sub Button1_Click
-	Dim index As Int = clv2.GetItemFromView(Sender)
-	Dim id_voce As Int = clv2.GetValue(index)
-	Dim v As VoceOrdine = Starter.db.GetVoce(id_voce)
-	' Msgbox("Item value: " & clv2.GetValue(index), "Clicked")
-	
-	Msgbox2Async("Eliminare " & v.DescArt & "?", "Elimina", "Elimina", "Annulla", "", Null, True) 
-	Wait For MsgBox_Result (iResult As Int)
-	
-	If iResult == DialogResponse.POSITIVE Then
-		Starter.db.EliminaVoce(id_voce)
-		m_ordine = Starter.db.GetOrdineInCorso(m_ordine.Id)
+	Dim v As VoceOrdine = Value
+	'Input box
+	Dim IP As BD_InputBoxParams
+	IP.Initialize
+	IP.Question = "<I>Note</I>"
+	IP.QuestionTextSize = 18
+	IP.SpaceBetween = 4dip
+	IP.InputTextSize = 24
+	IP.InputType = IP.INPUT_TYPE_TEXT_WITH_CAPS
+	IP.Default = v.Note
+	IP.Gravity = Gravity.CENTER_VERTICAL + Gravity.CENTER_HORIZONTAL
+	'IP.ValidationCallback = "Input_Validation"
+	'IP.WithSuggestions = True
+	Dim DR As Int = BD.InputBox(v.DescArt, IP, "Salva", "Annulla", "", Null)
+	If DR = DialogResponse.POSITIVE Then
+		v.Note = IP.Answer
+		Starter.db.SalvaVoceOrdineInCorso(v)
 		Aggiorna
+		ToastMessageShow("Nota salvata", False)
 	End If
+	
 End Sub
 
 Sub Aggiorna
 	m_ordine = Starter.db.GetOrdineInCorso(m_ordine.Id)
+	lblCliente.Text = m_cliente.Denominazione
+	lblIndirizzo.Text = m_cliente.Indirizzo
+	lblOrdine.Text = "Ordine n° " & m_ordine.Id
 	CaricaVoci
 	btnInvia.Enabled = (m_ordine.Voci.Size > 0)
-	lblTotale.Text = NumberFormat2(m_ordine.Totale, 0, 2, 2, False) & " €"
+	lblTotale.Text = NumberFormat2(m_ordine.Totale, 1, 2, 2, False) & " €"
+	If m_ordine.Note <> Null Then
+		If m_ordine.Note.Trim.Length > 0 Then
+			btnNotaOrdine.TextColor = Colors.Red
+		Else
+			btnNotaOrdine.TextColor = Colors.Black
+		End If
+	End If
 End Sub
 
 Sub btnAggiungi_Click
@@ -124,8 +136,7 @@ End Sub
 
 Sub Spinner1_ItemClick (Position As Int, Value As Object)
 	Dim index As Int = clv2.GetItemFromView(Sender)
-	Dim id_voce As Int = clv2.GetValue(index)
-	Dim v As VoceOrdine = Starter.db.GetVoce(id_voce)
+	Dim v As VoceOrdine = clv2.GetValue(index)
 	v.Qta = Value
 	Starter.db.AggiornaVoce(v)
 	Aggiorna
@@ -152,7 +163,7 @@ Sub btnInvia_LongClick
 				If Starter.client.Successo Then
 					Starter.db.SalvaPreferitiPerCliente(Preferiti, m_cliente.Id)
 				End If
-				
+								
 				ProgressDialogHide()
 				ToastMessageShow("Ordine inviato correttamente", True)
 				Activity.Finish
@@ -162,5 +173,77 @@ Sub btnInvia_LongClick
 		Else
 			Msgbox("C'è stato un problema con l'invio dell'ordine: " & Starter.client.Errore, "Attenzione")
 		End If
+	End If
+End Sub
+
+Sub btnPrezzo_Click
+	clv2.AsView.BringToFront
+	Dim index As Int = clv2.GetItemFromView(Sender)
+	Dim v As VoceOrdine = clv2.GetValue(index)
+	'Input box
+	Dim IP As BD_InputBoxParams
+	IP.Initialize
+	IP.Question = "<I>Prezzo</I>"
+	IP.QuestionTextSize = 18
+	IP.SpaceBetween = 4dip
+	IP.InputTextSize = 24
+	IP.InputType = IP.INPUT_TYPE_DECIMAL_NUMBERS
+	IP.Default = NumberFormat2(v.Prezzo, 1, 2, 2, False)
+	IP.Gravity = Gravity.CENTER_VERTICAL + Gravity.CENTER_HORIZONTAL
+	'IP.ValidationCallback = "Input_Validation"
+	'IP.WithSuggestions = True
+	Dim DR As Int = BD.InputBox(v.DescArt, IP, "Salva", "Annulla", "Originale", Null)
+	If DR = DialogResponse.POSITIVE Then
+		' Prezzo modificato
+		If IP.Answer.Trim = "" Then Return
+		v.Prezzo = IP.Answer
+		ToastMessageShow("Prezzo salvato", False)
+	Else If DR = DialogResponse.NEGATIVE Then
+		' Originale
+		Dim art As Articolo = Starter.db.GetArticoloPerCodice(v.CodArt)
+		If art <> Null Then
+			Dim przOrig As Float = art.Prezzo
+			v.Prezzo = przOrig
+		End If
+	Else	' Annulla
+		Return
+	End If
+	
+	Starter.db.SalvaVoceOrdineInCorso(v)
+	Aggiorna
+End Sub
+
+Sub btnElimina_Click
+	Dim index As Int = clv2.GetItemFromView(Sender)
+	Dim v As VoceOrdine = clv2.GetValue(index)
+	
+	Msgbox2Async("Eliminare " & v.DescArt & "?", "Elimina", "Elimina", "Annulla", "", Null, True)
+	Wait For MsgBox_Result (iResult As Int)
+	
+	If iResult == DialogResponse.POSITIVE Then
+		Starter.db.EliminaVoce(v.Id)
+		m_ordine = Starter.db.GetOrdineInCorso(m_ordine.Id)
+		Aggiorna
+	End If
+End Sub
+
+Sub btnNotaOrdine_Click
+	Dim IP As BD_InputBoxParams
+	IP.Initialize
+	IP.Question = "<I>Note</I>"
+	IP.QuestionTextSize = 18
+	IP.SpaceBetween = 4dip
+	IP.InputTextSize = 24
+	IP.InputType = IP.INPUT_TYPE_TEXT_WITH_CAPS
+	If m_ordine.Note <> Null Then IP.Default = m_ordine.Note
+	IP.Gravity = Gravity.CENTER_VERTICAL + Gravity.CENTER_HORIZONTAL
+	'IP.ValidationCallback = "Input_Validation"
+	'IP.WithSuggestions = True
+	Dim DR As Int = BD.InputBox("Ordine n° " & m_ordine.Id, IP, "Salva", "Annulla", "", Null)
+	If DR = DialogResponse.POSITIVE Then
+		m_ordine.Note = IP.Answer.Trim
+		Starter.db.SalvaOrdineInCorso(m_ordine)
+		Aggiorna
+		ToastMessageShow("Nota salvata", False)
 	End If
 End Sub

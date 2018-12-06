@@ -3,7 +3,7 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="app.aegdistribuzione"
 	android:versionCode="1"
-	android:versionName=""
+	android:versionName="1.0"
 	android:installLocation="internalOnly">
 	
 	<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>
@@ -29,6 +29,13 @@
 			   <category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 			
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".clientiactivity"
+			android:label="AEG Distribuzione"
+			android:screenOrientation="portrait">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
@@ -79,7 +86,7 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".clientiactivity"
+			android:name=".ordiniincorsoactivity"
 			android:label="AEG Distribuzione"
 			android:screenOrientation="portrait">
 		</activity>
