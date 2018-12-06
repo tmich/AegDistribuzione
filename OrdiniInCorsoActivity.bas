@@ -50,7 +50,8 @@ Sub Aggiorna
 	Next
 	
 	If lvOrdiniInCorso.Size = 0 Then
-		lvOrdiniInCorso.AddSingleLine("Nessun ordine in attesa")
+		'lvOrdiniInCorso.AddSingleLine("Nessun ordine in attesa")
+		Activity.Finish
 	End If
 End Sub
 

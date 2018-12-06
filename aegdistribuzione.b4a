@@ -11,13 +11,12 @@ File17=pastry_bn.jpg
 File18=persona.png
 File19=persona_piu.png
 File2=articolo.png
-File20=prodotti.jpg
-File21=ScaricaDatiLayout.bal
-File22=SchedaClienteLayout.bal
-File23=shipping.png
-File24=shipping_bn.png
-File25=stella.png
-File26=StoricoOrdiniLayout.bal
+File20=ScaricaDatiLayout.bal
+File21=SchedaClienteLayout.bal
+File22=shipping.png
+File23=shipping_bn.png
+File24=stella.png
+File25=StoricoOrdiniLayout.bal
 File3=cellitem.bal
 File4=clessidra.png
 File5=ClientiLayout.bal
@@ -43,7 +42,6 @@ FileGroup22=Default Group
 FileGroup23=Default Group
 FileGroup24=Default Group
 FileGroup25=Default Group
-FileGroup26=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
 FileGroup5=Default Group
@@ -84,7 +82,7 @@ Module6=SchedaClienteActivity
 Module7=ArticoliActivity
 Module8=Ordine
 Module9=VoceOrdine
-NumberOfFiles=26
+NumberOfFiles=25
 NumberOfLibraries=12
 NumberOfModules=18
 Version=8.5
@@ -115,11 +113,12 @@ Sub Globals
 	Dim txCerca As EditText
 	Dim btnCerca As Button
 	Dim btnAnnulla As Button
-	Dim Label1 As Label
+	Dim lblVersione As Label
 	Dim oIme As IME
 	Private btnOrdiniInCorso As Button
 	Private btnClienti As Button
 	Private btnArticoli As Button
+	Private lblUser As Label
 End Sub
 
 
@@ -129,7 +128,9 @@ Sub Activity_Create(FirstTime As Boolean)
 		StartActivity(LoginActivity)
 	End If
 	
-	Label1.Text = Application.LabelName & " " & Application.VersionName
+	'Label1.Text = Application.LabelName & " " & Application.VersionName
+	lblVersione.Text = "v" & Application.VersionName
+	lblUser.Text = Starter.User.Nome
 	oIme.Initialize("Keyboard")
 End Sub
 
@@ -152,7 +153,7 @@ Sub Activity_Pause (UserClosed As Boolean)
 End Sub
 
 Sub btnCerca_Click
-	Label1.Visible = False
+	'Label1.Visible = False
 	txCerca.Visible = True
 	oIme.ShowKeyboard(txCerca)
 	btnCerca.Visible = False
@@ -165,7 +166,7 @@ Sub btnAnnulla_Click
 	btnAnnulla.Visible = False
 	txCerca.Text = ""
 	oIme.HideKeyboard
-	Label1.Visible = True
+	'Label1.Visible = True
 	'AggiornaLista(Starter.db.GetClienti())
 End Sub
 

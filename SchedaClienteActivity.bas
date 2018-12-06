@@ -23,7 +23,7 @@ Sub Globals
 	Dim ListView1, ListView2, lvOrdiniInCorso As ListView
 	Private pnlOrdiniInCorso As Panel
 	Private Label1, Label2 As Label
-	'Dim apertoOrdine As Boolean
+	Dim BD As BetterDialogs
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -216,12 +216,32 @@ Sub ListView1_ItemClick (Position As Int, Value As Object)
 		Return
 	End If
 	
-	If o.Aggiungi(a, 1, "") Then
-		' ToastMessageShow("Articolo aggiunto all'ordine " & o.Id, False)
-		lvOrdiniInCorso.SetColorAnimated(1000, Colors.White, Colors.Green)
-		lvOrdiniInCorso.SetColorAnimated(1000, Colors.Green, Colors.White)
-		CaricaOrdiniInCorso
-	Else
-		ToastMessageShow("Articolo già presente", False)
+	Dim dlgp As BD_CustomDlgParams
+	Dim spQta As Spinner
+	spQta.Initialize("Spqta")
+	For q = 1 To 30
+		spQta.Add(q)
+	Next
+	dlgp.Initialize
+	dlgp.Title = "<b>Quantità</b>"
+	dlgp.BodyHeight = 80dip
+	dlgp.TitleHeight = 30dip
+	dlgp.TitleWidth = 120dip
+	dlgp.BodyWidth = 300dip
+	dlgp.DialogBody = spQta
+	dlgp.PositiveButton = "Ok"
+	dlgp.CancelButton = "Annulla"
+	Dim i As Int = BD.CustomDialog(dlgp, "")
+	
+	If i = DialogResponse.POSITIVE Then
+		Dim qta As Int = spQta.SelectedItem
+		If o.Aggiungi(a, qta, "") Then
+			' ToastMessageShow("Articolo aggiunto all'ordine " & o.Id, False)
+			lvOrdiniInCorso.SetColorAnimated(1000, Colors.White, Colors.Green)
+			lvOrdiniInCorso.SetColorAnimated(1000, Colors.Green, Colors.White)
+			CaricaOrdiniInCorso
+		Else
+			ToastMessageShow("Articolo già presente", False)
+		End If
 	End If
 End Sub
