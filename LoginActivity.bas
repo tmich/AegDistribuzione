@@ -21,6 +21,8 @@ Sub Globals
 
 	Private txNome As EditText
 	Private txPassword As EditText
+	Private btLogin As Button
+	Private lblErrore As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -37,6 +39,11 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
+Sub Errore(msg As String)
+	lblErrore.Text = msg
+	lblErrore.SetVisibleAnimated(1000, True)
+	lblErrore.SetVisibleAnimated(5000, False)
+End Sub
 
 Sub btLogin_Click
 	Dim username As String = txNome.Text
@@ -46,6 +53,7 @@ Sub btLogin_Click
 		Return
 	End If
 	
+	btLogin.Enabled = False
 	ProgressDialogShow2("Accesso in corso", False)
 	
 	Wait For (Starter.client.Login(username, password)) Complete (Result As Utente)
@@ -56,7 +64,8 @@ Sub btLogin_Click
 		StartActivity(Main)
 		Activity.Finish()
 	Else
+		btLogin.Enabled = True
 		ProgressDialogHide
-		Msgbox(Starter.client.Errore, "Accesso")
+		Errore(Starter.client.Errore)
 	End If
 End Sub

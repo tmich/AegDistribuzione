@@ -90,6 +90,7 @@ Private Sub CaricaOrdiniInCorso
 	Dim ordini As List = Starter.db.OrdiniInCorsoPerCliente(cli.Id)
 	'Dim height As Int = 60dip
 	lvOrdiniInCorso.Clear
+	lvOrdiniInCorso.Enabled = True
 	'lvOrdiniInCorso.Height = height
 	'TabHost1.Height = 844dip
 	'lvOrdiniInCorso.SingleLineLayout.Label.Gravity = Gravity.TOP
@@ -107,11 +108,23 @@ Private Sub CaricaOrdiniInCorso
 		lvOrdiniInCorso.AddTwoLinesAndBitmap2("Ordine n. " & o.Id, riga2 , bmp, o)
 	Next
 	
-	pnlOrdiniInCorso.Visible = (lvOrdiniInCorso.Size > 0)
+	'pnlOrdiniInCorso.Visible = (lvOrdiniInCorso.Size > 0)
+	If lvOrdiniInCorso.Size = 0 Then
+		NessunOrdineInCorso
+	End If
 	
 	'If lvOrdiniInCorso.Size = 0 Then
 	'	lvOrdiniInCorso.AddSingleLine("Nessun ordine in attesa")
 	'End If
+End Sub
+
+Private Sub NessunOrdineInCorso
+	Dim bmp As Bitmap = LoadBitmap(File.DirAssets, "done_all_gr.png")
+	lvOrdiniInCorso.Enabled = False
+	lvOrdiniInCorso.TwoLinesAndBitmap.ItemHeight = 100dip
+	lvOrdiniInCorso.TwoLinesAndBitmap.Label.Padding = Array As Int(0dip, 30dip, 0dip, 0dip)
+	lvOrdiniInCorso.TwoLinesAndBitmap.Label.TextColor = Colors.Gray
+	lvOrdiniInCorso.AddTwoLinesAndBitmap("Nessun ordine in corso", "", bmp)
 End Sub
 
 Sub TabHost1_TabChanged
@@ -206,6 +219,7 @@ Sub ListView1_ItemClick (Position As Int, Value As Object)
 	Dim p As Preferito = Value
 	Dim a As Articolo = Starter.db.GetArticolo(p.IdArt)
 	Dim o As Ordine
+	Dim in_corso As List
 		
 	Dim dlgp As BD_CustomDlgParams
 	Dim spQta As Spinner
@@ -226,10 +240,12 @@ Sub ListView1_ItemClick (Position As Int, Value As Object)
 	
 	If i = DialogResponse.POSITIVE Then
 		
-		If lvOrdiniInCorso.Size = 0 Then
+		in_corso = Starter.db.OrdiniInCorsoPerCliente(cli.Id)
+		If in_corso.Size = 0 Then
 			o = Starter.db.NuovoOrdine(cli)
-		Else If lvOrdiniInCorso.Size = 1 Then
-			o = lvOrdiniInCorso.GetItem(0)
+		Else If in_corso.Size = 1 Then
+			'o = lvOrdiniInCorso.GetItem(0)
+			o = in_corso.Get(0)
 		Else
 			' Più di un ordine aperto, non decido ed esco
 			Return
