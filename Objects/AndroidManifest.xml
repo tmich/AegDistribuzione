@@ -33,6 +33,13 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
+			android:name=".schedaclienteactivity"
+			android:label="AEG Distribuzione"
+			android:screenOrientation="portrait">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
 			android:name=".ordineactivity"
 			android:label="AEG Distribuzione"
 			android:screenOrientation="portrait">
@@ -41,13 +48,6 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".ordiniincorsoactivity"
-			android:label="AEG Distribuzione"
-			android:screenOrientation="portrait">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".schedaclienteactivity"
 			android:label="AEG Distribuzione"
 			android:screenOrientation="portrait">
 		</activity>

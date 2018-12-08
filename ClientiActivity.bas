@@ -41,24 +41,15 @@ Sub AggiornaLista(clienti As List)
 	lvClienti.TwoLinesAndBitmap.Label.TextSize = 22
 	lvClienti.TwoLinesAndBitmap.SecondLabel.TextSize = 16
 	
-	If clienti.Size > 0 Then
-		' Aggiunta cliente fittizio
-		lvClienti.AddTwoLinesAndBitmap2("Crea cliente fittizio", "", LoadBitmap(File.DirAssets, "persona_piu.png"), 0)
-	End If
-	
 	Dim bmp As Bitmap = LoadBitmap(File.DirAssets, "persona.png")
-'	Dim cd(2) As ColorDrawable
-'	cd(0).Initialize(Colors.White, 0)
-'	cd(1).Initialize(Colors.Yellow, 0)
+	Dim bmp2 As Bitmap = LoadBitmap(File.DirAssets, "person_outline.png")
 	
 	For Each c As Cliente In clienti
-'		Dim fitt As Int = 0
-'		If c.Fittizio Then fitt = 1
-'		lvClienti.TwoLinesAndBitmap.Background = cd(fitt)
-'		Sleep(0)
-		Dim strfitt As String = ""
-		If c.Fittizio Then strfitt = " (FITTIZIO) "
-		lvClienti.AddTwoLinesAndBitmap2(c.Denominazione & strfitt, c.Indirizzo, bmp, c)
+		If c.Fittizio Then
+			lvClienti.AddTwoLinesAndBitmap2(c.Denominazione, c.Indirizzo, bmp2, c)
+		Else
+			lvClienti.AddTwoLinesAndBitmap2(c.Denominazione, c.Indirizzo, bmp, c)
+		End If
 	Next
 	
 	If lvClienti.Size == 0 Then
@@ -81,51 +72,51 @@ Sub Activity_Pause (UserClosed As Boolean)
 	
 End Sub
 
-Sub CreaClienteFittizio()
-	'Input box
-	Dim IP As BD_InputBoxParams
-	IP.Initialize
-	IP.Question = "<I>Nome</I>"
-	IP.QuestionTextSize = 18
-	IP.SpaceBetween = 4dip
-	IP.InputTextSize = 24
-	IP.InputType = IP.INPUT_TYPE_TEXT_WITH_CAPS
-	IP.Gravity = Gravity.CENTER_VERTICAL + Gravity.CENTER_HORIZONTAL
-	IP.ValidationCallback = "Input_Validation"
-	IP.WithSuggestions = True
-		
-	Dim DR As Int = BD.InputBox("Cliente fittizio", IP, "Salva", "Annulla", "", Null)
-	If DR = DialogResponse.POSITIVE Then
-		'Log(IP.Answer)
-		'Log(IP.CompactAnswer)
-		ProgressDialogShow2("Attendi un momento...", False)
-		Try
-			Dim c As Cliente
-			c.Initialize(0, "", IP.Answer, "", "", "")
-			c.Fittizio = True
-			Wait For (Starter.client.CreaCliente(c)) Complete (Result As Cliente)
-			If Starter.client.Successo Then
-				If Result <> Null Then
-					Starter.db.SalvaCliente(Result)
-					AggiornaLista(Starter.db.GetClienti())
-				End If
-			End If
-		Catch
-			Log(LastException)
-		End Try
-		
-		ProgressDialogHide
-	End If
-End Sub
+'Sub CreaClienteFittizio()
+'	'Input box
+'	Dim IP As BD_InputBoxParams
+'	IP.Initialize
+'	IP.Question = "<I>Nome</I>"
+'	IP.QuestionTextSize = 18
+'	IP.SpaceBetween = 4dip
+'	IP.InputTextSize = 24
+'	IP.InputType = IP.INPUT_TYPE_TEXT_WITH_CAPS
+'	IP.Gravity = Gravity.CENTER_VERTICAL + Gravity.CENTER_HORIZONTAL
+'	IP.ValidationCallback = "Input_Validation"
+'	IP.WithSuggestions = True
+'		
+'	Dim DR As Int = BD.InputBox("Cliente fittizio", IP, "Salva", "Annulla", "", Null)
+'	If DR = DialogResponse.POSITIVE Then
+'		'Log(IP.Answer)
+'		'Log(IP.CompactAnswer)
+'		ProgressDialogShow2("Attendi un momento...", False)
+'		Try
+'			Dim c As Cliente
+'			c.Initialize(0, "", IP.Answer, "", "", "")
+'			c.Fittizio = True
+'			Wait For (Starter.client.CreaCliente(c)) Complete (Result As Cliente)
+'			If Starter.client.Successo Then
+'				If Result <> Null Then
+'					Starter.db.SalvaCliente(Result)
+'					AggiornaLista(Starter.db.GetClienti())
+'				End If
+'			End If
+'		Catch
+'			Log(LastException)
+'		End Try
+'		
+'		ProgressDialogHide
+'	End If
+'End Sub
 
 
 Sub lvClienti_ItemClick (Position As Int, Value As Object)
-	If Value == 0 Then
-		CreaClienteFittizio
-	Else
+	'If Value == 0 Then
+	'	CreaClienteFittizio
+	'Else
 		Dim cli As Cliente = Value
 		CallSubDelayed2(SchedaClienteActivity, "VisualizzaScheda", cli)
-	End If
+	'End If
 End Sub
 
 Sub txCerca_TextChanged (Old As String, New As String)

@@ -25,5 +25,5 @@ Public Sub Initialize(cId As Int, Cod As String, Denom As String, Indir As Strin
 	DataUltimaModifica = dtum
 	Fittizio = False
 	Ordini.Initialize
-	If Cod.StartsWith("$TMP") Then Fittizio = True
+	If Cod.StartsWith("$FITTIZIO$") Then Fittizio = True
 End Sub

@@ -15,11 +15,11 @@ End Sub
 Public Sub Initialize
 	m_job.Initialize("", Me)
 	#if DEBUG
-	m_url = "http://80.211.227.37:5002/api/v2"
+	m_url = "http://80.211.227.37/apiv2"
 	#End If
 	
 	#if RELEASE
-		m_url = "http://80.211.2.91:8080/api/v2"
+		m_url = "http://80.211.2.91/apiv2"
 	#End If
 End Sub
 
@@ -156,7 +156,7 @@ Public Sub ScaricaClienti() As ResumableSub
 			Dim dtum As String = m.Get("data_ultima_modifica")
 			Dim c As Cliente
 			c.Initialize(id,cod,denom,indir,piva,dtum)
-			If cod.StartsWith("$TMP") Then 
+			If cod.CompareTo("$FITTIZIO$") = 0 Then 
 				c.Fittizio = True
 			End If
 			m_clienti.Add(c)
@@ -322,7 +322,7 @@ Public Sub ScaricaPreferitiPerCliente(id_cliente As Int) As ResumableSub
 	Return m_preferiti
 End Sub
 
-Public Sub Invia(ord As Ordine) As ResumableSub
+Public Sub Invia(ord As Ordine, utn As Utente) As ResumableSub
 	m_successo = False
 	Dim ordn As Ordine
 	Dim form As Map
@@ -330,7 +330,7 @@ Public Sub Invia(ord As Ordine) As ResumableSub
 	ordn.Initialize(0,0,0,"","")
 	form.Initialize
 	form.Put("id_cliente", ord.IdCliente)
-	form.Put("id_utente", Starter.User.Id)
+	form.Put("id_utente", utn.Id)
 	form.Put("data", ord.ToJson)
 	m_job.PostMultipart(m_url & "/ordine", form, Null)
 	Wait For (m_job) JobDone

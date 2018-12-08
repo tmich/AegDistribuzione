@@ -143,12 +143,17 @@ Sub Spinner1_ItemClick (Position As Int, Value As Object)
 End Sub
 
 Sub btnInvia_LongClick
+	If m_cliente.Fittizio And (m_ordine.Note == Null Or m_ordine.Note.Trim() == "") Then
+		Msgbox("Ordine per cliente FITTIZIO: è obbligatorio inserire le note nell'ordine", "Attenzione")
+		Return
+	End If
+	
 	Msgbox2Async("Inviare l'ordine?", "Invio", "Invia", "Annulla", "", Null, True)
 	Wait For MsgBox_Result (iResult As Int)
 	
 	If iResult == DialogResponse.POSITIVE Then
 		ProgressDialogShow2("Invio in corso", False)
-		Wait For (Starter.client.Invia(m_ordine)) Complete (Result As Ordine)
+		Wait For (Starter.client.Invia(m_ordine, Starter.User)) Complete (Result As Ordine)
 		If Starter.client.Successo Then
 			If Result <> Null Then
 				Starter.db.SalvaOrdine(Result)
