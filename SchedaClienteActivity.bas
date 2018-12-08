@@ -24,6 +24,8 @@ Sub Globals
 	Private pnlOrdiniInCorso As Panel
 	Private Label1, Label2 As Label
 	Dim BD As BetterDialogs
+	Private lblNessunOrdine As Label
+	Dim clessidra, cloud, stella As Bitmap
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -32,6 +34,13 @@ Sub Activity_Create(FirstTime As Boolean)
 	TabHost1.AddTab("Scheda", "ListaPreferitiLayout")
 	'TabHost1.AddTab("Ordini in corso", "ordinincorsolayout")
 	TabHost1.AddTab("Storico Ordini", "StoricoOrdiniLayout")
+	
+	clessidra = LoadBitmap(File.DirAssets, "clessidra.png")
+	stella = LoadBitmap(File.DirAssets, "stella.png")
+	cloud = LoadBitmap(File.DirAssets, "cloud_ok.png")
+	'Dim bmp As BitmapDrawable
+	'bmp.Initialize(LoadBitmap(File.DirAssets, "done_all_gr.png"))
+	'lblNessunOrdine.Background = bmp
 End Sub
 
 Sub VisualizzaScheda(c As Cliente)
@@ -56,18 +65,12 @@ End Sub
 Private Sub CaricaPreferiti
 	Dim preferiti As List = Starter.db.GetPreferitiCliente(cli.Id)
 	ListView1.Clear
-	
-'	ListView1.SingleLineLayout.Label.Gravity = Gravity.TOP
-'	ListView1.SingleLineLayout.ItemHeight = 60
-'	ListView1.SingleLineLayout.Label.TextColor = Colors.Black
-'	ListView1.SingleLineLayout.Label.TextSize = 22
 	ListView1.TwoLinesAndBitmap.ItemHeight = 60dip
 	ListView1.TwoLinesAndBitmap.Label.TextColor = Colors.Black
 	ListView1.TwoLinesAndBitmap.Label.TextSize = 22
 	ListView1.TwoLinesAndBitmap.SecondLabel.TextSize = 16
 	For Each p As Preferito In preferiti
-'		ListView1.AddSingleLine2(p.Descrizione, p)
-		ListView1.AddTwoLinesAndBitmap2(p.Descrizione, p.Occorrenze & " volt" & Utils.SingPlur(p.Occorrenze), LoadBitmap(File.DirAssets, "stella.png"), p)
+		ListView1.AddTwoLinesAndBitmap2(p.Descrizione, p.Occorrenze & " volt" & Utils.SingPlur(p.Occorrenze), stella, p)
 	Next
 End Sub
 
@@ -78,11 +81,11 @@ Private Sub CaricaStoricoOrdini
 	ListView2.SingleLineLayout.ItemHeight = 60
 	ListView2.TwoLinesAndBitmap.Label.TextColor = Colors.Black
 	ListView2.TwoLinesAndBitmap.Label.TextSize = 22
-	Dim bmp As Bitmap = LoadBitmap(File.DirAssets, "cloud_ok.png")
+	'Dim bmp As Bitmap = LoadBitmap(File.DirAssets, "cloud_ok.png")
 	For Each o As Ordine In ordini
 		ListView2.AddTwoLinesAndBitmap2("Ordine n. " & o.Id & " inviato il " & o.DataFormattata, _
 				o.Voci.Size & " pezz" & Utils.SingPlurM(o.Voci.Size) & TAB & NumberFormat2(o.Totale, 1, 2, 2, False) & " €", _
-				bmp, o)
+				cloud, o)
 	Next
 End Sub
 
@@ -94,37 +97,29 @@ Private Sub CaricaOrdiniInCorso
 	'lvOrdiniInCorso.Height = height
 	'TabHost1.Height = 844dip
 	'lvOrdiniInCorso.SingleLineLayout.Label.Gravity = Gravity.TOP
+	
+	If ordini.Size = 0 Then
+		NessunOrdineInCorso
+		Return
+	End If
+	
+	Sleep(100)
+	lblNessunOrdine.Visible = False
 	lvOrdiniInCorso.TwoLinesAndBitmap.ItemHeight = 60dip
-	lvOrdiniInCorso.TwoLinesAndBitmap.Label.TextColor = Colors.Black
 	lvOrdiniInCorso.TwoLinesAndBitmap.Label.TextSize = 22
-	Dim bmp As Bitmap = LoadBitmap(File.DirAssets, "clessidra.png")
+	lvOrdiniInCorso.TwoLinesAndBitmap.Label.TextColor = Colors.Black
+	'Dim bmp As Bitmap = LoadBitmap(File.DirAssets, "clessidra.png")
 	For Each o As Ordine In ordini
-		'lvOrdiniInCorso.Height = lvOrdiniInCorso.Height + 60dip
-		'TabHost1.Height = TabHost1.Height - height
 		Dim riga2 As String = o.Voci.Size & " pezzi " & TAB & NumberFormat2(o.Totale, 1, 2, 2, False) & " €"
 		If o.Note <> Null Then
 			riga2 = riga2 & TAB & TAB & "Note: " & o.Note
 		End If
-		lvOrdiniInCorso.AddTwoLinesAndBitmap2("Ordine n. " & o.Id, riga2 , bmp, o)
+		lvOrdiniInCorso.AddTwoLinesAndBitmap2("Ordine n. " & o.Id, riga2 , clessidra, o)
 	Next
-	
-	'pnlOrdiniInCorso.Visible = (lvOrdiniInCorso.Size > 0)
-	If lvOrdiniInCorso.Size = 0 Then
-		NessunOrdineInCorso
-	End If
-	
-	'If lvOrdiniInCorso.Size = 0 Then
-	'	lvOrdiniInCorso.AddSingleLine("Nessun ordine in attesa")
-	'End If
 End Sub
 
 Private Sub NessunOrdineInCorso
-	Dim bmp As Bitmap = LoadBitmap(File.DirAssets, "done_all_gr.png")
-	lvOrdiniInCorso.Enabled = False
-	lvOrdiniInCorso.TwoLinesAndBitmap.ItemHeight = 100dip
-	lvOrdiniInCorso.TwoLinesAndBitmap.Label.Padding = Array As Int(0dip, 30dip, 0dip, 0dip)
-	lvOrdiniInCorso.TwoLinesAndBitmap.Label.TextColor = Colors.Gray
-	lvOrdiniInCorso.AddTwoLinesAndBitmap("Nessun ordine in corso", "", bmp)
+	lblNessunOrdine.Visible = True
 End Sub
 
 Sub TabHost1_TabChanged
@@ -252,8 +247,9 @@ Sub ListView1_ItemClick (Position As Int, Value As Object)
 		End If
 		
 		Dim qta As Int = spQta.SelectedItem
-		If o.Aggiungi(a, qta, "") Then
-			' ToastMessageShow("Articolo aggiunto all'ordine " & o.Id, False)
+		If Not(o.Contiene(a)) Then
+			Dim v As VoceOrdine = Starter.db.NuovaVoce(o, a.Codice, a.Descrizione, qta, a.Prezzo, "")
+			o.Aggiungi(v)
 			lvOrdiniInCorso.SetColorAnimated(1000, Colors.White, Colors.Green)
 			lvOrdiniInCorso.SetColorAnimated(1000, Colors.Green, Colors.White)
 			CaricaOrdiniInCorso

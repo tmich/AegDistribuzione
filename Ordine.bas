@@ -1,5 +1,5 @@
 ﻿B4A=true
-Group=Classes
+Group=Default Group
 ModulesStructureVersion=1
 Type=Class
 Version=8.5
@@ -50,15 +50,20 @@ Public Sub Contiene(art As Articolo) As Boolean
 	Return False
 End Sub
 
-Public Sub Aggiungi(art As Articolo, qta As Int, nt As String) As Boolean
-	Dim cnt As Boolean = Contiene(art)
-	If Not(cnt) Then
-		Dim v As VoceOrdine = Starter.db.NuovaVoce(Me, art.Codice, art.Descrizione, qta, art.Prezzo, nt)
-		Voci.Add(v)
-	End If
-	
-	Return Not(cnt)
+Public Sub Aggiungi(v As VoceOrdine) As Boolean
+	Voci.Add(v)
+	Return True
 End Sub
+
+'Public Sub Aggiungi(art As Articolo, qta As Int, nt As String) As Boolean
+'	Dim cnt As Boolean = Contiene(art)
+'	If Not(cnt) Then
+'		Dim v As VoceOrdine = Starter.db.NuovaVoce(Me, art.Codice, art.Descrizione, qta, art.Prezzo, nt)
+'		Voci.Add(v)
+'	End If
+'	
+'	Return Not(cnt)
+'End Sub
 
 Public Sub FromJson(jsonString As String)
 	Dim parser As JSONParser

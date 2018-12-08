@@ -24,7 +24,7 @@ Sub Globals
 	Dim btnAnnulla As Button
 	Dim Label1 As Label
 	Dim oIme As IME
-	Dim BD As BetterDialogs
+	'Dim BD As BetterDialogs
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)

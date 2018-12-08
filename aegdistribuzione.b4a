@@ -79,24 +79,24 @@ Library8=ime
 Library9=okhttp
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~'End of default text.~\n~~\n~AddPermission(android.permission.WRITE_EXTERNAL_STORAGE)~\n~SetApplicationAttribute(android:theme, "@android:style/Theme.Holo.Light")
 Module1=SchedaClienteActivity
-Module10=Utils
-Module11=ArticoliActivity
-Module12=Cliente
-Module13=VoceOrdine
+Module10=OrdiniInCorsoActivity
+Module11=LoginActivity
+Module12=Utils
+Module13=ArticoliActivity
 Module14=Starter
 Module15=Utente
 Module16=ScaricaDatiActivity
 Module17=DettaglioOrdineActivity
 Module18=Preferito
 Module19=CustomListView
-Module2=OrdineActivity
-Module3=Database
-Module4=Articolo
-Module5=OrdiniInCorsoActivity
-Module6=ApiClient
-Module7=ClientiActivity
-Module8=LoginActivity
-Module9=Ordine
+Module2=ApiClient
+Module3=ClientiActivity
+Module4=Cliente
+Module5=Database
+Module6=VoceOrdine
+Module7=Ordine
+Module8=OrdineActivity
+Module9=Articolo
 NumberOfFiles=32
 NumberOfLibraries=12
 NumberOfModules=19
@@ -150,6 +150,7 @@ Sub MostraLogin
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("Main2Layout")
 	oIme.Initialize("Keyboard")
 End Sub

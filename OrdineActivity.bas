@@ -125,9 +125,12 @@ Sub btnAggiungi_Click
 End Sub
 
 Sub GetResult(Result As Articolo)
-	'Dim v As VoceOrdine = Starter.db.NuovaVoce(m_ordine, Result.Codice, Result.Descrizione, 1, Result.Prezzo, "")
 	'm_ordine.Voci.Add(v)
-	If m_ordine.Aggiungi(Result, 1, "") == False Then
+	'If m_ordine.Aggiungi(Result, 1, "") == False Then
+	If Not(m_ordine.Contiene(Result)) Then
+		Dim v As VoceOrdine = Starter.db.NuovaVoce(m_ordine, Result.Codice, Result.Descrizione, 1, Result.Prezzo, "")
+		m_ordine.Aggiungi(v)
+	Else
 		ToastMessageShow("Articolo già presente", False)
 		Return
 	End If
