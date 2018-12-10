@@ -131,6 +131,54 @@ Public Sub ScaricaArticoli As ResumableSub
 	Return m_articoli
 End Sub
 
+Public Sub ScaricaOrdiniDaId(id As Int) As ResumableSub
+	m_successo = False
+	Dim m_ordini As List
+	m_ordini.Initialize
+	m_job.Download(m_url & "/ordini/" & id)
+	Wait For (m_job) JobDone
+	
+	If m_job.Success Then
+		m_successo = True
+		Dim parser As JSONParser
+		parser.Initialize(m_job.GetString)
+		Dim root As Map = parser.NextObject
+		Dim objects As List = root.Get("data")
+		
+		For Each m As Map In objects
+			Dim dt_inv As String = m.Get("data_invio")
+			Dim oid As Int = m.Get("id")
+			Dim cId As Int = m.Get("id_cliente")
+			Dim uId As Int = m.Get("id_utente")
+			Dim nt As String = m.Get("note")
+			Dim ordn As Ordine
+			ordn.Initialize(oid,cId,uId,dt_inv,nt)
+			
+			Dim righe As List = m.Get("righe")
+			For Each r As Map In righe
+				Try
+					Dim v As VoceOrdine
+					Dim id As Int = r.Get("id")
+					Dim oid As Int = ordn.Id
+					Dim cod As String = r.Get("cod_art")
+					Dim desc As String = r.Get("desc_art")
+					Dim note As String = r.Get("note")
+					Dim prezzo As Float = r.Get("prez_art")
+					Dim qta As Int = r.Get("qta")
+					v.Initialize(id, cod, desc, oid, note, prezzo, qta)
+					ordn.Voci.Add(v)
+				Catch
+					Log(LastException)
+				End Try
+			Next
+			
+			m_ordini.Add(ordn)
+		Next
+	End If
+	
+	Return m_ordini
+End Sub
+
 Public Sub ScaricaClienti() As ResumableSub
 	m_successo = False
 	Dim m_clienti As List
