@@ -90,6 +90,7 @@ Module17=DettaglioOrdineActivity
 Module18=Preferito
 Module19=CustomListView
 Module2=ApiClient
+Module20=OrdineConCliente
 Module3=ClientiActivity
 Module4=Cliente
 Module5=Database
@@ -99,7 +100,7 @@ Module8=OrdineActivity
 Module9=Articolo
 NumberOfFiles=32
 NumberOfLibraries=12
-NumberOfModules=19
+NumberOfModules=20
 Version=8.5
 @EndOfDesignText@
 #Region  Project Attributes 

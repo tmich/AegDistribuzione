@@ -151,8 +151,13 @@ Public Sub ScaricaOrdiniDaId(id As Int) As ResumableSub
 			Dim cId As Int = m.Get("id_cliente")
 			Dim uId As Int = m.Get("id_utente")
 			Dim nt As String = m.Get("note")
-			Dim ordn As Ordine
-			ordn.Initialize(oid,cId,uId,dt_inv,nt)
+			Dim den As String = m.Get("denominazione")
+			Dim codcli As String = m.Get("cod_cliente")
+			Dim indir As String = m.Get("indirizzo")
+			Dim iva As String = m.Get("part_iva")
+			Dim usr As String = m.Get("utente")
+			Dim ordn As OrdineConCliente
+			ordn.Initialize(oid,cId,uId,dt_inv,nt,codcli,den,indir,iva,usr)
 			
 			Dim righe As List = m.Get("righe")
 			For Each r As Map In righe
